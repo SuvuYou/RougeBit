@@ -15,7 +15,7 @@ class AttackOnCollision : BaseAttack
 
     private Vector3 _getSpawnPosition() => _attackerPosition;
 
-    public override void Setup(GameObject attacker, Func<GameObject> getTarget)
+    public override void Setup(GameObject attacker, Func<(GameObject, bool)> getTarget)
     {
         base.Setup(attacker, getTarget);
 
@@ -28,7 +28,11 @@ class AttackOnCollision : BaseAttack
 
     protected override bool _shouldAttack() 
     {
-        return Vector3.Distance(_attacker.transform.position, _getTarget().transform.position) <= _attackDistance;
+        var (target, isTargetFound) = _getTarget();
+
+        if (!isTargetFound) return false;
+
+        return Vector3.Distance(_attacker.transform.position, target.transform.position) <= _attackDistance;
     } 
 
     protected override void _handleAttack()
@@ -39,7 +43,11 @@ class AttackOnCollision : BaseAttack
 
     private void _updateAttackState()
     {
-        _attackDirection = (_getTarget().transform.position - _attacker.transform.position).normalized;
+        var (target, isTargetFound) = _getTarget();
+
+        if (!isTargetFound) return;
+
+        _attackDirection = (target.transform.position - _attacker.transform.position).normalized;
         _attackerPosition = _attacker.transform.position;
     }
 
@@ -55,7 +63,6 @@ class AttackOnCollision : BaseAttack
         if (colliders != null)
         {
             Transform parent = colliders.gameObject.transform.parent;
-            Debug.Log(colliders.gameObject.name);
 
             if (parent.TryGetComponentInChildren(out BaseDamagable damagable))
             {

@@ -497,7 +497,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30f4ec25e57fce443b721400b0fb1b1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _attack: {fileID: 1514046789374074313, guid: 58ae3c8115d2cb144904e417b9339340, type: 3}
+  _attackPrefab: {fileID: 1514046789374074313, guid: 58ae3c8115d2cb144904e417b9339340, type: 3}
   _palyerInputSO: {fileID: 11400000, guid: 65ce6e570007244489fc49596258c513, type: 2}
   _movement: {fileID: 2213814842685308979}
   _attackAnimationController: {fileID: 2927109885443794583}

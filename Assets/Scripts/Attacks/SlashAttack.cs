@@ -16,7 +16,11 @@ class SlashAttack : BaseAttack
 
     protected override bool _shouldAttack() 
     {
-        return Vector3.Distance(_attacker.transform.position, _getTarget().transform.position) <= _attackDistance;
+        var (target, isTargetFound) = _getTarget();
+
+        if (!isTargetFound) return false;
+
+        return Vector3.Distance(_attacker.transform.position, target.transform.position) <= _attackDistance;
     } 
 
     protected override void _handleAttack()
@@ -27,7 +31,11 @@ class SlashAttack : BaseAttack
 
     private void _updateAttackState()
     {
-        _attackDirection = (_getTarget().transform.position - _attacker.transform.position).normalized;
+        var (target, isTargetFound) = _getTarget();
+
+        if (!isTargetFound) return;
+
+        _attackDirection = (target.transform.position - _attacker.transform.position).normalized;
         _attackerPosition = _attacker.transform.position;
     }
 
@@ -46,11 +54,13 @@ class SlashAttack : BaseAttack
     private void _handleCollision()
     {    
         var angle = _attackAnimation.transform.rotation.z;
-        var colliders = Physics2D.OverlapBox(_getSpawnPosition(), new Vector2(_spriteRenderer.bounds.size.x, _spriteRenderer.bounds.size.y), angle, _enemyLayerMask);
+        var colliders = Physics2D.OverlapBoxAll(_getSpawnPosition(), new Vector2(_spriteRenderer.bounds.size.x, _spriteRenderer.bounds.size.y), angle, _enemyLayerMask);
 
-        if (colliders != null)
+        foreach (var collider in colliders)
         {
-            Transform parent = colliders.gameObject.transform.parent;
+            if (collider == null) continue;
+
+            Transform parent = collider.gameObject.transform.parent;
 
             if (parent.TryGetComponentInChildren(out BaseDamagable damagable))
             {
@@ -62,5 +72,6 @@ class SlashAttack : BaseAttack
                 knockable.AddKnockback(_attackDirection);
             }
         }
+        
     }
 }

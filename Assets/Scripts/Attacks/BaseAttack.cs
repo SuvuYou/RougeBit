@@ -9,11 +9,11 @@ class BaseAttack : MonoBehaviour
     public Action OnAttack;
 
     protected GameObject _attacker;
-    protected Func<GameObject> _getTarget;
+    protected Func<(GameObject, bool)> _getTarget;
 
     private Timer _attackTimer;
 
-    public virtual void Setup(GameObject attacker, Func<GameObject> getTarget)
+    public virtual void Setup(GameObject attacker, Func<(GameObject, bool)> getTarget)
     {
         _attackTimer = new Timer(_cooldown);
 
@@ -32,7 +32,7 @@ class BaseAttack : MonoBehaviour
     {
         _attackTimer.Update(Time.deltaTime);
 
-        if (_attackTimer.IsRunning && _attackTimer.Time <= 0)
+        if (_attackTimer.IsRunning && _attackTimer.IsFinished)
         {
             if (!_shouldAttack()) return;
 
