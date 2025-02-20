@@ -2,10 +2,9 @@ using System.Collections;
 using System.Linq;
 using UnityEngine;
 
-class PlayerAttack : MonoBehaviour
+class EnemyAttack : MonoBehaviour
 {
     [SerializeField] private BaseAttack _attack;
-    [SerializeField] private PalyerInputSO _palyerInputSO;
     [SerializeField] private CharacterMovement _movement;
 
     [SerializeField] private AttackAnimationController _attackAnimationController;
@@ -23,12 +22,11 @@ class PlayerAttack : MonoBehaviour
     {
         _movement.DisableMovement();
         yield return new WaitForSeconds(seconds);
-        _movement.EnableMovement();
-        
+        _movement.EnableMovement(); 
     }
 
     private GameObject _getTarget()
     {
-        return FindObjectsByType<FollowTargetMovement>(FindObjectsSortMode.None)?.First().gameObject;
+        return FindObjectsByType<PlayerMovement>(FindObjectsSortMode.None)?.First().gameObject;
     }
 }

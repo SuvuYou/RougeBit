@@ -70,13 +70,18 @@
     <Compile Include="Assets\Scripts\Movement\EntityMovementStats.cs" />
     <Compile Include="Assets\Scripts\Movement\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\Attacks\AttackAnimation.cs" />
+    <Compile Include="Assets\Scripts\Attacks\AttackAnimationController.cs" />
     <Compile Include="Assets\Scripts\Helpers\Extentions.cs" />
+    <Compile Include="Assets\Scripts\DamageControl\TakeDamageAnimationController.cs" />
     <Compile Include="Assets\Scripts\Attacks\PlayerAttack.cs" />
     <Compile Include="Assets\Scripts\Input\PalyerInputSO.cs" />
     <Compile Include="Assets\Scripts\Helpers\Timer.cs" />
+    <Compile Include="Assets\Scripts\Attacks\EnemyAttack.cs" />
     <Compile Include="Assets\Scripts\Attacks\BaseKnockback.cs" />
     <Compile Include="Assets\Scripts\Attacks\BaseAttack.cs" />
+    <Compile Include="Assets\Scripts\SpriteEffects\FlashAnimation.cs" />
     <Compile Include="Assets\Scripts\Movement\FollowTargetMovement.cs" />
+    <Compile Include="Assets\Scripts\Attacks\AttackOnCollision.cs" />
     <Compile Include="Assets\Scripts\DamageControl\BaseDamagable.cs" />
     <Compile Include="Assets\Scripts\Input\PalyerInput.cs" />
   </ItemGroup>
