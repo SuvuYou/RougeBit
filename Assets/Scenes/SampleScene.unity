@@ -301,7 +301,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 7.0859375
+  orthographic size: 7.1484375
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -439,8 +439,10 @@ MonoBehaviour:
   _upperSpawnBounds: {x: 8, y: 4}
   _enemiesWithSpawnWeights:
     m_keys:
-    - {fileID: 5837283929390393851, guid: dd05c05e472459340a0731bb06b2e3c0, type: 3}
+    - {fileID: 8488398856723413218, guid: 7db9571a3f73a1c4cb51c2ca3566a643, type: 3}
+    - {fileID: 6099018204556544869, guid: 10e1beb7085d44444b1aae11a009e694, type: 3}
     m_values:
+    - 0
     - 1
 --- !u!1 &619394800
 GameObject:

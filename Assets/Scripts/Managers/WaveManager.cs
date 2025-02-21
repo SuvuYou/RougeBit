@@ -131,7 +131,7 @@ class WaveManager : Singlton<WaveManager>
 
     private Vector3 _getRandomSpawnPosition()
     {
-        Vector3 spawnPosition = Vector3.zero;
+        Vector3 spawnPosition;
 
         do 
         {
