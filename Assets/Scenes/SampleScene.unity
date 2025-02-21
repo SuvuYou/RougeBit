@@ -161,17 +161,6 @@ Transform:
   - {fileID: 619394802}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &279001920 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4355351075479850002, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
-  m_PrefabInstance: {fileID: 2658125268145529193}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6ce96cac0535374e851e7bcc20e14b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &386041272
 GameObject:
   m_ObjectHideFlags: 0
@@ -3419,11 +3408,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 932260380665832382, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.43
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 932260380665832382, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.43
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 932260380665832382, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3461,25 +3450,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 5262327163436022303, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
-      propertyPath: m_Name
-      value: ColliderP
+    - target: {fileID: 4335793314640104623, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
+      propertyPath: _approachSpeed
+      value: 20
       objectReference: {fileID: 0}
-    - target: {fileID: 7812479410768360746, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
-      propertyPath: OnTakeDamage.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 279001920}
-    - target: {fileID: 7812479410768360746, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
-      propertyPath: OnTakeDamage.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: TriggerHurtAnimation
-      objectReference: {fileID: 0}
-    - target: {fileID: 7812479410768360746, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
-      propertyPath: OnTakeDamage.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: TakeDamageAnimationController, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 8308423075698151257, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
-      propertyPath: m_SortingOrder
-      value: 2
+    - target: {fileID: 4335793314640104623, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
+      propertyPath: _radiousOfPulling
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

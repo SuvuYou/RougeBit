@@ -1,5 +1,57 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &482267453083203822
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2579051138909961319}
+  - component: {fileID: 4335793314640104623}
+  m_Layer: 7
+  m_Name: ItemCollector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2579051138909961319
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 482267453083203822}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 932260380665832382}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4335793314640104623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 482267453083203822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02967b44a2b14c64d977cc888d2b03c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _inventory: {fileID: 11400000, guid: ef460be10be72ad45924fab585f10c4b, type: 2}
+  _targetTransform: {fileID: 932260380665832382}
+  _radiousOfPulling: 5
+  _radiousOfConsumsion: 1
+  _approachSpeed: 20
+  _itemsLayerMask:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!1 &962131282749968106
 GameObject:
   m_ObjectHideFlags: 0
@@ -76,7 +128,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 516203883, guid: d43c38d58f8eb784082aade0c98d0ee3, type: 3}
   m_Color: {r: 0.9163928, g: 0.6556604, b: 1, a: 1}
   m_FlipX: 0
@@ -186,6 +238,7 @@ Transform:
   - {fileID: 6675224873160403988}
   - {fileID: 2034788136928177550}
   - {fileID: 2603307879337783538}
+  - {fileID: 2579051138909961319}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1695696457331701395
@@ -315,9 +368,9 @@ MonoBehaviour:
   OnTakeDamage:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2927109885443794583}
-        m_TargetAssemblyTypeName: AttackAnimationController, Assembly-CSharp
-        m_MethodName: TriggerAttackAnimation
+      - m_Target: {fileID: 4355351075479850002}
+        m_TargetAssemblyTypeName: TakeDamageAnimationController, Assembly-CSharp
+        m_MethodName: TriggerHurtAnimation
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -387,7 +440,7 @@ GameObject:
   - component: {fileID: 2603307879337783538}
   - component: {fileID: 6467394637593815757}
   m_Layer: 7
-  m_Name: Collider
+  m_Name: ColliderP
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
