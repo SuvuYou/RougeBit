@@ -442,8 +442,8 @@ MonoBehaviour:
     - {fileID: 8488398856723413218, guid: 7db9571a3f73a1c4cb51c2ca3566a643, type: 3}
     - {fileID: 6099018204556544869, guid: 10e1beb7085d44444b1aae11a009e694, type: 3}
     m_values:
-    - 0
     - 1
+    - 0
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -3504,7 +3504,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5744413092235882709, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

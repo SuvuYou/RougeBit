@@ -65,7 +65,7 @@ MonoBehaviour:
   _reloadDuration: 1
   _addsKnockback: 0
   _requiresAim: 1
-  _aimDuration: 1
+  _aimDuration: 0.5
   _attackerMovement: {fileID: 3904539437941727822}
   _movementVelocityToCancelAttackThreshold: 1
   _enemyLayerMask:
@@ -124,7 +124,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5597872238646907730, guid: c53e215881dc85046964129259c89939, type: 3}
       propertyPath: _minDistanceToTarget
-      value: 3
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 8969133470949677645, guid: c53e215881dc85046964129259c89939, type: 3}
       propertyPath: m_LocalPosition.x

@@ -87,7 +87,6 @@
     <Compile Include="Assets\Scripts\Economy\ItemCollector.cs" />
     <Compile Include="Assets\Scripts\Attacks\PlayerAttack.cs" />
     <Compile Include="Assets\Scripts\Input\PalyerInputSO.cs" />
-    <Compile Include="Assets\Scripts\Attacks\Test.cs" />
     <Compile Include="Assets\Scripts\Helpers\Timer.cs" />
     <Compile Include="Assets\SerializableDictionary\Example\SerializableDictionaryExample.cs" />
     <Compile Include="Assets\Scripts\Economy\ItemDropper.cs" />

@@ -39,6 +39,8 @@ class AttackOnCollision : BaseAttack
     {
         _updateAttackState();
         _handleCollision();
+
+        finishAttack();
     }
 
     private void _updateAttackState()
