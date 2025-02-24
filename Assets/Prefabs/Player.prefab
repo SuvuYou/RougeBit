@@ -516,6 +516,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6675224873160403988}
   - component: {fileID: 5560871501445495362}
+  - component: {fileID: 428924298724892825}
   m_Layer: 7
   m_Name: Attack
   m_TagString: Player
@@ -550,7 +551,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30f4ec25e57fce443b721400b0fb1b1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _attackPrefab: {fileID: 1514046789374074313, guid: 58ae3c8115d2cb144904e417b9339340, type: 3}
+  _attack: {fileID: 428924298724892825}
   _palyerInputSO: {fileID: 11400000, guid: 65ce6e570007244489fc49596258c513, type: 2}
   _movement: {fileID: 2213814842685308979}
   _attackAnimationController: {fileID: 2927109885443794583}
+--- !u!114 &428924298724892825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5744413092235882709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce432193abee6f8449468ed74263581a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _reloadDuration: 0.25
+  _addsKnockback: 1
+  _requiresAim: 0
+  _aimDuration: 0
+  _attackAnimation: {fileID: 1844774124403437146, guid: 43fd00fcd43e05445bb7114d3b487538, type: 3}
+  _enemyLayerMask:
+    serializedVersion: 2
+    m_Bits: 64
+  _spriteRenderer: {fileID: 8308423075698151257}
+  _attackDistance: 2
+  _attackDamage: 50

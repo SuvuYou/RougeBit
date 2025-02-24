@@ -15,9 +15,9 @@ class AttackOnCollision : BaseAttack
 
     private Vector3 _getSpawnPosition() => _attackerPosition;
 
-    public override void Setup(GameObject attacker, Func<(GameObject, bool)> getTarget)
+    public override void Setup(GameObject attacker, GameObject target)
     {
-        base.Setup(attacker, getTarget);
+        base.Setup(attacker, target);
 
         if(attacker.transform.parent.TryGetComponentInChildren(out BoxCollider2D collider))
         {
@@ -26,34 +26,27 @@ class AttackOnCollision : BaseAttack
         }
     }
 
-    protected override bool _shouldAttack() 
+    protected override void _handleIsReadyForAttack(Action performAttackOrAim) 
     {
-        var (target, isTargetFound) = _getTarget();
+        if (!_isTargetFound) return;
 
-        if (!isTargetFound) return false;
+        if (Vector3.Distance(_attacker.transform.position, _target.transform.position) > _attackDistance) return;
 
-        return Vector3.Distance(_attacker.transform.position, target.transform.position) <= _attackDistance;
+        performAttackOrAim();
     } 
 
-    protected override void _handleAttack()
+    protected override void _handleAttack(Action finishAttack, Action cancelAttack) 
     {
         _updateAttackState();
-        _handleAttackInDirection();
+        _handleCollision();
     }
 
     private void _updateAttackState()
     {
-        var (target, isTargetFound) = _getTarget();
+        if (!_isTargetFound) return;
 
-        if (!isTargetFound) return;
-
-        _attackDirection = (target.transform.position - _attacker.transform.position).normalized;
+        _attackDirection = (_target.transform.position - _attacker.transform.position).normalized;
         _attackerPosition = _attacker.transform.position;
-    }
-
-    private void _handleAttackInDirection()
-    {
-        _handleCollision(); 
     }
 
     private void _handleCollision()

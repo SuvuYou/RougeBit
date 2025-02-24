@@ -1,9 +1,11 @@
 using System;
-using System.Collections;
 using UnityEngine;
 
 class RangedAttack : BaseAttack
 {
+    [SerializeField] private CharacterMovement _attackerMovement;
+    [SerializeField] private float _movementVelocityToCancelAttackThreshold = 1f;
+
     [SerializeField] private LayerMask _enemyLayerMask;
     [SerializeField] private BaseProjectile _projectilePrefab; 
     [SerializeField] private float _attackDistance;
@@ -13,64 +15,36 @@ class RangedAttack : BaseAttack
 
     private Vector3 _getSpawnPosition() => _attackerPosition;
 
-    public override void Setup(GameObject attacker, Func<(GameObject, bool)> getTarget)
+    protected override void _handleIsReadyForAttack(Action performAttackOrAim) 
     {
-        base.Setup(attacker, getTarget);
-    }
+        if (!_isTargetFound) return;
 
-    protected override bool _shouldAttack() 
-    {
-        var (target, isTargetFound) = _getTarget();
+        if (Vector3.Distance(_attacker.transform.position, _target.transform.position) > _attackDistance) return;
 
-        if (!isTargetFound) return false;
+        if (_attackerMovement.Velocity.magnitude > _movementVelocityToCancelAttackThreshold) return;
 
-        return Vector3.Distance(_attacker.transform.position, target.transform.position) <= _attackDistance;
+        performAttackOrAim();
     } 
 
-    protected override void _handleAttack()
+    protected override void _handleAttack(Action finishAttack, Action cancelAttack) 
     {
-        DeactivateAttack();
+        _throwProjectileInDirection();
+        finishAttack();
+    }
 
-        _takeAim(
-            onAim: () => 
-            {
-                _updateAttackState();
-            }, 
-            onFinishAiming: () =>
-            {   
-                _throwProjectileInDirection();
-                ActivateAttack();
-            });
+    protected override void _handleAim(Action cancelAim) 
+    {
+        if (_attackerMovement.Velocity.magnitude > _movementVelocityToCancelAttackThreshold) cancelAim();
+
+        _updateAttackState();
     }
 
     private void _updateAttackState()
     {
-        var (target, isTargetFound) = _getTarget();
+        if (!_isTargetFound || _attacker == null) return;
 
-        if (!isTargetFound || _attacker == null) return;
-
-        _attackDirection = (target.transform.position - _attacker.transform.position).normalized;
+        _attackDirection = (_target.transform.position - _attacker.transform.position).normalized;
         _attackerPosition = _attacker.transform.position;
-    }
-
-    private void _takeAim(Action onAim, Action onFinishAiming)
-    {
-        StartCoroutine(_takeAimForDuration(1f, onAim, onFinishAiming));
-    }
-
-    private IEnumerator _takeAimForDuration(float aimDuration, Action onAim, Action onFinishAiming)
-    {
-        float elapsedTime = 0f;
-
-        while (elapsedTime < aimDuration)
-        {
-            onAim?.Invoke();
-            elapsedTime += Time.deltaTime;
-
-            yield return null;
-        }
-
-        onFinishAiming?.Invoke();
     }
 
     private void _throwProjectileInDirection()

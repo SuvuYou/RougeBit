@@ -5,17 +5,14 @@ class EnemyAttack : MonoBehaviour
 {
     [SerializeField] private Enemy _enemyComponent;   
 
-    [SerializeField] private BaseAttack _attackPrefab;
+    [SerializeField] private BaseAttack _attack;
     [SerializeField] private CharacterMovement _movement;
 
     [SerializeField] private AttackAnimationController _attackAnimationController;
 
-    private BaseAttack _attack;
-
     private void Start()
     {
-        _attack = Instantiate(_attackPrefab);
-        _attack.Setup(this.gameObject, _getTarget);
+        _attack.Setup(this.gameObject, _enemyComponent.Target);
 
         _attack.OnAttack += () => StartCoroutine(_disableMovementForSeconds(0.05f));
         _attack.OnAttack += _triggerAttackAnimation;

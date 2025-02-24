@@ -3,21 +3,25 @@ using UnityEngine;
 
 class PlayerAttack : MonoBehaviour
 {
-    [SerializeField] private BaseAttack _attackPrefab;
+    [SerializeField] private BaseAttack _attack;
     [SerializeField] private PalyerInputSO _palyerInputSO;
     [SerializeField] private CharacterMovement _movement;
 
     [SerializeField] private AttackAnimationController _attackAnimationController;
 
-    private BaseAttack _attack;
-
     private void Start()
     {
-        _attack = Instantiate(_attackPrefab);
-        _attack.Setup(this.gameObject, _getTarget);
+        (var enemy, var isEnemyFound) = _getTarget();
+        _attack.Setup(this.gameObject, enemy);
 
         _attack.OnAttack += () => StartCoroutine(_disableMovementForSeconds(0.05f));
         _attack.OnAttack += () => _triggerAttackAnimation();
+    }
+
+    private void Update()
+    {
+        (var enemy, var _) = _getTarget();
+        _attack.SetTarget(enemy);
     }
 
     private void OnDestroy()

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 class SlashAttack : BaseAttack
@@ -14,35 +15,30 @@ class SlashAttack : BaseAttack
 
     private Vector3 _getSpawnPosition() => _attackerPosition + _attackDirection * 1.5f;
 
-    protected override bool _shouldAttack() 
+    protected override void _handleIsReadyForAttack(Action performAttackOrAim) 
     {
-        var (target, isTargetFound) = _getTarget();
+        if (!_isTargetFound) return;
 
-        if (!isTargetFound) return false;
+        if (Vector3.Distance(_attacker.transform.position, _target.transform.position) > _attackDistance) return;
 
-        return Vector3.Distance(_attacker.transform.position, target.transform.position) <= _attackDistance;
+        performAttackOrAim();
     } 
 
-    protected override void _handleAttack()
+    protected override void _handleAttack(Action finishAttack, Action cancelAttack) 
     {
         _updateAttackState();
-        _handleAttackInDirection();
+        _spawnAttackAnimation();
+        _handleCollision(); 
+
+        finishAttack();
     }
 
     private void _updateAttackState()
     {
-        var (target, isTargetFound) = _getTarget();
+        if (!_isTargetFound) return;
 
-        if (!isTargetFound) return;
-
-        _attackDirection = (target.transform.position - _attacker.transform.position).normalized;
+        _attackDirection = (_target.transform.position - _attacker.transform.position).normalized;
         _attackerPosition = _attacker.transform.position;
-    }
-
-    private void _handleAttackInDirection()
-    {
-        _spawnAttackAnimation();
-        _handleCollision(); 
     }
 
     private void _spawnAttackAnimation() 

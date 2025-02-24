@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8537873903114999356}
   - component: {fileID: 9198479413477711553}
+  - component: {fileID: 914600723247244100}
+  - component: {fileID: 7560001510003070108}
   m_Layer: 6
   m_Name: Attack
   m_TagString: Untagged
@@ -45,9 +47,50 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyComponent: {fileID: 8488398856723413218}
-  _attackPrefab: {fileID: 430786431155869248, guid: c07870d556271f24db2b0a83e52ba309, type: 3}
+  _attack: {fileID: 914600723247244100}
   _movement: {fileID: 1677446386513760713}
   _attackAnimationController: {fileID: 7902042522811569894}
+--- !u!114 &914600723247244100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5606925002198056521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d992871ee139da549b8b1bf0584efe6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _reloadDuration: 1
+  _addsKnockback: 1
+  _requiresAim: 0
+  _aimDuration: 0
+  _enemyLayerMask:
+    serializedVersion: 2
+    m_Bits: 128
+  _attackDamage: 50
+--- !u!114 &7560001510003070108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5606925002198056521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc7479f3834ddf445a026ab32db6494e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 7298410877907432884}
+  _attack: {fileID: 914600723247244100}
+  _colorByState:
+    m_keys: 00000000010000000200000003000000
+    m_values:
+    - {r: 1, g: 0, b: 0, a: 1}
+    - {r: 1, g: 0, b: 0.8352337, a: 1}
+    - {r: 0, g: 1, b: 0.9800041, a: 1}
+    - {r: 0.956295, g: 1, b: 0, a: 1}
 --- !u!1001 &6550731663930524315
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -140,6 +183,11 @@ MonoBehaviour:
 --- !u!4 &2778752730171054294 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8969133470949677645, guid: c53e215881dc85046964129259c89939, type: 3}
+  m_PrefabInstance: {fileID: 6550731663930524315}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &7298410877907432884 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 4585216083140507439, guid: c53e215881dc85046964129259c89939, type: 3}
   m_PrefabInstance: {fileID: 6550731663930524315}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &7902042522811569894 stripped

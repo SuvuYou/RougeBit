@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6471340676590014898}
   - component: {fileID: 7109228228538304452}
+  - component: {fileID: 8815143691013309144}
+  - component: {fileID: 3380579558360320230}
   m_Layer: 6
   m_Name: Attack
   m_TagString: Untagged
@@ -45,9 +47,53 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyComponent: {fileID: 6099018204556544869}
-  _attackPrefab: {fileID: 5486229748569267541, guid: d352aa150dd4b7d4ba83a4483b8a9e1e, type: 3}
+  _attack: {fileID: 8815143691013309144}
   _movement: {fileID: 3904539437941727822}
   _attackAnimationController: {fileID: 5530834555966612833}
+--- !u!114 &8815143691013309144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4820260346055398469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a65b38dad8a4eb4e859021b945da412, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _reloadDuration: 1
+  _addsKnockback: 0
+  _requiresAim: 1
+  _aimDuration: 1
+  _attackerMovement: {fileID: 3904539437941727822}
+  _movementVelocityToCancelAttackThreshold: 1
+  _enemyLayerMask:
+    serializedVersion: 2
+    m_Bits: 128
+  _projectilePrefab: {fileID: 173239952212642452, guid: c5bce1b52f16f764189b5d195c3b4cdf, type: 3}
+  _attackDistance: 5
+--- !u!114 &3380579558360320230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4820260346055398469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc7479f3834ddf445a026ab32db6494e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 4909455143372293683}
+  _attack: {fileID: 8815143691013309144}
+  _colorByState:
+    m_keys: 00000000010000000200000003000000
+    m_values:
+    - {r: 1, g: 0, b: 0, a: 1}
+    - {r: 1, g: 0, b: 0.8352337, a: 1}
+    - {r: 0, g: 1, b: 0.9800041, a: 1}
+    - {r: 0.956295, g: 1, b: 0, a: 1}
 --- !u!1001 &8899137924425380124
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -71,6 +117,14 @@ PrefabInstance:
     - target: {fileID: 4585216083140507439, guid: c53e215881dc85046964129259c89939, type: 3}
       propertyPath: m_Color.r
       value: 0.16981131
+      objectReference: {fileID: 0}
+    - target: {fileID: 5597872238646907730, guid: c53e215881dc85046964129259c89939, type: 3}
+      propertyPath: _maxDistanceToTarget
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5597872238646907730, guid: c53e215881dc85046964129259c89939, type: 3}
+      propertyPath: _minDistanceToTarget
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8969133470949677645, guid: c53e215881dc85046964129259c89939, type: 3}
       propertyPath: m_LocalPosition.x
@@ -136,6 +190,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6589f33b0ce87bb4b8c5978bbdfa9f08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!212 &4909455143372293683 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 4585216083140507439, guid: c53e215881dc85046964129259c89939, type: 3}
+  m_PrefabInstance: {fileID: 8899137924425380124}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &5530834555966612833 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3981584987706922109, guid: c53e215881dc85046964129259c89939, type: 3}
