@@ -13,7 +13,8 @@ class RangedAttack : BaseAttack
     private Vector3 _attackDirection;
     private Vector3 _attackerPosition;
 
-    private Vector3 _getSpawnPosition() => _attackerPosition;
+    [SerializeField] [Range(1, 12)] private int _numberOfProjectiles = 1;
+    [SerializeField] [Range(0, 360)] private float _spreadAngle = 45f;
 
     protected override void _handleIsReadyForAttack(Action performAttackOrAim) 
     {
@@ -28,7 +29,7 @@ class RangedAttack : BaseAttack
 
     protected override void _handleAttack(Action finishAttack, Action cancelAttack, Action cancelReloadAttack)
     {
-        _throwProjectileInDirection();
+        _spawnProjectiles();
         finishAttack();
     }
 
@@ -47,9 +48,29 @@ class RangedAttack : BaseAttack
         _attackerPosition = _attacker.transform.position;
     }
 
-    private void _throwProjectileInDirection()
+    private void _spawnProjectiles()
     {
-        BaseProjectile projectile = Instantiate(_projectilePrefab, _getSpawnPosition(), Quaternion.identity);
-        projectile.Init(_attackDirection, _enemyLayerMask);
+        if (_numberOfProjectiles == 1)
+        {
+            _throwProjectileInDirection(_attackDirection);
+        }
+        else
+        {
+            float startAngle = -_spreadAngle / 2f;
+            float angleIncrement = _spreadAngle / (_numberOfProjectiles - 1);
+            
+            for (int i = 0; i < _numberOfProjectiles; i++)
+            {
+                float angle = startAngle + i * angleIncrement;
+
+                _throwProjectileInDirection(direction: Quaternion.Euler(0, 0, angle) * _attackDirection);
+            }
+        }
+    }
+
+    private void _throwProjectileInDirection(Vector3 direction)
+    {
+        BaseProjectile projectile = Instantiate(_projectilePrefab, _attackerPosition, Quaternion.identity);
+        projectile.Init(direction, _enemyLayerMask);
     }
 }

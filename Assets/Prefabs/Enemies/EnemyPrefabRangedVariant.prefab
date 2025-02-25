@@ -73,6 +73,8 @@ MonoBehaviour:
     m_Bits: 128
   _projectilePrefab: {fileID: 173239952212642452, guid: c5bce1b52f16f764189b5d195c3b4cdf, type: 3}
   _attackDistance: 5
+  _numberOfProjectiles: 8
+  _spreadAngle: 360
 --- !u!114 &3380579558360320230
 MonoBehaviour:
   m_ObjectHideFlags: 0
