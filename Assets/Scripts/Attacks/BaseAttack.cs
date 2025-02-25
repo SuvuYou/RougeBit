@@ -20,8 +20,8 @@ public class BaseAttack : MonoBehaviour
 
     protected bool _isTargetFound => _target != null;
 
-    private Timer _reloadTimer;
-    private Timer _aimTimer;
+    protected Timer _reloadTimer;
+    protected Timer _aimTimer;
 
     protected AttackState _attackState = AttackState.Reload;
 
@@ -68,7 +68,7 @@ public class BaseAttack : MonoBehaviour
                 }
                 break;
             case AttackState.Attacking:
-                _handleAttack(finishAttack: _finishAttack, cancelAttack: _cancelAttack);
+                _handleAttack(finishAttack: _finishAttack, cancelAttack: _cancelAttack, cancelReloadAttack: _cancelReloadAttack);
                 break;
         }
     }
@@ -90,11 +90,12 @@ public class BaseAttack : MonoBehaviour
 
     protected virtual void _handleIsReadyForAttack(Action performAttackOrAim) => performAttackOrAim();
 
-    protected virtual void _handleAttack(Action finishAttack, Action cancelAttack) {}
+    protected virtual void _handleAttack(Action finishAttack, Action cancelAttack, Action cancelReloadAttack) {}
 
     protected virtual void _handleAim(Action cancelAim) {}
 
     private void _cancelAttack() => _switchAttackState(AttackState.ReadyForAttack);
+    private void _cancelReloadAttack() => _switchAttackState(AttackState.Reload);
 
     private void _finishAttack() => _switchAttackState(AttackState.Reload);
 

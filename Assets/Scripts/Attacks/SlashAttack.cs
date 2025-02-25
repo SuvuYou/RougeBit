@@ -24,7 +24,7 @@ class SlashAttack : BaseAttack
         performAttackOrAim();
     } 
 
-    protected override void _handleAttack(Action finishAttack, Action cancelAttack) 
+    protected override void _handleAttack(Action finishAttack, Action cancelAttack, Action cancelReloadAttack)
     {
         _updateAttackState();
         _spawnAttackAnimation();
