@@ -14,8 +14,8 @@ class EnemyAttack : MonoBehaviour
     {
         _attack.Setup(this.gameObject, _enemyComponent.Target);
 
-        _attack.OnAttack += () => StartCoroutine(_disableMovementForSeconds(0.5f));
-        _attack.OnAttack += _triggerAttackAnimation;
+        // _attack.OnAttack += () => StartCoroutine(_disableMovementForSeconds(0.5f));
+        // _attack.OnAttack += _triggerAttackAnimation;
     }
 
     private void OnDestroy()

@@ -442,7 +442,9 @@ MonoBehaviour:
     - {fileID: 8488398856723413218, guid: 7db9571a3f73a1c4cb51c2ca3566a643, type: 3}
     - {fileID: 6099018204556544869, guid: 10e1beb7085d44444b1aae11a009e694, type: 3}
     - {fileID: 991788335296621021, guid: 14e30d5b321bbaf4b8cb01be1df4ff50, type: 3}
+    - {fileID: 7720119478463386275, guid: 866460311c91f5641b7ea65c945464c6, type: 3}
     m_values:
+    - 0
     - 0
     - 0
     - 1
@@ -673,7 +675,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 81cabf170c29058409b798198817f204, type: 2}
+  - {fileID: 2100000, guid: dd42d3c3b5905764283408c1e13bf4d4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3506,7 +3508,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5744413092235882709, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
