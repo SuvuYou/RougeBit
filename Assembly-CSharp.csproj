@@ -106,11 +106,8 @@
     <Compile Include="Assets\Scripts\Input\PalyerInput.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\Packs\Mystic Woods\sprites\characters\README.txt" />
     <None Include="Assets\Packs\Dengeon Roguelike\license.txt" />
     <None Include="Assets\Packs\Roguelike Shoot ’em up\license.txt" />
-    <None Include="Assets\Packs\Tower Defence Enemies\License.txt" />
-    <None Include="Assets\Packs\Mystic Woods\read_me.txt" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
