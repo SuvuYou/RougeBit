@@ -517,6 +517,7 @@ GameObject:
   - component: {fileID: 6675224873160403988}
   - component: {fileID: 5560871501445495362}
   - component: {fileID: 428924298724892825}
+  - component: {fileID: 6423048190998339948}
   m_Layer: 7
   m_Name: Attack
   m_TagString: Player
@@ -578,3 +579,24 @@ MonoBehaviour:
   _spriteRenderer: {fileID: 8308423075698151257}
   _attackDistance: 2
   _attackDamage: 50
+--- !u!114 &6423048190998339948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5744413092235882709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc7479f3834ddf445a026ab32db6494e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 8308423075698151257}
+  _attack: {fileID: 428924298724892825}
+  _colorByState:
+    m_keys: 00000000010000000200000003000000
+    m_values:
+    - {r: 1, g: 0, b: 0, a: 1}
+    - {r: 1, g: 0, b: 0.8352337, a: 1}
+    - {r: 0, g: 1, b: 0.9800041, a: 1}
+    - {r: 0.956295, g: 1, b: 0, a: 1}

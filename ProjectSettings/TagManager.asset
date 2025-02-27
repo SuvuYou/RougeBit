@@ -38,6 +38,21 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 1303345985
+    locked: 0
+  - name: Background Props
+    uniqueID: 4168624717
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Entities
+    uniqueID: 3530237551
+    locked: 0
+  - name: Player
+    uniqueID: 3288413377
+    locked: 0
+  - name: Bullets
+    uniqueID: 358726641
     locked: 0
