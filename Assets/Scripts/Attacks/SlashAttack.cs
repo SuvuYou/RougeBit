@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 class SlashAttack : BaseAttack
@@ -14,27 +15,30 @@ class SlashAttack : BaseAttack
 
     private Vector3 _getSpawnPosition() => _attackerPosition + _attackDirection * 1.5f;
 
-    protected override bool _shouldAttack() 
+    protected override void _handleIsReadyForAttack(Action performAttackOrAim) 
     {
-        return Vector3.Distance(_attacker.transform.position, _getTarget().transform.position) <= _attackDistance;
+        if (!_isTargetFound) return;
+
+        if (Vector3.Distance(_attacker.transform.position, _target.transform.position) > _attackDistance) return;
+
+        performAttackOrAim();
     } 
 
-    protected override void _handleAttack()
+    protected override void _handleAttack(Action finishAttack, Action cancelAttack, Action cancelReloadAttack)
     {
         _updateAttackState();
-        _handleAttackInDirection();
+        _spawnAttackAnimation();
+        _handleCollision(); 
+
+        finishAttack();
     }
 
     private void _updateAttackState()
     {
-        _attackDirection = (_getTarget().transform.position - _attacker.transform.position).normalized;
-        _attackerPosition = _attacker.transform.position;
-    }
+        if (!_isTargetFound) return;
 
-    private void _handleAttackInDirection()
-    {
-        _spawnAttackAnimation();
-        _handleCollision(); 
+        _attackDirection = (_target.transform.position - _attacker.transform.position).normalized;
+        _attackerPosition = _attacker.transform.position;
     }
 
     private void _spawnAttackAnimation() 
@@ -46,11 +50,13 @@ class SlashAttack : BaseAttack
     private void _handleCollision()
     {    
         var angle = _attackAnimation.transform.rotation.z;
-        var colliders = Physics2D.OverlapBox(_getSpawnPosition(), new Vector2(_spriteRenderer.bounds.size.x, _spriteRenderer.bounds.size.y), angle, _enemyLayerMask);
+        var colliders = Physics2D.OverlapBoxAll(_getSpawnPosition(), new Vector2(_spriteRenderer.bounds.size.x, _spriteRenderer.bounds.size.y), angle, _enemyLayerMask);
 
-        if (colliders != null)
+        foreach (var collider in colliders)
         {
-            Transform parent = colliders.gameObject.transform.parent;
+            if (collider == null) continue;
+
+            Transform parent = collider.gameObject.transform.parent;
 
             if (parent.TryGetComponentInChildren(out BaseDamagable damagable))
             {
@@ -62,5 +68,6 @@ class SlashAttack : BaseAttack
                 knockable.AddKnockback(_attackDirection);
             }
         }
+        
     }
 }
