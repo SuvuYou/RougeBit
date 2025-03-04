@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6471340676590014898}
-  - component: {fileID: 7109228228538304452}
+  - component: {fileID: 3730901822004711704}
   - component: {fileID: 8815143691013309144}
   - component: {fileID: 3380579558360320230}
   m_Layer: 6
@@ -34,7 +34,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 574443792301648721}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7109228228538304452
+--- !u!114 &3730901822004711704
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -43,13 +43,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 4820260346055398469}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 860ccd306a875744cabf9dce366dd975, type: 3}
+  m_Script: {fileID: 11500000, guid: fd412d61bbbd3aa42a53d3e0c46fd377, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyComponent: {fileID: 6099018204556544869}
   _attack: {fileID: 8815143691013309144}
   _movement: {fileID: 3904539437941727822}
-  _attackAnimationController: {fileID: 5530834555966612833}
 --- !u!114 &8815143691013309144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,6 +65,18 @@ MonoBehaviour:
   _addsKnockback: 0
   _requiresAim: 1
   _aimDuration: 0.5
+  OnReload:
+    m_PersistentCalls:
+      m_Calls: []
+  OnReadyForAttack:
+    m_PersistentCalls:
+      m_Calls: []
+  OnAim:
+    m_PersistentCalls:
+      m_Calls: []
+  OnAttack:
+    m_PersistentCalls:
+      m_Calls: []
   _attackerMovement: {fileID: 3904539437941727822}
   _movementVelocityToCancelAttackThreshold: 1
   _enemyLayerMask:
@@ -197,17 +208,6 @@ SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 4585216083140507439, guid: c53e215881dc85046964129259c89939, type: 3}
   m_PrefabInstance: {fileID: 8899137924425380124}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &5530834555966612833 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3981584987706922109, guid: c53e215881dc85046964129259c89939, type: 3}
-  m_PrefabInstance: {fileID: 8899137924425380124}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08bc7c46f9418ad47a6ae65fbddfe607, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &6099018204556544869 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3396847117748091513, guid: c53e215881dc85046964129259c89939, type: 3}

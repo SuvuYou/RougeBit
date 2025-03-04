@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8537873903114999356}
-  - component: {fileID: 9198479413477711553}
+  - component: {fileID: 1417841405742168173}
   - component: {fileID: 914600723247244100}
   - component: {fileID: 7560001510003070108}
   m_Layer: 6
@@ -34,7 +34,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2778752730171054294}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &9198479413477711553
+--- !u!114 &1417841405742168173
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -43,13 +43,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 5606925002198056521}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 860ccd306a875744cabf9dce366dd975, type: 3}
+  m_Script: {fileID: 11500000, guid: fd412d61bbbd3aa42a53d3e0c46fd377, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyComponent: {fileID: 8488398856723413218}
   _attack: {fileID: 914600723247244100}
   _movement: {fileID: 1677446386513760713}
-  _attackAnimationController: {fileID: 7902042522811569894}
 --- !u!114 &914600723247244100
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,10 +65,24 @@ MonoBehaviour:
   _addsKnockback: 1
   _requiresAim: 1
   _aimDuration: 0.2
+  OnReload:
+    m_PersistentCalls:
+      m_Calls: []
+  OnReadyForAttack:
+    m_PersistentCalls:
+      m_Calls: []
+  OnAim:
+    m_PersistentCalls:
+      m_Calls: []
+  OnAttack:
+    m_PersistentCalls:
+      m_Calls: []
   _enemyLayerMask:
     serializedVersion: 2
     m_Bits: 128
   _attackDamage: 10
+  _attackDistance: 0
+  _collisionRadius: 0
 --- !u!114 &7560001510003070108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -198,17 +211,6 @@ SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 4585216083140507439, guid: c53e215881dc85046964129259c89939, type: 3}
   m_PrefabInstance: {fileID: 6550731663930524315}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &7902042522811569894 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3981584987706922109, guid: c53e215881dc85046964129259c89939, type: 3}
-  m_PrefabInstance: {fileID: 6550731663930524315}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08bc7c46f9418ad47a6ae65fbddfe607, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &8488398856723413218 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3396847117748091513, guid: c53e215881dc85046964129259c89939, type: 3}

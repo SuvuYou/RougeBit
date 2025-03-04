@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8887895581365842916}
-  - component: {fileID: 6589201248989798844}
+  - component: {fileID: 2808817379547777978}
   - component: {fileID: 6447942781119233521}
   - component: {fileID: 7086620095145753611}
   m_Layer: 6
@@ -34,7 +34,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6818255323868006889}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6589201248989798844
+--- !u!114 &2808817379547777978
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -43,13 +43,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 9163379868223423023}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 860ccd306a875744cabf9dce366dd975, type: 3}
+  m_Script: {fileID: 11500000, guid: fd412d61bbbd3aa42a53d3e0c46fd377, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyComponent: {fileID: 991788335296621021}
   _attack: {fileID: 6447942781119233521}
   _movement: {fileID: 8018711280699687158}
-  _attackAnimationController: {fileID: 1560183067641415641}
 --- !u!114 &6447942781119233521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,6 +65,18 @@ MonoBehaviour:
   _addsKnockback: 0
   _requiresAim: 1
   _aimDuration: 0.2
+  OnReload:
+    m_PersistentCalls:
+      m_Calls: []
+  OnReadyForAttack:
+    m_PersistentCalls:
+      m_Calls: []
+  OnAim:
+    m_PersistentCalls:
+      m_Calls: []
+  OnAttack:
+    m_PersistentCalls:
+      m_Calls: []
   _enemyLayerMask:
     serializedVersion: 2
     m_Bits: 128
@@ -182,17 +193,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 59c86002ec8f55a408a6f825cf71f3af, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1560183067641415641 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3981584987706922109, guid: c53e215881dc85046964129259c89939, type: 3}
-  m_PrefabInstance: {fileID: 2515133160595133348}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08bc7c46f9418ad47a6ae65fbddfe607, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!212 &2109507561226724491 stripped

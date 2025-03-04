@@ -528,7 +528,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6675224873160403988}
-  - component: {fileID: 5560871501445495362}
+  - component: {fileID: 7454476559328382400}
   - component: {fileID: 428924298724892825}
   - component: {fileID: 6423048190998339948}
   m_Layer: 7
@@ -553,7 +553,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 932260380665832382}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5560871501445495362
+--- !u!114 &7454476559328382400
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -562,7 +562,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5744413092235882709}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30f4ec25e57fce443b721400b0fb1b1b, type: 3}
+  m_Script: {fileID: 11500000, guid: b65cc1b4d1194ed42baca67e47a68c92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _attack: {fileID: 428924298724892825}
@@ -585,7 +585,19 @@ MonoBehaviour:
   _addsKnockback: 1
   _requiresAim: 0
   _aimDuration: 0
-  _attackAnimation: {fileID: 1844774124403437146, guid: 43fd00fcd43e05445bb7114d3b487538, type: 3}
+  OnReload:
+    m_PersistentCalls:
+      m_Calls: []
+  OnReadyForAttack:
+    m_PersistentCalls:
+      m_Calls: []
+  OnAim:
+    m_PersistentCalls:
+      m_Calls: []
+  OnAttack:
+    m_PersistentCalls:
+      m_Calls: []
+  _attackAnimation: {fileID: 1523887455126584251, guid: 43fd00fcd43e05445bb7114d3b487538, type: 3}
   _enemyLayerMask:
     serializedVersion: 2
     m_Bits: 64
