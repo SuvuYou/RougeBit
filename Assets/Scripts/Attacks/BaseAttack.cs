@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class BaseAttack : MonoBehaviour
 {
@@ -10,13 +11,13 @@ public class BaseAttack : MonoBehaviour
     [SerializeField] protected bool _requiresAim; 
     [SerializeField] protected float _aimDuration; 
 
-    public Action OnReload;
-    public Action OnReadyForAttack;
-    public Action OnAim;
-    public Action OnAttack;
+    public UnityEvent OnReload;
+    public UnityEvent OnReadyForAttack;
+    public UnityEvent OnAim;
+    public UnityEvent OnAttack;
 
     protected GameObject _attacker;
-    protected GameObject _target;
+    protected Target _target;
 
     protected bool _isTargetFound => _target != null;
 
@@ -28,9 +29,9 @@ public class BaseAttack : MonoBehaviour
     public void ActivateAttack() { _reloadTimer.Start(); _reloadTimer.Reset(); }
     public void DeactivateAttack() { _reloadTimer.Stop(); _aimTimer.Stop(); }
 
-    public void SetTarget(GameObject target) => _target = target;
+    public void SetTarget(Target target) => _target = target;
 
-    public virtual void Setup(GameObject attacker, GameObject target)
+    public virtual void Setup(GameObject attacker, Target target)
     {
         _reloadTimer = new Timer(_reloadDuration);
         _aimTimer = new Timer(_aimDuration);

@@ -14,7 +14,7 @@ class WaveManager : Singlton<WaveManager>
 
     public List<Enemy> Enemies { get; private set; } = new();
 
-    [SerializeField] private GameObject _enemyTarget;
+    [SerializeField] private Target _enemyTarget;
 
     [SerializeField] private float _safeRadious = 5f;
 
@@ -63,7 +63,7 @@ class WaveManager : Singlton<WaveManager>
             MinGroupSpawnTimeout = 2,
             MaxGroupSpawnTimeout = 10,
             MinGroupSize = 1,
-            MaxGroupSize = 3,
+            MaxGroupSize = 1,
             EnemiesWithSpawnWeights = _enemiesWithSpawnWeights
         };
     }
@@ -150,6 +150,8 @@ class WaveManager : Singlton<WaveManager>
 
         foreach (var enemy in Enemies) 
         {
+            if (!enemy.IsTargetable) continue;
+
             float distance = Vector3.Distance(position, enemy.transform.position);
 
             if (distance < minDistance) 

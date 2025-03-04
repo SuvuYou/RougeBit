@@ -1,8 +1,6 @@
-using UnityEngine;
-
-public class Enemy : MonoBehaviour
+public class Enemy : Target
 {
-    public GameObject Target { get; private set; }
+    public Target Target { get; private set; }
 
-    public void SetTarget(GameObject target) => Target = target;
+    public void SetTarget(Target target) => Target = target;
 }

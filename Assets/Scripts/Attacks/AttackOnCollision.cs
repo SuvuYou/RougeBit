@@ -6,24 +6,17 @@ class AttackOnCollision : BaseAttack
     [SerializeField] private LayerMask _enemyLayerMask;
     [SerializeField] private float _attackDamage = 50f;
 
-    private BoxCollider2D _collider;
-
-    private float _attackDistance;
+    [SerializeField] private float _attackDistance;
+    [SerializeField] private float _collisionRadius;
 
     private Vector3 _attackDirection;
     private Vector3 _attackerPosition;
 
     private Vector3 _getSpawnPosition() => _attackerPosition;
 
-    public override void Setup(GameObject attacker, GameObject target)
+    public override void Setup(GameObject attacker, Target target)
     {
         base.Setup(attacker, target);
-
-        if(attacker.transform.parent.TryGetComponentInChildren(out BoxCollider2D collider))
-        {
-            _attackDistance = collider.bounds.size.x;
-            _collider = collider;
-        }
     }
 
     protected override void _handleIsReadyForAttack(Action performAttackOrAim) 
@@ -53,7 +46,7 @@ class AttackOnCollision : BaseAttack
 
     private void _handleCollision()
     {    
-        var colliders = Physics2D.OverlapBox(_getSpawnPosition(), new Vector2(_collider.bounds.size.x, _collider.bounds.size.y), 0, _enemyLayerMask);
+        var colliders = Physics2D.OverlapBox(_getSpawnPosition(), new Vector2(_collisionRadius, _collisionRadius), 0, _enemyLayerMask);
 
         if (colliders != null)
         {

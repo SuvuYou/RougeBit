@@ -26,7 +26,7 @@ class LaserBeamAttack : BaseAttack
     private Timer _attackTimer = new();
     private Timer _collisionTimer = new();
 
-    public override void Setup(GameObject attacker, GameObject target)
+    public override void Setup(GameObject attacker, Target target)
     {
         base.Setup(attacker, target);
 
@@ -38,8 +38,8 @@ class LaserBeamAttack : BaseAttack
         _attackTimer.SetBaseTime(_beamDuration);
         _collisionTimer.SetBaseTime(1f / _beamAttacksPerSecond);
 
-        OnAttack += () => _spawnBeamSprite();
-        OnAttack += () => _attackerMovement.DisableMovement();
+        OnAttack.AddListener(() => _spawnBeamSprite());
+        OnAttack.AddListener(() => _attackerMovement.DisableMovement());
     }
 
     protected override void _handleIsReadyForAttack(Action performAttackOrAim) 

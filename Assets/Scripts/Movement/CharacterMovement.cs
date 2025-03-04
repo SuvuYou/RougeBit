@@ -7,6 +7,7 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] protected Transform _character;
     [SerializeField] EntityMovementStats _movementStats;
     
+    public bool PermaDisabled { get; private set; } = false;
     public bool Enabled { get; private set; } = true;
 
     public Vector3 Velocity { get; private set; }
@@ -15,7 +16,7 @@ public class CharacterMovement : MonoBehaviour
 
     public void MoveToDirection(Vector3 direction)
     {
-        if (!Enabled) return;
+        if (PermaDisabled || !Enabled) return;
 
         CurrentDirection = direction;
 
@@ -77,4 +78,6 @@ public class CharacterMovement : MonoBehaviour
     {
         Enabled = true;
     }
+
+    public void DisableMovementPermanently() => PermaDisabled = true;
 }

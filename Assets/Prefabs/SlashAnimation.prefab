@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2588298166256545066}
   - component: {fileID: 801023708076770901}
   - component: {fileID: 5004340517112097412}
-  - component: {fileID: 1844774124403437146}
+  - component: {fileID: 1523887455126584251}
   m_Layer: 0
   m_Name: SlashAnimation
   m_TagString: Untagged
@@ -107,7 +107,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1844774124403437146
+--- !u!114 &1523887455126584251
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -116,7 +116,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6139642152461852785}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41957bd0943023542adea5d5e7e1b485, type: 3}
+  m_Script: {fileID: 11500000, guid: c8ece256e9a5448438657b88ea27a5c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _spriteRenderer: {fileID: 5004340517112097412}

@@ -14,8 +14,8 @@ class PlayerAttack : MonoBehaviour
         (var enemy, var isEnemyFound) = _getTarget();
         _attack.Setup(this.gameObject, enemy);
 
-        _attack.OnAttack += () => StartCoroutine(_disableMovementForSeconds(0.05f));
-        _attack.OnAttack += () => _triggerAttackAnimation();
+        _attack.OnAttack.AddListener(() => StartCoroutine(_disableMovementForSeconds(0.05f)));
+        _attack.OnAttack.AddListener(() => _triggerAttackAnimation());
     }
 
     private void Update()
@@ -45,10 +45,10 @@ class PlayerAttack : MonoBehaviour
         _attackAnimationController.TriggerAttackAnimation((target.transform.position - transform.position).normalized);
     }
 
-    private (GameObject, bool) _getTarget()
+    private (Target, bool) _getTarget()
     {
         bool isTargetFound = WaveManager.Instance.TryGetClosestEnemy(transform.position, out Enemy enemy);
 
-        return (enemy?.gameObject, isTargetFound);
+        return (enemy, isTargetFound);
     }
 }

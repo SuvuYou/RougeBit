@@ -6,6 +6,8 @@ public class EnemyFollowTargetMovement : FollowTargetMovement
 
     void Start()
     {
+        if (_enemyComponent?.Target == null) return;
+        
         SetTarget(_enemyComponent.Target.transform);
     }
 }

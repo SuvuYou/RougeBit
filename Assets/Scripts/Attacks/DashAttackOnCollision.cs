@@ -18,7 +18,7 @@ class DashAttackOnCollision : BaseAttack
     private Vector3 _positionBeforeDash;
     private Vector3 _dashTargetPosition;
 
-    public override void Setup(GameObject attacker, GameObject target)
+    public override void Setup(GameObject attacker, Target target)
     {
         base.Setup(attacker, target);
 
@@ -33,7 +33,7 @@ class DashAttackOnCollision : BaseAttack
             _attackerMovement = movement;
         }
 
-        OnAim += () => _attackerMovement.Dash(_positionBeforeDash, _dashTargetPosition, _aimTimer.Duration);
+        OnAim.AddListener(() => _attackerMovement.Dash(_positionBeforeDash, _dashTargetPosition, _aimTimer.Duration));
     }
 
     protected override void _handleIsReadyForAttack(Action performAttackOrAim) 

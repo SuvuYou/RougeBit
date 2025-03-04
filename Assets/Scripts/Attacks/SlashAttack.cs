@@ -58,6 +58,11 @@ class SlashAttack : BaseAttack
 
             Transform parent = collider.gameObject.transform.parent;
 
+            if (parent.TryGetComponentInChildren(out Target target))
+            {
+                if (target == null || !target.IsTargetable) return;
+            }
+
             if (parent.TryGetComponentInChildren(out BaseDamagable damagable))
             {
                 damagable.TakeDamage(_attackDamage);
