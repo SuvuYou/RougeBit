@@ -64,6 +64,8 @@
     <Analyzer Include="A:\Unity\Editor\2022.3.19f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Animations\Controllers\BaseEntityAnimationController.cs" />
+    <Compile Include="Assets\Scripts\SpriteEffects\SnapToRotationByDirection.cs" />
     <Compile Include="Assets\Scripts\Movement\CharacterMovement.cs" />
     <Compile Include="Assets\Scripts\Animations\TakeDamageAnimationController.cs" />
     <Compile Include="Assets\Scripts\Animations\Controllers\BaseAnimationController.cs" />
@@ -81,6 +83,7 @@
     <Compile Include="Assets\Scripts\Attacks\Projectiles\BaseProjectile.cs" />
     <Compile Include="Assets\Scripts\Attacks\LaserBeamAttack.cs" />
     <Compile Include="Assets\Scripts\Attacks\Managers\EnemyAttack.cs" />
+    <Compile Include="Assets\Scripts\Animations\Controllers\ShootingEffectAnimationController.cs" />
     <Compile Include="Assets\Scripts\SpriteEffects\ColorSpritesBasedOnAttackState.cs" />
     <Compile Include="Assets\Scripts\Managers\GameManager.cs" />
     <Compile Include="Assets\Scripts\DamageControl\Target.cs" />
@@ -97,9 +100,11 @@
     <Compile Include="Assets\Scripts\Helpers\Timer.cs" />
     <Compile Include="Assets\Scripts\Attacks\KnockBack\Shockwave.cs" />
     <Compile Include="Assets\Scripts\Attacks\KnockBack\BaseKnockback.cs" />
+    <Compile Include="Assets\Scripts\Attacks\Weapons\BaseWeapon.cs" />
     <Compile Include="Assets\SerializableDictionary\Example\SerializableDictionaryExample.cs" />
     <Compile Include="Assets\Scripts\Economy\ItemDropper.cs" />
     <Compile Include="Assets\Scripts\Helpers\Singlton.cs" />
+    <Compile Include="Assets\Scripts\SpriteEffects\WeaponRotationSpritesetSO.cs" />
     <Compile Include="Assets\Scripts\Economy\CollectableItem.cs" />
     <Compile Include="Assets\SerializableDictionary\Example\UserSerializableDictionaries.cs" />
     <Compile Include="Assets\Scripts\SpriteEffects\FlashAnimation.cs" />

@@ -117,8 +117,8 @@ TextureImporter:
         y: 12
         width: 14
         height: 23
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.49999985, y: 0.7355876}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -131,15 +131,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Laser Gun_Down_Right_30
+      name: Laser Gun_Down_Right_60
       rect:
         serializedVersion: 2
         x: 64
         y: 12
         width: 17
         height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.34901923, y: 0.72901225}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -159,8 +159,8 @@ TextureImporter:
         y: 14
         width: 19
         height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.30300704, y: 0.71158457}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -173,15 +173,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Laser Gun_Down_Right_60
+      name: Laser Gun_Down_Right_30
       rect:
         serializedVersion: 2
         x: 157
         y: 16
         width: 22
         height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.28457782, y: 0.6215199}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -201,8 +201,8 @@ TextureImporter:
         y: 17
         width: 24
         height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.29236856, y: 0.55273193}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -222,8 +222,8 @@ TextureImporter:
         y: 16
         width: 22
         height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.3077781, y: 0.41590285}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -243,8 +243,8 @@ TextureImporter:
         y: 14
         width: 20
         height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.35306397, y: 0.34388113}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -264,8 +264,8 @@ TextureImporter:
         y: 13
         width: 17
         height: 21
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.4027638, y: 0.35131565}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -285,8 +285,8 @@ TextureImporter:
         y: 13
         width: 14
         height: 21
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.30870828}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -310,9 +310,9 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       Laser Gun_Down: 1240881130
-      Laser Gun_Down_Right_30: -771208906
+      Laser Gun_Down_Right_30: 759784322
       Laser Gun_Down_Right_45: 1229474690
-      Laser Gun_Down_Right_60: 759784322
+      Laser Gun_Down_Right_60: -771208906
       Laser Gun_Right: -1512698264
       Laser Gun_Up: -894011749
       Laser Gun_Up_Right_30: -1259423243

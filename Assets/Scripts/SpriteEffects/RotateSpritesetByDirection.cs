@@ -2,12 +2,13 @@ using UnityEngine;
 
 public class RotateSpritesetByDirection : MonoBehaviour
 {
+    [Header("References")]
     [SerializeField] private SpriteRenderer _spriteRenderer;
-    [SerializeField] private Sprite _upSprite, _rightSprite, _downSprite;
-    [SerializeField] private Sprite _downRightSprite30, _downRightSprite45, _downRightSprite60;
-    [SerializeField] private Sprite _upRightSprite30, _upRightSprite45, _upRightSprite60;
 
-    [SerializeField] private Transform _targetTransform;
+    [Header("Directions")]
+    [SerializeField] private WeaponRotationSpritesetSO _rotations;
+
+    private Target _target;
 
     private struct DirectionSprite
     {
@@ -17,25 +18,27 @@ public class RotateSpritesetByDirection : MonoBehaviour
 
     private DirectionSprite[] _directionSprites;
 
+    public void SetTarget(Target target) => _target = target;
+
     private void Awake()
     {
         _directionSprites = new DirectionSprite[]
         {
-            new DirectionSprite { Direction = Vector2.up, Sprite = _upSprite },
-            new DirectionSprite { Direction = Vector2.right, Sprite = _rightSprite },
-            new DirectionSprite { Direction = Vector2.down, Sprite = _downSprite },
-            new DirectionSprite { Direction = new Vector2(0.866f, -0.5f), Sprite = _downRightSprite30 },
-            new DirectionSprite { Direction = new Vector2(0.707f, -0.707f), Sprite = _downRightSprite45 },
-            new DirectionSprite { Direction = new Vector2(0.5f, -0.866f), Sprite = _downRightSprite60 },
-            new DirectionSprite { Direction = new Vector2(0.866f, 0.5f), Sprite = _upRightSprite30 },
-            new DirectionSprite { Direction = new Vector2(0.707f, 0.707f), Sprite = _upRightSprite45 },
-            new DirectionSprite { Direction = new Vector2(0.5f, 0.866f), Sprite = _upRightSprite60 }
+            new() { Direction = Vector2.up, Sprite = _rotations.UpSprite },
+            new() { Direction = Vector2.right, Sprite = _rotations.RightSprite },
+            new() { Direction = Vector2.down, Sprite = _rotations.DownSprite },
+            new() { Direction = new Vector2(0.866f, -0.5f), Sprite = _rotations.DownRightSprite30 },
+            new() { Direction = new Vector2(0.707f, -0.707f), Sprite = _rotations.DownRightSprite45 },
+            new() { Direction = new Vector2(0.5f, -0.866f), Sprite = _rotations.DownRightSprite60 },
+            new() { Direction = new Vector2(0.866f, 0.5f), Sprite = _rotations.UpRightSprite30 },
+            new() { Direction = new Vector2(0.707f, 0.707f), Sprite = _rotations.UpRightSprite45 },
+            new() { Direction = new Vector2(0.5f, 0.866f), Sprite = _rotations.UpRightSprite60 }
         };
     }
 
-    private void Update() => RotateToDirection(_targetTransform.position - transform.position);
+    private void Update() => _rotateToDirection(_target.transform.position - transform.position);
 
-    public void RotateToDirection(Vector3 direction)
+    private void _rotateToDirection(Vector3 direction)
     {
         if (direction == Vector3.zero)
             return;
@@ -46,7 +49,7 @@ public class RotateSpritesetByDirection : MonoBehaviour
         if (direction.x < 0) direction.x *= -1;
 
         float bestAngle = float.MaxValue;
-        Sprite bestSprite = _rightSprite;
+        Sprite bestSprite = _rotations.UpSprite;
 
         foreach (var entry in _directionSprites)
         {

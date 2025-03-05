@@ -1,6 +1,6 @@
 using UnityEngine;
 
-class SimpleEntityAnimationController : BaseAnimationController
+class SimpleEntityAnimationController : BaseEntityAnimationController
 {
     [Space(20)]
     [SerializeField] private BaseDamagable _baseDamagable;
