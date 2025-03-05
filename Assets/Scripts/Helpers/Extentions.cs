@@ -21,3 +21,17 @@ public static class VectorExtentions
         return vector;
     }
 } 
+
+public static class AnimatorExtentions
+{
+    public static float GetClipLength(this Animator animator, string clipName)
+    {
+        foreach (AnimationClip clip in animator.runtimeAnimatorController.animationClips)
+        {
+            if (clip.name == clipName)
+                return clip.length;
+        }
+        
+        return 0f;
+    }
+}

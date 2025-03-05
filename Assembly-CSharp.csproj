@@ -66,6 +66,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Movement\CharacterMovement.cs" />
     <Compile Include="Assets\Scripts\Animations\TakeDamageAnimationController.cs" />
+    <Compile Include="Assets\Scripts\Animations\Controllers\BaseAnimationController.cs" />
     <Compile Include="Assets\Scripts\Attacks\SlashAttack.cs" />
     <Compile Include="Assets\Scripts\Movement\EntityMovementStats.cs" />
     <Compile Include="Assets\Scripts\Attacks\RangedAttack.cs" />
@@ -87,9 +88,11 @@
     <Compile Include="Assets\Scripts\Economy\CollectableItemSO.cs" />
     <Compile Include="Assets\Scripts\EntitiesController\EntityStats.cs" />
     <Compile Include="Assets\Scripts\EntitiesController\Enemy.cs" />
+    <Compile Include="Assets\Scripts\Animations\Controllers\SimpleEntityAnimationController.cs" />
     <Compile Include="Assets\Scripts\Helpers\Extentions.cs" />
     <Compile Include="Assets\Scripts\Animations\EntityMovementAnimatorController.cs" />
     <Compile Include="Assets\Scripts\Economy\ItemCollector.cs" />
+    <Compile Include="Assets\Scripts\DamageControl\DamagableWithImmunity.cs" />
     <Compile Include="Assets\Scripts\Input\PalyerInputSO.cs" />
     <Compile Include="Assets\Scripts\Helpers\Timer.cs" />
     <Compile Include="Assets\Scripts\Attacks\KnockBack\Shockwave.cs" />
@@ -106,7 +109,6 @@
     <Compile Include="Assets\Scripts\Movement\FollowTargetMovement.cs" />
     <Compile Include="Assets\Scripts\Attacks\AttackOnCollision.cs" />
     <Compile Include="Assets\Scripts\DamageControl\BaseDamagable.cs" />
-    <Compile Include="Assets\Scripts\Animations\EntityAnimationController.cs" />
     <Compile Include="Assets\Scripts\Input\PalyerInput.cs" />
   </ItemGroup>
   <ItemGroup>
