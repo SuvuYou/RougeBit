@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Animations\Controllers\BaseEntityAnimationController.cs" />
+    <Compile Include="Assets\Scripts\Attacks\_ScriptableObjects\RangedAttackStatsSO.cs" />
     <Compile Include="Assets\Scripts\SpriteEffects\SnapToRotationByDirection.cs" />
     <Compile Include="Assets\Scripts\Movement\CharacterMovement.cs" />
     <Compile Include="Assets\Scripts\Animations\TakeDamageAnimationController.cs" />
@@ -102,12 +103,16 @@
     <Compile Include="Assets\Scripts\Attacks\KnockBack\Shockwave.cs" />
     <Compile Include="Assets\Scripts\Attacks\KnockBack\BaseKnockback.cs" />
     <Compile Include="Assets\Scripts\Attacks\Weapons\BaseWeapon.cs" />
+    <Compile Include="Assets\Scripts\Attacks\_ScriptableObjects\_BaseAttackStatsSO.cs" />
     <Compile Include="Assets\SerializableDictionary\Example\SerializableDictionaryExample.cs" />
     <Compile Include="Assets\Scripts\Economy\ItemDropper.cs" />
     <Compile Include="Assets\Scripts\Helpers\Singlton.cs" />
+    <Compile Include="Assets\Scripts\Attacks\_ScriptableObjects\SlashAttackStatsSO.cs" />
+    <Compile Include="Assets\Scripts\Attacks\_ScriptableObjects\LaserBeamAttackStatsSO.cs" />
     <Compile Include="Assets\Scripts\SpriteEffects\WeaponRotationSpritesetSO.cs" />
     <Compile Include="Assets\Scripts\Economy\CollectableItem.cs" />
     <Compile Include="Assets\SerializableDictionary\Example\UserSerializableDictionaries.cs" />
+    <Compile Include="Assets\Scripts\Attacks\_ScriptableObjects\DashAttackOnCollisionStatsSO.cs" />
     <Compile Include="Assets\Scripts\SpriteEffects\FlashAnimation.cs" />
     <Compile Include="Assets\Scripts\Attacks\_BaseAttack.cs" />
     <Compile Include="Assets\Scripts\Attacks\Managers\PlayerAttack.cs" />
@@ -117,6 +122,7 @@
     <Compile Include="Assets\Scripts\Attacks\AttackOnCollision.cs" />
     <Compile Include="Assets\Scripts\DamageControl\BaseDamagable.cs" />
     <Compile Include="Assets\Scripts\Input\PalyerInput.cs" />
+    <Compile Include="Assets\Scripts\Attacks\_ScriptableObjects\AttackOnCollisionStatsSO.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Packs\Dengeon Roguelike\license.txt" />

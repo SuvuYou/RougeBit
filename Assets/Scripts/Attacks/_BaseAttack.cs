@@ -6,11 +6,9 @@ public class BaseAttack : MonoBehaviour
 {
     public enum AttackState { Reload, ReadyForAttack, Aiming, Attacking }
 
-    [SerializeField] private float _reloadDuration;
-    [SerializeField] protected bool _addsKnockback; 
-    [SerializeField] protected bool _requiresAim; 
-    [SerializeField] protected float _aimDuration; 
+    [SerializeField] protected _BaseAttackStatsSO _baseStats;
 
+    [Header("Attack Events")]
     public UnityEvent OnReload;
     public UnityEvent OnReadyForAttack;
     public UnityEvent OnAim;
@@ -34,8 +32,8 @@ public class BaseAttack : MonoBehaviour
 
     public virtual void Setup(GameObject attacker, Target target)
     {
-        _reloadTimer = new Timer(_reloadDuration);
-        _aimTimer = new Timer(_aimDuration);
+        _reloadTimer = new Timer(_baseStats.ReloadDuration);
+        _aimTimer = new Timer(_baseStats.AimDuration);
 
         _attacker = attacker;
         _target = target;
@@ -105,7 +103,7 @@ public class BaseAttack : MonoBehaviour
         _switchAttackState(AttackState.Reload);
     }
 
-    private void _performAttackOrAim() => _switchAttackState(_requiresAim ? AttackState.Aiming : AttackState.Attacking);
+    private void _performAttackOrAim() => _switchAttackState(_baseStats.RequiresAim ? AttackState.Aiming : AttackState.Attacking);
 
     private void OnDisable() => DeactivateAttack();
 }

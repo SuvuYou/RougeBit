@@ -3,18 +3,7 @@ using UnityEngine;
 
 class LaserBeamAttack : BaseAttack
 {
-    [SerializeField] private float _movementVelocityToCancelAttackThreshold = 1f;
-
-    [SerializeField] private LayerMask _enemyLayerMask;
-    [SerializeField] private float _attackReachDistance;
-
-    [SerializeField] private float _beamDamage = 1f;
-    [SerializeField] private float _beamAttacksPerSecond = 5f;
-    [SerializeField] private float _beamDuration = 3f;
-    [SerializeField] private float _beamLength = 8f;
-    [SerializeField] private float _beamWidth = 1f;
-
-    [SerializeField] private GameObject _beamSprite;
+    [SerializeField] private LaserBeamAttackStatsSO _stats;
 
     private GameObject _beam;
 
@@ -35,8 +24,8 @@ class LaserBeamAttack : BaseAttack
             _attackerMovement = movement;
         }
 
-        _attackTimer.SetBaseTime(_beamDuration);
-        _collisionTimer.SetBaseTime(1f / _beamAttacksPerSecond);
+        _attackTimer.SetBaseTime(_stats.BeamDuration);
+        _collisionTimer.SetBaseTime(1f / _stats.BeamAttacksPerSecond);
 
         OnAttack.AddListener(() => _spawnBeamSprite());
         OnAttack.AddListener(() => _attackerMovement.DisableMovement());
@@ -46,9 +35,9 @@ class LaserBeamAttack : BaseAttack
     {
         if (!_isTargetFound) return;
 
-        if (Vector3.Distance(_attacker.transform.position, _target.transform.position) > _attackReachDistance) return;
+        if (Vector3.Distance(_attacker.transform.position, _target.transform.position) > _stats.AttackReachDistance) return;
 
-        if (_attackerMovement.Velocity.magnitude > _movementVelocityToCancelAttackThreshold) return;
+        if (_attackerMovement.Velocity.magnitude > _stats.MovementVelocityToCancelAttackThreshold) return;
 
         _collisionTimer.Reset();
         _collisionTimer.Start();
@@ -84,7 +73,7 @@ class LaserBeamAttack : BaseAttack
 
     protected override void _handleAim(Action cancelAim) 
     {
-        if (_attackerMovement.Velocity.magnitude > _movementVelocityToCancelAttackThreshold) cancelAim();
+        if (_attackerMovement.Velocity.magnitude > _stats.MovementVelocityToCancelAttackThreshold) cancelAim();
 
         _updateAttackState();
     }
@@ -104,9 +93,9 @@ class LaserBeamAttack : BaseAttack
         if (_attackDirection.y < 0)
             angle = -angle;
 
-        Vector3 spawnPosition = _attackerPosition + _attackDirection * (_beamLength / 2);
+        Vector3 spawnPosition = _attackerPosition + _attackDirection * (_stats.BeamLength / 2);
 
-        var colliders = Physics2D.OverlapBox(spawnPosition, new Vector2(_beamLength, _beamWidth), angle, _enemyLayerMask);
+        var colliders = Physics2D.OverlapBox(spawnPosition, new Vector2(_stats.BeamLength, _stats.BeamWidth), angle, _baseStats.EnemyLayerMask);
 
         if (colliders != null)
         {
@@ -114,10 +103,10 @@ class LaserBeamAttack : BaseAttack
 
             if (parent.TryGetComponentInChildren(out BaseDamagable damagable))
             {
-                damagable.TakeDamage(_beamDamage);
+                damagable.TakeDamage(_stats.BeamDamage);
             }
 
-            if (_addsKnockback && parent.TryGetComponentInChildren(out BaseKnockback knockable))
+            if (_baseStats.AddsKnockback && parent.TryGetComponentInChildren(out BaseKnockback knockable))
             {
                 knockable.AddKnockback(_attackDirection);
             }
@@ -131,9 +120,9 @@ class LaserBeamAttack : BaseAttack
         if (_attackDirection.y < 0)
             angle = -angle;
 
-        Vector3 spawnPosition = _attackerPosition + _attackDirection * (_beamLength / 2);
+        Vector3 spawnPosition = _attackerPosition + _attackDirection * (_stats.BeamLength / 2);
 
-        _beam = Instantiate(_beamSprite, spawnPosition, Quaternion.Euler(0, 0, angle));
+        _beam = Instantiate(_stats.BeamSprite, spawnPosition, Quaternion.Euler(0, 0, angle));
     }
 
     private void OnDrawGizmos()
@@ -143,7 +132,7 @@ class LaserBeamAttack : BaseAttack
 
         Gizmos.color = Color.red;
 
-        Vector3 spawnPosition = _attackerPosition + _attackDirection * (_beamLength / 2);
+        Vector3 spawnPosition = _attackerPosition + _attackDirection * (_stats.BeamLength / 2);
         Vector3 center = spawnPosition;
 
         float angle = Vector3.Angle(Vector3.right, _attackDirection);
@@ -154,7 +143,7 @@ class LaserBeamAttack : BaseAttack
 
         Gizmos.matrix = Matrix4x4.TRS(center, Quaternion.Euler(0, 0, angle), Vector3.one);
 
-        Gizmos.DrawWireCube(Vector3.zero, new Vector3(_beamLength, _beamWidth, 0f));
+        Gizmos.DrawWireCube(Vector3.zero, new Vector3(_stats.BeamLength, _stats.BeamWidth, 0f));
 
         Gizmos.matrix = oldMatrix;
     }

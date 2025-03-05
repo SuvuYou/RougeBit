@@ -48,6 +48,7 @@ MonoBehaviour:
   _enemyComponent: {fileID: 8795521627271913304}
   _attack: {fileID: 6678009102356995107}
   _movement: {fileID: 1766639212795278963}
+  _weapon: {fileID: 0}
 --- !u!114 &6678009102356995107
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60,10 +61,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd3bfa1e617e4604a83bca26763c565c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _reloadDuration: 3
-  _addsKnockback: 0
-  _requiresAim: 1
-  _aimDuration: 0.2
+  _baseStats: {fileID: 11400000, guid: 636d2a28437b89541a5df99d57f8a3de, type: 2}
   OnReload:
     m_PersistentCalls:
       m_Calls: []
@@ -91,15 +89,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _enemyLayerMask:
-    serializedVersion: 2
-    m_Bits: 128
   _attackerMovement: {fileID: 1766639212795278963}
-  _attackDamage: 10
-  _dashTriggerDistance: 6
-  _dashDistance: 3
-  _attackReachDistance: 1.5
-  _collisionRadius: 2
+  _stats: {fileID: 11400000, guid: ad427506444d277438247be32c2d5dac, type: 2}
 --- !u!1001 &6137278353941587233
 PrefabInstance:
   m_ObjectHideFlags: 0

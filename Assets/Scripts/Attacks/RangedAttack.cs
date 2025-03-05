@@ -4,25 +4,19 @@ using UnityEngine;
 class RangedAttack : BaseAttack
 {
     [SerializeField] private CharacterMovement _attackerMovement;
-    [SerializeField] private float _movementVelocityToCancelAttackThreshold = 1f;
 
-    [SerializeField] private LayerMask _enemyLayerMask;
-    [SerializeField] private BaseProjectile _projectilePrefab; 
-    [SerializeField] private float _attackDistance;
+    [SerializeField] private RangedAttackStatsSO _stats;
 
     private Vector3 _attackDirection;
     private Vector3 _attackerPosition;
-
-    [SerializeField] [Range(1, 12)] private int _numberOfProjectiles = 1;
-    [SerializeField] [Range(0, 360)] private float _spreadAngle = 45f;
 
     protected override void _handleIsReadyForAttack(Action performAttackOrAim) 
     {
         if (!_isTargetFound) return;
 
-        if (Vector3.Distance(_attacker.transform.position, _target.transform.position) > _attackDistance) return;
+        if (Vector3.Distance(_attacker.transform.position, _target.transform.position) > _stats.AttackDistance) return;
 
-        if (_attackerMovement.Velocity.magnitude > _movementVelocityToCancelAttackThreshold) return;
+        if (_attackerMovement.Velocity.magnitude > _stats.MovementVelocityToCancelAttackThreshold) return;
 
         performAttackOrAim();
     } 
@@ -35,7 +29,7 @@ class RangedAttack : BaseAttack
 
     protected override void _handleAim(Action cancelAim) 
     {
-        if (_attackerMovement.Velocity.magnitude > _movementVelocityToCancelAttackThreshold) cancelAim();
+        if (_attackerMovement.Velocity.magnitude > _stats.MovementVelocityToCancelAttackThreshold) cancelAim();
 
         _updateAttackState();
     }
@@ -50,16 +44,16 @@ class RangedAttack : BaseAttack
 
     private void _spawnProjectiles()
     {
-        if (_numberOfProjectiles == 1)
+        if (_stats.NumberOfProjectiles == 1)
         {
             _throwProjectileInDirection(_attackDirection);
         }
         else
         {
-            float startAngle = -_spreadAngle / 2f;
-            float angleIncrement = _spreadAngle / (_numberOfProjectiles - 1);
+            float startAngle = -_stats.SpreadAngle / 2f;
+            float angleIncrement = _stats.SpreadAngle / (_stats.NumberOfProjectiles - 1);
             
-            for (int i = 0; i < _numberOfProjectiles; i++)
+            for (int i = 0; i < _stats.NumberOfProjectiles; i++)
             {
                 float angle = startAngle + i * angleIncrement;
 
@@ -70,7 +64,7 @@ class RangedAttack : BaseAttack
 
     private void _throwProjectileInDirection(Vector3 direction)
     {
-        BaseProjectile projectile = Instantiate(_projectilePrefab, _attackerPosition, Quaternion.identity);
-        projectile.Init(direction, _enemyLayerMask);
+        BaseProjectile projectile = Instantiate(_stats.ProjectilePrefab, _attackerPosition, Quaternion.identity);
+        projectile.Init(direction, _baseStats.EnemyLayerMask);
     }
 }

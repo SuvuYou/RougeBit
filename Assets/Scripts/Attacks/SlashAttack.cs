@@ -4,11 +4,7 @@ using UnityEngine;
 class SlashAttack : BaseAttack
 {
     [SerializeField] private AttackAnimation _attackAnimation;
-    [SerializeField] private LayerMask _enemyLayerMask;
-    [SerializeField] private SpriteRenderer _spriteRenderer;
-
-    [SerializeField] private float _attackDistance = 2f;
-    [SerializeField] private float _attackDamage = 50f;
+    [SerializeField] private SlashAttackStatsSO _stats;
 
     private Vector3 _attackDirection;
     private Vector3 _attackerPosition;
@@ -19,7 +15,7 @@ class SlashAttack : BaseAttack
     {
         if (!_isTargetFound) return;
 
-        if (Vector3.Distance(_attacker.transform.position, _target.transform.position) > _attackDistance) return;
+        if (Vector3.Distance(_attacker.transform.position, _target.transform.position) > _stats.AttackDistance) return;
 
         performAttackOrAim();
     } 
@@ -50,7 +46,7 @@ class SlashAttack : BaseAttack
     private void _handleCollision()
     {    
         var angle = _attackAnimation.transform.rotation.z;
-        var colliders = Physics2D.OverlapBoxAll(_getSpawnPosition(), new Vector2(_spriteRenderer.bounds.size.x, _spriteRenderer.bounds.size.y), angle, _enemyLayerMask);
+        var colliders = Physics2D.OverlapBoxAll(_getSpawnPosition(), new Vector2(_stats.AttackDistance + 0.5f, _stats.AttackDistance + 0.5f), angle, _baseStats.EnemyLayerMask);
 
         foreach (var collider in colliders)
         {
@@ -65,10 +61,10 @@ class SlashAttack : BaseAttack
 
             if (parent.TryGetComponentInChildren(out BaseDamagable damagable))
             {
-                damagable.TakeDamage(_attackDamage);
+                damagable.TakeDamage(_stats.AttackDamage);
             }
 
-            if (_addsKnockback && parent.TryGetComponentInChildren(out BaseKnockback knockable))
+            if (_baseStats.AddsKnockback && parent.TryGetComponentInChildren(out BaseKnockback knockable))
             {
                 knockable.AddKnockback(_attackDirection);
             }
