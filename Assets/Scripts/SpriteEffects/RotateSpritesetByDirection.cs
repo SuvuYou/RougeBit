@@ -36,7 +36,7 @@ public class RotateSpritesetByDirection : MonoBehaviour
         };
     }
 
-    private void Update() => _rotateToDirection(_target.transform.position - transform.position);
+    public void Rotate() => _rotateToDirection(_target.transform.position - transform.position);
 
     private void _rotateToDirection(Vector3 direction)
     {

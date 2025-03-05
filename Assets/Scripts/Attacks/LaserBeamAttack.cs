@@ -4,9 +4,7 @@ using UnityEngine;
 class LaserBeamAttack : BaseAttack
 {
     [SerializeField] private LaserBeamAttackStatsSO _stats;
-
-    private GameObject _beam;
-
+    
     private CharacterMovement _attackerMovement;
 
     private Vector3 _attackDirection;
@@ -27,8 +25,7 @@ class LaserBeamAttack : BaseAttack
         _attackTimer.SetBaseTime(_stats.BeamDuration);
         _collisionTimer.SetBaseTime(1f / _stats.BeamAttacksPerSecond);
 
-        OnAttack.AddListener(() => _spawnBeamSprite());
-        OnAttack.AddListener(() => _attackerMovement.DisableMovement());
+        OnAttack.AddListener(() => _attackerMovement.AddMovementLock(MovementLock.Attack));
     }
 
     protected override void _handleIsReadyForAttack(Action performAttackOrAim) 
@@ -63,9 +60,7 @@ class LaserBeamAttack : BaseAttack
             _attackTimer.Stop();
             _collisionTimer.Stop();
 
-            _attackerMovement.EnableMovement();
-
-            Destroy(_beam.gameObject);
+            _attackerMovement.RemoveMovementLock(MovementLock.Attack);
 
             finishAttack();
         }
@@ -111,18 +106,6 @@ class LaserBeamAttack : BaseAttack
                 knockable.AddKnockback(_attackDirection);
             }
         }
-    }
-
-    private void _spawnBeamSprite()
-    {
-        float angle = Vector3.Angle(Vector3.right, _attackDirection);
-
-        if (_attackDirection.y < 0)
-            angle = -angle;
-
-        Vector3 spawnPosition = _attackerPosition + _attackDirection * (_stats.BeamLength / 2);
-
-        _beam = Instantiate(_stats.BeamSprite, spawnPosition, Quaternion.Euler(0, 0, angle));
     }
 
     private void OnDrawGizmos()

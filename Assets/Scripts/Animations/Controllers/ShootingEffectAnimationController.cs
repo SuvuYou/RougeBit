@@ -32,9 +32,9 @@ class ShootingEffectAnimationController : BaseAnimationController
         { ShootingEffectType.LaserBeamContinuous, "Laser Beam Continuous" }
     };
 
-
     [Space(20)]
     [SerializeField] private ShootingEffectType _shootingEffectType;
+    [SerializeField] private float _overrideShootingAnimationLength = 0f;
 
     private float _shootingAnimationLength = 0f;
 
@@ -48,5 +48,5 @@ class ShootingEffectAnimationController : BaseAnimationController
         _switchAnimationState(IDLE_HASH);
     }
 
-    public void TriggerShootingEffectAnimation() => _switchAnimationState(ShootingEffectHashes[_shootingEffectType], lockTime: _shootingAnimationLength);
+    public void TriggerShootingEffectAnimation() => _switchAnimationState(ShootingEffectHashes[_shootingEffectType], lockTime: _overrideShootingAnimationLength > 0f ? _overrideShootingAnimationLength : _shootingAnimationLength);
 }

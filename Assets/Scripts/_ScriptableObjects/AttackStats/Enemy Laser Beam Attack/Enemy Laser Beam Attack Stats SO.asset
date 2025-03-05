@@ -12,18 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e30076283f89dd4449c3671dead9416a, type: 3}
   m_Name: Enemy Laser Beam Attack Stats SO
   m_EditorClassIdentifier: 
-  EnemyLayerMask:
-    serializedVersion: 2
-    m_Bits: 128
-  ReloadDuration: 3
-  RequiresAim: 1
-  AimDuration: 2
-  AddsKnockback: 0
   MovementVelocityToCancelAttackThreshold: 1
   AttackReachDistance: 10
   BeamDamage: 1
   BeamAttacksPerSecond: 5
-  BeamDuration: 3
+  BeamDuration: 5
   BeamSprite: {fileID: 3431848524641470274, guid: 8d54bd8d408db3147b51d3e9f50b5f57, type: 3}
   BeamLength: 15
   BeamWidth: 1

@@ -31,9 +31,9 @@ class PlayerAttack : MonoBehaviour
 
     private IEnumerator _disableMovementForSeconds(float seconds)
     {
-        _movement.DisableMovement();
+        _movement.AddMovementLock(MovementLock.AttackStunned);
         yield return new WaitForSeconds(seconds);
-        _movement.EnableMovement();
+        _movement.RemoveMovementLock(MovementLock.AttackStunned);
     }
 
     private void _triggerAttackAnimation()

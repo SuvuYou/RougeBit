@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 49559a0a65771aa4db1937fe81349c16
+guid: 2e9a45d1da9217742a2a2555d0d0b1d7
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,190 +110,190 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Shot Gun_Down
+      name: Wings Laser Gun_Down
       rect:
         serializedVersion: 2
         x: 16
-        y: 11
+        y: 13
         width: 16
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 24
+      alignment: 9
+      pivot: {x: 0.5000001, y: 0.68925875}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f2c23860ec2027244a17cd94cb1b0428
-      internalID: 915215029
+      spriteID: b47f304ad777de34cbab4afe3fd9a4c8
+      internalID: 423627597
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shot Gun_Down_Right_30
+      name: Wings Laser Gun_Down_Right_60
       rect:
         serializedVersion: 2
-        x: 64
-        y: 12
-        width: 17
-        height: 19
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 62
+        y: 13
+        width: 18
+        height: 23
+      alignment: 9
+      pivot: {x: 0.442649, y: 0.6974873}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 079403b77386cbf468ac0e86a7575018
-      internalID: 2093903555
+      spriteID: 048ea79990265cb40bf4678b764c1320
+      internalID: 1044768550
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shot Gun_Down_Right_45
+      name: Wings Laser Gun_Down_Right_45
       rect:
         serializedVersion: 2
-        x: 112
-        y: 12
-        width: 20
-        height: 19
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 109
+        y: 13
+        width: 21
+        height: 21
+      alignment: 9
+      pivot: {x: 0.35252598, y: 0.69663256}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a3899a15d81ef274882a6d6ec2ac9b39
-      internalID: -750004589
+      spriteID: 36816783a78493f459b276a655556a14
+      internalID: 625393417
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shot Gun_Down_Right_60
+      name: Wings Laser Gun_Down_Right_30
       rect:
         serializedVersion: 2
-        x: 160
+        x: 156
         y: 15
-        width: 21
+        width: 24
+        height: 17
+      alignment: 9
+      pivot: {x: 0.31074142, y: 0.6457394}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d52d6938bcaa9e4995c3b2e202ff775
+      internalID: 1228130505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wings Laser Gun_Right
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 15
+        width: 24
         height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.327947, y: 0.56452036}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 69bf078a4bda33d44a6b27bbbeed87c4
-      internalID: 1038425637
+      spriteID: f0f77156ce665dd44a8d5f9263a2f32b
+      internalID: -1074609747
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shot Gun_Right
+      name: Wings Laser Gun_Up_Right_30
       rect:
         serializedVersion: 2
-        x: 208
-        y: 16
-        width: 22
-        height: 15
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1ddcd7d8b84350c4abcfe9e96870c56c
-      internalID: 411030354
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Shot Gun_Up_Right_30
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 16
-        width: 21
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 407d0b1f9df94ba4ebd55abbcac11b9b
-      internalID: 152588775
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Shot Gun_Up_Right_45
-      rect:
-        serializedVersion: 2
-        x: 304
-        y: 16
-        width: 19
-        height: 18
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 02bcf9c1cdcb80245a38fcbbd4fe7c70
-      internalID: -1671658728
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Shot Gun_Up_Right_60
-      rect:
-        serializedVersion: 2
-        x: 352
-        y: 16
-        width: 17
+        x: 252
+        y: 14
+        width: 24
         height: 19
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.33114496, y: 0.43264478}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cf1bc9858d06d84488c07f0a2f539ffa
-      internalID: 809520878
+      spriteID: a33a064c253cadb41bbe7678b4ea42c1
+      internalID: -403748202
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shot Gun_Up
+      name: Wings Laser Gun_Up_Right_45
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 13
+        width: 21
+        height: 20
+      alignment: 9
+      pivot: {x: 0.3426935, y: 0.37612182}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32c56255d4639f94b993bf9c7021362a
+      internalID: -715777342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wings Laser Gun_Up_Right_60
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 12
+        width: 18
+        height: 22
+      alignment: 9
+      pivot: {x: 0.45411852, y: 0.3498445}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4022c28c9332d0c47b27266edcab0a29
+      internalID: 1549955275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wings Laser Gun_Up
       rect:
         serializedVersion: 2
         x: 400
-        y: 15
+        y: 11
         width: 16
-        height: 19
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 22
+      alignment: 9
+      pivot: {x: 0.5140667, y: 0.3567888}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bf42b57059a08be44a3be6b23137dfd6
-      internalID: -1171635875
+      spriteID: 8416acda120720149a2531a7a0db6122
+      internalID: -185429466
       vertices: []
       indices: 
       edges: []
@@ -309,15 +309,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Shot Gun_Down: 915215029
-      Shot Gun_Down_Right_30: 2093903555
-      Shot Gun_Down_Right_45: -750004589
-      Shot Gun_Down_Right_60: 1038425637
-      Shot Gun_Right: 411030354
-      Shot Gun_Up: -1171635875
-      Shot Gun_Up_Right_30: 152588775
-      Shot Gun_Up_Right_45: -1671658728
-      Shot Gun_Up_Right_60: 809520878
+      Wings Laser Gun_Down: 423627597
+      Wings Laser Gun_Down_Right_30: 1228130505
+      Wings Laser Gun_Down_Right_45: 625393417
+      Wings Laser Gun_Down_Right_60: 1044768550
+      Wings Laser Gun_Right: -1074609747
+      Wings Laser Gun_Up: -185429466
+      Wings Laser Gun_Up_Right_30: -403748202
+      Wings Laser Gun_Up_Right_45: -715777342
+      Wings Laser Gun_Up_Right_60: 1549955275
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

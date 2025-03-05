@@ -12,7 +12,6 @@ public class LaserBeamAttackStatsSO : ScriptableObject
     public float BeamDuration = 3f;
 
     [Header("Beam Visuals Settings")]
-    public GameObject BeamSprite;
     public float BeamLength = 8f;
     public float BeamWidth = 1f;
 }

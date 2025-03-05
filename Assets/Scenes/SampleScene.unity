@@ -3620,7 +3620,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 12.4375
+  orthographic size: 11.34375
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -3645,7 +3645,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.89062, y: -1.4375, z: -12.42}
+  m_LocalPosition: {x: -7.828127, y: -1.4375, z: -12.42}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3886,11 +3886,13 @@ MonoBehaviour:
     - {fileID: 8795521627271913304, guid: 386f2f425f3f5bf488d6d49b05198354, type: 3}
     - {fileID: 8795521627271913304, guid: 7e3de83e9c7ce104591fc499debd7647, type: 3}
     - {fileID: 8795521627271913304, guid: 260b9460927350f438f8dd819ea983ce, type: 3}
+    - {fileID: 7189367331512252750, guid: 4903fd52864a408429258602a9198451, type: 3}
     m_values:
     - 0
     - 0
     - 0
     - 0
+    - 1
     - 1
     - 1
     - 1
@@ -4198,7 +4200,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &619394801
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5872,37 +5874,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &852987829
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 852987830}
-  m_Layer: 0
-  m_Name: target
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &852987830
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 852987829}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.5, y: 7.9375, z: -0.16999342}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &874056309
 GameObject:
   m_ObjectHideFlags: 0
@@ -7795,7 +7766,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1142161004
 Transform:
   m_ObjectHideFlags: 0
@@ -35429,5 +35400,4 @@ SceneRoots:
   - {fileID: 386041273}
   - {fileID: 205432977}
   - {fileID: 542802270}
-  - {fileID: 852987830}
   - {fileID: 1476829491}

@@ -29,7 +29,7 @@ class BaseKnockback : MonoBehaviour
             _isEnabled = false;
             _elapsedTime = 0;
 
-            _characterMovement?.EnableMovement();
+            _characterMovement?.RemoveMovementLock(MovementLock.Knockback);
         }
     }
 
@@ -37,7 +37,7 @@ class BaseKnockback : MonoBehaviour
     {
         _isEnabled = true;
 
-        _characterMovement?.DisableMovement();
+        _characterMovement?.AddMovementLock(MovementLock.Knockback);
 
         _knockbackTargetPosition = _entity.position + direction.normalized * strength;
     }

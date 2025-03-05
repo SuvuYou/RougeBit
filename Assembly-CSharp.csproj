@@ -102,7 +102,6 @@
     <Compile Include="Assets\Scripts\Helpers\Timer.cs" />
     <Compile Include="Assets\Scripts\Attacks\KnockBack\Shockwave.cs" />
     <Compile Include="Assets\Scripts\Attacks\KnockBack\BaseKnockback.cs" />
-    <Compile Include="Assets\Scripts\Attacks\Weapons\BaseWeapon.cs" />
     <Compile Include="Assets\Scripts\Attacks\_ScriptableObjects\_BaseAttackStatsSO.cs" />
     <Compile Include="Assets\SerializableDictionary\Example\SerializableDictionaryExample.cs" />
     <Compile Include="Assets\Scripts\Economy\ItemDropper.cs" />
@@ -111,6 +110,7 @@
     <Compile Include="Assets\Scripts\Attacks\_ScriptableObjects\LaserBeamAttackStatsSO.cs" />
     <Compile Include="Assets\Scripts\SpriteEffects\WeaponRotationSpritesetSO.cs" />
     <Compile Include="Assets\Scripts\Economy\CollectableItem.cs" />
+    <Compile Include="Assets\Scripts\Attacks\Weapons\BaseWeaponVisual.cs" />
     <Compile Include="Assets\SerializableDictionary\Example\UserSerializableDictionaries.cs" />
     <Compile Include="Assets\Scripts\Attacks\_ScriptableObjects\DashAttackOnCollisionStatsSO.cs" />
     <Compile Include="Assets\Scripts\SpriteEffects\FlashAnimation.cs" />

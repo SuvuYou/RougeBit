@@ -2,13 +2,24 @@ using System;
 using System.Collections;
 using UnityEngine;
 
+[Flags]
+public enum MovementLock {
+    None            = 0,
+    AttackStunned   = 1 << 0,
+    Attack          = 1 << 1,
+    Knockback       = 1 << 2,
+    Dash            = 1 << 3,
+    Dead            = 1 << 4,
+}
+
 public class CharacterMovement : MonoBehaviour
 {
     [SerializeField] protected Transform _character;
     [SerializeField] EntityMovementStats _movementStats;
-    
-    public bool PermaDisabled { get; private set; } = false;
-    public bool Enabled { get; private set; } = true;
+
+    private MovementLock _activeMovementLocks = MovementLock.None;
+
+    public bool Enabled => _activeMovementLocks == MovementLock.None;
 
     public Vector3 Velocity { get; private set; }
     public Vector3 CurrentDirection { get; private set; }
@@ -16,7 +27,7 @@ public class CharacterMovement : MonoBehaviour
 
     public void MoveToDirection(Vector3 direction)
     {
-        if (PermaDisabled || !Enabled) return;
+        if (!Enabled) return;
 
         CurrentDirection = direction;
 
@@ -43,9 +54,9 @@ public class CharacterMovement : MonoBehaviour
 
     public void Dash(Vector3 currentPositoin, Vector3 targetPosition, float duration)
     {
-        DisableMovement();
+        AddMovementLock(MovementLock.Dash);
 
-        StartCoroutine(_dashCoroutine(currentPositoin, targetPosition, duration, () => EnableMovement()));
+        StartCoroutine(_dashCoroutine(currentPositoin, targetPosition, duration, () => RemoveMovementLock(MovementLock.Dash)));
     }
 
     private IEnumerator _dashCoroutine(Vector3 currentPositoin, Vector3 targetPosition, float duration, Action onComplete = null)
@@ -68,16 +79,11 @@ public class CharacterMovement : MonoBehaviour
         onComplete?.Invoke();
     }
 
-    public void DisableMovement()
+    public void AddMovementLock(MovementLock lockType) 
     {
         Velocity = Vector3.zero;
-        Enabled = false;
-    }
+        _activeMovementLocks |= lockType;
+    } 
 
-    public void EnableMovement()
-    {
-        Enabled = true;
-    }
-
-    public void DisableMovementPermanently() => PermaDisabled = true;
+    public void RemoveMovementLock(MovementLock lockType) => _activeMovementLocks &= ~lockType;
 }

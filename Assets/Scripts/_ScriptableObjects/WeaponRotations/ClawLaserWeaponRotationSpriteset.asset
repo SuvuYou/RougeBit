@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 38e812f5ec162b449a934a992a3aec50, type: 3}
-  m_Name: LaserWeaponRotationSpriteset
+  m_Name: ClawLaserWeaponRotationSpriteset
   m_EditorClassIdentifier: 
   UpSprite: {fileID: -894011749, guid: 1ae4477ef805cdc49afa967905b9930a, type: 3}
   RightSprite: {fileID: -1512698264, guid: 1ae4477ef805cdc49afa967905b9930a, type: 3}

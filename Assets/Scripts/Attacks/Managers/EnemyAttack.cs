@@ -8,7 +8,7 @@ class EnemyAttack : MonoBehaviour
     [SerializeField] private BaseAttack _attack;
     [SerializeField] private CharacterMovement _movement;
 
-    [SerializeField] private BaseWeapon _weapon;
+    [SerializeField] private BaseWeaponVisual _weapon;
 
     private void Start()
     {
@@ -26,8 +26,8 @@ class EnemyAttack : MonoBehaviour
 
     private IEnumerator _disableMovementForSeconds(float seconds)
     {
-        _movement.DisableMovement();
+        _movement.AddMovementLock(MovementLock.AttackStunned);
         yield return new WaitForSeconds(seconds);
-        _movement.EnableMovement(); 
+        _movement.RemoveMovementLock(MovementLock.AttackStunned);
     }
 }
