@@ -74,6 +74,7 @@
     <Compile Include="Assets\Scripts\Attacks\RangedAttack.cs" />
     <Compile Include="Assets\Scripts\Attacks\DashAttackOnCollision.cs" />
     <Compile Include="Assets\Scripts\Managers\WaveManager.cs" />
+    <Compile Include="Assets\Scripts\Managers\TimeManager.cs" />
     <Compile Include="Assets\Scripts\Movement\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\Economy\InventorySO.cs" />
     <Compile Include="Assets\Scripts\SpriteEffects\RotateSpritesetByDirection.cs" />

@@ -9,7 +9,7 @@ class DamagableWithImmunity : BaseDamagable
     [SerializeField] private float _immunityDuration = 0.5f;
 
     [Header("Events")]
-    public UnityEvent OnImmunityGranted;
+    public UnityEvent<float> OnImmunityGranted;
     public UnityEvent OnImmunityEnd;
 
     public bool IsImmune { get; private set; }
@@ -26,7 +26,7 @@ class DamagableWithImmunity : BaseDamagable
 
     private IEnumerator _setImmunityForSeconds(float seconds) 
     { 
-        OnImmunityGranted?.Invoke();
+        OnImmunityGranted?.Invoke(_immunityDuration);
         IsImmune = true; 
         yield return new WaitForSeconds(seconds); 
         IsImmune = false; 

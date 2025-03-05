@@ -10,7 +10,7 @@ class AlphaPulseAnimation : MonoBehaviour
     
     [Header("Animation Settings")]
     [SerializeField] private float _targetAlphaValue = 0.1f;
-    [SerializeField] private int _cycleCount = 4;
+    [SerializeField] private int _numCycles = 4;
     [SerializeField] private float _cycleDuration = 0.5f;
 
     private Color _defaultColor;
@@ -24,14 +24,14 @@ class AlphaPulseAnimation : MonoBehaviour
         _semiTransparentColor.a = _targetAlphaValue;
     }
 
-    public void Flash()
+    public void Pulse()
     {
-        StartCoroutine(FlashSequence());
+        StartCoroutine(PulseSequence(_numCycles));
     }
 
-    private IEnumerator FlashSequence()
+    private IEnumerator PulseSequence(int cycleCount = 1)
     {
-        for (int i = 0; i < _cycleCount; i++)
+        for (int i = 0; i < cycleCount; i++)
         {
             yield return StartCoroutine(_completeAnimationCycle(_defaultColor, _semiTransparentColor));
         }
