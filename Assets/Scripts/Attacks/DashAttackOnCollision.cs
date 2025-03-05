@@ -3,14 +3,20 @@ using UnityEngine;
 
 class DashAttackOnCollision : BaseAttack
 {
+    [Header("References")]
     [SerializeField] private LayerMask _enemyLayerMask;
+    [SerializeField] private CharacterMovement _attackerMovement;
+    [Space(15)]
+
+    [Header("Dash Settings")]
     [SerializeField] private float _attackDamage = 50f;
     [SerializeField] private float _dashTriggerDistance = 5f;
     [SerializeField] private float _dashDistance = 2f;
+    [Space(15)]
 
-    private BoxCollider2D _collider;
-    private CharacterMovement _attackerMovement;
-    private float _attackReachDistance;
+    [Header("Collision Settings")]
+    [SerializeField] private float _attackReachDistance = 2f;
+    [SerializeField] private float _collisionRadius = 2f;
 
     private Vector3 _attackDirection;
     private Vector3 _attackerPosition;
@@ -21,17 +27,6 @@ class DashAttackOnCollision : BaseAttack
     public override void Setup(GameObject attacker, Target target)
     {
         base.Setup(attacker, target);
-
-        if(attacker.transform.parent.TryGetComponentInChildren(out BoxCollider2D collider))
-        {
-            _attackReachDistance = collider.bounds.size.x;
-            _collider = collider;
-        }
-
-        if(attacker.transform.parent.TryGetComponentInChildren(out CharacterMovement movement))
-        {
-            _attackerMovement = movement;
-        }
 
         OnAim.AddListener(() => _attackerMovement.Dash(_positionBeforeDash, _dashTargetPosition, _aimTimer.Duration));
     }
@@ -75,7 +70,7 @@ class DashAttackOnCollision : BaseAttack
 
     private void _handleCollision()
     {    
-        var colliders = Physics2D.OverlapBox(_attackerPosition, new Vector2(_collider.bounds.size.x, _collider.bounds.size.y), 0, _enemyLayerMask);
+        var colliders = Physics2D.OverlapBox(_attackerPosition, new Vector2(_collisionRadius, _collisionRadius), 0, _enemyLayerMask);
 
         if (colliders != null)
         {

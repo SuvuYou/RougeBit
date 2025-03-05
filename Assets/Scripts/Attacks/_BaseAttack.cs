@@ -15,6 +15,7 @@ public class BaseAttack : MonoBehaviour
     public UnityEvent OnReadyForAttack;
     public UnityEvent OnAim;
     public UnityEvent OnAttack;
+    public UnityEvent OnFinishAttack;
 
     protected GameObject _attacker;
     protected Target _target;
@@ -98,7 +99,11 @@ public class BaseAttack : MonoBehaviour
     private void _cancelAttack() => _switchAttackState(AttackState.ReadyForAttack);
     private void _cancelReloadAttack() => _switchAttackState(AttackState.Reload);
 
-    private void _finishAttack() => _switchAttackState(AttackState.Reload);
+    private void _finishAttack() 
+    {
+        OnFinishAttack?.Invoke();
+        _switchAttackState(AttackState.Reload);
+    }
 
     private void _performAttackOrAim() => _switchAttackState(_requiresAim ? AttackState.Aiming : AttackState.Attacking);
 

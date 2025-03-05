@@ -76,12 +76,30 @@ MonoBehaviour:
   OnAttack:
     m_PersistentCalls:
       m_Calls: []
+  OnFinishAttack:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4610428551385491949}
+        m_TargetAssemblyTypeName: BaseDamagable, Assembly-CSharp
+        m_MethodName: Die
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _enemyLayerMask:
     serializedVersion: 2
     m_Bits: 128
+  _attackerMovement: {fileID: 1766639212795278963}
   _attackDamage: 50
   _dashTriggerDistance: 6
   _dashDistance: 3
+  _attackReachDistance: 1.5
+  _collisionRadius: 2
 --- !u!1001 &6137278353941587233
 PrefabInstance:
   m_ObjectHideFlags: 0

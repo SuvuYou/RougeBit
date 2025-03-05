@@ -56,7 +56,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1906548972662065430}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d992871ee139da549b8b1bf0584efe6e, type: 3}
   m_Name: 
@@ -75,6 +75,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   OnAttack:
+    m_PersistentCalls:
+      m_Calls: []
+  OnFinishAttack:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4610428551385491949}
@@ -394,6 +397,7 @@ MonoBehaviour:
   _characterMovement: {fileID: 1766639212795278963}
   _spriteRenderer: {fileID: 7676961290247377422}
   _baseDamagable: {fileID: 4610428551385491949}
+  _includeIdleAnimations: 0
 --- !u!114 &4610428551385491949 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7696781996479433932, guid: c53e215881dc85046964129259c89939, type: 3}

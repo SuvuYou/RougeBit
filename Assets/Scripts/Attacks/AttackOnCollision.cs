@@ -14,11 +14,6 @@ class AttackOnCollision : BaseAttack
 
     private Vector3 _getSpawnPosition() => _attackerPosition;
 
-    public override void Setup(GameObject attacker, Target target)
-    {
-        base.Setup(attacker, target);
-    }
-
     protected override void _handleIsReadyForAttack(Action performAttackOrAim) 
     {
         if (!_isTargetFound) return;
