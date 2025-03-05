@@ -4,12 +4,15 @@ using UnityEngine.Events;
 
 class DamagableWithImmunity : BaseDamagable
 {
+    [Space(10)]
+    [Header("Immunity Settings")]
     [SerializeField] private float _immunityDuration = 0.5f;
 
-    public bool IsImmune { get; private set; }
-
+    [Header("Events")]
     public UnityEvent OnImmunityGranted;
     public UnityEvent OnImmunityEnd;
+
+    public bool IsImmune { get; private set; }
 
     public override void TakeDamage(float damage) 
     { 

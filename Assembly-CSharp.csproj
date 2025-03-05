@@ -111,6 +111,7 @@
     <Compile Include="Assets\Scripts\Attacks\_BaseAttack.cs" />
     <Compile Include="Assets\Scripts\Attacks\Managers\PlayerAttack.cs" />
     <Compile Include="Assets\SerializableDictionary\SerializableDictionary.cs" />
+    <Compile Include="Assets\Scripts\SpriteEffects\AlphaPulseAnimation.cs" />
     <Compile Include="Assets\Scripts\Movement\FollowTargetMovement.cs" />
     <Compile Include="Assets\Scripts\Attacks\AttackOnCollision.cs" />
     <Compile Include="Assets\Scripts\DamageControl\BaseDamagable.cs" />

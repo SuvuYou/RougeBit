@@ -98,7 +98,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   _projectilePrefab: {fileID: 173239952212642452, guid: 77f260542eb3a5c4fb32a45f19bd8cbe, type: 3}
-  _attackDistance: 6
+  _attackDistance: 13
   _numberOfProjectiles: 1
   _spreadAngle: 45
 --- !u!1001 &6137278353941587233
@@ -119,7 +119,7 @@ PrefabInstance:
       objectReference: {fileID: -1717268059, guid: 3a8a817b688756645b93e1136ad94c6d, type: 3}
     - target: {fileID: 5597872238646907730, guid: c53e215881dc85046964129259c89939, type: 3}
       propertyPath: _maxDistanceToTarget
-      value: 5
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 5597872238646907730, guid: c53e215881dc85046964129259c89939, type: 3}
       propertyPath: _minDistanceToTarget

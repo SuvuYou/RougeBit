@@ -4,12 +4,15 @@ using UnityEngine.Events;
 
 class BaseDamagable : MonoBehaviour
 {
+    [Header("References")]
     [SerializeField] private GameObject _parent;
 
+    [field: Header("Stats")]
+    [field: SerializeField] public float Health { get; private set; }
+
+    [Header("Events")]
     [SerializeField] protected UnityEvent OnTakeDamage;
     [SerializeField] protected UnityEvent OnDie;
-
-    [field: SerializeField] public float Health { get; private set; }
 
     private float _objectDestroyDelay = 0f; 
 

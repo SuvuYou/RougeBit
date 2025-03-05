@@ -123,42 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &722139 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 962131282749968106, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
-  m_PrefabInstance: {fileID: 1476829491}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &722140 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 9091214844209312108, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
-  m_PrefabInstance: {fileID: 1476829491}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 722139}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08ab5f6148ae45f44a24f918395db310, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!212 &722144 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 8308423075698151257, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
-  m_PrefabInstance: {fileID: 1476829491}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &722146
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 722139}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9312fa9e4b233934a917013ded6bec73, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _spriteRenderer: {fileID: 722144}
-  _flashColor: {r: 0, g: 0, b: 0, a: 1}
-  _flashDuraionInSeconds: 2
 --- !u!1 &7014945
 GameObject:
   m_ObjectHideFlags: 0
@@ -3879,8 +3843,8 @@ MonoBehaviour:
     - 0
     - 0
     - 0
-    - 0
-    - 0
+    - 1
+    - 1
     - 1
 --- !u!1 &547064754
 GameObject:
@@ -6728,16 +6692,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1014407086}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &958735126 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1354620486190745828, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
-  m_PrefabInstance: {fileID: 1476829491}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &958735127 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 932260380665832382, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
-  m_PrefabInstance: {fileID: 1476829491}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &962871487
 GameObject:
   m_ObjectHideFlags: 0
@@ -27982,74 +27936,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1442804629 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2984592810734220386, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
-  m_PrefabInstance: {fileID: 1476829491}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1442804632
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1442804629}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd1a301ce59894246b40e2e4e1532066, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _parent: {fileID: 958735126}
-  OnTakeDamage:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 722140}
-        m_TargetAssemblyTypeName: TakeDamageAnimationController, Assembly-CSharp
-        m_MethodName: TriggerHurtAnimation
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1670411081}
-        m_TargetAssemblyTypeName: Shockwave, Assembly-CSharp
-        m_MethodName: SendShockwave
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnDie:
-    m_PersistentCalls:
-      m_Calls: []
-  <Health>k__BackingField: 100
-  _immunityDuration: 2
-  OnImmunityGranted:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 722146}
-        m_TargetAssemblyTypeName: FlashAnimation, Assembly-CSharp
-        m_MethodName: Flash
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnImmunityEnd:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &1456690481
 GameObject:
   m_ObjectHideFlags: 0
@@ -28310,14 +28196,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 428924298724892825, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 428924298724892825, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
-      propertyPath: _reloadDuration
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 932260380665832382, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -28362,62 +28240,67 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 7454476559328382400, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
+    - target: {fileID: 1432480121755178584, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 7812479410768360746, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
-      propertyPath: OnTakeDamage.m_PersistentCalls.m_Calls.Array.size
+    - target: {fileID: 6902085884689227041, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
+      propertyPath: _targetAlphaValue
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9071764285014470526, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
+      propertyPath: OnImmunityGranted.m_PersistentCalls.m_Calls.Array.size
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 7812479410768360746, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
-      propertyPath: OnTakeDamage.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+    - target: {fileID: 9071764285014470526, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
+      propertyPath: OnImmunityGranted.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 7812479410768360746, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
-      propertyPath: OnTakeDamage.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+    - target: {fileID: 9071764285014470526, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
+      propertyPath: OnImmunityGranted.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1670411081}
-    - target: {fileID: 7812479410768360746, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
-      propertyPath: OnTakeDamage.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      objectReference: {fileID: 1476829493}
+    - target: {fileID: 9071764285014470526, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
+      propertyPath: OnImmunityGranted.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 7812479410768360746, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
-      propertyPath: OnTakeDamage.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: SendShockwave
+    - target: {fileID: 9071764285014470526, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
+      propertyPath: OnImmunityGranted.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Flash
       objectReference: {fileID: 0}
-    - target: {fileID: 7812479410768360746, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
-      propertyPath: OnTakeDamage.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: Shockwave, Assembly-CSharp
+    - target: {fileID: 9071764285014470526, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
+      propertyPath: OnImmunityGranted.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: AlphaPulseAnimation, Assembly-CSharp
       objectReference: {fileID: 0}
-    - target: {fileID: 7812479410768360746, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
-      propertyPath: OnTakeDamage.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+    - target: {fileID: 9071764285014470526, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
+      propertyPath: OnImmunityGranted.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 7812479410768360746, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 962131282749968106, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 722146}
-    - targetCorrespondingSourceObject: {fileID: 5744413092235882709, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
-      insertIndex: 3
-      addedObject: {fileID: 1670411081}
-    - targetCorrespondingSourceObject: {fileID: 2984592810734220386, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1442804632}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
 --- !u!114 &1476829492 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8474485352587460548, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
   m_PrefabInstance: {fileID: 1476829491}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 958735126}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7c337a18093a8f24d922ba6fd892999a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1476829493 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6902085884689227041, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
+  m_PrefabInstance: {fileID: 1476829491}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f36b3499d299bbe4ea5841f579e09d84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1503457474
@@ -29764,31 +29647,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1014407086}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1670411076 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5744413092235882709, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
-  m_PrefabInstance: {fileID: 1476829491}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1670411081
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1670411076}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 550d3f41252f52f4cbe0ae2f5b4a145c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _attacker: {fileID: 958735127}
-  _enemyLayerMask:
-    serializedVersion: 2
-    m_Bits: 64
-  _maxKnockbackRadius: 8
-  _knockbackStepDelay: 0.001
-  _knockbackStep: 0.1
-  _knockbackForce: 0.1
 --- !u!1 &1677233632
 GameObject:
   m_ObjectHideFlags: 0
