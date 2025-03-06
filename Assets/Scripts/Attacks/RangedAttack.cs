@@ -66,5 +66,7 @@ class RangedAttack : BaseAttack
     {
         BaseProjectile projectile = Instantiate(_stats.ProjectilePrefab, _attackerPosition, Quaternion.identity);
         projectile.Init(direction, _baseStats.EnemyLayerMask);
+
+        ProjectileManager.Instance.AddProjectile(projectile);
     }
 }

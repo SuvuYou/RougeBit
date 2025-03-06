@@ -66,6 +66,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Animations\Controllers\BaseEntityAnimationController.cs" />
     <Compile Include="Assets\Scripts\Attacks\_ScriptableObjects\RangedAttackStatsSO.cs" />
+    <Compile Include="Assets\Scripts\Managers\ProjectileManager.cs" />
     <Compile Include="Assets\Scripts\SpriteEffects\SnapToRotationByDirection.cs" />
     <Compile Include="Assets\Scripts\Movement\CharacterMovement.cs" />
     <Compile Include="Assets\Scripts\Animations\TakeDamageAnimationController.cs" />
@@ -73,6 +74,7 @@
     <Compile Include="Assets\Scripts\Movement\EntityMovementStats.cs" />
     <Compile Include="Assets\Scripts\Attacks\AirStrikeAttack.cs" />
     <Compile Include="Assets\Scripts\Attacks\RangedAttack.cs" />
+    <Compile Include="Assets\Scripts\Attacks\Weapons\ShieldWeaponVisual.cs" />
     <Compile Include="Assets\Scripts\Attacks\DashAttackOnCollision.cs" />
     <Compile Include="Assets\Scripts\Managers\WaveManager.cs" />
     <Compile Include="Assets\Scripts\Managers\TimeManager.cs" />

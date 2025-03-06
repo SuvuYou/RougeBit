@@ -7,18 +7,18 @@ public class BaseProjectile : MonoBehaviour
     [SerializeField] private float _lifeTime;
 
     private LayerMask _layerMask;
-    private Vector3 _direction;
+    public Vector3 Direction { get; private set; }
 
     protected virtual void Start() => Destroy(gameObject, _lifeTime);
 
     protected virtual void Update() 
     {
-        transform.Translate(_direction * _speed * Time.deltaTime);   
+        transform.Translate(Direction * _speed * Time.deltaTime);   
     }
 
     public void Init(Vector3 flyDirection, LayerMask? layerMask = null)
     {
-        _direction = flyDirection;
+        Direction = flyDirection;
         _layerMask = layerMask ?? LayerMask.GetMask("Default");
     }
 

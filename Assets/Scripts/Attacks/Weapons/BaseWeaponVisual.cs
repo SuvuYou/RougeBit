@@ -11,15 +11,19 @@ public class BaseWeaponVisual : MonoBehaviour
     public void EnableRotation() => IsRotationEnabled = true;
     public void DisableRotation() => IsRotationEnabled = false;
 
-    public void SetTarget(Target target) 
+    protected Vector3 _currentTarget;
+
+    public void SetTarget(Vector3 target) 
     {
+        _currentTarget = target;
+
         _weaponSpriteRotator.SetTarget(target);
         _shootingSpriteRotator.SetTarget(target);
     }
 
-    private void Update()
+    protected virtual void Update()
     {
-        if (IsRotationEnabled)
+        if (IsRotationEnabled && _currentTarget != null)
         {
             _weaponSpriteRotator.Rotate();
             _shootingSpriteRotator.Rotate();

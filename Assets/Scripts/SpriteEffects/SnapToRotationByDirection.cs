@@ -5,7 +5,7 @@ public class SnapToRotationByDirection : MonoBehaviour
     [Header("References")]
     [SerializeField] private Transform _pivotPoint;
 
-    private Target _target;
+    private Vector3 _targetPosition;
 
     private struct DirectionRotation
     {
@@ -15,7 +15,7 @@ public class SnapToRotationByDirection : MonoBehaviour
 
     private DirectionRotation[] _directionRotations;
 
-    public void SetTarget(Target target) => _target = target;
+    public void SetTarget(Vector3 target) => _targetPosition = target;
 
     private void Awake()
     {
@@ -42,7 +42,7 @@ public class SnapToRotationByDirection : MonoBehaviour
         };
     }
 
-    public void Rotate() => _rotateToDirection(_target.transform.position - transform.position);
+    public void Rotate() => _rotateToDirection(_targetPosition - transform.position);
 
     private void _rotateToDirection(Vector3 direction)
     {
@@ -64,6 +64,6 @@ public class SnapToRotationByDirection : MonoBehaviour
             }
         }
 
-        _pivotPoint.rotation =  Quaternion.Euler(0, 0, closestRotationZ);
+        _pivotPoint.rotation = Quaternion.Euler(0, 0, closestRotationZ);
     }
 }

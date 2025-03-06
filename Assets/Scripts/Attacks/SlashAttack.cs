@@ -10,7 +10,7 @@ class SlashAttack : BaseAttack
     private Vector3 _attackDirection;
     private Vector3 _attackerPosition;
 
-    private Vector3 _getSpawnPosition() => _attackerPosition + _attackDirection * 1f;
+    private Vector3 _getSpawnPosition() => _attackerPosition + _attackDirection.normalized * 2f;
 
     protected override void _handleIsReadyForAttack(Action performAttackOrAim) 
     {

@@ -16,7 +16,7 @@ class EnemyAttack : MonoBehaviour
 
         _attack.OnAttack.AddListener((Vector3 targetPosition) => StartCoroutine(_disableMovementForSeconds(0.5f)));
     
-        if (_weapon != null) _weapon.SetTarget(_enemyComponent.Target);
+        if (_weapon != null) _weapon.SetTarget(_enemyComponent.Target.transform.position);
     }
 
     private void OnDestroy()
