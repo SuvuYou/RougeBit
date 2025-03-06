@@ -63,9 +63,11 @@ GameObject:
   - component: {fileID: 6596021881325814312}
   - component: {fileID: 8308423075698151257}
   - component: {fileID: 7137740450250172180}
-  - component: {fileID: 5749396351322231601}
-  - component: {fileID: 2927109885443794583}
-  - component: {fileID: 4355351075479850002}
+  - component: {fileID: 8377897308595987508}
+  - component: {fileID: 9091214844209312108}
+  - component: {fileID: 1432480121755178584}
+  - component: {fileID: 6902085884689227041}
+  - component: {fileID: 6302253613349006212}
   m_Layer: 7
   m_Name: SpriteRendererAndAnimator
   m_TagString: Player
@@ -161,7 +163,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &5749396351322231601
+--- !u!114 &8377897308595987508
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -170,14 +172,40 @@ MonoBehaviour:
   m_GameObject: {fileID: 962131282749968106}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee07b8819c0cb2443b4b3a584ebcb99d, type: 3}
+  m_Script: {fileID: 11500000, guid: debbc24257beae84ab30c95c4f62fa7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 7137740450250172180}
+--- !u!114 &9091214844209312108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 962131282749968106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08ab5f6148ae45f44a24f918395db310, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 7137740450250172180}
+--- !u!114 &1432480121755178584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 962131282749968106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fb6c6d4cff513b47abee8e483888ade, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _animator: {fileID: 7137740450250172180}
   _spriteRenderer: {fileID: 8308423075698151257}
   _characterMovement: {fileID: 2213814842685308979}
   _movementThreshold: 0.1
---- !u!114 &2927109885443794583
+--- !u!114 &6902085884689227041
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -186,11 +214,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 962131282749968106}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08bc7c46f9418ad47a6ae65fbddfe607, type: 3}
+  m_Script: {fileID: 11500000, guid: f36b3499d299bbe4ea5841f579e09d84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _animator: {fileID: 7137740450250172180}
---- !u!114 &4355351075479850002
+  _spriteRenderer: {fileID: 8308423075698151257}
+  _cycleCount: 4
+  _cycleDuration: 0.5
+--- !u!114 &6302253613349006212
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -199,10 +229,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 962131282749968106}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6ce96cac0535374e851e7bcc20e14b3, type: 3}
+  m_Script: {fileID: 11500000, guid: 9312fa9e4b233934a917013ded6bec73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _animator: {fileID: 7137740450250172180}
+  _spriteRenderer: {fileID: 8308423075698151257}
+  _flashColor: {r: 0, g: 0, b: 0, a: 1}
+  _flashDuraionInSeconds: 2
 --- !u!1 &1354620486190745828
 GameObject:
   m_ObjectHideFlags: 0
@@ -212,6 +244,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 932260380665832382}
+  - component: {fileID: 8474485352587460548}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -229,8 +262,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6596021881325814312}
   - {fileID: 1389256550799590785}
@@ -241,6 +274,18 @@ Transform:
   - {fileID: 2579051138909961319}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8474485352587460548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1354620486190745828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c337a18093a8f24d922ba6fd892999a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1695696457331701395
 GameObject:
   m_ObjectHideFlags: 0
@@ -329,7 +374,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2034788136928177550}
-  - component: {fileID: 7812479410768360746}
+  - component: {fileID: 9071764285014470526}
   m_Layer: 7
   m_Name: Health
   m_TagString: Player
@@ -352,7 +397,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 932260380665832382}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7812479410768360746
+--- !u!114 &9071764285014470526
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -361,16 +406,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 2984592810734220386}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76cebba2f41f6124e8804455c72b3cd7, type: 3}
+  m_Script: {fileID: 11500000, guid: fd1a301ce59894246b40e2e4e1532066, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _parent: {fileID: 1354620486190745828}
   OnTakeDamage:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4355351075479850002}
+      - m_Target: {fileID: 9091214844209312108}
         m_TargetAssemblyTypeName: TakeDamageAnimationController, Assembly-CSharp
         m_MethodName: TriggerHurtAnimation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 6004201784454083774}
+        m_TargetAssemblyTypeName: Shockwave, Assembly-CSharp
+        m_MethodName: SendShockwave
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -384,6 +441,25 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   <Health>k__BackingField: 100
+  _immunityDuration: 2
+  OnImmunityGranted:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6302253613349006212}
+        m_TargetAssemblyTypeName: FlashAnimation, Assembly-CSharp
+        m_MethodName: Flash
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnImmunityEnd:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &3008977200384705168
 GameObject:
   m_ObjectHideFlags: 0
@@ -515,8 +591,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6675224873160403988}
-  - component: {fileID: 5560871501445495362}
+  - component: {fileID: 7454476559328382400}
   - component: {fileID: 428924298724892825}
+  - component: {fileID: 6004201784454083774}
   - component: {fileID: 6423048190998339948}
   m_Layer: 7
   m_Name: Attack
@@ -540,7 +617,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 932260380665832382}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5560871501445495362
+--- !u!114 &7454476559328382400
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -549,13 +626,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 5744413092235882709}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30f4ec25e57fce443b721400b0fb1b1b, type: 3}
+  m_Script: {fileID: 11500000, guid: b65cc1b4d1194ed42baca67e47a68c92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _attack: {fileID: 428924298724892825}
   _palyerInputSO: {fileID: 11400000, guid: 65ce6e570007244489fc49596258c513, type: 2}
   _movement: {fileID: 2213814842685308979}
-  _attackAnimationController: {fileID: 2927109885443794583}
+  _attackAnimationController: {fileID: 8377897308595987508}
 --- !u!114 &428924298724892825
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -568,17 +645,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce432193abee6f8449468ed74263581a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _reloadDuration: 0.25
+  _reloadDuration: 0.5
   _addsKnockback: 1
   _requiresAim: 0
   _aimDuration: 0
-  _attackAnimation: {fileID: 1844774124403437146, guid: 43fd00fcd43e05445bb7114d3b487538, type: 3}
+  OnReload:
+    m_PersistentCalls:
+      m_Calls: []
+  OnReadyForAttack:
+    m_PersistentCalls:
+      m_Calls: []
+  OnAim:
+    m_PersistentCalls:
+      m_Calls: []
+  OnAttack:
+    m_PersistentCalls:
+      m_Calls: []
+  OnFinishAttack:
+    m_PersistentCalls:
+      m_Calls: []
+  _attackAnimation: {fileID: 1523887455126584251, guid: 43fd00fcd43e05445bb7114d3b487538, type: 3}
   _enemyLayerMask:
     serializedVersion: 2
     m_Bits: 64
   _spriteRenderer: {fileID: 8308423075698151257}
   _attackDistance: 2
   _attackDamage: 50
+--- !u!114 &6004201784454083774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5744413092235882709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 550d3f41252f52f4cbe0ae2f5b4a145c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _attacker: {fileID: 932260380665832382}
+  _enemyLayerMask:
+    serializedVersion: 2
+    m_Bits: 64
+  _maxKnockbackRadius: 8
+  _knockbackStepDelay: 0.001
+  _knockbackStep: 0.1
+  _knockbackForce: 0.1
 --- !u!114 &6423048190998339948
 MonoBehaviour:
   m_ObjectHideFlags: 0

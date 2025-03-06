@@ -50,6 +50,9 @@ TagManager:
   - name: Entities
     uniqueID: 3530237551
     locked: 0
+  - name: Weapon
+    uniqueID: 3592964685
+    locked: 0
   - name: Player
     uniqueID: 3288413377
     locked: 0

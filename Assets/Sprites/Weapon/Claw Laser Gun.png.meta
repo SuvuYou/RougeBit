@@ -1,0 +1,325 @@
+fileFormatVersion: 2
+guid: 1ae4477ef805cdc49afa967905b9930a
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Laser Gun_Down
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 12
+        width: 14
+        height: 23
+      alignment: 9
+      pivot: {x: 0.49999985, y: 0.7355876}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9261043cb225e640a9c21e4a1ff5992
+      internalID: 1240881130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser Gun_Down_Right_60
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 12
+        width: 17
+        height: 22
+      alignment: 9
+      pivot: {x: 0.34901923, y: 0.72901225}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fff743d64f3d0f54bbd9d0d265ff47bf
+      internalID: -771208906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser Gun_Down_Right_45
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 14
+        width: 19
+        height: 19
+      alignment: 9
+      pivot: {x: 0.30300704, y: 0.71158457}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f67c5ab27b46f8043ba936fc9c8d5629
+      internalID: 1229474690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser Gun_Down_Right_30
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 16
+        width: 22
+        height: 16
+      alignment: 9
+      pivot: {x: 0.28457782, y: 0.6215199}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93ed3fd402ada3149b0025d8ad39bad5
+      internalID: 759784322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser Gun_Right
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 17
+        width: 24
+        height: 14
+      alignment: 9
+      pivot: {x: 0.29236856, y: 0.55273193}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 832b97249e325074b940efdd642500da
+      internalID: -1512698264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser Gun_Up_Right_30
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 16
+        width: 22
+        height: 16
+      alignment: 9
+      pivot: {x: 0.3077781, y: 0.41590285}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 337354e9a24ee8e4784a9fd8377b10d9
+      internalID: -1259423243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser Gun_Up_Right_45
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 14
+        width: 20
+        height: 20
+      alignment: 9
+      pivot: {x: 0.35306397, y: 0.34388113}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2c8ed72b1da92a4a9e7a68627d68609
+      internalID: 815752193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser Gun_Up_Right_60
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 13
+        width: 17
+        height: 21
+      alignment: 9
+      pivot: {x: 0.4027638, y: 0.35131565}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e47509974f72b0948ba6c47fa025102e
+      internalID: -407656912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser Gun_Up
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 13
+        width: 14
+        height: 21
+      alignment: 9
+      pivot: {x: 0.5, y: 0.30870828}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 331101c22398c424f8200011d8f5e537
+      internalID: -894011749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Laser Gun_Down: 1240881130
+      Laser Gun_Down_Right_30: 759784322
+      Laser Gun_Down_Right_45: 1229474690
+      Laser Gun_Down_Right_60: -771208906
+      Laser Gun_Right: -1512698264
+      Laser Gun_Up: -894011749
+      Laser Gun_Up_Right_30: -1259423243
+      Laser Gun_Up_Right_45: 815752193
+      Laser Gun_Up_Right_60: -407656912
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

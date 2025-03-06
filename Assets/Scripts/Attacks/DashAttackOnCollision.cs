@@ -3,14 +3,11 @@ using UnityEngine;
 
 class DashAttackOnCollision : BaseAttack
 {
-    [SerializeField] private LayerMask _enemyLayerMask;
-    [SerializeField] private float _attackDamage = 50f;
-    [SerializeField] private float _dashTriggerDistance = 5f;
-    [SerializeField] private float _dashDistance = 2f;
+    [Header("References")]
+    [SerializeField] private CharacterMovement _attackerMovement;
+    [Space(15)]
 
-    private BoxCollider2D _collider;
-    private CharacterMovement _attackerMovement;
-    private float _attackReachDistance;
+    [SerializeField] private DashAttackOnCollisionStatsSO _stats;
 
     private Vector3 _attackDirection;
     private Vector3 _attackerPosition;
@@ -18,29 +15,18 @@ class DashAttackOnCollision : BaseAttack
     private Vector3 _positionBeforeDash;
     private Vector3 _dashTargetPosition;
 
-    public override void Setup(GameObject attacker, GameObject target)
+    public override void Setup(GameObject attacker, Target target)
     {
         base.Setup(attacker, target);
 
-        if(attacker.transform.parent.TryGetComponentInChildren(out BoxCollider2D collider))
-        {
-            _attackReachDistance = collider.bounds.size.x;
-            _collider = collider;
-        }
-
-        if(attacker.transform.parent.TryGetComponentInChildren(out CharacterMovement movement))
-        {
-            _attackerMovement = movement;
-        }
-
-        OnAim += () => _attackerMovement.Dash(_positionBeforeDash, _dashTargetPosition, _aimTimer.Duration);
+        OnAim.AddListener((Vector3 targetPosition) => _attackerMovement.Dash(_positionBeforeDash, _dashTargetPosition, _aimTimer.Duration));
     }
 
     protected override void _handleIsReadyForAttack(Action performAttackOrAim) 
     {
         if (!_isTargetFound) return;
 
-        if (Vector3.Distance(_attacker.transform.position, _target.transform.position) > _dashTriggerDistance) return;
+        if (Vector3.Distance(_attacker.transform.position, _target.transform.position) > _stats.DashTriggerDistance) return;
 
         _updateAttackState();
         performAttackOrAim();
@@ -50,7 +36,7 @@ class DashAttackOnCollision : BaseAttack
     {
         _updateAttackState();
 
-        if (Vector3.Distance(_attacker.transform.position, _target.transform.position) > _attackReachDistance) 
+        if (Vector3.Distance(_attacker.transform.position, _target.transform.position) > _stats.AttackReachDistance) 
         {
             cancelReloadAttack();
 
@@ -70,12 +56,12 @@ class DashAttackOnCollision : BaseAttack
         _attackerPosition = _attacker.transform.position;
 
         _positionBeforeDash = _attackerPosition;
-        _dashTargetPosition = _positionBeforeDash + _attackDirection.normalized * _dashDistance;
+        _dashTargetPosition = _positionBeforeDash + _attackDirection.normalized * _stats.DashDistance;
     }
 
     private void _handleCollision()
     {    
-        var colliders = Physics2D.OverlapBox(_attackerPosition, new Vector2(_collider.bounds.size.x, _collider.bounds.size.y), 0, _enemyLayerMask);
+        var colliders = Physics2D.OverlapBox(_attackerPosition, new Vector2(_stats.CollisionRadius, _stats.CollisionRadius), 0, _baseStats.EnemyLayerMask);
 
         if (colliders != null)
         {
@@ -83,10 +69,10 @@ class DashAttackOnCollision : BaseAttack
 
             if (parent.TryGetComponentInChildren(out BaseDamagable damagable))
             {
-                damagable.TakeDamage(_attackDamage);
+                damagable.TakeDamage(_stats.AttackDamage);
             }
 
-            if (_addsKnockback && parent.TryGetComponentInChildren(out BaseKnockback knockable))
+            if (_baseStats.AddsKnockback && parent.TryGetComponentInChildren(out BaseKnockback knockable))
             {
                 knockable.AddKnockback(_attackDirection);
             }
