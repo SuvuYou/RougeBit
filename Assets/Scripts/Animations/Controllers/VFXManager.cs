@@ -52,5 +52,5 @@ public class VFXManager : MonoBehaviour
         }
     }
 
-    public void DestroyAnimation() => Destroy(_animation);
+    public void DestroyAnimation() => Destroy(_animation?.gameObject);
 }

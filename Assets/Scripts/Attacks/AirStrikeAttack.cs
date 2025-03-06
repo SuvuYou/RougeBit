@@ -9,13 +9,13 @@ class AirStrikeAttack : BaseAttack
 
     private Vector3 _cachedTargetPosition;
 
-    protected override Vector3 _targetPosition => _cachedTargetPosition;
+    protected override Vector3 _targetPosition => _cachedTargetPosition == Vector3.zero ? _target.transform.position : _cachedTargetPosition;
 
     public override void Setup(GameObject attacker, Target target)
     {
         base.Setup(attacker, target);
         
-        OnAim.AddListener((Vector3 targetPosition) => _cachedTargetPosition = targetPosition);
+        OnAim.AddListener((Vector3 _) => _cachedTargetPosition = _target.transform.position);
     }
 
     protected override void _handleIsReadyForAttack(Action performAttackOrAim) 

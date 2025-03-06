@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 
+[Serializable]
 [Flags]
 public enum MovementLock {
     None            = 0,
@@ -86,4 +87,10 @@ public class CharacterMovement : MonoBehaviour
     } 
 
     public void RemoveMovementLock(MovementLock lockType) => _activeMovementLocks &= ~lockType;
+
+    public void LockMovementByAttack() => AddMovementLock(MovementLock.Attack);
+    public void LockMovementByDead() => AddMovementLock(MovementLock.Dead);
+
+    public void UnlockMovementByAttack() => RemoveMovementLock(MovementLock.Attack);
+    public void UnlockMovementByDead() => RemoveMovementLock(MovementLock.Dead);
 }

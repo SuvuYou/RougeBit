@@ -52,6 +52,8 @@ class WaveManager : Singlton<WaveManager>
 
     public void StartNextWave()
     {
+        // if (Enemies.Count >= 1) return;
+
         _startWave(_generateNewWave(_waveNumber + 1));
     }
 

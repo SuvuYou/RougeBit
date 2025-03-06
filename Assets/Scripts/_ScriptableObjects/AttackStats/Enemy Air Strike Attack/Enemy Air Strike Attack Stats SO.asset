@@ -14,5 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TargetingAnimationPrefab: {fileID: 4746490053413211658, guid: 312149cf8a1373d4ba7397ad51bbc2ec, type: 3}
   ExplosionAnimationPrefab: {fileID: 5707951101454167097, guid: 509c45141af33f0408016d2fa9a8d29d, type: 3}
+  Damage: 50
+  ExplosionRadious: 2
   AttackDistance: 15
   TargetingDuration: 3

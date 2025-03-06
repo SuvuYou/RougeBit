@@ -1,9 +1,8 @@
-using UnityEditor.Rendering;
 using UnityEngine;
 
 class GameManager : Singlton<GameManager>
 {
-    private Timer _waveTimer = new (2f);
+    private Timer _waveTimer = new (1f);
 
     private void Start()
     {
