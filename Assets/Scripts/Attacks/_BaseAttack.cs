@@ -11,12 +11,14 @@ public class BaseAttack : MonoBehaviour
     [Header("Attack Events")]
     public UnityEvent OnReload;
     public UnityEvent OnReadyForAttack;
-    public UnityEvent OnAim;
-    public UnityEvent OnAttack;
+    public Vector3UnityEvent OnAim;
+    public Vector3UnityEvent OnAttack;
     public UnityEvent OnFinishAttack;
 
     protected GameObject _attacker;
     protected Target _target;
+
+    protected virtual Vector3 _targetPosition => _target.transform.position;
 
     protected bool _isTargetFound => _target != null;
 
@@ -80,8 +82,8 @@ public class BaseAttack : MonoBehaviour
 
         if (newState == AttackState.Reload) OnReload?.Invoke();
         if (newState == AttackState.ReadyForAttack) OnReadyForAttack?.Invoke();
-        if (newState == AttackState.Aiming) OnAim?.Invoke();
-        if (newState == AttackState.Attacking) OnAttack?.Invoke();
+        if (newState == AttackState.Aiming) OnAim?.Invoke(_targetPosition);
+        if (newState == AttackState.Attacking) OnAttack?.Invoke(_targetPosition);
 
         if (newState == AttackState.Aiming) _aimTimer?.Start();
         

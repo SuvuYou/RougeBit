@@ -19,7 +19,7 @@ class DashAttackOnCollision : BaseAttack
     {
         base.Setup(attacker, target);
 
-        OnAim.AddListener(() => _attackerMovement.Dash(_positionBeforeDash, _dashTargetPosition, _aimTimer.Duration));
+        OnAim.AddListener((Vector3 targetPosition) => _attackerMovement.Dash(_positionBeforeDash, _dashTargetPosition, _aimTimer.Duration));
     }
 
     protected override void _handleIsReadyForAttack(Action performAttackOrAim) 

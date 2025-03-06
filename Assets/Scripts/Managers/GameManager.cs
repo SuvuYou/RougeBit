@@ -3,7 +3,7 @@ using UnityEngine;
 
 class GameManager : Singlton<GameManager>
 {
-    private Timer _waveTimer = new (0.5f);
+    private Timer _waveTimer = new (2f);
 
     private void Start()
     {

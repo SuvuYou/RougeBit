@@ -14,8 +14,8 @@ class PlayerAttack : MonoBehaviour
         (var enemy, var isEnemyFound) = _getTarget();
         _attack.Setup(this.gameObject, enemy);
 
-        _attack.OnAttack.AddListener(() => StartCoroutine(_disableMovementForSeconds(0.05f)));
-        _attack.OnAttack.AddListener(() => _triggerAttackAnimation());
+        _attack.OnAttack.AddListener((Vector3 targetPosition) => StartCoroutine(_disableMovementForSeconds(0.05f)));
+        _attack.OnAttack.AddListener((Vector3 targetPosition) => _triggerAttackAnimation());
     }
 
     private void Update()

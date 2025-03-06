@@ -9,9 +9,9 @@ class ColorSpritesBasedOnAttackState : MonoBehaviour
 
     private void Start()
     {
-        _attack.OnAttack.AddListener(() => spriteRenderer.color = _colorByState[BaseAttack.AttackState.Attacking]);
+        _attack.OnAttack.AddListener((Vector3 targetPosition) => spriteRenderer.color = _colorByState[BaseAttack.AttackState.Attacking]);
         _attack.OnReload.AddListener(() => spriteRenderer.color = _colorByState[BaseAttack.AttackState.Reload]);
-        _attack.OnAim.AddListener(() => spriteRenderer.color = _colorByState[BaseAttack.AttackState.Aiming]);
+        _attack.OnAim.AddListener((Vector3 targetPosition) => spriteRenderer.color = _colorByState[BaseAttack.AttackState.Aiming]);
         _attack.OnReadyForAttack.AddListener(() => spriteRenderer.color = _colorByState[BaseAttack.AttackState.ReadyForAttack]);
     }
 }

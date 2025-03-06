@@ -25,7 +25,7 @@ class LaserBeamAttack : BaseAttack
         _attackTimer.SetBaseTime(_stats.BeamDuration);
         _collisionTimer.SetBaseTime(1f / _stats.BeamAttacksPerSecond);
 
-        OnAttack.AddListener(() => _attackerMovement.AddMovementLock(MovementLock.Attack));
+        OnAttack.AddListener((Vector3 targetPosition) => _attackerMovement.AddMovementLock(MovementLock.Attack));
     }
 
     protected override void _handleIsReadyForAttack(Action performAttackOrAim) 

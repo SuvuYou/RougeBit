@@ -69,9 +69,9 @@
     <Compile Include="Assets\Scripts\SpriteEffects\SnapToRotationByDirection.cs" />
     <Compile Include="Assets\Scripts\Movement\CharacterMovement.cs" />
     <Compile Include="Assets\Scripts\Animations\TakeDamageAnimationController.cs" />
-    <Compile Include="Assets\Scripts\Animations\Controllers\BaseAnimationController.cs" />
     <Compile Include="Assets\Scripts\Attacks\SlashAttack.cs" />
     <Compile Include="Assets\Scripts\Movement\EntityMovementStats.cs" />
+    <Compile Include="Assets\Scripts\Attacks\AirStrikeAttack.cs" />
     <Compile Include="Assets\Scripts\Attacks\RangedAttack.cs" />
     <Compile Include="Assets\Scripts\Attacks\DashAttackOnCollision.cs" />
     <Compile Include="Assets\Scripts\Managers\WaveManager.cs" />
@@ -91,23 +91,29 @@
     <Compile Include="Assets\Scripts\DamageControl\Target.cs" />
     <Compile Include="Assets\Scripts\Animations\AttackAnimation.cs" />
     <Compile Include="Assets\Scripts\Economy\CollectableItemSO.cs" />
+    <Compile Include="Assets\Scripts\Attacks\_ScriptableObjects\AirStrikeAttackStatsSO.cs" />
     <Compile Include="Assets\Scripts\EntitiesController\EntityStats.cs" />
+    <Compile Include="Assets\Scripts\Helpers\UnityEvents.cs" />
     <Compile Include="Assets\Scripts\EntitiesController\Enemy.cs" />
     <Compile Include="Assets\Scripts\Animations\Controllers\SimpleEntityAnimationController.cs" />
     <Compile Include="Assets\Scripts\Helpers\Extentions.cs" />
     <Compile Include="Assets\Scripts\Animations\EntityMovementAnimatorController.cs" />
+    <Compile Include="Assets\Scripts\Animations\Controllers\_BaseAnimationController.cs" />
     <Compile Include="Assets\Scripts\Economy\ItemCollector.cs" />
     <Compile Include="Assets\Scripts\DamageControl\DamagableWithImmunity.cs" />
     <Compile Include="Assets\Scripts\Input\PalyerInputSO.cs" />
     <Compile Include="Assets\Scripts\Helpers\Timer.cs" />
+    <Compile Include="Assets\Scripts\Animations\Controllers\VFXManager.cs" />
     <Compile Include="Assets\Scripts\Attacks\KnockBack\Shockwave.cs" />
     <Compile Include="Assets\Scripts\Attacks\KnockBack\BaseKnockback.cs" />
+    <Compile Include="Assets\Scripts\Animations\Controllers\_IVFXAnimationTrigger.cs" />
     <Compile Include="Assets\Scripts\Attacks\_ScriptableObjects\_BaseAttackStatsSO.cs" />
     <Compile Include="Assets\SerializableDictionary\Example\SerializableDictionaryExample.cs" />
     <Compile Include="Assets\Scripts\Economy\ItemDropper.cs" />
     <Compile Include="Assets\Scripts\Helpers\Singlton.cs" />
     <Compile Include="Assets\Scripts\Attacks\_ScriptableObjects\SlashAttackStatsSO.cs" />
     <Compile Include="Assets\Scripts\Attacks\_ScriptableObjects\LaserBeamAttackStatsSO.cs" />
+    <Compile Include="Assets\Scripts\Animations\Controllers\ExplosionEffectAnimationController.cs" />
     <Compile Include="Assets\Scripts\SpriteEffects\WeaponRotationSpritesetSO.cs" />
     <Compile Include="Assets\Scripts\Economy\CollectableItem.cs" />
     <Compile Include="Assets\Scripts\Attacks\Weapons\BaseWeaponVisual.cs" />
@@ -123,6 +129,7 @@
     <Compile Include="Assets\Scripts\DamageControl\BaseDamagable.cs" />
     <Compile Include="Assets\Scripts\Input\PalyerInput.cs" />
     <Compile Include="Assets\Scripts\Attacks\_ScriptableObjects\AttackOnCollisionStatsSO.cs" />
+    <Compile Include="Assets\Scripts\Animations\Controllers\TargetingEffectAnimationController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Packs\Dengeon Roguelike\license.txt" />
