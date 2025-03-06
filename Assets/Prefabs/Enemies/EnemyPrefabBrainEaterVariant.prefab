@@ -88,7 +88,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 94124998459592805}
         m_TargetAssemblyTypeName: CharacterMovement, Assembly-CSharp
-        m_MethodName: DisableMovement
+        m_MethodName: LockMovementByAttack
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -115,7 +115,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 94124998459592805}
         m_TargetAssemblyTypeName: CharacterMovement, Assembly-CSharp
-        m_MethodName: EnableMovement
+        m_MethodName: UnlockMovementByAttack
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -244,7 +244,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7696781996479433932, guid: c53e215881dc85046964129259c89939, type: 3}
       propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
-      value: DisableMovementPermanently
+      value: LockMovementByDead
       objectReference: {fileID: 0}
     - target: {fileID: 7696781996479433932, guid: c53e215881dc85046964129259c89939, type: 3}
       propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName

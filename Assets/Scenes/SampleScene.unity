@@ -3620,7 +3620,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 11.34375
+  orthographic size: 10.203125
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -3645,7 +3645,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.828127, y: -1.4375, z: -12.42}
+  m_LocalPosition: {x: -9.859371, y: -1.4375, z: -12.42}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3876,10 +3876,6 @@ MonoBehaviour:
   _upperSpawnBounds: {x: 8, y: 4}
   _enemiesWithSpawnWeights:
     m_keys:
-    - {fileID: 8488398856723413218, guid: 7db9571a3f73a1c4cb51c2ca3566a643, type: 3}
-    - {fileID: 6099018204556544869, guid: 10e1beb7085d44444b1aae11a009e694, type: 3}
-    - {fileID: 991788335296621021, guid: 14e30d5b321bbaf4b8cb01be1df4ff50, type: 3}
-    - {fileID: 7720119478463386275, guid: 866460311c91f5641b7ea65c945464c6, type: 3}
     - {fileID: 8795521627271913304, guid: 217658e50647b89438b1cd0168c11fba, type: 3}
     - {fileID: 8795521627271913304, guid: d66d3139f6af8484b80cc418e3b3aef9, type: 3}
     - {fileID: 8795521627271913304, guid: 9673f6091c08f2240a75ba25748b4a26, type: 3}
@@ -3889,17 +3885,13 @@ MonoBehaviour:
     - {fileID: 7189367331512252750, guid: 4903fd52864a408429258602a9198451, type: 3}
     - {fileID: 8795521627271913304, guid: c3338f38727314b42bd72980ec5172ee, type: 3}
     m_values:
-    - 0
-    - 0
-    - 0
-    - 0
-    - 0
-    - 0
-    - 0
-    - 0
-    - 0
-    - 0
-    - 0
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
     - 1
 --- !u!1 &547064754
 GameObject:
