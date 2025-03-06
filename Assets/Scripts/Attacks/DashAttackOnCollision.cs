@@ -32,6 +32,13 @@ class DashAttackOnCollision : BaseAttack
         performAttackOrAim();
     } 
 
+    protected override void _handleAim(Action cancelAim, Action earlyFinishAttack)
+    {
+        _updateAttackState();
+
+        if (_handleCollision()) earlyFinishAttack();
+    }
+
     protected override void _handleAttack(Action finishAttack, Action cancelAttack, Action cancelReloadAttack)
     {
         _updateAttackState();
@@ -59,23 +66,24 @@ class DashAttackOnCollision : BaseAttack
         _dashTargetPosition = _positionBeforeDash + _attackDirection.normalized * _stats.DashDistance;
     }
 
-    private void _handleCollision()
+    private bool _handleCollision()
     {    
         var colliders = Physics2D.OverlapBox(_attackerPosition, new Vector2(_stats.CollisionRadius, _stats.CollisionRadius), 0, _baseStats.EnemyLayerMask);
 
-        if (colliders != null)
+        if (colliders == null) return false;
+
+        Transform parent = colliders.gameObject.transform.parent;
+
+        if (parent.TryGetComponentInChildren(out BaseDamagable damagable))
         {
-            Transform parent = colliders.gameObject.transform.parent;
-
-            if (parent.TryGetComponentInChildren(out BaseDamagable damagable))
-            {
-                damagable.TakeDamage(_stats.AttackDamage);
-            }
-
-            if (_baseStats.AddsKnockback && parent.TryGetComponentInChildren(out BaseKnockback knockable))
-            {
-                knockable.AddKnockback(_attackDirection);
-            }
+            damagable.TakeDamage(_stats.AttackDamage);
         }
+
+        if (_baseStats.AddsKnockback && parent.TryGetComponentInChildren(out BaseKnockback knockable))
+        {
+            knockable.AddKnockback(_attackDirection);
+        }
+
+        return true;   
     }
 }

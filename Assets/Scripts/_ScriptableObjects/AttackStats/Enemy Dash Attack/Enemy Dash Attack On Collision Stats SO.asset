@@ -12,15 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da81b3cb60abde040b6382b55939fcab, type: 3}
   m_Name: Enemy Dash Attack On Collision Stats SO
   m_EditorClassIdentifier: 
-  EnemyLayerMask:
-    serializedVersion: 2
-    m_Bits: 128
-  ReloadDuration: 2
-  RequiresAim: 1
-  AimDuration: 0.2
-  AddsKnockback: 0
-  _attackDamage: 10
-  _dashTriggerDistance: 6
-  _dashDistance: 3
-  _attackReachDistance: 1.5
-  _collisionRadius: 2
+  AttackDamage: 10
+  DashTriggerDistance: 6
+  DashDistance: 4
+  AttackReachDistance: 0.5
+  CollisionRadius: 0.5

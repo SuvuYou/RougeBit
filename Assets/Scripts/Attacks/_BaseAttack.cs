@@ -60,7 +60,7 @@ public class BaseAttack : MonoBehaviour
                 _handleIsReadyForAttack(performAttackOrAim: _performAttackOrAim);
                 break;
             case AttackState.Aiming:
-                _handleAim(cancelAim: _cancelAttack);
+                _handleAim(cancelAim: _cancelAttack, earlyFinishAttack: _finishAttack);
             
                 _aimTimer.Update(Time.deltaTime);
                 
@@ -94,7 +94,7 @@ public class BaseAttack : MonoBehaviour
 
     protected virtual void _handleAttack(Action finishAttack, Action cancelAttack, Action cancelReloadAttack) {}
 
-    protected virtual void _handleAim(Action cancelAim) {}
+    protected virtual void _handleAim(Action cancelAim, Action earlyFinishAttack) {}
 
     private void _cancelAttack() => _switchAttackState(AttackState.ReadyForAttack);
     private void _cancelReloadAttack() => _switchAttackState(AttackState.Reload);

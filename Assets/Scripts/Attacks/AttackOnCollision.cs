@@ -37,7 +37,7 @@ class AttackOnCollision : BaseAttack
 
     private void _handleCollision()
     {    
-        var colliders = Physics2D.OverlapBox(_getSpawnPosition(), new Vector2(_stats.CollisionRadius, _stats.CollisionRadius), 0, _baseStats.EnemyLayerMask);
+        var colliders = Physics2D.OverlapBox(_getSpawnPosition(), new Vector2(_stats.CollisionRadius + 1f, _stats.CollisionRadius + 1f), 0, _baseStats.EnemyLayerMask);
 
         if (colliders != null)
         {

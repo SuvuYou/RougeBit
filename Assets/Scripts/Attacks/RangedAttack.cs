@@ -27,7 +27,7 @@ class RangedAttack : BaseAttack
         finishAttack();
     }
 
-    protected override void _handleAim(Action cancelAim) 
+    protected override void _handleAim(Action cancelAim, Action earlyFinishAttack)
     {
         if (_attackerMovement.Velocity.magnitude > _stats.MovementVelocityToCancelAttackThreshold) cancelAim();
 
