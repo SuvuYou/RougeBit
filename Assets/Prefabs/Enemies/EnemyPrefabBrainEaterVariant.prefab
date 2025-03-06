@@ -433,7 +433,7 @@ MonoBehaviour:
   _characterMovement: {fileID: 94124998459592805}
   _spriteRenderer: {fileID: 8304691247470457880}
   _baseDamagable: {fileID: 2752178183313657851}
-  _includeIdleAnimations: 0
+  _includeIdleAnimations: 1
 --- !u!4 &3501837145725688186 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8969133470949677645, guid: c53e215881dc85046964129259c89939, type: 3}
