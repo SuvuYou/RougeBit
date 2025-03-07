@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1037213667559662768}
   - component: {fileID: 7877319492599500217}
   - component: {fileID: 5778194186843608966}
-  - component: {fileID: 173239952212642452}
+  - component: {fileID: 9104435584736616129}
   m_Layer: 0
   m_Name: BulletProjectile
   m_TagString: Untagged
@@ -159,7 +159,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &173239952212642452
+--- !u!114 &9104435584736616129
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -168,9 +168,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2044180544916972905}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 896f0adac5113944faaa673f59d0cedd, type: 3}
+  m_Script: {fileID: 11500000, guid: 28184668ddfe1d145b8b52addc393a5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 10
-  _speed: 5
-  _lifeTime: 5
+  _playerVarientStats: {fileID: 11400000, guid: 9c1a37b8a6fedf34693c569724cdb3b1, type: 2}
+  _enemyVarientStats: {fileID: 11400000, guid: 9ee25f78d39e47348981d451ee2d616a, type: 2}
+  _currentVarient: 1

@@ -8,6 +8,17 @@ public static class TransformExtentions
 
         return component != null;
     }
+
+    public static bool TryGetComponentInChildrenOfParent<T>(this Transform transform, out T component) where T : Component
+    {
+        var parent = transform.parent;
+
+        if (parent == null) parent = transform;
+
+        component = parent.GetComponentInChildren<T>();
+
+        return component != null;
+    }
 }
 
 public static class VectorExtentions
@@ -20,6 +31,16 @@ public static class VectorExtentions
 
         return vector;
     }
+
+    public static Vector2 With(this Vector2 vector, float? x = null, float? y = null)
+    {
+        vector.x = x ?? vector.x;
+        vector.y = y ?? vector.y;
+
+        return vector;
+    }
+
+    public static Vector3 ToVector3WithZ(this Vector2 vector, float z) => new (vector.x, vector.y, z);
 } 
 
 public static class AnimatorExtentions

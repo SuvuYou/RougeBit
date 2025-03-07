@@ -24,7 +24,7 @@ public class BaseWeaponVisual : MonoBehaviour
     protected virtual void Update()
     {
         if (IsRotationEnabled && _currentTarget != null)
-        {
+        {       
             _weaponSpriteRotator.Rotate();
             _shootingSpriteRotator.Rotate();
         }

@@ -3011,6 +3011,38 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1254478220}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &411887770 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6537718211861794339, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
+  m_PrefabInstance: {fileID: 1476829491}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &411887773
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 411887770}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 0.0001
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &412915486
 GameObject:
   m_ObjectHideFlags: 0
@@ -3890,10 +3922,10 @@ MonoBehaviour:
     m_values:
     - 0
     - 0
-    - 0
-    - 0
-    - 0
     - 1
+    - 0
+    - 0
+    - 0
     - 0
     - 0
 --- !u!1 &547064754
@@ -8388,67 +8420,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1001 &1235428311
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1965389716515882799, guid: 251c5c06197ae1d43bedf439ac9fb7e8, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -4.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1965389716515882799, guid: 251c5c06197ae1d43bedf439ac9fb7e8, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -3.375
-      objectReference: {fileID: 0}
-    - target: {fileID: 1965389716515882799, guid: 251c5c06197ae1d43bedf439ac9fb7e8, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1965389716515882799, guid: 251c5c06197ae1d43bedf439ac9fb7e8, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1965389716515882799, guid: 251c5c06197ae1d43bedf439ac9fb7e8, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1965389716515882799, guid: 251c5c06197ae1d43bedf439ac9fb7e8, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1965389716515882799, guid: 251c5c06197ae1d43bedf439ac9fb7e8, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1965389716515882799, guid: 251c5c06197ae1d43bedf439ac9fb7e8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1965389716515882799, guid: 251c5c06197ae1d43bedf439ac9fb7e8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1965389716515882799, guid: 251c5c06197ae1d43bedf439ac9fb7e8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8649272319919860842, guid: 251c5c06197ae1d43bedf439ac9fb7e8, type: 3}
-      propertyPath: m_Name
-      value: WeaponShieldVariant
-      objectReference: {fileID: 0}
-    - target: {fileID: 8649272319919860842, guid: 251c5c06197ae1d43bedf439ac9fb7e8, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 251c5c06197ae1d43bedf439ac9fb7e8, type: 3}
 --- !u!1 &1254478219
 GameObject:
   m_ObjectHideFlags: 0
@@ -28476,6 +28447,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 513942097, guid: 9815f53664780a746b3b70b4fb87b189, type: 3}
+    - target: {fileID: 6702074626331706796, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6902085884689227041, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
       propertyPath: _targetAlphaValue
       value: 0.1
@@ -28573,13 +28548,25 @@ PrefabInstance:
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 9126853494114019803, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
+      propertyPath: smoothTime
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9126853494114019803, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
       propertyPath: _distanceFromCenter
       value: 1.5
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 9126853494114019803, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
+      propertyPath: _shieldRotationSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 6741776294495912119, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6537718211861794339, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 411887773}
   m_SourcePrefab: {fileID: 100100000, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
 --- !u!114 &1476829492 stripped
 MonoBehaviour:
@@ -35620,5 +35607,4 @@ SceneRoots:
   - {fileID: 205432977}
   - {fileID: 542802270}
   - {fileID: 1476829491}
-  - {fileID: 1235428311}
   - {fileID: 562759023}

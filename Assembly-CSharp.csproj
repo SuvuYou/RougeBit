@@ -85,7 +85,6 @@
     <Compile Include="Assets\Scripts\SpriteEffects\SwitchSpriteColor.cs" />
     <Compile Include="Assets\Scripts\Movement\EnemyFollowTargetMovement.cs" />
     <Compile Include="Assets\Scripts\Animations\AttackAnimationController.cs" />
-    <Compile Include="Assets\Scripts\Attacks\Projectiles\BaseProjectile.cs" />
     <Compile Include="Assets\Scripts\Attacks\LaserBeamAttack.cs" />
     <Compile Include="Assets\Scripts\Attacks\Managers\EnemyAttack.cs" />
     <Compile Include="Assets\Scripts\Animations\Controllers\ShootingEffectAnimationController.cs" />
@@ -93,6 +92,7 @@
     <Compile Include="Assets\Scripts\Managers\GameManager.cs" />
     <Compile Include="Assets\Scripts\DamageControl\Target.cs" />
     <Compile Include="Assets\Scripts\Animations\AttackAnimation.cs" />
+    <Compile Include="Assets\Scripts\Attacks\Projectiles\_BaseProjectileStatsSO.cs" />
     <Compile Include="Assets\Scripts\Economy\CollectableItemSO.cs" />
     <Compile Include="Assets\Scripts\Attacks\_ScriptableObjects\AirStrikeAttackStatsSO.cs" />
     <Compile Include="Assets\Scripts\EntitiesController\EntityStats.cs" />
@@ -105,6 +105,7 @@
     <Compile Include="Assets\Scripts\Economy\ItemCollector.cs" />
     <Compile Include="Assets\Scripts\DamageControl\DamagableWithImmunity.cs" />
     <Compile Include="Assets\Scripts\Input\PalyerInputSO.cs" />
+    <Compile Include="Assets\Scripts\Attacks\Projectiles\_BaseProjectile.cs" />
     <Compile Include="Assets\Scripts\Helpers\Timer.cs" />
     <Compile Include="Assets\Scripts\Animations\Controllers\VFXManager.cs" />
     <Compile Include="Assets\Scripts\Attacks\KnockBack\Shockwave.cs" />
