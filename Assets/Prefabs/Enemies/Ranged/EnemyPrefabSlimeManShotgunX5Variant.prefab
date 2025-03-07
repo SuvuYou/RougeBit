@@ -48,7 +48,7 @@ MonoBehaviour:
   _enemyComponent: {fileID: 8795521627271913304}
   _attack: {fileID: 2514519400024782096}
   _movement: {fileID: 1766639212795278963}
-  _weapon: {fileID: 6062519814360686345}
+  _weaponRotation: {fileID: 4899750867594115454}
 --- !u!114 &2514519400024782096
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -436,6 +436,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2977791374451310444}
     m_Modifications:
+    - target: {fileID: 2134370542474834749, guid: 267704ef5705f5d4cac02dc60ebe0997, type: 3}
+      propertyPath: _centerTransform
+      value: 
+      objectReference: {fileID: 5109751432227162159}
+    - target: {fileID: 2521527303830574203, guid: 267704ef5705f5d4cac02dc60ebe0997, type: 3}
+      propertyPath: _centerTransform
+      value: 
+      objectReference: {fileID: 2977791374451310444}
     - target: {fileID: 4094874383664824571, guid: 267704ef5705f5d4cac02dc60ebe0997, type: 3}
       propertyPath: m_Name
       value: WeaponLaserVariant
@@ -517,15 +525,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5863fbb5ae0983f48a1546cfffb1ee55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &6062519814360686345 stripped
+--- !u!114 &4899750867594115454 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 739648487953700170, guid: 267704ef5705f5d4cac02dc60ebe0997, type: 3}
+  m_CorrespondingSourceObject: {fileID: 2134370542474834749, guid: 267704ef5705f5d4cac02dc60ebe0997, type: 3}
   m_PrefabInstance: {fileID: 6800901385675000387}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7400062115323480760}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e97bfbb9dca4b64aa1e741c527c42f7, type: 3}
+  m_Script: {fileID: 11500000, guid: 2e06cb5cbce6b0f4295230e92ca8e1a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7400062115323480760 stripped

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class RotateSpritesetByDirection : MonoBehaviour
+public class RotateSpritesetByDirection : RotationStrategyBase
 {
     [Header("References")]
     [SerializeField] private SpriteRenderer _spriteRenderer;
@@ -18,7 +18,7 @@ public class RotateSpritesetByDirection : MonoBehaviour
 
     private DirectionSprite[] _directionSprites;
 
-    public void SetTarget(Vector3 target) => _targetPosition = target;
+    public override void SetTargetPosition(Vector3 target) => _targetPosition = target;
 
     private void Awake()
     {
@@ -36,7 +36,7 @@ public class RotateSpritesetByDirection : MonoBehaviour
         };
     }
 
-    public void Rotate() => _rotateToDirection(_targetPosition - transform.position);
+    public override void Rotate() => _rotateToDirection(_targetPosition - transform.position);
 
     private void _rotateToDirection(Vector3 direction)
     {

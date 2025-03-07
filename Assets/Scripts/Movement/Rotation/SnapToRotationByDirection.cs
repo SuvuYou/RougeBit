@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class SnapToRotationByDirection : MonoBehaviour
+public class SnapToRotationByDirection : RotationStrategyBase
 {
     [Header("References")]
     [SerializeField] private Transform _pivotPoint;
@@ -15,7 +15,7 @@ public class SnapToRotationByDirection : MonoBehaviour
 
     private DirectionRotation[] _directionRotations;
 
-    public void SetTarget(Vector3 target) => _targetPosition = target;
+    public override void SetTargetPosition(Vector3 target) => _targetPosition = target;
 
     private void Awake()
     {
@@ -42,7 +42,7 @@ public class SnapToRotationByDirection : MonoBehaviour
         };
     }
 
-    public void Rotate() => _rotateToDirection(_targetPosition - transform.position);
+    public override void Rotate() => _rotateToDirection(_targetPosition - transform.position);
 
     private void _rotateToDirection(Vector3 direction)
     {

@@ -8,7 +8,7 @@ class EnemyAttack : MonoBehaviour
     [SerializeField] private BaseAttack _attack;
     [SerializeField] private CharacterMovement _movement;
 
-    [SerializeField] private BaseWeaponVisual _weapon;
+    [SerializeField] private FollowTargetRotationController _weaponRotation;
 
     private void Start()
     {
@@ -16,7 +16,7 @@ class EnemyAttack : MonoBehaviour
 
         _attack.OnAttack.AddListener((Vector3 targetPosition) => StartCoroutine(_disableMovementForSeconds(0.5f)));
     
-        if (_weapon != null) _weapon.SetTarget(_enemyComponent.Target.transform.position);
+        if (_weaponRotation != null) _weaponRotation.SetTarget(_enemyComponent.Target);
     }
 
     private void OnDestroy()

@@ -88,8 +88,61 @@ PrefabInstance:
       propertyPath: m_Name
       value: WeaponWingsLaserVariant
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7956819823656736135, guid: d32945e6fda138c41bc4b69f123568a1, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6700342045166944310, guid: d32945e6fda138c41bc4b69f123568a1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7129764150590768758}
   m_SourcePrefab: {fileID: 100100000, guid: d32945e6fda138c41bc4b69f123568a1, type: 3}
+--- !u!1 &2001551918115659325 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6700342045166944310, guid: d32945e6fda138c41bc4b69f123568a1, type: 3}
+  m_PrefabInstance: {fileID: 5132578872365374987}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7129764150590768758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2001551918115659325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12abc18292362c64680678467b3c0447, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rotationStrategies:
+  - {fileID: 6378174146655766411}
+  - {fileID: 7903021542367354823}
+  _centerTransform: {fileID: 0}
+  _shouldClampOutsideCircle: 0
+  _distanceFromCenter: 0
+  _useSmoothRotation: 0
+  _smoothTime: 0
+  _shouldEnableIdleCircularMotion: 0
+  _idleCircularMotionSpeed: 0
+--- !u!114 &6378174146655766411 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2285936203351726464, guid: d32945e6fda138c41bc4b69f123568a1, type: 3}
+  m_PrefabInstance: {fileID: 5132578872365374987}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dada51f3c6bf4b48b4ba957477c0489, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7903021542367354823 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3069125574381502924, guid: d32945e6fda138c41bc4b69f123568a1, type: 3}
+  m_PrefabInstance: {fileID: 5132578872365374987}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d07692ea2ae8f14a8ecbdd25c72adfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

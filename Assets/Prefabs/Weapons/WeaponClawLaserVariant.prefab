@@ -50,10 +50,63 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6700342045166944310, guid: d32945e6fda138c41bc4b69f123568a1, type: 3}
       propertyPath: m_Name
-      value: WeaponLaserVariant
+      value: WeaponClawLaserVariant
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7956819823656736135, guid: d32945e6fda138c41bc4b69f123568a1, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6700342045166944310, guid: d32945e6fda138c41bc4b69f123568a1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2134370542474834749}
   m_SourcePrefab: {fileID: 100100000, guid: d32945e6fda138c41bc4b69f123568a1, type: 3}
+--- !u!1 &4094874383664824571 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6700342045166944310, guid: d32945e6fda138c41bc4b69f123568a1, type: 3}
+  m_PrefabInstance: {fileID: 7219146067348685005}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2134370542474834749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4094874383664824571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e06cb5cbce6b0f4295230e92ca8e1a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rotationStrategies:
+  - {fileID: 5672343566243430657}
+  - {fileID: 8905527160815884621}
+  _centerTransform: {fileID: 0}
+  _shouldClampOutsideCircle: 1
+  _distanceFromCenter: 0
+  _useSmoothRotation: 1
+  _smoothTime: 0.5
+  _shouldEnableIdleCircularMotion: 0
+  _idleCircularMotionSpeed: 1
+--- !u!114 &5672343566243430657 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3069125574381502924, guid: d32945e6fda138c41bc4b69f123568a1, type: 3}
+  m_PrefabInstance: {fileID: 7219146067348685005}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d07692ea2ae8f14a8ecbdd25c72adfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8905527160815884621 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2285936203351726464, guid: d32945e6fda138c41bc4b69f123568a1, type: 3}
+  m_PrefabInstance: {fileID: 7219146067348685005}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dada51f3c6bf4b48b4ba957477c0489, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
