@@ -1,8 +1,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RotationController : MonoBehaviour
+public class RotationController : Upgradable<MonoBehaviour>
 {
+    public override void UpgradeValues(BaseUpgradeValuesSetSO upgradeValuesSet) => _smoothTime = upgradeValuesSet.RotationControllerUpgradeValues.SmoothTime;
+
     [Header("References")]
     [SerializeField] private List<RotationStrategyBase> _rotationStrategies;
     [SerializeField] private Transform _centerTransform;

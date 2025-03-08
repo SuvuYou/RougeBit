@@ -66,7 +66,9 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Animations\Controllers\BaseEntityAnimationController.cs" />
     <Compile Include="Assets\Scripts\Attacks\_ScriptableObjects\RangedAttackStatsSO.cs" />
+    <Compile Include="Assets\Scripts\Upgrades\_BaseUpgradeValuesSetSO.cs" />
     <Compile Include="Assets\Scripts\Managers\ProjectileManager.cs" />
+    <Compile Include="Assets\Scripts\Upgrades\RotationControllerUpgradeValuesSO.cs" />
     <Compile Include="Assets\Scripts\Movement\CharacterMovement.cs" />
     <Compile Include="Assets\Scripts\Animations\TakeDamageAnimationController.cs" />
     <Compile Include="Assets\Scripts\Attacks\SlashAttack.cs" />
@@ -74,7 +76,6 @@
     <Compile Include="Assets\Scripts\Movement\EntityMovementStats.cs" />
     <Compile Include="Assets\Scripts\Attacks\AirStrikeAttack.cs" />
     <Compile Include="Assets\Scripts\Attacks\RangedAttack.cs" />
-    <Compile Include="Assets\Scripts\Attacks\Weapons\ShieldWeaponVisual.cs" />
     <Compile Include="Assets\Scripts\Attacks\DashAttackOnCollision.cs" />
     <Compile Include="Assets\Scripts\Managers\WaveManager.cs" />
     <Compile Include="Assets\Scripts\Managers\TimeManager.cs" />
@@ -96,6 +97,7 @@
     <Compile Include="Assets\Scripts\Economy\CollectableItemSO.cs" />
     <Compile Include="Assets\Scripts\Attacks\_ScriptableObjects\AirStrikeAttackStatsSO.cs" />
     <Compile Include="Assets\Scripts\EntitiesController\EntityStats.cs" />
+    <Compile Include="Assets\Scripts\Attacks\Weapons\ShieldWeapon.cs" />
     <Compile Include="Assets\Scripts\Helpers\UnityEvents.cs" />
     <Compile Include="Assets\Scripts\EntitiesController\Enemy.cs" />
     <Compile Include="Assets\Scripts\Animations\Controllers\SimpleEntityAnimationController.cs" />
@@ -110,6 +112,7 @@
     <Compile Include="Assets\Scripts\Attacks\Projectiles\_BaseProjectile.cs" />
     <Compile Include="Assets\Scripts\Helpers\Timer.cs" />
     <Compile Include="Assets\Scripts\Animations\Controllers\VFXManager.cs" />
+    <Compile Include="Assets\Scripts\Upgrades\UpgradeManager.cs" />
     <Compile Include="Assets\Scripts\Attacks\KnockBack\Shockwave.cs" />
     <Compile Include="Assets\Scripts\Attacks\KnockBack\BaseKnockback.cs" />
     <Compile Include="Assets\Scripts\Animations\Controllers\_IVFXAnimationTrigger.cs" />
@@ -128,6 +131,7 @@
     <Compile Include="Assets\Scripts\SpriteEffects\FlashAnimation.cs" />
     <Compile Include="Assets\Scripts\Attacks\_BaseAttack.cs" />
     <Compile Include="Assets\Scripts\Attacks\Managers\PlayerAttack.cs" />
+    <Compile Include="Assets\Scripts\Upgrades\_IUpgradable.cs" />
     <Compile Include="Assets\SerializableDictionary\SerializableDictionary.cs" />
     <Compile Include="Assets\Scripts\Movement\Rotation\RotateSpritesetByDirection.cs" />
     <Compile Include="Assets\Scripts\Movement\Rotation\SnapToRotationByDirection.cs" />
@@ -140,8 +144,29 @@
     <Compile Include="Assets\Scripts\Animations\Controllers\TargetingEffectAnimationController.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\Packs\Dengeon Roguelike\license.txt" />
     <None Include="Assets\Packs\Roguelike Shoot ’em up\license.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
+    <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
+    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

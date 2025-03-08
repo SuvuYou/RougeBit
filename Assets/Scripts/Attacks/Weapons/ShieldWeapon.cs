@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ShieldWeaponVisual : MonoBehaviour
+public class ShieldWeapon : MonoBehaviour
 {
     [SerializeField] RotationController _rotationController;
 
