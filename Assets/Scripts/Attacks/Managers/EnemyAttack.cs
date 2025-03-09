@@ -12,7 +12,8 @@ class EnemyAttack : MonoBehaviour
 
     private void Start()
     {
-        _attack.Setup(this.gameObject, _enemyComponent.Target);
+        _attack.Setup(this.gameObject);
+        _attack.SetTarget(_enemyComponent.Target);
 
         _attack.OnAttack.AddListener((Vector3 targetPosition) => StartCoroutine(_disableMovementForSeconds(0.5f)));
     

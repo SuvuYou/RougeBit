@@ -69,6 +69,7 @@
     <Compile Include="Assets\Scripts\Upgrades\_BaseUpgradeValuesSetSO.cs" />
     <Compile Include="Assets\Scripts\Managers\ProjectileManager.cs" />
     <Compile Include="Assets\Scripts\Upgrades\RotationControllerUpgradeValuesSO.cs" />
+    <Compile Include="Assets\Scripts\Attacks\Weapons\SlashWeapon.cs" />
     <Compile Include="Assets\Scripts\Movement\CharacterMovement.cs" />
     <Compile Include="Assets\Scripts\Animations\TakeDamageAnimationController.cs" />
     <Compile Include="Assets\Scripts\Attacks\SlashAttack.cs" />
@@ -128,6 +129,7 @@
     <Compile Include="Assets\Scripts\Economy\CollectableItem.cs" />
     <Compile Include="Assets\SerializableDictionary\Example\UserSerializableDictionaries.cs" />
     <Compile Include="Assets\Scripts\Attacks\_ScriptableObjects\DashAttackOnCollisionStatsSO.cs" />
+    <Compile Include="Assets\Scripts\Attacks\Weapons\_BaseWeapon.cs" />
     <Compile Include="Assets\Scripts\SpriteEffects\FlashAnimation.cs" />
     <Compile Include="Assets\Scripts\Attacks\_BaseAttack.cs" />
     <Compile Include="Assets\Scripts\Attacks\Managers\PlayerAttack.cs" />

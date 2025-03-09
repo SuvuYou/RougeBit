@@ -15,9 +15,9 @@ class DashAttackOnCollision : BaseAttack
     private Vector3 _positionBeforeDash;
     private Vector3 _dashTargetPosition;
 
-    public override void Setup(GameObject attacker, Target target)
+    public override void Setup(GameObject attacker)
     {
-        base.Setup(attacker, target);
+        base.Setup(attacker);
 
         OnAim.AddListener((Vector3 targetPosition) => _attackerMovement.Dash(_positionBeforeDash, _dashTargetPosition, _aimTimer.Duration));
     }

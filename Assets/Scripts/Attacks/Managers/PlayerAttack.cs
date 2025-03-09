@@ -3,7 +3,7 @@ using UnityEngine;
 
 class PlayerAttack : MonoBehaviour
 {
-    [SerializeField] private BaseAttack _attack;
+    [SerializeField] private BaseWeapon[] _weapons;
     [SerializeField] private PalyerInputSO _palyerInputSO;
     [SerializeField] private CharacterMovement _movement;
 
@@ -11,23 +11,52 @@ class PlayerAttack : MonoBehaviour
 
     private void Start()
     {
-        (var enemy, var isEnemyFound) = _getTarget();
-        _attack.Setup(this.gameObject, enemy);
-
-        _attack.OnAttack.AddListener((Vector3 targetPosition) => StartCoroutine(_disableMovementForSeconds(0.05f)));
-        _attack.OnAttack.AddListener((Vector3 targetPosition) => _triggerAttackAnimation());
+        _setupAttacks();
     }
 
     private void Update()
     {
-        (var enemy, var _) = _getTarget();
-        _attack.SetTarget(enemy);
+        _setAttacksTarget();
     }
 
-    private void OnDestroy()
+    private void _setupAttacks()
     {
-        Destroy(_attack.gameObject);
+        foreach (var attack in _weapons) 
+        {
+            attack.Setup(this.gameObject);
+        }
+
+        _setAttacksTarget();
     }
+
+    private void _setAttacksTarget()
+    {
+        (var enemy, var isEnemyFound) = _getEnemyTarget();
+        (var projectile, var isProjectileFound) = _getProjectileTarget();
+        
+        foreach (var weapon in _weapons)
+        {
+            if (weapon.WeaponTargetType == BaseWeapon.TargetType.Projectile) weapon.SetTarget(projectile, isProjectileFound);
+            else weapon.SetTarget(enemy, isEnemyFound);
+        }
+    }
+
+    private (Target, bool) _getEnemyTarget()
+    {
+        bool isTargetFound = WaveManager.Instance.TryGetClosestEnemy(transform.position, out Enemy enemy);
+
+        return (enemy, isTargetFound);
+    }
+
+    private (Target, bool) _getProjectileTarget()
+    {
+        bool isTargetFound = ProjectileManager.Instance.TryGetClosestProjectile(transform.position, out BaseProjectile closestProjectile);
+
+        return (closestProjectile?.TargetComponent, isTargetFound);
+    }
+
+    public void DisableMovementOnAttack() => StartCoroutine(_disableMovementForSeconds(0.1f));
+    public void TriggerAttackAnimation() => _triggerAttackAnimation();
 
     private IEnumerator _disableMovementForSeconds(float seconds)
     {
@@ -38,17 +67,11 @@ class PlayerAttack : MonoBehaviour
 
     private void _triggerAttackAnimation()
     {
-        var (target, isTargetFound) = _getTarget();
+        var (target, isTargetFound) = _getEnemyTarget();
 
         if (!isTargetFound) return;
 
         _attackAnimationController.TriggerAttackAnimation((target.transform.position - transform.position).normalized);
     }
 
-    private (Target, bool) _getTarget()
-    {
-        bool isTargetFound = WaveManager.Instance.TryGetClosestEnemy(transform.position, out Enemy enemy);
-
-        return (enemy, isTargetFound);
-    }
 }

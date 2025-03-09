@@ -27,18 +27,19 @@ public class BaseAttack : MonoBehaviour
 
     protected AttackState _attackState = AttackState.Reload;
 
+    public bool IsAttacking => _attackState == AttackState.Attacking;
+
     public void ActivateAttack() { _reloadTimer.Start(); _reloadTimer.Reset(); }
     public void DeactivateAttack() { _reloadTimer.Stop(); _aimTimer.Stop(); }
 
     public void SetTarget(Target target) => _target = target;
 
-    public virtual void Setup(GameObject attacker, Target target)
+    public virtual void Setup(GameObject attacker)
     {
         _reloadTimer = new Timer(_baseStats.ReloadDuration);
         _aimTimer = new Timer(_baseStats.AimDuration);
 
         _attacker = attacker;
-        _target = target;
 
         ActivateAttack();
     }

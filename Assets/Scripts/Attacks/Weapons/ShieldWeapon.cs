@@ -1,20 +1,15 @@
 using UnityEngine;
 
-public class ShieldWeapon : MonoBehaviour
+public class ShieldWeapon : BaseWeapon
 {
     [SerializeField] RotationController _rotationController;
 
-    protected void Update()
+    public override void SetTarget(Target targetPosition, bool isTargetFound = false)
     {
-        _scanForProjectiles();
-    } 
-
-    private void _scanForProjectiles()
-    {
-        if (ProjectileManager.Instance.TryGetClosestProjectile(transform.position, out BaseProjectile closestProjectile))
+        if (isTargetFound)
         {
             _rotationController.DisableIdleRotation();
-            _rotationController.SetNewTarget(closestProjectile.transform.position);
+            _rotationController.SetNewTarget(targetPosition.transform.position);
         }
         else
         {

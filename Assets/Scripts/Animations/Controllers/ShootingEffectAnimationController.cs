@@ -9,7 +9,9 @@ class ShootingEffectAnimationController : BaseAnimationController
         SmallBullet,
         LaserBeam,
         LaserBeam2,
-        LaserBeamContinuous
+        LaserBeamContinuous,
+        Slash1,
+        Slash2
     }
 
     private static readonly int IDLE_HASH = Animator.StringToHash("Idle");
@@ -20,7 +22,9 @@ class ShootingEffectAnimationController : BaseAnimationController
         { ShootingEffectType.SmallBullet, Animator.StringToHash("Small Bullet Shot") },
         { ShootingEffectType.LaserBeam, Animator.StringToHash("Laser Beam") },
         { ShootingEffectType.LaserBeam2, Animator.StringToHash("Laser Beam 2") },
-        { ShootingEffectType.LaserBeamContinuous, Animator.StringToHash("Laser Beam Continuous") }
+        { ShootingEffectType.LaserBeamContinuous, Animator.StringToHash("Laser Beam Continuous") },
+        { ShootingEffectType.Slash1, Animator.StringToHash("Slash 1") },
+        { ShootingEffectType.Slash2, Animator.StringToHash("Slash 2") }
     };
 
     private static readonly Dictionary<ShootingEffectType, string> ShootingEffectClipNames = new()
@@ -29,7 +33,9 @@ class ShootingEffectAnimationController : BaseAnimationController
         { ShootingEffectType.SmallBullet, "Small Bullet Shot" },
         { ShootingEffectType.LaserBeam, "Laser Beam" },
         { ShootingEffectType.LaserBeam2, "Laser Beam 2" },
-        { ShootingEffectType.LaserBeamContinuous, "Laser Beam Continuous" }
+        { ShootingEffectType.LaserBeamContinuous, "Laser Beam Continuous" },
+        { ShootingEffectType.Slash1, "Slash 1" },
+        { ShootingEffectType.Slash2, "Slash 2" },
     };
 
     [Space(20)]

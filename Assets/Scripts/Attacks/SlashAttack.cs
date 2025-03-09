@@ -1,10 +1,8 @@
 using System;
-using System.Linq;
 using UnityEngine;
 
 class SlashAttack : BaseAttack
 {
-    [SerializeField] private AttackAnimation _attackAnimation;
     [SerializeField] private SlashAttackStatsSO _stats;
 
     private Vector3 _attackDirection;
@@ -24,7 +22,6 @@ class SlashAttack : BaseAttack
     protected override void _handleAttack(Action finishAttack, Action cancelAttack, Action cancelReloadAttack)
     {
         _updateAttackState();
-        _spawnAttackAnimation();
         _handleCollision(); 
 
         finishAttack();
@@ -38,15 +35,9 @@ class SlashAttack : BaseAttack
         _attackerPosition = _attacker.transform.position;
     }
 
-    private void _spawnAttackAnimation() 
-    {
-        var attackAnimation = Instantiate(_attackAnimation, _getSpawnPosition(), Quaternion.identity);
-        attackAnimation.AttackIntoDirection(_attackDirection);
-    }
-
     private void _handleCollision()
     {    
-        var angle = _attackAnimation.transform.rotation.z;
+        var angle = Vector3.Angle(Vector3.left, _attackDirection);
         var colliders = Physics2D.OverlapBoxAll(_getSpawnPosition(), new Vector2(_stats.AttackDistance + 1f, _stats.AttackDistance + 1f), angle, _baseStats.EnemyLayerMask);
 
         foreach (var collider in colliders)
@@ -78,7 +69,7 @@ class SlashAttack : BaseAttack
         if (!_isTargetFound) return;
 
         Gizmos.color = new Color(1, 0, 0, 0.5f); // Semi-transparent red
-        Matrix4x4 rotationMatrix = Matrix4x4.TRS(_getSpawnPosition(), Quaternion.Euler(0, 0, _attackAnimation.transform.rotation.eulerAngles.z), Vector3.one);
+        Matrix4x4 rotationMatrix = Matrix4x4.TRS(_getSpawnPosition(), Quaternion.Euler(0, 0, Vector3.Angle(Vector3.left, _attackDirection)), Vector3.one);
         Gizmos.matrix = rotationMatrix;
 
         Vector2 size = new Vector2(_stats.AttackDistance + 0.5f, _stats.AttackDistance + 0.5f);

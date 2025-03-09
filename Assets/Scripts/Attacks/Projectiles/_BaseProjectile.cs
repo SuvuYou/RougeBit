@@ -4,6 +4,8 @@ public class BaseProjectile : MonoBehaviour
 {
     private enum Varients { Player, Enemy };
 
+    [field: SerializeField] public Target TargetComponent { get; private set; }
+
     [SerializeField] private _BaseProjectileStatsSO _playerVarientStats;
     [SerializeField] private _BaseProjectileStatsSO _enemyVarientStats;
 
