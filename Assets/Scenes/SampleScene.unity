@@ -3668,7 +3668,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 11.5
+  orthographic size: 12
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -3693,7 +3693,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.5624986, y: -1.4375, z: -12.42}
+  m_LocalPosition: {x: -6.671859, y: -1.4375, z: -12.42}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3935,12 +3935,12 @@ MonoBehaviour:
     m_values:
     - 0
     - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
     - 1
-    - 0
-    - 0
-    - 0
-    - 0
-    - 0
 --- !u!1 &547064754
 GameObject:
   m_ObjectHideFlags: 0
@@ -4242,7 +4242,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &619394801
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7852,7 +7852,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1142161004
 Transform:
   m_ObjectHideFlags: 0
@@ -28500,6 +28500,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6423048190998339948, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6448197120450705059, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
       propertyPath: _smoothTime
       value: 0.1
@@ -28518,15 +28522,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8308423075698151257, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
       propertyPath: m_Color.b
-      value: 0.768446
+      value: 0.8867924
       objectReference: {fileID: 0}
     - target: {fileID: 8308423075698151257, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
       propertyPath: m_Color.g
-      value: 0.3563546
+      value: 0.6065326
       objectReference: {fileID: 0}
     - target: {fileID: 8308423075698151257, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
       propertyPath: m_Color.r
-      value: 0.8301887
+      value: 0.7761229
       objectReference: {fileID: 0}
     - target: {fileID: 8308423075698151257, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
       propertyPath: m_Enabled

@@ -3,11 +3,12 @@ using UnityEngine;
 
 class AttackAnimation : MonoBehaviour
 {
+    [SerializeField] private Animator _animator;
     [SerializeField] private SpriteRenderer _spriteRenderer;
 
     private void Awake()
     {
-        StartCoroutine(_destroyAfterSeconds(0.25f));
+        StartCoroutine(_destroyAfterSeconds(_animator.GetClipLength("slash2")));
     }
 
     public void AttackIntoDirection(Vector3 attackDirection)

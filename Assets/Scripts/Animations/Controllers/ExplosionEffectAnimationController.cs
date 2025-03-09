@@ -7,7 +7,9 @@ public class ExplosionEffectAnimationController : BaseAnimationController, IVFXA
     {
         Boom,
         BigBoom,
-        BiggerBoom
+        BiggerBoom,
+        PurpleBoom1,
+        PurpleBoom2
     }
 
     private static readonly int IDLE_HASH = Animator.StringToHash("Idle");
@@ -17,6 +19,8 @@ public class ExplosionEffectAnimationController : BaseAnimationController, IVFXA
         { ExplosionEffectType.Boom, Animator.StringToHash("Boom") },
         { ExplosionEffectType.BigBoom, Animator.StringToHash("BigBoom") },
         { ExplosionEffectType.BiggerBoom, Animator.StringToHash("BiggerBoom") },
+        { ExplosionEffectType.PurpleBoom1, Animator.StringToHash("PurpleBoom1") },
+        { ExplosionEffectType.PurpleBoom2, Animator.StringToHash("PurpleBoom2") },
     };
 
     private static readonly Dictionary<ExplosionEffectType, string> ExplosionEffectClipNames = new()
@@ -24,6 +28,8 @@ public class ExplosionEffectAnimationController : BaseAnimationController, IVFXA
         { ExplosionEffectType.Boom, "Boom" },
         { ExplosionEffectType.BigBoom, "BigBoom" },
         { ExplosionEffectType.BiggerBoom, "BiggerBoom" },
+        { ExplosionEffectType.PurpleBoom1, "PurpleBoom1" },
+        { ExplosionEffectType.PurpleBoom2, "PurpleBoom2" },
     };
 
     [Space(20)]
