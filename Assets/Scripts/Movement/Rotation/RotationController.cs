@@ -36,7 +36,7 @@ public class RotationController : Upgradable<MonoBehaviour>
 
     public void SetNewTarget(Vector3 newTarget)
     {
-        _goalTarget = newTarget;
+        _goalTarget =_shouldClampOutsideCircle ? _clampOutsideCircle(newTarget) : newTarget;
     }
 
     protected virtual void Update()
@@ -90,9 +90,9 @@ public class RotationController : Upgradable<MonoBehaviour>
 
         if (offset.magnitude == 0) offset = _getRandomTargetPosition();
 
-        if (offset.magnitude < _distanceFromCenter)
+        if (offset.magnitude < _distanceFromCenter + 1)
         {            
-            return _centerTransform.position + offset.normalized * (_distanceFromCenter + 0.1f);
+            return _centerTransform.position + offset.normalized * (_distanceFromCenter + 1f);
         }
 
         return point;

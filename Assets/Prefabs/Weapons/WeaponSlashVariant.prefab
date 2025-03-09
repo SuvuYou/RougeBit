@@ -57,7 +57,7 @@ MonoBehaviour:
   OnAttack:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 9005959678731561865}
+      - m_Target: {fileID: 6342530746234320138}
         m_TargetAssemblyTypeName: ParentBasedVFXManager, Assembly-CSharp
         m_MethodName: TriggerAnimationAtPositionOnce
         m_Mode: 1
@@ -169,13 +169,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: WeaponSlashVariant
       objectReference: {fileID: 0}
+    - target: {fileID: 7680250962130234415, guid: d32945e6fda138c41bc4b69f123568a1, type: 3}
+      propertyPath: _animatedPrefab
+      value: 
+      objectReference: {fileID: 6398712736177628684, guid: 13b1f33fac5c72c42b701114050e39b9, type: 3}
     m_RemovedComponents:
-    - {fileID: 7956819823656736135, guid: d32945e6fda138c41bc4b69f123568a1, type: 3}
-    - {fileID: 5444347284322965064, guid: d32945e6fda138c41bc4b69f123568a1, type: 3}
-    - {fileID: 6622072496300471187, guid: d32945e6fda138c41bc4b69f123568a1, type: 3}
-    - {fileID: 2868796129381000499, guid: d32945e6fda138c41bc4b69f123568a1, type: 3}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
     m_RemovedGameObjects:
     - {fileID: 2264669785944940972, guid: d32945e6fda138c41bc4b69f123568a1, type: 3}
+    - {fileID: 7143175187942201920, guid: d32945e6fda138c41bc4b69f123568a1, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 4589855519121468275, guid: d32945e6fda138c41bc4b69f123568a1, type: 3}
       insertIndex: 0
@@ -184,9 +189,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6700342045166944310, guid: d32945e6fda138c41bc4b69f123568a1, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1817573500339798143}
-    - targetCorrespondingSourceObject: {fileID: 602492945323675432, guid: d32945e6fda138c41bc4b69f123568a1, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 9005959678731561865}
   m_SourcePrefab: {fileID: 100100000, guid: d32945e6fda138c41bc4b69f123568a1, type: 3}
 --- !u!4 &946592461894726230 stripped
 Transform:
@@ -215,26 +217,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12abc18292362c64680678467b3c0447, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &4237031514239899149 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 602492945323675432, guid: d32945e6fda138c41bc4b69f123568a1, type: 3}
+--- !u!114 &6342530746234320138 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7680250962130234415, guid: d32945e6fda138c41bc4b69f123568a1, type: 3}
   m_PrefabInstance: {fileID: 3643563362556959013}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &9005959678731561865
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4237031514239899149}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 27e88e8e164a2734783d8c3078fdc882, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _animatedPrefab: {fileID: 6398712736177628684, guid: 13b1f33fac5c72c42b701114050e39b9, type: 3}
-  _positionParent: {fileID: 8810499905848375053}
-  _rotationParent: {fileID: 9186042689522628669}
 --- !u!1 &7956994152005081363 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6700342045166944310, guid: d32945e6fda138c41bc4b69f123568a1, type: 3}
@@ -255,13 +248,3 @@ MonoBehaviour:
   <WeaponTargetType>k__BackingField: 1
   _attack: {fileID: 6657794926940739506}
   _rotationController: {fileID: 2884839608959360413}
---- !u!4 &8810499905848375053 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5248285010592640552, guid: d32945e6fda138c41bc4b69f123568a1, type: 3}
-  m_PrefabInstance: {fileID: 3643563362556959013}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &9186042689522628669 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5614837249989681432, guid: d32945e6fda138c41bc4b69f123568a1, type: 3}
-  m_PrefabInstance: {fileID: 3643563362556959013}
-  m_PrefabAsset: {fileID: 0}

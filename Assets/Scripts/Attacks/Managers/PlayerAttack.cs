@@ -7,7 +7,7 @@ class PlayerAttack : MonoBehaviour
     [SerializeField] private PalyerInputSO _palyerInputSO;
     [SerializeField] private CharacterMovement _movement;
 
-    [SerializeField] private AttackAnimationController _attackAnimationController;
+    [SerializeField] private ComplexEntityAnimationController _animationController;
 
     private void Start()
     {
@@ -71,7 +71,6 @@ class PlayerAttack : MonoBehaviour
 
         if (!isTargetFound) return;
 
-        _attackAnimationController.TriggerAttackAnimation((target.transform.position - transform.position).normalized);
+        _animationController.TriggerAttackAnimation((target.transform.position - transform.position).normalized);
     }
-
 }

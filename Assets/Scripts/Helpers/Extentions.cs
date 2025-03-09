@@ -43,6 +43,11 @@ public static class VectorExtentions
     public static Vector3 ToVector3WithZ(this Vector2 vector, float z) => new (vector.x, vector.y, z);
 } 
 
+public static class FloatExtentions
+{
+    public static float AbsoluteValue(this float value) => Mathf.Abs(value);
+}
+
 public static class AnimatorExtentions
 {
     public static float GetClipLength(this Animator animator, string clipName)
