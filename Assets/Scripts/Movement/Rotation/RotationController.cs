@@ -92,7 +92,7 @@ public class RotationController : Upgradable<MonoBehaviour>
 
         if (offset.magnitude < _distanceFromCenter)
         {            
-            return _centerTransform.position + offset.normalized * (_distanceFromCenter + 0.01f);
+            return _centerTransform.position + offset.normalized * (_distanceFromCenter + 0.1f);
         }
 
         return point;
