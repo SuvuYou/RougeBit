@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-class ShootingEffectAnimationController : BaseAnimationController
+class ShootingEffectAnimationController : BaseAnimationController, IVFXAnimationTrigger
 {
     private enum ShootingEffectType
     {
@@ -44,15 +44,40 @@ class ShootingEffectAnimationController : BaseAnimationController
 
     private float _shootingAnimationLength = 0f;
 
-    private void Start()
+    private bool _isLockedInLoop = false;
+
+    private float _animationLength => _overrideShootingAnimationLength > 0 ? _overrideShootingAnimationLength : _shootingAnimationLength;
+
+    private void Awake()
     {
         _shootingAnimationLength = _animator.GetClipLength(ShootingEffectClipNames[_shootingEffectType]);
     }
 
     protected void Update()
     {
+        if (_isLockedInLoop) return;
+
         _switchAnimationState(IDLE_HASH);
     }
 
-    public void TriggerShootingEffectAnimation() => _switchAnimationState(ShootingEffectHashes[_shootingEffectType], lockTime: _overrideShootingAnimationLength > 0f ? _overrideShootingAnimationLength : _shootingAnimationLength);
+    public void TriggerAnimation() => _switchAnimationState(ShootingEffectHashes[_shootingEffectType], lockTime: _animationLength);
+
+    public void TriggerAnimationLooped() 
+    {
+        _isLockedInLoop = true;
+        
+        _switchAnimationState(ShootingEffectHashes[_shootingEffectType]);
+    }
+
+    public void TriggerAnimationOnce()
+    {
+        _switchAnimationState(ShootingEffectHashes[_shootingEffectType], lockTime: _animationLength);
+        StartCoroutine(_destroyAfterSeconds(_animationLength));
+    } 
+
+    private System.Collections.IEnumerator _destroyAfterSeconds(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        Destroy(gameObject);
+    }
 }

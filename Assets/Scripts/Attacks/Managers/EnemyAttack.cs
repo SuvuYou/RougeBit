@@ -5,24 +5,35 @@ class EnemyAttack : MonoBehaviour
 {
     [SerializeField] private Enemy _enemyComponent;   
 
-    [SerializeField] private BaseAttack _attack;
+    [SerializeField] private BaseWeapon[] _weapons;
     [SerializeField] private CharacterMovement _movement;
-
-    [SerializeField] private FollowTargetRotationController _weaponRotation;
 
     private void Start()
     {
-        _attack.Setup(this.gameObject);
-        _attack.SetTarget(_enemyComponent.Target);
-
-        _attack.OnAttack.AddListener((Vector3 targetPosition) => StartCoroutine(_disableMovementForSeconds(0.5f)));
+        _setupAttacks();
+        _setAttacksTarget();
+    }
     
-        if (_weaponRotation != null) _weaponRotation.SetTarget(_enemyComponent.Target);
+    private void Update()
+    {
+        _setAttacksTarget();
     }
 
-    private void OnDestroy()
+    private void _setAttacksTarget()
+    {  
+        foreach (var weapon in _weapons)
+        {
+            weapon.SetTarget(_enemyComponent.Target, isTargetFound: _enemyComponent.Target != null);
+        }
+    }
+
+    private void _setupAttacks()
     {
-        Destroy(_attack.gameObject);
+        foreach (var weapon in _weapons) 
+        {
+            weapon.Setup(this.gameObject);
+           
+        }
     }
 
     private IEnumerator _disableMovementForSeconds(float seconds)

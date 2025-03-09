@@ -126,7 +126,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ccf67bb64f4feb64e8076160f968da65, type: 2}
   - {fileID: 11400000, guid: 478c3ab65ebc847408cef7eb58bde3b6, type: 2}
   _upgradableComponents:
-  - {fileID: 8921171643377112298}
+  - {fileID: 0}
 --- !u!1001 &2662760763423943772
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -135,6 +135,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1916716790758114488, guid: d32945e6fda138c41bc4b69f123568a1, type: 3}
+      propertyPath: _distanceFromCenter
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1916716790758114488, guid: d32945e6fda138c41bc4b69f123568a1, type: 3}
+      propertyPath: _idleCircularMotionSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1916716790758114488, guid: d32945e6fda138c41bc4b69f123568a1, type: 3}
+      propertyPath: _rotationStrategies.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1916716790758114488, guid: d32945e6fda138c41bc4b69f123568a1, type: 3}
+      propertyPath: _shouldEnableIdleCircularMotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1916716790758114488, guid: d32945e6fda138c41bc4b69f123568a1, type: 3}
+      propertyPath: _rotationStrategies.Array.data[2]
+      value: 
+      objectReference: {fileID: 14943117213053059}
     - target: {fileID: 2285936203351726464, guid: d32945e6fda138c41bc4b69f123568a1, type: 3}
       propertyPath: _rotations
       value: 
@@ -204,40 +224,46 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6700342045166944310, guid: d32945e6fda138c41bc4b69f123568a1, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1593988525770425359}
-    - targetCorrespondingSourceObject: {fileID: 6700342045166944310, guid: d32945e6fda138c41bc4b69f123568a1, type: 3}
+    - targetCorrespondingSourceObject: {fileID: 1883834120494755090, guid: d32945e6fda138c41bc4b69f123568a1, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 8921171643377112298}
-    - targetCorrespondingSourceObject: {fileID: 6700342045166944310, guid: d32945e6fda138c41bc4b69f123568a1, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 4492407698818379512}
+      addedObject: {fileID: 14943117213053059}
   m_SourcePrefab: {fileID: 100100000, guid: d32945e6fda138c41bc4b69f123568a1, type: 3}
---- !u!114 &1036883155575434640 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3069125574381502924, guid: d32945e6fda138c41bc4b69f123568a1, type: 3}
-  m_PrefabInstance: {fileID: 2662760763423943772}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d07692ea2ae8f14a8ecbdd25c72adfe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1965389716515882799 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4589855519121468275, guid: d32945e6fda138c41bc4b69f123568a1, type: 3}
   m_PrefabInstance: {fileID: 2662760763423943772}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4273142075589359068 stripped
+--- !u!114 &4498406678673320164 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2285936203351726464, guid: d32945e6fda138c41bc4b69f123568a1, type: 3}
+  m_CorrespondingSourceObject: {fileID: 1916716790758114488, guid: d32945e6fda138c41bc4b69f123568a1, type: 3}
   m_PrefabInstance: {fileID: 2662760763423943772}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 4526328631854809422}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2dada51f3c6bf4b48b4ba957477c0489, type: 3}
+  m_Script: {fileID: 11500000, guid: 12abc18292362c64680678467b3c0447, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &4526328631854809422 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1883834120494755090, guid: d32945e6fda138c41bc4b69f123568a1, type: 3}
+  m_PrefabInstance: {fileID: 2662760763423943772}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &14943117213053059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4526328631854809422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19ac51fa1e96f134eaba154925547e18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rotatedTransform: {fileID: 1965389716515882799}
+  _centerTransform: {fileID: 0}
+  _distanceFromCenter: 2
 --- !u!1 &8649272319919860842 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6700342045166944310, guid: d32945e6fda138c41bc4b69f123568a1, type: 3}
@@ -255,7 +281,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9cdfd9706ceef648b97f0186b4d3798, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rotationController: {fileID: 8921171643377112298}
+  <WeaponTargetType>k__BackingField: 0
+  _rotationController: {fileID: 4498406678673320164}
 --- !u!50 &1593988525770425359
 Rigidbody2D:
   serializedVersion: 4
@@ -283,39 +310,3 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
---- !u!114 &8921171643377112298
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8649272319919860842}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12abc18292362c64680678467b3c0447, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _rotationStrategies:
-  - {fileID: 1036883155575434640}
-  - {fileID: 4273142075589359068}
-  _centerTransform: {fileID: 0}
-  _shouldClampOutsideCircle: 1
-  _distanceFromCenter: 2
-  _useSmoothRotation: 1
-  _smoothTime: 0.5
-  _shouldEnableIdleCircularMotion: 1
-  _idleCircularMotionSpeed: 2
---- !u!114 &4492407698818379512
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8649272319919860842}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19ac51fa1e96f134eaba154925547e18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _centerTransform: {fileID: 0}
-  _distanceFromCenter: 2

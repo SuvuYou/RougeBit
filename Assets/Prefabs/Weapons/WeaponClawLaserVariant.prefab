@@ -52,6 +52,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WeaponClawLaserVariant
       objectReference: {fileID: 0}
+    - target: {fileID: 7680250962130234415, guid: d32945e6fda138c41bc4b69f123568a1, type: 3}
+      propertyPath: _animatedPrefab
+      value: 
+      objectReference: {fileID: 6398712736177628684, guid: c589b7ac7f5cebb4681cf11b1d5ce486, type: 3}
     m_RemovedComponents:
     - {fileID: 7956819823656736135, guid: d32945e6fda138c41bc4b69f123568a1, type: 3}
     m_RemovedGameObjects: []
@@ -59,14 +63,52 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 6700342045166944310, guid: d32945e6fda138c41bc4b69f123568a1, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2134370542474834749}
+      addedObject: {fileID: 5617858956281802409}
+    - targetCorrespondingSourceObject: {fileID: 7143175187942201920, guid: d32945e6fda138c41bc4b69f123568a1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8501003572257688360}
   m_SourcePrefab: {fileID: 100100000, guid: d32945e6fda138c41bc4b69f123568a1, type: 3}
+--- !u!1 &508388775179049613 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7143175187942201920, guid: d32945e6fda138c41bc4b69f123568a1, type: 3}
+  m_PrefabInstance: {fileID: 7219146067348685005}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8501003572257688360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 508388775179049613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a65b38dad8a4eb4e859021b945da412, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _baseStats: {fileID: 0}
+  OnReload:
+    m_PersistentCalls:
+      m_Calls: []
+  OnReadyForAttack:
+    m_PersistentCalls:
+      m_Calls: []
+  OnAim:
+    m_PersistentCalls:
+      m_Calls: []
+  OnAttack:
+    m_PersistentCalls:
+      m_Calls: []
+  OnFinishAttack:
+    m_PersistentCalls:
+      m_Calls: []
+  _attackerMovement: {fileID: 0}
+  _stats: {fileID: 0}
 --- !u!1 &4094874383664824571 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6700342045166944310, guid: d32945e6fda138c41bc4b69f123568a1, type: 3}
   m_PrefabInstance: {fileID: 7219146067348685005}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2134370542474834749
+--- !u!114 &5617858956281802409
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -75,38 +117,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 4094874383664824571}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e06cb5cbce6b0f4295230e92ca8e1a5, type: 3}
+  m_Script: {fileID: 11500000, guid: 5ebbacafea04b7141a2afa36f0de96a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rotationStrategies:
-  - {fileID: 5672343566243430657}
-  - {fileID: 8905527160815884621}
-  _centerTransform: {fileID: 0}
-  _shouldClampOutsideCircle: 1
-  _distanceFromCenter: 0
-  _useSmoothRotation: 1
-  _smoothTime: 0.5
-  _shouldEnableIdleCircularMotion: 0
-  _idleCircularMotionSpeed: 1
---- !u!114 &5672343566243430657 stripped
+  <WeaponTargetType>k__BackingField: 0
+  _attack: {fileID: 8501003572257688360}
+  _rotationController: {fileID: 9130490643482674293}
+--- !u!114 &9130490643482674293 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3069125574381502924, guid: d32945e6fda138c41bc4b69f123568a1, type: 3}
+  m_CorrespondingSourceObject: {fileID: 1916716790758114488, guid: d32945e6fda138c41bc4b69f123568a1, type: 3}
   m_PrefabInstance: {fileID: 7219146067348685005}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d07692ea2ae8f14a8ecbdd25c72adfe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &8905527160815884621 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2285936203351726464, guid: d32945e6fda138c41bc4b69f123568a1, type: 3}
-  m_PrefabInstance: {fileID: 7219146067348685005}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2dada51f3c6bf4b48b4ba957477c0489, type: 3}
+  m_Script: {fileID: 11500000, guid: 12abc18292362c64680678467b3c0447, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

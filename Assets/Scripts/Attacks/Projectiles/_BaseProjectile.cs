@@ -40,6 +40,11 @@ public class BaseProjectile : MonoBehaviour
     {
         // Wrong layer
         if (((1 << collision.gameObject.layer) & _layerMask) == 0) return;
+
+        if (collision.transform.parent.TryGetComponentInChildren(out Target target))
+        {
+            if (target == null || !target.IsTargetable) return;
+        }
         
         if (collision.transform.parent.TryGetComponentInChildren(out BaseDamagable damagable)) 
         {

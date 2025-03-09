@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class RotatePositionStrategy : RotationStrategyBase
 {
+    [SerializeField] private Transform _rotatedTransform;
     [SerializeField] private Transform _centerTransform;
     [SerializeField] private float _distanceFromCenter = 2f;
 
@@ -16,6 +17,6 @@ public class RotatePositionStrategy : RotationStrategyBase
         if (direction == Vector3.zero)
             return;
 
-        transform.position = _centerTransform.position + direction.normalized * _distanceFromCenter;
+        _rotatedTransform.position = _centerTransform.position + direction.normalized * _distanceFromCenter;
     }
 }
