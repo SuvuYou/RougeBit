@@ -6,6 +6,7 @@ public class _BaseProjectileStatsSO : ScriptableObject
 {
     [Header("Projectile")]
     public Sprite ProjectileSprite;
+    public Color ProjectileColor;
 
     [Header("Target")]
     public LayerMask EnemyLayerMask;

@@ -2,29 +2,34 @@ using UnityEngine;
 
 public class BaseProjectile : MonoBehaviour
 {
-    private enum Varients { Player, Enemy };
+    public enum Varients { Player, Enemy };
 
+    [Header("References")]
+    [SerializeField] private SpriteRenderer _spriteRenderer;
     [field: SerializeField] public Target TargetComponent { get; private set; }
 
+    [Header("Varients")]
     [SerializeField] private _BaseProjectileStatsSO _playerVarientStats;
     [SerializeField] private _BaseProjectileStatsSO _enemyVarientStats;
 
-    [SerializeField] private Varients _currentVarient;
+    [field: SerializeField] public Varients CurrentVarient;
     
     private _BaseProjectileStatsSO _currentStats;
 
     public Vector3 Direction { get; private set; }
 
-    protected virtual void Start() 
+    private float _cachedSpeed;
+
+    protected virtual void Awake() 
     {
-        _applyVariantStats(_currentVarient == Varients.Player ? _playerVarientStats : _enemyVarientStats);
+        _applyVariantStats(CurrentVarient == Varients.Player ? _playerVarientStats : _enemyVarientStats);
 
         Destroy(gameObject, _currentStats.LifeTime);
     }
 
     protected virtual void Update() 
     {
-        transform.Translate(Direction * _currentStats.Speed * Time.deltaTime);   
+        transform.Translate(Direction * _cachedSpeed * Time.deltaTime);   
     }
 
     public void Init(Vector3 flyDirection, LayerMask? layerMask = null)
@@ -53,12 +58,12 @@ public class BaseProjectile : MonoBehaviour
 
     public void Redirect(float speedMultiplier = 1f)
     {
-        var newVarient = _currentVarient == Varients.Enemy ? Varients.Player : Varients.Enemy;
+        var newVarient = CurrentVarient == Varients.Enemy ? Varients.Player : Varients.Enemy;
 
-        _currentVarient = newVarient;
+        CurrentVarient = newVarient;
         _applyVariantStats(newVarient == Varients.Player ? _playerVarientStats : _enemyVarientStats);
 
-        _currentStats.Speed *= speedMultiplier;
+        _cachedSpeed *= speedMultiplier;
 
         Direction = -Direction;
     }
@@ -66,5 +71,10 @@ public class BaseProjectile : MonoBehaviour
     private void _applyVariantStats(_BaseProjectileStatsSO newStats) 
     {
         _currentStats = newStats;
+
+        _spriteRenderer.sprite = _currentStats.ProjectileSprite;
+        _spriteRenderer.color = _currentStats.ProjectileColor;
+
+        _cachedSpeed = _currentStats.Speed;
     }
 }

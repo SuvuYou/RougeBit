@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94df7c74c8afc0d4d9088f62cf96184c, type: 3}
   m_Name: Enemy Simple Projectile Stats SO
   m_EditorClassIdentifier: 
-  ProjectileSprite: {fileID: 21300000, guid: 4c4f79b5a9c263d40bbbb4d032d86689, type: 3}
+  ProjectileSprite: {fileID: 21300000, guid: ba6edd0b2b79d4145a0e53e16d377119, type: 3}
+  ProjectileColor: {r: 1, g: 0, b: 0.41492462, a: 1}
   EnemyLayerMask:
     serializedVersion: 2
     m_Bits: 128
   Damage: 25
-  Speed: 5
-  LifeTime: 5
+  Speed: 8
+  LifeTime: 6

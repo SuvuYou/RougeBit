@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b383c3445699f334d8134caed5a320f3, type: 3}
-  m_Name: Enemy Ranged Attack Stats SO Base
+  m_Name: Player Shotgun Stats SO Base
   m_EditorClassIdentifier: 
   EnemyLayerMask:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 64
   ReloadDuration: 1
   RequiresAim: 1
-  AimDuration: 2
+  AimDuration: 1
   AddsKnockback: 0

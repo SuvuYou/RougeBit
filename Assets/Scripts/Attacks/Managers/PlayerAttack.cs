@@ -36,7 +36,7 @@ class PlayerAttack : MonoBehaviour
         
         foreach (var weapon in _weapons)
         {
-            if (weapon.WeaponTargetType == BaseWeapon.TargetType.Projectile) weapon.SetTarget(projectile, isProjectileFound);
+            if (weapon.WeaponTargetType == BaseWeapon.TargetType.EnemyProjectile || weapon.WeaponTargetType == BaseWeapon.TargetType.PlayerProjectile) weapon.SetTarget(projectile, isProjectileFound);
             else weapon.SetTarget(enemy, isEnemyFound);
         }
     }

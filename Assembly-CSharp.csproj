@@ -85,6 +85,7 @@
     <Compile Include="Assets\Scripts\Movement\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\Economy\InventorySO.cs" />
     <Compile Include="Assets\Scripts\Helpers\WeightedDictionary.cs" />
+    <Compile Include="Assets\Scripts\Attacks\Weapons\ShotGunWeapon.cs" />
     <Compile Include="Assets\Scripts\SpriteEffects\SwitchSpriteColor.cs" />
     <Compile Include="Assets\Scripts\Movement\EnemyFollowTargetMovement.cs" />
     <Compile Include="Assets\Scripts\Attacks\LaserBeamAttack.cs" />

@@ -283,7 +283,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9cdfd9706ceef648b97f0186b4d3798, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <WeaponTargetType>k__BackingField: 0
+  <WeaponTargetType>k__BackingField: 2
   _rotationController: {fileID: 4498406678673320164}
 --- !u!50 &1593988525770425359
 Rigidbody2D:

@@ -21,6 +21,9 @@ public class ShieldWeapon : BaseWeapon
     {
         if (collision.transform.TryGetComponentInChildrenOfParent(out BaseProjectile projectile)) 
         {
+            if (projectile.CurrentVarient == BaseProjectile.Varients.Player && WeaponTargetType == TargetType.EnemyProjectile) return;
+            if (projectile.CurrentVarient == BaseProjectile.Varients.Enemy && WeaponTargetType == TargetType.PlayerProjectile) return;
+
            projectile.Redirect(speedMultiplier: 2f);
         }
     } 

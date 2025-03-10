@@ -10,11 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9e325b5cc00782e4bbc6ef658444454f, type: 3}
-  m_Name: Enemy Ranged X5 Attack Stats SO
+  m_Name: Player Shotgun Stats SO
   m_EditorClassIdentifier: 
   ProjectilePrefabs:
-  - {fileID: 9104435584736616129, guid: a7a4296d00fd27e45a75af89a38a3318, type: 3}
-  MovementVelocityToCancelAttackThreshold: 1
+  - {fileID: 9104435584736616129, guid: 50a0909cf999868468fa1686a6b600c7, type: 3}
+  - {fileID: 9104435584736616129, guid: ca8feb7db06a0644593f6b1ebf008edd, type: 3}
+  - {fileID: 9104435584736616129, guid: 34dcbf8185eff6940a8b9fe87608c64f, type: 3}
+  MovementVelocityToCancelAttackThreshold: 999
   AttackDistance: 15
-  NumberOfProjectiles: 5
-  SpreadAngle: 90
+  NumberOfProjectiles: 6
+  SpreadAngle: 45

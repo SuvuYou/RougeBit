@@ -7,8 +7,9 @@ class RangedAttack : BaseAttack
 
     [SerializeField] private RangedAttackStatsSO _stats;
 
+    [SerializeField] private Transform _spawnPoint;
+
     private Vector3 _attackDirection;
-    private Vector3 _attackerPosition;
 
     protected override void _handleIsReadyForAttack(Action performAttackOrAim) 
     {
@@ -40,7 +41,6 @@ class RangedAttack : BaseAttack
         if (!_isTargetFound || _attacker == null) return;
 
         _attackDirection = (_target.transform.position - _attacker.transform.position).normalized;
-        _attackerPosition = _attacker.transform.position;
     }
 
     private void _spawnProjectiles()
@@ -65,9 +65,12 @@ class RangedAttack : BaseAttack
 
     private void _throwProjectileInDirection(Vector3 direction)
     {
-        BaseProjectile projectile = Instantiate(_stats.ProjectilePrefab, _attackerPosition, Quaternion.identity);
+        BaseProjectile projectile = Instantiate(_getRandomProjectilePrefab(), _spawnPoint.position, Quaternion.identity);
+
         projectile.Init(direction, _baseStats.EnemyLayerMask);
 
         ProjectileManager.Instance.AddProjectile(projectile);
     }
+
+    private BaseProjectile _getRandomProjectilePrefab() => _stats.ProjectilePrefabs[UnityEngine.Random.Range(0, _stats.ProjectilePrefabs.Length - 1)];
 }

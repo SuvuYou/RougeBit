@@ -18,7 +18,7 @@ public class BaseAttack : MonoBehaviour
     protected GameObject _attacker;
     protected Target _target;
 
-    protected virtual Vector3 _targetPosition => _target.transform.position;
+    protected virtual Vector3 _targetPosition => _isTargetFound ? _target.transform.position : Vector3.zero;
 
     protected bool _isTargetFound => _target != null;
 

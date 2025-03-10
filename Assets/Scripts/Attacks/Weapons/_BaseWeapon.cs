@@ -2,7 +2,7 @@ using UnityEngine;
 
 public abstract class BaseWeapon : MonoBehaviour
 {
-    public enum TargetType { Player, Enemy, Projectile};
+    public enum TargetType { Player, Enemy, EnemyProjectile, PlayerProjectile};
 
     [field: SerializeField] public TargetType WeaponTargetType { get; private set; }
 
