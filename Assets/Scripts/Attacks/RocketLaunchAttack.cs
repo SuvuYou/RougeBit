@@ -66,6 +66,6 @@ class RocketLaunchAttack : BaseAttack
     private void _throwProjectileInDirection(Vector3 direction)
     {
         RocketProjectiles projectile = Instantiate(_stats.RocketPrefab, _spawnPoint.position, Quaternion.identity);
-        projectile.Init(_target, direction, _baseStats.EnemyLayerMask);
+        projectile.Init(_target, direction);
     }
 }

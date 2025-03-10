@@ -2,8 +2,6 @@ using UnityEngine;
 
 public class RocketProjectiles : MonoBehaviour
 {
-    private enum Varients { Player, Enemy };
-
     [field: SerializeField] public Target TargetComponent { get; private set; }
 
     [SerializeField] private RocketProjectileStatsSO _stats;
@@ -13,13 +11,11 @@ public class RocketProjectiles : MonoBehaviour
 
     private float _randomDeviationTimeMultiplier = 1f;
 
-    public void Init(Target target, Vector3 initialDirection, LayerMask? layerMask = null)
+    public void Init(Target target, Vector3 initialDirection)
     {
         CurrentTarget = target;
         
         transform.rotation = _getRotationByDirection(initialDirection);
-
-        _stats.EnemyLayerMask = layerMask ?? LayerMask.GetMask("Default");
     }
 
     protected virtual void Start() 

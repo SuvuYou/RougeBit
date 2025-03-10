@@ -32,10 +32,9 @@ public class BaseProjectile : MonoBehaviour
         transform.Translate(Direction * _cachedSpeed * Time.deltaTime);   
     }
 
-    public void Init(Vector3 flyDirection, LayerMask? layerMask = null)
+    public void Init(Vector3 flyDirection)
     {
         Direction = flyDirection;
-        _currentStats.EnemyLayerMask = layerMask ?? LayerMask.GetMask("Default");
     }
 
     private void OnTriggerEnter2D(Collider2D collision) 
