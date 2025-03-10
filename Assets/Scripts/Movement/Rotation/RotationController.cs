@@ -51,7 +51,7 @@ public class RotationController : Upgradable<MonoBehaviour>
                 strategy.Rotate();
             }
         }
-    } 
+    }
 
     private void _setCurrentTarget(Vector3 target) 
     {

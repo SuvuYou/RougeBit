@@ -3,6 +3,13 @@ using UnityEngine;
 
 class DashAttackOnCollision : BaseAttack
 {
+    public override void UpgradeValues(BaseUpgradeValuesSetSO ovrrideValues)
+    {
+        base.UpgradeValues(ovrrideValues);
+
+        _stats = ovrrideValues.DashAttackOnCollisionStats;
+    }
+
     [Header("References")]
     [SerializeField] private CharacterMovement _attackerMovement;
     [Space(15)]

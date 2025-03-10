@@ -3,6 +3,13 @@ using UnityEngine;
 
 class PlantMineAttack : BaseAttack
 {
+    public override void UpgradeValues(BaseUpgradeValuesSetSO ovrrideValues)
+    {
+        base.UpgradeValues(ovrrideValues);
+
+        _stats = ovrrideValues.PlantMineAttackStats;
+    }
+
     [SerializeField] private CharacterMovement _attackerMovement;
 
     [SerializeField] private PlantMineAttackStatsSO _stats;

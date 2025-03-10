@@ -11,8 +11,5 @@ public class MinerWeapon : BaseWeapon
         _rotationController.EnableIdleRotation();
     }
 
-    public override void SetTarget(Target targetPosition, bool isTargetFound = false)
-    {
-
-    }
+    public override void SetTarget(Target targetPosition, bool isTargetFound = false) { }
 }

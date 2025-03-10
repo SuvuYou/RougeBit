@@ -3,6 +3,13 @@ using UnityEngine;
 
 class RangedAttack : BaseAttack
 {
+    public override void UpgradeValues(BaseUpgradeValuesSetSO ovrrideValues)
+    {
+        base.UpgradeValues(ovrrideValues);
+
+        _stats = ovrrideValues.RangedAttackStats;
+    }
+
     [SerializeField] private CharacterMovement _attackerMovement;
 
     [SerializeField] private RangedAttackStatsSO _stats;

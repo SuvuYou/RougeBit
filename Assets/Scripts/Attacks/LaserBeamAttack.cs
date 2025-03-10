@@ -3,6 +3,16 @@ using UnityEngine;
 
 class LaserBeamAttack : BaseAttack
 {
+    public override void UpgradeValues(BaseUpgradeValuesSetSO ovrrideValues)
+    {
+        base.UpgradeValues(ovrrideValues);
+
+        _stats = ovrrideValues.LaserBeamAttackStats;
+
+        _attackTimer.SetBaseTime(_stats.BeamDuration);
+        _collisionTimer.SetBaseTime(1f / _stats.BeamAttacksPerSecond);
+    }
+
     [SerializeField] private LaserBeamAttackStatsSO _stats;
     
     private CharacterMovement _attackerMovement;

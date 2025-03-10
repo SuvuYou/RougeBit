@@ -5872,7 +5872,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4094874383664824571, guid: 413a0664bfa429c40995779f92b65374, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6601712315830365118, guid: 413a0664bfa429c40995779f92b65374, type: 3}
       propertyPath: m_LocalScale.x
@@ -6921,7 +6921,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4094874383664824571, guid: 8a11566253fe8f644b91e8f8b2eb520c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6601712315830365118, guid: 8a11566253fe8f644b91e8f8b2eb520c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -28644,7 +28644,7 @@ PrefabInstance:
       objectReference: {fileID: 1297147463}
     - target: {fileID: 6537718211861794339, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7454476559328382400, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
       propertyPath: _weapons.Array.size
@@ -28664,7 +28664,7 @@ PrefabInstance:
       objectReference: {fileID: 1492720674}
     - target: {fileID: 8537948102222390110, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9071764285014470526, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
       propertyPath: OnTakeDamage.m_PersistentCalls.m_Calls.Array.data[2].m_Target

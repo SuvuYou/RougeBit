@@ -3,6 +3,13 @@ using UnityEngine;
 
 class RocketLaunchAttack : BaseAttack
 {
+    public override void UpgradeValues(BaseUpgradeValuesSetSO ovrrideValues)
+    {
+        base.UpgradeValues(ovrrideValues);
+
+        _stats = ovrrideValues.RocketLaunchAttackStats;
+    }
+
     [SerializeField] private CharacterMovement _attackerMovement;
 
     [SerializeField] private RocketLaunchAttackStatsSO _stats;

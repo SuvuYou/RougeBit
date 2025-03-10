@@ -22,7 +22,6 @@ public class ParentBasedVFXManager : BaseVFXManager
     protected virtual IVFXAnimationTrigger _instantiateAnimationTrigger() 
     {
         _cachedAnimation = Instantiate(_animatedPrefab, _positionParent.position, _rotationParent.rotation);
-        // _cachedAnimation = Instantiate(_animatedPrefab, _parent.transform);
 
         return _cachedAnimation.GetComponentInChildren<IVFXAnimationTrigger>();
     }

@@ -3,6 +3,13 @@ using UnityEngine;
 
 class SlashAttack : BaseAttack
 {
+    public override void UpgradeValues(BaseUpgradeValuesSetSO ovrrideValues)
+    {
+        base.UpgradeValues(ovrrideValues);
+
+        _stats = ovrrideValues.SlashAttackStats;
+    }
+
     [SerializeField] private SlashAttackStatsSO _stats;
 
     private Vector3 _attackDirection;

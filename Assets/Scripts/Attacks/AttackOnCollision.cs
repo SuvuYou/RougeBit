@@ -3,6 +3,13 @@ using UnityEngine;
 
 class AttackOnCollision : BaseAttack
 {
+    public override void UpgradeValues(BaseUpgradeValuesSetSO ovrrideValues)
+    {
+        base.UpgradeValues(ovrrideValues);
+
+        _stats = ovrrideValues.AttackOnCollisionStats;
+    }
+
     [SerializeField] private AttackOnCollisionStatsSO _stats;
 
     private Vector3 _attackDirection;

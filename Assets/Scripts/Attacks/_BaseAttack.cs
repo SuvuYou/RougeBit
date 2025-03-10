@@ -2,8 +2,16 @@ using System;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class BaseAttack : MonoBehaviour
+public class BaseAttack : Upgradable<MonoBehaviour>
 {
+    public override void UpgradeValues(BaseUpgradeValuesSetSO ovrrideValues)
+    {
+        _baseStats = ovrrideValues.BaseAttackStats;
+
+        _reloadTimer = new Timer(_baseStats.ReloadDuration);
+        _aimTimer = new Timer(_baseStats.AimDuration);
+    }
+
     public enum AttackState { Reload, ReadyForAttack, Aiming, Attacking }
 
     [SerializeField] protected _BaseAttackStatsSO _baseStats;

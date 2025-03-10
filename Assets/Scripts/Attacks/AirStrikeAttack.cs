@@ -3,6 +3,13 @@ using UnityEngine;
 
 class AirStrikeAttack : BaseAttack
 {
+    public override void UpgradeValues(BaseUpgradeValuesSetSO ovrrideValues)
+    {
+        base.UpgradeValues(ovrrideValues);
+
+        _stats = ovrrideValues.AirStrikeAttackStats;
+    }
+
     [SerializeField] private CharacterMovement _attackerMovement;
 
     [SerializeField] private AirStrikeAttackStatsSO _stats;
