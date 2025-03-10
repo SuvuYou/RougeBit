@@ -11,6 +11,8 @@ public class RocketProjectiles : MonoBehaviour
 
     public Target CurrentTarget { get; private set; }
 
+    private float _randomDeviationTimeMultiplier = 1f;
+
     public void Init(Target target, Vector3 initialDirection, LayerMask? layerMask = null)
     {
         CurrentTarget = target;
@@ -22,6 +24,8 @@ public class RocketProjectiles : MonoBehaviour
 
     protected virtual void Start() 
     {
+        _randomDeviationTimeMultiplier = Random.Range(0.8f, 1.2f);
+
         Destroy(gameObject, _stats.LifeTime);
     }
 
@@ -57,7 +61,7 @@ public class RocketProjectiles : MonoBehaviour
 
     private Vector3 _addDeviationToTarget(Vector3 target)
     {
-        var deviation = new Vector2(Mathf.Cos(Time.time * _stats.DeviationCycleSpeed) * _stats.DeviationStrength, Mathf.Sin(Time.time * _stats.DeviationCycleSpeed) * _stats.DeviationStrength);
+        var deviation = new Vector2(Mathf.Cos(Time.time * _stats.DeviationCycleSpeed * _randomDeviationTimeMultiplier) * _stats.DeviationStrength, Mathf.Sin(Time.time * _stats.DeviationCycleSpeed * _randomDeviationTimeMultiplier) * _stats.DeviationStrength);
 
         return target + transform.TransformDirection(deviation);
     } 

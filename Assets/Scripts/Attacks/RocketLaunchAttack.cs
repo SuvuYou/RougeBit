@@ -7,8 +7,9 @@ class RocketLaunchAttack : BaseAttack
 
     [SerializeField] private RocketLaunchAttackStatsSO _stats;
 
+    [SerializeField] private Transform _spawnPoint;
+
     private Vector3 _attackDirection;
-    private Vector3 _attackerPosition;
 
     protected override void _handleIsReadyForAttack(Action performAttackOrAim) 
     {
@@ -40,7 +41,6 @@ class RocketLaunchAttack : BaseAttack
         if (!_isTargetFound || _attacker == null) return;
 
         _attackDirection = (_target.transform.position - _attacker.transform.position).normalized;
-        _attackerPosition = _attacker.transform.position;
     }
 
     private void _spawnProjectiles()
@@ -65,7 +65,7 @@ class RocketLaunchAttack : BaseAttack
 
     private void _throwProjectileInDirection(Vector3 direction)
     {
-        RocketProjectiles projectile = Instantiate(_stats.RocketPrefab, _attackerPosition, Quaternion.identity);
+        RocketProjectiles projectile = Instantiate(_stats.RocketPrefab, _spawnPoint.position, Quaternion.identity);
         projectile.Init(_target, direction, _baseStats.EnemyLayerMask);
 
         // ProjectileManager.Instance.AddProjectile(projectile);
