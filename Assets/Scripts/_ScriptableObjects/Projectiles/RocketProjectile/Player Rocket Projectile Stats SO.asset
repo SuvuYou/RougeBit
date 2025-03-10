@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8a13297bb8eb3748afd9e47a107d0b3, type: 3}
+  m_Name: Player Rocket Projectile Stats SO
+  m_EditorClassIdentifier: 
+  RocketProjectileSprite: {fileID: -997774387, guid: d12e3691f071a7c47895531a3ebd465b, type: 3}
+  EnemyLayerMask:
+    serializedVersion: 2
+    m_Bits: 64
+  Damage: 100
+  Speed: 15
+  RotationSpeed: 180
+  LifeTime: 10
+  ExplosionRadious: 2
+  SearchRadious: 8
+  DeviationStrength: 5
+  DeviationCycleSpeed: 5

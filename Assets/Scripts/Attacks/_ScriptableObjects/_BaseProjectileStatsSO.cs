@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [System.Serializable]
-[CreateAssetMenu(menuName = "ScriptableObjects/Attacks/_BaseProjectileStatsSO")]
+[CreateAssetMenu(menuName = "ScriptableObjects/Attacks/Projectiles/_BaseProjectileStatsSO")]
 public class _BaseProjectileStatsSO : ScriptableObject
 {
     [Header("Projectile")]

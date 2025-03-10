@@ -141,6 +141,10 @@ PrefabInstance:
       propertyPath: _minDistanceToTarget
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 6821153135978145315, guid: c53e215881dc85046964129259c89939, type: 3}
+      propertyPath: _includeIdleAnimations
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7696781996479433932, guid: c53e215881dc85046964129259c89939, type: 3}
       propertyPath: <Health>k__BackingField
       value: 10

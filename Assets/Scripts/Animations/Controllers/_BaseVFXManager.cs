@@ -40,6 +40,4 @@ public class BaseVFXManager : MonoBehaviour
     }
 
     public void DestroyAnimation() => Destroy(_cachedAnimation?.gameObject);
-
-    private void OnDestroy() => DestroyAnimation();
 }
