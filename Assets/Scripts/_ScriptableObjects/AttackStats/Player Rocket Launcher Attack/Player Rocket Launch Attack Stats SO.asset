@@ -15,5 +15,5 @@ MonoBehaviour:
   RocketPrefab: {fileID: 6141790206074235986, guid: 7c1dfe1eb3055584a919dd8c8bfef19f, type: 3}
   MovementVelocityToCancelAttackThreshold: 999
   AttackDistance: 25
-  NumberOfProjectiles: 8
-  SpreadAngle: 360
+  NumberOfProjectiles: 1
+  SpreadAngle: 45

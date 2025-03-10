@@ -22,5 +22,5 @@ MonoBehaviour:
   LifeTime: 10
   ExplosionRadious: 2
   SearchRadious: 8
-  DeviationStrength: 5
-  DeviationCycleSpeed: 5
+  DeviationStrength: 8
+  DeviationCycleSpeed: 8

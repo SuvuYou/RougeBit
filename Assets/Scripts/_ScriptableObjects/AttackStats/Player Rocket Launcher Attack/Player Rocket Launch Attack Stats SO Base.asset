@@ -16,6 +16,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   ReloadDuration: 1
-  RequiresAim: 1
-  AimDuration: 1
+  RequiresAim: 0
+  AimDuration: 0
   AddsKnockback: 0

@@ -23,6 +23,7 @@ class RangedAttack : BaseAttack
 
     protected override void _handleAttack(Action finishAttack, Action cancelAttack, Action cancelReloadAttack)
     {
+        _updateAttackState();
         _spawnProjectiles();
         finishAttack();
     }
