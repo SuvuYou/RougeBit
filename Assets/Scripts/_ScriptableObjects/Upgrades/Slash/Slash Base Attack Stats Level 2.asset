@@ -9,7 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b55fc0bc0df9a8a4c9d8550a6d21ca86, type: 3}
-  m_Name: RotationControllerUpgradeValuesLevel1
+  m_Script: {fileID: 11500000, guid: b383c3445699f334d8134caed5a320f3, type: 3}
+  m_Name: Slash Base Attack Stats Level 2
   m_EditorClassIdentifier: 
-  SmoothTime: 2
+  ReloadDuration: 1.5
+  RequiresAim: 0
+  AimDuration: 0
+  AddsKnockback: 1

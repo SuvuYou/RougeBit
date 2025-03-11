@@ -43,7 +43,7 @@ class AirStrikeAttack : BaseAttack
 
     private void _handleCollision() 
     {
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(_cachedTargetPosition, _stats.ExplosionRadious, _baseStats.EnemyLayerMask);
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(_cachedTargetPosition, _stats.ExplosionRadious, _enemyLayerMask);
 
         foreach (var collider in colliders)
         {

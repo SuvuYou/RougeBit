@@ -9,7 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 409601ad3731a5b46aab279d6ee0417e, type: 3}
-  m_Name: Level2
+  m_Script: {fileID: 11500000, guid: eae216f32edd1c64abff74c9e2a8e861, type: 3}
+  m_Name: Slash Attack Stats Level 1
   m_EditorClassIdentifier: 
-  RotationControllerUpgradeValues: {fileID: 11400000, guid: 67487f076ee442145a554fb94c68b614, type: 2}
+  AttackDamage: 50
+  AttackDistance: 1

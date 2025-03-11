@@ -1,5 +1,57 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5108923387102959973
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1960464176931664613}
+  - component: {fileID: 6782928134572329379}
+  m_Layer: 0
+  m_Name: UpgradeManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1960464176931664613
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5108923387102959973}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6601712315830365118}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6782928134572329379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5108923387102959973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6364a26a78a2c8409430fb9a07c35dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _levels:
+  - {fileID: 11400000, guid: 68cf998891cc5f744ab9b64d812ef718, type: 2}
+  - {fileID: 11400000, guid: 1421c93f6b1cd634fad01ec4c1535dc0, type: 2}
+  - {fileID: 11400000, guid: dd355fd200f3a224686dfa4213002ff1, type: 2}
+  - {fileID: 11400000, guid: ba0df443dffb0b345b45d150362b73f3, type: 2}
+  - {fileID: 11400000, guid: f56327322ada26c4b965e6fe6fa28637, type: 2}
+  _upgradableComponents:
+  - {fileID: 8501003572257688360}
 --- !u!1001 &7219146067348685005
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -103,7 +155,10 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 7956819823656736135, guid: d32945e6fda138c41bc4b69f123568a1, type: 3}
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 4589855519121468275, guid: d32945e6fda138c41bc4b69f123568a1, type: 3}
+      insertIndex: 0
+      addedObject: {fileID: 1960464176931664613}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 6700342045166944310, guid: d32945e6fda138c41bc4b69f123568a1, type: 3}
       insertIndex: -1

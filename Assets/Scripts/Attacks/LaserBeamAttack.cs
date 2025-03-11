@@ -100,7 +100,7 @@ class LaserBeamAttack : BaseAttack
 
         Vector3 spawnPosition = _attackerPosition + _attackDirection * (_stats.BeamLength / 2);
 
-        var colliders = Physics2D.OverlapBox(spawnPosition, new Vector2(_stats.BeamLength, _stats.BeamWidth), angle, _baseStats.EnemyLayerMask);
+        var colliders = Physics2D.OverlapBox(spawnPosition, new Vector2(_stats.BeamLength, _stats.BeamWidth), angle, _enemyLayerMask);
 
         if (colliders != null)
         {

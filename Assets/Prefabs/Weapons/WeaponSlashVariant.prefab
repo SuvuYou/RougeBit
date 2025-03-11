@@ -1,5 +1,57 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1699686219401675665
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2965222273116930340}
+  - component: {fileID: 5294255697415845876}
+  m_Layer: 0
+  m_Name: Upgrade Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2965222273116930340
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1699686219401675665}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 946592461894726230}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5294255697415845876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1699686219401675665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6364a26a78a2c8409430fb9a07c35dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _levels:
+  - {fileID: 11400000, guid: 00864e723946b8e41a0459e88bac08c5, type: 2}
+  - {fileID: 11400000, guid: 26e52b99e93b7ac48b7670109bd540a5, type: 2}
+  - {fileID: 11400000, guid: 572c7525297fb134e967e1a0a84c46b0, type: 2}
+  - {fileID: 11400000, guid: e8c04a4f80599a3418648c960930e974, type: 2}
+  - {fileID: 11400000, guid: fb2d9776f81d0184bbc37ce8a6fc1f05, type: 2}
+  _upgradableComponents:
+  - {fileID: 6657794926940739506}
 --- !u!1 &5447050708658765077
 GameObject:
   m_ObjectHideFlags: 0
@@ -184,6 +236,9 @@ PrefabInstance:
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 4589855519121468275, guid: d32945e6fda138c41bc4b69f123568a1, type: 3}
       insertIndex: 0
+      addedObject: {fileID: 2965222273116930340}
+    - targetCorrespondingSourceObject: {fileID: 4589855519121468275, guid: d32945e6fda138c41bc4b69f123568a1, type: 3}
+      insertIndex: 1
       addedObject: {fileID: 1932955988810820767}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 6700342045166944310, guid: d32945e6fda138c41bc4b69f123568a1, type: 3}

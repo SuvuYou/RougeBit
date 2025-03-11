@@ -16,6 +16,9 @@ public class BaseAttack : Upgradable<MonoBehaviour>
 
     [SerializeField] protected _BaseAttackStatsSO _baseStats;
 
+    [Header("Target")]
+    protected LayerMask _enemyLayerMask;
+
     [Header("Attack Events")]
     public UnityEvent OnReload;
     public UnityEvent OnReadyForAttack;

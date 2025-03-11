@@ -9,7 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 409601ad3731a5b46aab279d6ee0417e, type: 3}
-  m_Name: Level1
+  m_Script: {fileID: 11500000, guid: b383c3445699f334d8134caed5a320f3, type: 3}
+  m_Name: Plant Mine Base Attack Stats Level 3
   m_EditorClassIdentifier: 
-  RotationControllerUpgradeValues: {fileID: 11400000, guid: 67c1c9c60c956c24280d8bcfb8e21519, type: 2}
+  ReloadDuration: 3
+  RequiresAim: 0
+  AimDuration: 0
+  AddsKnockback: 0

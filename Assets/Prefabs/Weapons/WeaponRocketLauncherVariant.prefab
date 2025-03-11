@@ -45,7 +45,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _levels:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 295c4bb03cbfc87408c81e2f95246262, type: 2}
+  - {fileID: 11400000, guid: f70f041d183a1b742ae5ab28c41e2619, type: 2}
+  - {fileID: 11400000, guid: f20d2351dd1712f4d89f7d40829f36ef, type: 2}
+  - {fileID: 11400000, guid: 92ca4928e324ca342b5ea914770555c8, type: 2}
+  - {fileID: 11400000, guid: a21d86aa8cc4bb94c948fbeba46ad255, type: 2}
   _upgradableComponents:
   - {fileID: 2287942443643250171}
 --- !u!1001 &7219146067348685005

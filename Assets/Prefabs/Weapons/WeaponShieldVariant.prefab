@@ -125,8 +125,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b810e5d2a5428be4ca2054ca9af90aba, type: 2}
   - {fileID: 11400000, guid: ccf67bb64f4feb64e8076160f968da65, type: 2}
   - {fileID: 11400000, guid: 478c3ab65ebc847408cef7eb58bde3b6, type: 2}
+  - {fileID: 11400000, guid: 1af5164998c03a34088c6d49213eec62, type: 2}
+  - {fileID: 11400000, guid: 73bbb71c5897d004f9cf76fa9d9d83e0, type: 2}
   _upgradableComponents:
-  - {fileID: 0}
+  - {fileID: 4498406678673320164}
 --- !u!1001 &2662760763423943772
 PrefabInstance:
   m_ObjectHideFlags: 0

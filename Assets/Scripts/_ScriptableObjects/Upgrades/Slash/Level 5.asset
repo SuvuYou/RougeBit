@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 409601ad3731a5b46aab279d6ee0417e, type: 3}
+  m_Name: Level 5
+  m_EditorClassIdentifier: 
+  BaseAttackStats: {fileID: 11400000, guid: db0fadafeec9ddf4687b3ce679b2d27a, type: 2}
+  RocketLaunchAttackStats: {fileID: 0}
+  RangedAttackStats: {fileID: 0}
+  PlantMineAttackStats: {fileID: 0}
+  LaserBeamAttackStats: {fileID: 0}
+  DashAttackOnCollisionStats: {fileID: 0}
+  AttackOnCollisionStats: {fileID: 0}
+  AirStrikeAttackStats: {fileID: 0}
+  SlashAttackStats: {fileID: 11400000, guid: 3f035d8b46cb96946b0a88b0f3a7322e, type: 2}
+  RotationControllerUpgradeValues: {fileID: 0}

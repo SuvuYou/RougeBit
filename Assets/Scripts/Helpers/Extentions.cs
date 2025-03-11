@@ -1,5 +1,4 @@
 using UnityEngine;
-
 public static class TransformExtentions
 {
     public static bool TryGetComponentInChildren<T>(this Transform transform, out T component) where T : Component

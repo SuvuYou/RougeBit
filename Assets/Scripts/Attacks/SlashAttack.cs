@@ -45,7 +45,7 @@ class SlashAttack : BaseAttack
     private void _handleCollision()
     {    
         var angle = Vector3.Angle(Vector3.left, _attackDirection);
-        var colliders = Physics2D.OverlapBoxAll(_getSpawnPosition(), new Vector2(_stats.AttackDistance + 1f, _stats.AttackDistance + 1f), angle, _baseStats.EnemyLayerMask);
+        var colliders = Physics2D.OverlapBoxAll(_getSpawnPosition(), new Vector2(_stats.AttackDistance + 1f, _stats.AttackDistance + 1f), angle, _enemyLayerMask);
 
         foreach (var collider in colliders)
         {
