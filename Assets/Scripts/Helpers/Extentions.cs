@@ -60,3 +60,8 @@ public static class AnimatorExtentions
         return 0f;
     }
 }
+
+public static class GameObjectExtentions
+{
+    public static bool IsPrefab(this GameObject gameObject) => gameObject.scene.IsValid();
+}

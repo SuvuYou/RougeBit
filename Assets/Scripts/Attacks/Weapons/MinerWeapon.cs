@@ -5,9 +5,10 @@ public class MinerWeapon : BaseWeapon
     [SerializeField] PlantMineAttack _attack;
     [SerializeField] RotationController _rotationController;
 
-    public override void Setup(GameObject attacker) 
+    public override void Setup(GameObject attacker, LayerMask enemyLayerMask) 
     {
-        _attack.Setup(attacker);
+        _attack.Setup(attacker, enemyLayerMask);
+        _rotationController.SetupPivotPoint(attacker.transform);
         _rotationController.EnableIdleRotation();
     }
 

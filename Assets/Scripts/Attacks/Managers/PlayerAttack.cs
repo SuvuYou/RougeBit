@@ -1,13 +1,22 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 class PlayerAttack : MonoBehaviour
 {
-    [SerializeField] private BaseWeapon[] _weapons;
+    [SerializeField] private List<BaseWeapon> _weapons;
     [SerializeField] private PalyerInputSO _palyerInputSO;
     [SerializeField] private CharacterMovement _movement;
 
+    [SerializeField] private LayerMask _enemyLayerMask;
+
     [SerializeField] private ComplexEntityAnimationController _animationController;
+
+    public void AddWeapon(BaseWeapon weapon) 
+    {
+        _weapons.Add(weapon);
+        weapon.Setup(this.gameObject, _enemyLayerMask);
+    }
 
     private void Start()
     {
@@ -21,9 +30,9 @@ class PlayerAttack : MonoBehaviour
 
     private void _setupAttacks()
     {
-        foreach (var attack in _weapons) 
+        foreach (var weapon in _weapons) 
         {
-            attack.Setup(this.gameObject);
+            weapon.Setup(this.gameObject, _enemyLayerMask);
         }
 
         _setAttacksTarget();

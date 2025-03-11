@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 409601ad3731a5b46aab279d6ee0417e, type: 3}
   m_Name: Level 4
   m_EditorClassIdentifier: 
+  Title: Shield
   BaseAttackStats: {fileID: 0}
   RocketLaunchAttackStats: {fileID: 0}
   RangedAttackStats: {fileID: 0}

@@ -11,10 +11,9 @@ class DashAttackOnCollision : BaseAttack
     }
 
     [Header("References")]
-    [SerializeField] private CharacterMovement _attackerMovement;
-    [Space(15)]
-
     [SerializeField] private DashAttackOnCollisionStatsSO _stats;
+
+    private CharacterMovement _attackerMovement;
 
     private Vector3 _attackDirection;
     private Vector3 _attackerPosition;
@@ -22,9 +21,18 @@ class DashAttackOnCollision : BaseAttack
     private Vector3 _positionBeforeDash;
     private Vector3 _dashTargetPosition;
 
-    public override void Setup(GameObject attacker)
+    public override void Setup(GameObject attacker, LayerMask enemyLayerMask)
     {
-        base.Setup(attacker);
+        base.Setup(attacker, enemyLayerMask);
+
+        if (attacker.transform.TryGetComponentInChildrenOfParent(out CharacterMovement movement))
+        {
+            _attackerMovement = movement;
+        }
+        else    
+        {
+            Debug.LogError("Attacker does not have a CharacterMovement component!");
+        }
 
         OnAim.AddListener((Vector3 targetPosition) => _attackerMovement.Dash(_positionBeforeDash, _dashTargetPosition, _aimTimer.Duration));
     }

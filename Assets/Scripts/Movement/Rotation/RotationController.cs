@@ -1,13 +1,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RotationController : Upgradable<MonoBehaviour>
+public class RotationController : Upgradable
 {
     public override void UpgradeValues(BaseUpgradeValuesSetSO upgradeValuesSet) => _smoothTime = upgradeValuesSet.RotationControllerUpgradeValues.SmoothTime;
 
     [Header("References")]
     [SerializeField] private List<RotationStrategyBase> _rotationStrategies;
-    [SerializeField] private Transform _centerTransform;
+    private Transform _pivotPopint;
 
     [Header("Clamp outside circle options")]
     [SerializeField] private bool _shouldClampOutsideCircle = true;
@@ -34,13 +34,29 @@ public class RotationController : Upgradable<MonoBehaviour>
     protected Vector3 _currentTarget;
     protected Vector3 _goalTarget;
 
+    public void SetupPivotPoint(Transform pivotPoint) 
+    {
+        _pivotPopint = pivotPoint;
+    } 
+
     public void SetNewTarget(Vector3 newTarget)
     {
         _goalTarget =_shouldClampOutsideCircle ? _clampOutsideCircle(newTarget) : newTarget;
     }
 
+    private void Start()
+    {
+        foreach (RotationStrategyBase strategy in _rotationStrategies)
+        {
+            strategy.SetPivotPoint(_pivotPopint);
+        }
+    }
+
     protected virtual void Update()
     {
+        
+        if (!_pivotPopint) return;
+
         if (_shouldEnableIdleCircularMotion && IsIdleRotationEnabled) _stepToCircilarMotion();
         else _stepToGoalTarget();
 
@@ -74,10 +90,10 @@ public class RotationController : Upgradable<MonoBehaviour>
 
     private void _stepToCircilarMotion()
     {
-        Vector3 relativeTarget = _currentTarget - _centerTransform.position;
+        Vector3 relativeTarget = _currentTarget - _pivotPopint.position;
         Vector3 offset = Quaternion.Euler(0, 0, 90 * _idleCircularMotionSpeed * Time.deltaTime) * relativeTarget;
 
-        Vector3 newTarget = _centerTransform.position + offset;
+        Vector3 newTarget = _pivotPopint.position + offset;
 
         if(_shouldClampOutsideCircle) newTarget = _clampOutsideCircle(newTarget);
         
@@ -86,19 +102,19 @@ public class RotationController : Upgradable<MonoBehaviour>
 
     private Vector3 _clampOutsideCircle(Vector3 point)
     {
-        Vector3 offset = point - _centerTransform.position;
+        Vector3 offset = point - _pivotPopint.position;
 
         if (offset.magnitude == 0) offset = _getRandomTargetPosition();
 
         if (offset.magnitude < _distanceFromCenter + 1)
         {            
-            return _centerTransform.position + offset.normalized * (_distanceFromCenter + 1f);
+            return _pivotPopint.position + offset.normalized * (_distanceFromCenter + 1f);
         }
 
         return point;
     }
 
-    private Vector3 _getRandomTargetPosition() => _centerTransform.position + Random.insideUnitCircle.ToVector3WithZ(z: 0f) * _distanceFromCenter;
+    private Vector3 _getRandomTargetPosition() => _pivotPopint.position + Random.insideUnitCircle.ToVector3WithZ(z: 0f) * _distanceFromCenter;
 
     private void OnDrawGizmos()
     {

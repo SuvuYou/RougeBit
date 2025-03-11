@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Slash Attack Stats Level 1
   m_EditorClassIdentifier: 
   AttackDamage: 50
-  AttackDistance: 1
+  AttackDistance: 2

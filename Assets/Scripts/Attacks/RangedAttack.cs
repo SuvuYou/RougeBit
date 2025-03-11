@@ -10,13 +10,27 @@ class RangedAttack : BaseAttack
         _stats = ovrrideValues.RangedAttackStats;
     }
 
-    [SerializeField] private CharacterMovement _attackerMovement;
-
     [SerializeField] private RangedAttackStatsSO _stats;
 
     [SerializeField] private Transform _spawnPoint;
 
+    private CharacterMovement _attackerMovement;
+    
     private Vector3 _attackDirection;
+
+    public override void Setup(GameObject attacker, LayerMask enemyLayerMask)
+    {
+        base.Setup(attacker, enemyLayerMask);
+
+        if (attacker.transform.TryGetComponentInChildrenOfParent(out CharacterMovement movement))
+        {
+            _attackerMovement = movement;
+        }
+        else    
+        {
+            Debug.LogError("Attacker does not have a CharacterMovement component!");
+        }
+    }
 
     protected override void _handleIsReadyForAttack(Action performAttackOrAim) 
     {

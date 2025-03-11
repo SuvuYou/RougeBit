@@ -8,6 +8,8 @@ class EnemyAttack : MonoBehaviour
     [SerializeField] private BaseWeapon[] _weapons;
     [SerializeField] private CharacterMovement _movement;
 
+    [SerializeField] private LayerMask _enemyLayerMask;
+
     private void Start()
     {
         _setupAttacks();
@@ -31,8 +33,7 @@ class EnemyAttack : MonoBehaviour
     {
         foreach (var weapon in _weapons) 
         {
-            weapon.Setup(this.gameObject);
-           
+            weapon.Setup(this.gameObject, _enemyLayerMask);
         }
     }
 

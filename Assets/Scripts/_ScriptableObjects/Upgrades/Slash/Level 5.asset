@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 409601ad3731a5b46aab279d6ee0417e, type: 3}
   m_Name: Level 5
   m_EditorClassIdentifier: 
+  Title: Slash
   BaseAttackStats: {fileID: 11400000, guid: db0fadafeec9ddf4687b3ce679b2d27a, type: 2}
   RocketLaunchAttackStats: {fileID: 0}
   RangedAttackStats: {fileID: 0}

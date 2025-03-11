@@ -10,18 +10,16 @@ class AirStrikeAttack : BaseAttack
         _stats = ovrrideValues.AirStrikeAttackStats;
     }
 
-    [SerializeField] private CharacterMovement _attackerMovement;
-
     [SerializeField] private AirStrikeAttackStatsSO _stats;
 
     private Vector3 _cachedTargetPosition;
 
     protected override Vector3 _targetPosition => _cachedTargetPosition == Vector3.zero ? _target.transform.position : _cachedTargetPosition;
 
-    public override void Setup(GameObject attacker)
+    public override void Setup(GameObject attacker, LayerMask enemyLayerMask)
     {
-        base.Setup(attacker);
-        
+        base.Setup(attacker, enemyLayerMask);
+
         OnAim.AddListener((Vector3 _) => _cachedTargetPosition = _target.transform.position);
     }
 

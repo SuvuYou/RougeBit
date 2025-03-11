@@ -4,6 +4,11 @@ public class ShieldWeapon : BaseWeapon
 {
     [SerializeField] RotationController _rotationController;
 
+    public override void Setup(GameObject attacker, LayerMask enemyLayerMask) 
+    {
+        _rotationController.SetupPivotPoint(attacker.transform);
+    }
+
     public override void SetTarget(Target targetPosition, bool isTargetFound = false)
     {
         if (isTargetFound)
@@ -19,7 +24,7 @@ public class ShieldWeapon : BaseWeapon
 
     private void OnTriggerEnter2D(Collider2D collision) 
     {
-        if (collision.transform.TryGetComponentInChildrenOfParent(out BaseProjectile projectile)) 
+        if (collision.transform.TryGetComponentInChildrenOfParent(out BaseProjectile projectile))
         {
             if (projectile.CurrentVarient == BaseProjectile.Varients.Player && WeaponTargetType == TargetType.EnemyProjectile) return;
             if (projectile.CurrentVarient == BaseProjectile.Varients.Enemy && WeaponTargetType == TargetType.PlayerProjectile) return;

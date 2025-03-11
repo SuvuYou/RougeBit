@@ -86,6 +86,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _baseStats: {fileID: 0}
+  _enemyLayerMask:
+    serializedVersion: 2
+    m_Bits: 128
   OnReload:
     m_PersistentCalls:
       m_Calls: []

@@ -10,8 +10,6 @@ class PlantMineAttack : BaseAttack
         _stats = ovrrideValues.PlantMineAttackStats;
     }
 
-    [SerializeField] private CharacterMovement _attackerMovement;
-
     [SerializeField] private PlantMineAttackStatsSO _stats;
 
     protected override void _handleIsReadyForAttack(Action performAttackOrAim) 

@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 409601ad3731a5b46aab279d6ee0417e, type: 3}
   m_Name: Level3
   m_EditorClassIdentifier: 
-  BaseAttackStats: {fileID: 0}
+  Title: Rocket launcher
+  BaseAttackStats: {fileID: 11400000, guid: 3fede0d6468039147a025c9a20bcc001, type: 2}
   RocketLaunchAttackStats: {fileID: 11400000, guid: 041c08ac1505c3d47b9dcb3a01648973, type: 2}
   RangedAttackStats: {fileID: 0}
   PlantMineAttackStats: {fileID: 0}

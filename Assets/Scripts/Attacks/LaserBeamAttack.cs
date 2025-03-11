@@ -23,9 +23,9 @@ class LaserBeamAttack : BaseAttack
     private Timer _attackTimer = new();
     private Timer _collisionTimer = new();
 
-    public override void Setup(GameObject attacker)
+    public override void Setup(GameObject attacker, LayerMask enemyLayerMask)
     {
-        base.Setup(attacker);
+        base.Setup(attacker, enemyLayerMask);
 
         if(attacker.transform.parent.TryGetComponentInChildren(out CharacterMovement movement))
         {

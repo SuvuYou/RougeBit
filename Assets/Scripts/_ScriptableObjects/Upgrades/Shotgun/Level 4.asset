@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 409601ad3731a5b46aab279d6ee0417e, type: 3}
   m_Name: Level 4
   m_EditorClassIdentifier: 
+  Title: Shotgun
   BaseAttackStats: {fileID: 11400000, guid: b64431fb661d90c43bbe3f1d93ae291e, type: 2}
   RocketLaunchAttackStats: {fileID: 0}
   RangedAttackStats: {fileID: 11400000, guid: 21d491fdc2246f94ea16104623fb69e0, type: 2}

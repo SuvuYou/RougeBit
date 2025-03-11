@@ -12,4 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 409601ad3731a5b46aab279d6ee0417e, type: 3}
   m_Name: Level 2
   m_EditorClassIdentifier: 
+  Title: Shield
+  BaseAttackStats: {fileID: 0}
+  RocketLaunchAttackStats: {fileID: 0}
+  RangedAttackStats: {fileID: 0}
+  PlantMineAttackStats: {fileID: 0}
+  LaserBeamAttackStats: {fileID: 0}
+  DashAttackOnCollisionStats: {fileID: 0}
+  AttackOnCollisionStats: {fileID: 0}
+  AirStrikeAttackStats: {fileID: 0}
+  SlashAttackStats: {fileID: 0}
   RotationControllerUpgradeValues: {fileID: 11400000, guid: 67487f076ee442145a554fb94c68b614, type: 2}

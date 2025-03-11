@@ -66,8 +66,8 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Animations\Controllers\BaseEntityAnimationController.cs" />
     <Compile Include="Assets\Scripts\Attacks\PlantMineAttack.cs" />
+    <Compile Include="Assets\Scripts\Shop\Shop.cs" />
     <Compile Include="Assets\Scripts\Attacks\_ScriptableObjects\RangedAttackStatsSO.cs" />
-    <Compile Include="Assets\Scripts\Upgrades\_BaseUpgradeValuesSetSO.cs" />
     <Compile Include="Assets\Scripts\Managers\ProjectileManager.cs" />
     <Compile Include="Assets\Scripts\Upgrades\RotationControllerUpgradeValuesSO.cs" />
     <Compile Include="Assets\Scripts\Attacks\Weapons\SlashWeapon.cs" />
@@ -107,6 +107,7 @@
     <Compile Include="Assets\Scripts\EntitiesController\Enemy.cs" />
     <Compile Include="Assets\Scripts\Animations\Controllers\SimpleEntityAnimationController.cs" />
     <Compile Include="Assets\Scripts\Helpers\Extentions.cs" />
+    <Compile Include="Assets\Scripts\Shop\Buyer.cs" />
     <Compile Include="Assets\Scripts\Attacks\Projectiles\Mine.cs" />
     <Compile Include="Assets\Scripts\Animations\Controllers\_BaseAnimationController.cs" />
     <Compile Include="Assets\Scripts\Movement\Rotation\RotationController.cs" />
@@ -119,10 +120,10 @@
     <Compile Include="Assets\Scripts\Attacks\Weapons\AirStrikeWeapon.cs" />
     <Compile Include="Assets\Scripts\Movement\Rotation\FollowTargetRotationController.cs" />
     <Compile Include="Assets\Scripts\Attacks\Projectiles\_BaseProjectile.cs" />
+    <Compile Include="Assets\Scripts\Upgrades\BaseUpgradeValuesSetSO.cs" />
     <Compile Include="Assets\Scripts\Helpers\Timer.cs" />
     <Compile Include="Assets\Scripts\Attacks\_ScriptableObjects\PlantMineAttackStatsSO.cs" />
     <Compile Include="Assets\Scripts\Attacks\_ScriptableObjects\RocketProjectileStatsSO.cs" />
-    <Compile Include="Assets\Scripts\Upgrades\UpgradeManager.cs" />
     <Compile Include="Assets\Scripts\Attacks\KnockBack\Shockwave.cs" />
     <Compile Include="Assets\Scripts\Attacks\KnockBack\BaseKnockback.cs" />
     <Compile Include="Assets\Scripts\Animations\Controllers\_IVFXAnimationTrigger.cs" />
@@ -138,17 +139,18 @@
     <Compile Include="Assets\Scripts\Animations\Controllers\ExplosionEffectAnimationController.cs" />
     <Compile Include="Assets\Scripts\SpriteEffects\WeaponRotationSpritesetSO.cs" />
     <Compile Include="Assets\Scripts\Movement\Rotation\_IRotationStrategy.cs" />
+    <Compile Include="Assets\Scripts\Upgrades\Upgradable.cs" />
     <Compile Include="Assets\Scripts\Economy\CollectableItem.cs" />
     <Compile Include="Assets\Scripts\Attacks\_ScriptableObjects\MineStatsSO.cs" />
     <Compile Include="Assets\Scripts\Attacks\Projectiles\RocketProjectile.cs" />
     <Compile Include="Assets\SerializableDictionary\Example\UserSerializableDictionaries.cs" />
+    <Compile Include="Assets\Scripts\Upgrades\UpgradablesBundleController.cs" />
     <Compile Include="Assets\Scripts\Attacks\_ScriptableObjects\DashAttackOnCollisionStatsSO.cs" />
     <Compile Include="Assets\Scripts\Attacks\Weapons\_BaseWeapon.cs" />
     <Compile Include="Assets\Scripts\SpriteEffects\FlashAnimation.cs" />
     <Compile Include="Assets\Scripts\Attacks\_BaseAttack.cs" />
     <Compile Include="Assets\Scripts\Animations\Controllers\ComplexEntityAnimationController.cs" />
     <Compile Include="Assets\Scripts\Attacks\Managers\PlayerAttack.cs" />
-    <Compile Include="Assets\Scripts\Upgrades\_IUpgradable.cs" />
     <Compile Include="Assets\SerializableDictionary\SerializableDictionary.cs" />
     <Compile Include="Assets\Scripts\Movement\Rotation\RotateSpritesetByDirection.cs" />
     <Compile Include="Assets\Scripts\Movement\Rotation\SnapToRotationByDirection.cs" />

@@ -3,6 +3,9 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "BaseUpgradeValuesSet", menuName = "ScriptableObjects/Upgrades/BaseUpgradeValuesSet")]
 public class BaseUpgradeValuesSetSO : ScriptableObject
 {
+    [Header("Display Info")]
+    public string Title = "Attack Name";
+
     [Header("Attacks")]
     public _BaseAttackStatsSO BaseAttackStats;
     public RocketLaunchAttackStatsSO RocketLaunchAttackStats;

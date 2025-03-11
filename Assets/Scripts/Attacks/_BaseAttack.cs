@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class BaseAttack : Upgradable<MonoBehaviour>
+public class BaseAttack : Upgradable
 {
     public override void UpgradeValues(BaseUpgradeValuesSetSO ovrrideValues)
     {
@@ -10,6 +10,8 @@ public class BaseAttack : Upgradable<MonoBehaviour>
 
         _reloadTimer = new Timer(_baseStats.ReloadDuration);
         _aimTimer = new Timer(_baseStats.AimDuration);
+
+        ActivateAttack();
     }
 
     public enum AttackState { Reload, ReadyForAttack, Aiming, Attacking }
@@ -45,12 +47,13 @@ public class BaseAttack : Upgradable<MonoBehaviour>
 
     public void SetTarget(Target target) => _target = target;
 
-    public virtual void Setup(GameObject attacker)
+    public virtual void Setup(GameObject attacker, LayerMask enemyLayerMask)
     {
         _reloadTimer = new Timer(_baseStats.ReloadDuration);
         _aimTimer = new Timer(_baseStats.AimDuration);
 
         _attacker = attacker;
+        _enemyLayerMask = enemyLayerMask;
 
         ActivateAttack();
     }
