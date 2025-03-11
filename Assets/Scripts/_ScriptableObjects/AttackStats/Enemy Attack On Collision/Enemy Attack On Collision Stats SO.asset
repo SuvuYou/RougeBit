@@ -12,13 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 544ac826520eb1e4f9c31ead6557928a, type: 3}
   m_Name: Enemy Attack On Collision Stats SO
   m_EditorClassIdentifier: 
-  EnemyLayerMask:
-    serializedVersion: 2
-    m_Bits: 128
-  ReloadDuration: 2
-  RequiresAim: 0
-  AimDuration: 0
-  AddsKnockback: 0
   AttackDamage: 25
-  AttackDistance: 2
-  CollisionRadius: 1.5
+  AttackDistance: 1
+  CollisionRadius: 2

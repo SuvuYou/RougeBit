@@ -3,6 +3,14 @@ using UnityEngine;
 
 public class TimeManager : Singlton<MonoBehaviour>
 {
+    [SerializeField] private bool _override;
+    [SerializeField] private float _timeScale = 0.1f;
+
+    private void Update()
+    {
+        if(_override) Time.timeScale =_timeScale;
+    }
+
     public void StopTimeFor(float duration)
     {
         StartCoroutine(_slowDownTimeFor(duration));
@@ -30,6 +38,6 @@ public class TimeManager : Singlton<MonoBehaviour>
             yield return null;
         }
 
-        Time.timeScale = 1;
+        Time.timeScale = 1f;
     }
 }

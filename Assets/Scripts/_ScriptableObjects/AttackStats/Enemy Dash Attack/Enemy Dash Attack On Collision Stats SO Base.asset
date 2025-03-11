@@ -17,5 +17,5 @@ MonoBehaviour:
     m_Bits: 128
   ReloadDuration: 3
   RequiresAim: 1
-  AimDuration: 0.2
+  AimDuration: 0.5
   AddsKnockback: 0

@@ -3,12 +3,34 @@ using UnityEngine;
 
 class RangedAttack : BaseAttack
 {
-    [SerializeField] private CharacterMovement _attackerMovement;
+    public override void UpgradeValues(BaseUpgradeValuesSetSO ovrrideValues)
+    {
+        base.UpgradeValues(ovrrideValues);
+
+        _stats = ovrrideValues.RangedAttackStats;
+    }
 
     [SerializeField] private RangedAttackStatsSO _stats;
 
+    [SerializeField] private Transform _spawnPoint;
+
+    private CharacterMovement _attackerMovement;
+    
     private Vector3 _attackDirection;
-    private Vector3 _attackerPosition;
+
+    public override void Setup(GameObject attacker, LayerMask enemyLayerMask)
+    {
+        base.Setup(attacker, enemyLayerMask);
+
+        if (attacker.transform.TryGetComponentInChildrenOfParent(out CharacterMovement movement))
+        {
+            _attackerMovement = movement;
+        }
+        else    
+        {
+            Debug.LogError("Attacker does not have a CharacterMovement component!");
+        }
+    }
 
     protected override void _handleIsReadyForAttack(Action performAttackOrAim) 
     {
@@ -23,11 +45,12 @@ class RangedAttack : BaseAttack
 
     protected override void _handleAttack(Action finishAttack, Action cancelAttack, Action cancelReloadAttack)
     {
+        _updateAttackState();
         _spawnProjectiles();
         finishAttack();
     }
 
-    protected override void _handleAim(Action cancelAim) 
+    protected override void _handleAim(Action cancelAim, Action earlyFinishAttack)
     {
         if (_attackerMovement.Velocity.magnitude > _stats.MovementVelocityToCancelAttackThreshold) cancelAim();
 
@@ -39,7 +62,6 @@ class RangedAttack : BaseAttack
         if (!_isTargetFound || _attacker == null) return;
 
         _attackDirection = (_target.transform.position - _attacker.transform.position).normalized;
-        _attackerPosition = _attacker.transform.position;
     }
 
     private void _spawnProjectiles()
@@ -64,7 +86,12 @@ class RangedAttack : BaseAttack
 
     private void _throwProjectileInDirection(Vector3 direction)
     {
-        BaseProjectile projectile = Instantiate(_stats.ProjectilePrefab, _attackerPosition, Quaternion.identity);
-        projectile.Init(direction, _baseStats.EnemyLayerMask);
+        BaseProjectile projectile = Instantiate(_getRandomProjectilePrefab(), _spawnPoint.position, Quaternion.identity);
+
+        projectile.Init(direction);
+
+        ProjectileManager.Instance.AddProjectile(projectile);
     }
+
+    private BaseProjectile _getRandomProjectilePrefab() => _stats.ProjectilePrefabs[UnityEngine.Random.Range(0, _stats.ProjectilePrefabs.Length - 1)];
 }

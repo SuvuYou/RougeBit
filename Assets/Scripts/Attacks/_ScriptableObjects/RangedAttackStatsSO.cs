@@ -3,7 +3,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "ScriptableObjects/Attacks/RangedAttackStatsSO")]
 public class RangedAttackStatsSO : ScriptableObject
 {
-    public BaseProjectile ProjectilePrefab; 
+    public BaseProjectile[] ProjectilePrefabs; 
 
     public float MovementVelocityToCancelAttackThreshold = 1f;
     public float AttackDistance = 15f;

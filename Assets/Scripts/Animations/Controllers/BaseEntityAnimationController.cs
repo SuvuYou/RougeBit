@@ -11,6 +11,6 @@ public class BaseEntityAnimationController : BaseAnimationController
 
     protected virtual void Update()
     {
-        _spriteRenderer.flipX = _isFaceLeft;
+        _spriteRenderer.flipX = !_isFaceLeft;
     }
 }

@@ -3,7 +3,12 @@ using UnityEngine;
 
 class AirStrikeAttack : BaseAttack
 {
-    [SerializeField] private CharacterMovement _attackerMovement;
+    public override void UpgradeValues(BaseUpgradeValuesSetSO ovrrideValues)
+    {
+        base.UpgradeValues(ovrrideValues);
+
+        _stats = ovrrideValues.AirStrikeAttackStats;
+    }
 
     [SerializeField] private AirStrikeAttackStatsSO _stats;
 
@@ -11,10 +16,10 @@ class AirStrikeAttack : BaseAttack
 
     protected override Vector3 _targetPosition => _cachedTargetPosition == Vector3.zero ? _target.transform.position : _cachedTargetPosition;
 
-    public override void Setup(GameObject attacker, Target target)
+    public override void Setup(GameObject attacker, LayerMask enemyLayerMask)
     {
-        base.Setup(attacker, target);
-        
+        base.Setup(attacker, enemyLayerMask);
+
         OnAim.AddListener((Vector3 _) => _cachedTargetPosition = _target.transform.position);
     }
 
@@ -36,7 +41,7 @@ class AirStrikeAttack : BaseAttack
 
     private void _handleCollision() 
     {
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(_cachedTargetPosition, _stats.ExplosionRadious, _baseStats.EnemyLayerMask);
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(_cachedTargetPosition, _stats.ExplosionRadious, _enemyLayerMask);
 
         foreach (var collider in colliders)
         {

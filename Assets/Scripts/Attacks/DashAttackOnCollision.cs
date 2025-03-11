@@ -3,11 +3,17 @@ using UnityEngine;
 
 class DashAttackOnCollision : BaseAttack
 {
-    [Header("References")]
-    [SerializeField] private CharacterMovement _attackerMovement;
-    [Space(15)]
+    public override void UpgradeValues(BaseUpgradeValuesSetSO ovrrideValues)
+    {
+        base.UpgradeValues(ovrrideValues);
 
+        _stats = ovrrideValues.DashAttackOnCollisionStats;
+    }
+
+    [Header("References")]
     [SerializeField] private DashAttackOnCollisionStatsSO _stats;
+
+    private CharacterMovement _attackerMovement;
 
     private Vector3 _attackDirection;
     private Vector3 _attackerPosition;
@@ -15,9 +21,18 @@ class DashAttackOnCollision : BaseAttack
     private Vector3 _positionBeforeDash;
     private Vector3 _dashTargetPosition;
 
-    public override void Setup(GameObject attacker, Target target)
+    public override void Setup(GameObject attacker, LayerMask enemyLayerMask)
     {
-        base.Setup(attacker, target);
+        base.Setup(attacker, enemyLayerMask);
+
+        if (attacker.transform.TryGetComponentInChildrenOfParent(out CharacterMovement movement))
+        {
+            _attackerMovement = movement;
+        }
+        else    
+        {
+            Debug.LogError("Attacker does not have a CharacterMovement component!");
+        }
 
         OnAim.AddListener((Vector3 targetPosition) => _attackerMovement.Dash(_positionBeforeDash, _dashTargetPosition, _aimTimer.Duration));
     }
@@ -31,6 +46,13 @@ class DashAttackOnCollision : BaseAttack
         _updateAttackState();
         performAttackOrAim();
     } 
+
+    protected override void _handleAim(Action cancelAim, Action earlyFinishAttack)
+    {
+        _updateAttackState();
+
+        if (_handleCollision()) earlyFinishAttack();
+    }
 
     protected override void _handleAttack(Action finishAttack, Action cancelAttack, Action cancelReloadAttack)
     {
@@ -59,23 +81,24 @@ class DashAttackOnCollision : BaseAttack
         _dashTargetPosition = _positionBeforeDash + _attackDirection.normalized * _stats.DashDistance;
     }
 
-    private void _handleCollision()
+    private bool _handleCollision()
     {    
-        var colliders = Physics2D.OverlapBox(_attackerPosition, new Vector2(_stats.CollisionRadius, _stats.CollisionRadius), 0, _baseStats.EnemyLayerMask);
+        var colliders = Physics2D.OverlapBox(_attackerPosition, new Vector2(_stats.CollisionRadius, _stats.CollisionRadius), 0, _enemyLayerMask);
 
-        if (colliders != null)
+        if (colliders == null) return false;
+
+        Transform parent = colliders.gameObject.transform.parent;
+
+        if (parent.TryGetComponentInChildren(out BaseDamagable damagable))
         {
-            Transform parent = colliders.gameObject.transform.parent;
-
-            if (parent.TryGetComponentInChildren(out BaseDamagable damagable))
-            {
-                damagable.TakeDamage(_stats.AttackDamage);
-            }
-
-            if (_baseStats.AddsKnockback && parent.TryGetComponentInChildren(out BaseKnockback knockable))
-            {
-                knockable.AddKnockback(_attackDirection);
-            }
+            damagable.TakeDamage(_stats.AttackDamage);
         }
+
+        if (_baseStats.AddsKnockback && parent.TryGetComponentInChildren(out BaseKnockback knockable))
+        {
+            knockable.AddKnockback(_attackDirection);
+        }
+
+        return true;   
     }
 }

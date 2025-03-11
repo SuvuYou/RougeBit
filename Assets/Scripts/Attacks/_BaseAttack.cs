@@ -2,11 +2,24 @@ using System;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class BaseAttack : MonoBehaviour
+public class BaseAttack : Upgradable
 {
+    public override void UpgradeValues(BaseUpgradeValuesSetSO ovrrideValues)
+    {
+        _baseStats = ovrrideValues.BaseAttackStats;
+
+        _reloadTimer = new Timer(_baseStats.ReloadDuration);
+        _aimTimer = new Timer(_baseStats.AimDuration);
+
+        ActivateAttack();
+    }
+
     public enum AttackState { Reload, ReadyForAttack, Aiming, Attacking }
 
     [SerializeField] protected _BaseAttackStatsSO _baseStats;
+
+    [Header("Target")]
+    protected LayerMask _enemyLayerMask;
 
     [Header("Attack Events")]
     public UnityEvent OnReload;
@@ -18,7 +31,7 @@ public class BaseAttack : MonoBehaviour
     protected GameObject _attacker;
     protected Target _target;
 
-    protected virtual Vector3 _targetPosition => _target.transform.position;
+    protected virtual Vector3 _targetPosition => _isTargetFound ? _target.transform.position : Vector3.zero;
 
     protected bool _isTargetFound => _target != null;
 
@@ -27,18 +40,20 @@ public class BaseAttack : MonoBehaviour
 
     protected AttackState _attackState = AttackState.Reload;
 
+    public bool IsAttacking => _attackState == AttackState.Attacking;
+
     public void ActivateAttack() { _reloadTimer.Start(); _reloadTimer.Reset(); }
     public void DeactivateAttack() { _reloadTimer.Stop(); _aimTimer.Stop(); }
 
     public void SetTarget(Target target) => _target = target;
 
-    public virtual void Setup(GameObject attacker, Target target)
+    public virtual void Setup(GameObject attacker, LayerMask enemyLayerMask)
     {
         _reloadTimer = new Timer(_baseStats.ReloadDuration);
         _aimTimer = new Timer(_baseStats.AimDuration);
 
         _attacker = attacker;
-        _target = target;
+        _enemyLayerMask = enemyLayerMask;
 
         ActivateAttack();
     }
@@ -60,7 +75,7 @@ public class BaseAttack : MonoBehaviour
                 _handleIsReadyForAttack(performAttackOrAim: _performAttackOrAim);
                 break;
             case AttackState.Aiming:
-                _handleAim(cancelAim: _cancelAttack);
+                _handleAim(cancelAim: _cancelAttack, earlyFinishAttack: _finishAttack);
             
                 _aimTimer.Update(Time.deltaTime);
                 
@@ -94,7 +109,7 @@ public class BaseAttack : MonoBehaviour
 
     protected virtual void _handleAttack(Action finishAttack, Action cancelAttack, Action cancelReloadAttack) {}
 
-    protected virtual void _handleAim(Action cancelAim) {}
+    protected virtual void _handleAim(Action cancelAim, Action earlyFinishAttack) {}
 
     private void _cancelAttack() => _switchAttackState(AttackState.ReadyForAttack);
     private void _cancelReloadAttack() => _switchAttackState(AttackState.Reload);

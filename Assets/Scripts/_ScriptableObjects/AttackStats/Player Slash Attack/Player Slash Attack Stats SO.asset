@@ -12,12 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eae216f32edd1c64abff74c9e2a8e861, type: 3}
   m_Name: Player Slash Attack Stats SO
   m_EditorClassIdentifier: 
-  EnemyLayerMask:
-    serializedVersion: 2
-    m_Bits: 64
-  ReloadDuration: 0.5
-  RequiresAim: 0
-  AimDuration: 0
-  AddsKnockback: 1
   AttackDamage: 50
-  AttackDistance: 2
+  AttackDistance: 4

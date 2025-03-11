@@ -11,6 +11,7 @@ public enum MovementLock {
     Knockback       = 1 << 2,
     Dash            = 1 << 3,
     Dead            = 1 << 4,
+    Timed           = 1 << 5
 }
 
 public class CharacterMovement : MonoBehaviour

@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e325b5cc00782e4bbc6ef658444454f, type: 3}
   m_Name: Enemy Ranged X8 Attack Stats SO
   m_EditorClassIdentifier: 
-  ProjectilePrefab: {fileID: 173239952212642452, guid: 77f260542eb3a5c4fb32a45f19bd8cbe, type: 3}
+  ProjectilePrefabs:
+  - {fileID: 9104435584736616129, guid: a7a4296d00fd27e45a75af89a38a3318, type: 3}
   MovementVelocityToCancelAttackThreshold: 1
   AttackDistance: 15
   NumberOfProjectiles: 8

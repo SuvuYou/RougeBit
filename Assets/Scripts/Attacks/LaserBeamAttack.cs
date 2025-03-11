@@ -3,6 +3,16 @@ using UnityEngine;
 
 class LaserBeamAttack : BaseAttack
 {
+    public override void UpgradeValues(BaseUpgradeValuesSetSO ovrrideValues)
+    {
+        base.UpgradeValues(ovrrideValues);
+
+        _stats = ovrrideValues.LaserBeamAttackStats;
+
+        _attackTimer.SetBaseTime(_stats.BeamDuration);
+        _collisionTimer.SetBaseTime(1f / _stats.BeamAttacksPerSecond);
+    }
+
     [SerializeField] private LaserBeamAttackStatsSO _stats;
     
     private CharacterMovement _attackerMovement;
@@ -13,9 +23,9 @@ class LaserBeamAttack : BaseAttack
     private Timer _attackTimer = new();
     private Timer _collisionTimer = new();
 
-    public override void Setup(GameObject attacker, Target target)
+    public override void Setup(GameObject attacker, LayerMask enemyLayerMask)
     {
-        base.Setup(attacker, target);
+        base.Setup(attacker, enemyLayerMask);
 
         if(attacker.transform.parent.TryGetComponentInChildren(out CharacterMovement movement))
         {
@@ -66,7 +76,7 @@ class LaserBeamAttack : BaseAttack
         }
     }
 
-    protected override void _handleAim(Action cancelAim) 
+    protected override void _handleAim(Action cancelAim, Action earlyFinishAttack)
     {
         if (_attackerMovement.Velocity.magnitude > _stats.MovementVelocityToCancelAttackThreshold) cancelAim();
 
@@ -90,7 +100,7 @@ class LaserBeamAttack : BaseAttack
 
         Vector3 spawnPosition = _attackerPosition + _attackDirection * (_stats.BeamLength / 2);
 
-        var colliders = Physics2D.OverlapBox(spawnPosition, new Vector2(_stats.BeamLength, _stats.BeamWidth), angle, _baseStats.EnemyLayerMask);
+        var colliders = Physics2D.OverlapBox(spawnPosition, new Vector2(_stats.BeamLength, _stats.BeamWidth), angle, _enemyLayerMask);
 
         if (colliders != null)
         {

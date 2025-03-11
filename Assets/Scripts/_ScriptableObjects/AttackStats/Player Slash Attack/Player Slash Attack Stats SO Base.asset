@@ -15,7 +15,7 @@ MonoBehaviour:
   EnemyLayerMask:
     serializedVersion: 2
     m_Bits: 64
-  ReloadDuration: 0.25
+  ReloadDuration: 0.5
   RequiresAim: 0
   AimDuration: 0
   AddsKnockback: 1
