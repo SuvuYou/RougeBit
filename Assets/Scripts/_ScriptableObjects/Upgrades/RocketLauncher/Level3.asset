@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: Level3
   m_EditorClassIdentifier: 
   Title: Rocket launcher
+  IconSprite: {fileID: -1617884484, guid: 977f00798cba7414487bac1d443bfdef, type: 3}
+  TitleSprite: {fileID: 0}
+  UpgradeRarity: 2
   BaseAttackStats: {fileID: 11400000, guid: 3fede0d6468039147a025c9a20bcc001, type: 2}
   RocketLaunchAttackStats: {fileID: 11400000, guid: 041c08ac1505c3d47b9dcb3a01648973, type: 2}
   RangedAttackStats: {fileID: 0}

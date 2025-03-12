@@ -123,6 +123,7 @@
     <Compile Include="Assets\Scripts\Upgrades\BaseUpgradeValuesSetSO.cs" />
     <Compile Include="Assets\Scripts\Helpers\Timer.cs" />
     <Compile Include="Assets\Scripts\Attacks\_ScriptableObjects\PlantMineAttackStatsSO.cs" />
+    <Compile Include="Assets\Scripts\Shop\CardRarityConfig.cs" />
     <Compile Include="Assets\Scripts\Attacks\_ScriptableObjects\RocketProjectileStatsSO.cs" />
     <Compile Include="Assets\Scripts\Attacks\KnockBack\Shockwave.cs" />
     <Compile Include="Assets\Scripts\Attacks\KnockBack\BaseKnockback.cs" />
@@ -158,6 +159,7 @@
     <Compile Include="Assets\Scripts\Movement\FollowTargetMovement.cs" />
     <Compile Include="Assets\Scripts\Attacks\AttackOnCollision.cs" />
     <Compile Include="Assets\Scripts\DamageControl\BaseDamagable.cs" />
+    <Compile Include="Assets\Scripts\Upgrades\Rarity.cs" />
     <Compile Include="Assets\Scripts\Input\PalyerInput.cs" />
     <Compile Include="Assets\Scripts\Attacks\_ScriptableObjects\AttackOnCollisionStatsSO.cs" />
     <Compile Include="Assets\Scripts\Animations\Controllers\TargetingEffectAnimationController.cs" />

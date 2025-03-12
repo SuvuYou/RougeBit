@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 409601ad3731a5b46aab279d6ee0417e, type: 3}
   m_Name: Level 2
   m_EditorClassIdentifier: 
-  Title: Slash
+  Title: Sword
+  IconSprite: {fileID: -835266852, guid: 5d6e44802feb47f41aeb27f4e072d254, type: 3}
+  TitleSprite: {fileID: 0}
+  UpgradeRarity: 1
   BaseAttackStats: {fileID: 11400000, guid: e28aa9d3d5d560848bea29e35a4e9556, type: 2}
   RocketLaunchAttackStats: {fileID: 0}
   RangedAttackStats: {fileID: 0}
