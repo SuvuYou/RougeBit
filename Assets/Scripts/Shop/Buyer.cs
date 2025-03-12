@@ -43,18 +43,20 @@ class Buyer : MonoBehaviour
         }
     }
 
-    public bool TrySelectRandomItemToBuy(out UpgradablesBundleController item)
+    public bool TrySelectRandomItemsToBuy(int numberOfItems, out List<UpgradablesBundleController> items)
     {
-        List<UpgradablesBundleController> availableUpgradableItems = new ();
-        item = null;
+        List<UpgradablesBundleController> availableUpgradableItems = new();
+        items = new List<UpgradablesBundleController>();
 
         availableUpgradableItems.AddRange(_spawnableUpgradableItems);
         availableUpgradableItems.AddRange(_spawnedUpgradableItems.Where(item => item.IsUpgradable));
 
-        if (availableUpgradableItems.Count == 0) return false;
+        if (availableUpgradableItems.Count == 0 || numberOfItems <= 0) return false;
 
-        item = availableUpgradableItems[Random.Range(0, availableUpgradableItems.Count)];;
+        numberOfItems = Mathf.Min(numberOfItems, availableUpgradableItems.Count);
 
-        return true;
+        items = availableUpgradableItems.OrderBy(_ => Random.value).Take(numberOfItems).ToList();
+
+        return items.Count > 0;
     }
 }

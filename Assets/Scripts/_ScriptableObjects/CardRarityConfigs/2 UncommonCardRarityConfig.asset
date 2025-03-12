@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RarityTitleSprite: {fileID: 21300000, guid: af571df3e6235fb458f3a52042d1ff01, type: 3}
   BackgroundSprite: {fileID: 6287267173368021057, guid: 6f679b16d92fd814cb5f32f67cca3b5f, type: 3}
-  TextTintColor: {r: 0.7019608, g: 0.6862745, b: 0.90588236, a: 0}
+  TextTintColor: {r: 0.7019608, g: 0.6862745, b: 0.90588236, a: 1}

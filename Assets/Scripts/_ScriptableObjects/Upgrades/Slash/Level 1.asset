@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Title: Sword
   IconSprite: {fileID: -835266852, guid: 5d6e44802feb47f41aeb27f4e072d254, type: 3}
-  TitleSprite: {fileID: 0}
+  TitleSprite: {fileID: 21300000, guid: eb391e1937f833e4086a1fd74355934a, type: 3}
   UpgradeRarity: 0
   BaseAttackStats: {fileID: 11400000, guid: c70c20715ea3dd94d945d4ed7a9c77b7, type: 2}
   RocketLaunchAttackStats: {fileID: 0}

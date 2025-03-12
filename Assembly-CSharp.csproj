@@ -66,7 +66,6 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Animations\Controllers\BaseEntityAnimationController.cs" />
     <Compile Include="Assets\Scripts\Attacks\PlantMineAttack.cs" />
-    <Compile Include="Assets\Scripts\Shop\Shop.cs" />
     <Compile Include="Assets\Scripts\Attacks\_ScriptableObjects\RangedAttackStatsSO.cs" />
     <Compile Include="Assets\Scripts\Managers\ProjectileManager.cs" />
     <Compile Include="Assets\Scripts\Upgrades\RotationControllerUpgradeValuesSO.cs" />
@@ -93,6 +92,7 @@
     <Compile Include="Assets\Scripts\Attacks\Managers\EnemyAttack.cs" />
     <Compile Include="Assets\Scripts\Animations\Controllers\ShootingEffectAnimationController.cs" />
     <Compile Include="Assets\Scripts\Animations\Controllers\PositionBasedVFXManager.cs" />
+    <Compile Include="Assets\Scripts\Helpers\UglySerializableDictionary.cs" />
     <Compile Include="Assets\Scripts\SpriteEffects\ColorSpritesBasedOnAttackState.cs" />
     <Compile Include="Assets\Scripts\Managers\GameManager.cs" />
     <Compile Include="Assets\Scripts\Attacks\Weapons\CollisionWeapon.cs" />
@@ -107,10 +107,12 @@
     <Compile Include="Assets\Scripts\EntitiesController\Enemy.cs" />
     <Compile Include="Assets\Scripts\Animations\Controllers\SimpleEntityAnimationController.cs" />
     <Compile Include="Assets\Scripts\Helpers\Extentions.cs" />
+    <Compile Include="Assets\Scripts\Shop\ShopController.cs" />
     <Compile Include="Assets\Scripts\Shop\Buyer.cs" />
     <Compile Include="Assets\Scripts\Attacks\Projectiles\Mine.cs" />
     <Compile Include="Assets\Scripts\Animations\Controllers\_BaseAnimationController.cs" />
     <Compile Include="Assets\Scripts\Movement\Rotation\RotationController.cs" />
+    <Compile Include="Assets\Scripts\UI\CardUI.cs" />
     <Compile Include="Assets\Scripts\Economy\ItemCollector.cs" />
     <Compile Include="Assets\Scripts\Animations\Controllers\ParentBasedVFXManager.cs" />
     <Compile Include="Assets\Scripts\DamageControl\DamagableWithImmunity.cs" />
@@ -157,6 +159,7 @@
     <Compile Include="Assets\Scripts\Movement\Rotation\SnapToRotationByDirection.cs" />
     <Compile Include="Assets\Scripts\SpriteEffects\AlphaPulseAnimation.cs" />
     <Compile Include="Assets\Scripts\Movement\FollowTargetMovement.cs" />
+    <Compile Include="Assets\Scripts\UI\ShopUI.cs" />
     <Compile Include="Assets\Scripts\Attacks\AttackOnCollision.cs" />
     <Compile Include="Assets\Scripts\DamageControl\BaseDamagable.cs" />
     <Compile Include="Assets\Scripts\Upgrades\Rarity.cs" />

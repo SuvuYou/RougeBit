@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Title: Shield
   IconSprite: {fileID: -1331912561, guid: 9815f53664780a746b3b70b4fb87b189, type: 3}
-  TitleSprite: {fileID: 0}
+  TitleSprite: {fileID: 21300000, guid: abe5e73bbc8b2224396f1941f0a39268, type: 3}
   UpgradeRarity: 3
   BaseAttackStats: {fileID: 0}
   RocketLaunchAttackStats: {fileID: 0}
