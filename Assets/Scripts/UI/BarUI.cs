@@ -13,6 +13,8 @@ class BarUI : MonoBehaviour
     [SerializeField] private bool _shouldInterpolate = false;
     [SerializeField] private float _interpolationTime = 0.5f;
 
+    private Coroutine _currentLerpCoroutine;
+
     private float _percentageFilled;
 
     public float PercentageFilled { get => _percentageFilled;  private set { _percentageFilled = Mathf.Clamp(value, 0f, 1f); } }
@@ -32,11 +34,19 @@ class BarUI : MonoBehaviour
     private void _setPercentageFilled(float percentageFilled)
     {
         PercentageFilled = percentageFilled;
-        
-        if (!_shouldInterpolate) _displayerPercentageFilled = PercentageFilled;
-        else StartCoroutine(_lerpFilled(_displayerPercentageFilled, PercentageFilled, _interpolationTime));
 
-        _displayFillBar();
+        if(!_shouldInterpolate)
+        {
+            _displayerPercentageFilled = PercentageFilled;
+            _displayFillBar();
+
+            return;
+        }
+
+        if (_currentLerpCoroutine != null) StopCoroutine(_currentLerpCoroutine);
+        
+        _currentLerpCoroutine = StartCoroutine(_lerpFilled(_displayerPercentageFilled, PercentageFilled, _interpolationTime));
+  
     }
 
     private IEnumerator _lerpFilled(float startPercentageFilled, float endPercentageFilled, float duration)

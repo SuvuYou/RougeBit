@@ -532,8 +532,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _minXScale: 0
   _maxXScale: 3.57
-  _valueRange: {fileID: 11400000, guid: 6024bdc186b658c419fde3ac6b8d04bc, type: 2}
+  _valueRange: {fileID: 11400000, guid: c4f2fc4f8daefea44b5cbe2e548b5cab, type: 2}
   _shouldInterpolate: 0
+  _interpolationTime: 0.5
 --- !u!1 &39752746
 GameObject:
   m_ObjectHideFlags: 0
@@ -4920,7 +4921,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 9.40625
+  orthographic size: 10.34375
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -8649,6 +8650,7 @@ MonoBehaviour:
   _maxXScale: 4.35
   _valueRange: {fileID: 11400000, guid: 6024bdc186b658c419fde3ac6b8d04bc, type: 2}
   _shouldInterpolate: 1
+  _interpolationTime: 0.5
 --- !u!1 &1014407085
 GameObject:
   m_ObjectHideFlags: 0

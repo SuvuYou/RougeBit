@@ -13,7 +13,9 @@ public class FloatRangeValue : ScriptableObject
     {
         Value = Mathf.Clamp(value, Config.MinValue, Config.MaxValue);
         OnValueChanged?.Invoke(Value);
-    } 
+    }
+
+    public void AddValue(float increase) => SetValue(Value + increase); 
 
     public void ReduceValue(float decrease) => SetValue(Value - decrease);
 

@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f9ee93b0e7a7384b8561bf624bed48a, type: 3}
-  m_Name: Collectable Gem SO
+  m_Script: {fileID: 11500000, guid: 582d47d1334dcb34c95d395ce1f9f120, type: 3}
+  m_Name: Player XP
   m_EditorClassIdentifier: 
-  <ItemPrefab>k__BackingField: {fileID: 6144053399824063320, guid: a000aac2085cd7e4dab215941ea7029a, type: 3}
-  <XPValue>k__BackingField: 25
+  Value: 0
+  Config: {fileID: 11400000, guid: 4f90ae13e1ad70047a8ecd6530c6fce5, type: 2}

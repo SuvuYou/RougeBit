@@ -4,5 +4,5 @@ using UnityEngine;
 class CollectableItemSO : ScriptableObject
 {
     [field: SerializeField] public CollectableItem ItemPrefab { get; private set; }
-    [field: SerializeField] public Sprite Icon { get; private set; }
+    [field: SerializeField] public int XPValue { get; private set; }
 }

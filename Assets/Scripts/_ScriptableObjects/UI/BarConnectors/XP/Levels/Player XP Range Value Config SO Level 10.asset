@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 522b0fad8ab0b88419defdbcbeff4b22, type: 3}
-  m_Name: Default Player Float Range Value Config SO
+  m_Name: Player XP Range Value Config SO Level 10
   m_EditorClassIdentifier: 
-  DefaultValue: 100
+  DefaultValue: 0
   MinValue: 0
-  MaxValue: 100
+  MaxValue: 1000

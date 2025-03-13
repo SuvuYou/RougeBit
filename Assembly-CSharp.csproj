@@ -137,6 +137,7 @@
     <Compile Include="Assets\Scripts\Animations\Controllers\_BaseVFXManager.cs" />
     <Compile Include="Assets\SerializableDictionary\Example\SerializableDictionaryExample.cs" />
     <Compile Include="Assets\Scripts\Economy\ItemDropper.cs" />
+    <Compile Include="Assets\Scripts\Economy\XPManager.cs" />
     <Compile Include="Assets\Scripts\Helpers\Singlton.cs" />
     <Compile Include="Assets\Scripts\Attacks\Weapons\MinerWeapon.cs" />
     <Compile Include="Assets\Scripts\Attacks\_ScriptableObjects\SlashAttackStatsSO.cs" />

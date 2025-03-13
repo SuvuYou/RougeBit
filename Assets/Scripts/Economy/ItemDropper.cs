@@ -6,11 +6,13 @@ class ItemDropper : MonoBehaviour
 
     public void DropItem()
     {
-        Instantiate(_item.ItemPrefab, transform.position, Quaternion.identity);
+        var item = Instantiate(_item.ItemPrefab, transform.position, Quaternion.identity);
+        item.Initialize(_item.XPValue);
     }
 
     public void DropItem(Vector3 dropPosition)
     {
-        Instantiate(_item.ItemPrefab, dropPosition, Quaternion.identity);
+        var item = Instantiate(_item.ItemPrefab, dropPosition, Quaternion.identity);
+        item.Initialize(_item.XPValue);
     }
 }
