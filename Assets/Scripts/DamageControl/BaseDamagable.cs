@@ -9,20 +9,27 @@ class BaseDamagable : MonoBehaviour
 
     [field: Header("Stats")]
     [field: SerializeField] public float Health { get; private set; }
+    [Tooltip("Health value connector (optional)")]
+    [SerializeField] FloatRangeValue HealthValueConnector;
 
     [Header("Events")]
-    [SerializeField] protected UnityEvent OnTakeDamage;
+    [SerializeField] protected FloatUnityEvent OnTakeDamage;
     [SerializeField] protected UnityEvent OnDie;
 
     private float _objectDestroyDelay = 0f; 
 
     public void SetObjectDestroyDelay(float delay) => _objectDestroyDelay = delay;
 
+    private void Start() 
+    {
+        if (HealthValueConnector != null) HealthValueConnector.SetValue(Health);
+    }
+
     public virtual void TakeDamage(float damage) 
     { 
         Health -= damage;
 
-        OnTakeDamage?.Invoke();
+        OnTakeDamage?.Invoke(damage);
 
         if (Health <= 0) Die();
     }

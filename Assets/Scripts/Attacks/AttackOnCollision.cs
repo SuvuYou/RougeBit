@@ -44,11 +44,11 @@ class AttackOnCollision : BaseAttack
 
     private void _handleCollision()
     {    
-        var colliders = Physics2D.OverlapBox(_getSpawnPosition(), new Vector2(_stats.CollisionRadius + 1f, _stats.CollisionRadius + 1f), 0, _enemyLayerMask);
+        var collider = Physics2D.OverlapBox(_getSpawnPosition(), new Vector2(_stats.CollisionRadius + 1f, _stats.CollisionRadius + 1f), 0, _enemyLayerMask);
 
-        if (colliders != null)
+        if (collider != null)
         {
-            Transform parent = colliders.gameObject.transform.parent;
+            Transform parent = collider.gameObject.transform.parent;
 
             if (parent.TryGetComponentInChildren(out BaseDamagable damagable))
             {
