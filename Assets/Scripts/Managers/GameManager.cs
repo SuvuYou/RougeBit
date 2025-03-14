@@ -2,27 +2,37 @@ using UnityEngine;
 
 class GameManager : Singlton<GameManager>
 {
-    private Timer _waveTimer = new (1f);
+    [field: SerializeField] public GameLevelsConfigSO GameLevels { get; private set; }
+
+    protected override void Awake() 
+    {
+        base.Awake();
+
+        GameLevels.Init();
+    }
 
     private void Start()
     {
-        _waveTimer.Start();
+        XPManager.Instance.OnLevelUp.AddListener(() => _stopRound());
     }
 
     private void Update()
     {
-        _waveTimer.Update(Time.deltaTime);
-
-        if (_waveTimer.IsRunning && _waveTimer.IsFinished)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            WaveManager.Instance.StartNextWave();
-
-            _waveTimer.Reset();
+            _startRound();
         }
+    }
 
-        // if (Input.GetKeyDown(KeyCode.Space))
-        // {
-        //     WaveManager.Instance.StartNextWave();
-        // } 
+    private void _startRound()
+    {
+        WaveManager.Instance.StartNextWave();
+    }
+
+    private void _stopRound()
+    {
+        WaveManager.Instance.StopWave();
+        ProjectileManager.Instance.ClearProjectiles();
+        CollectablesManager.Instance.ClearCollectableItem();
     }
 }

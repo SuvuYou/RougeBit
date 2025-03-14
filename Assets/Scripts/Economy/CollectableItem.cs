@@ -1,6 +1,6 @@
 using UnityEngine;
 
-class CollectableItem : MonoBehaviour
+public class CollectableItem : MonoBehaviour
 {
     public int XPValue { get; private set; }
 

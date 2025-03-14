@@ -533,7 +533,7 @@ MonoBehaviour:
   _minXScale: 0
   _maxXScale: 3.57
   _valueRange: {fileID: 11400000, guid: c4f2fc4f8daefea44b5cbe2e548b5cab, type: 2}
-  _shouldInterpolate: 0
+  _shouldInterpolate: 1
   _interpolationTime: 0.5
 --- !u!1 &39752746
 GameObject:
@@ -4175,6 +4175,8 @@ Transform:
   - {fileID: 82427264}
   - {fileID: 769813839}
   - {fileID: 17545155}
+  - {fileID: 512905744}
+  - {fileID: 1882708508}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &390683702
@@ -4692,6 +4694,50 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &512905743
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 512905744}
+  - component: {fileID: 512905745}
+  m_Layer: 0
+  m_Name: Collectables Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &512905744
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 512905743}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 386041273}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &512905745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 512905743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4518c80b04e1e1748a99abc5060999fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &514041873
 GameObject:
   m_ObjectHideFlags: 0
@@ -4921,7 +4967,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 10.34375
+  orthographic size: 9.578125
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -5176,25 +5222,6 @@ MonoBehaviour:
   _safeRadious: 5
   _lowerSpawnBounds: {x: -8, y: -4}
   _upperSpawnBounds: {x: 8, y: 4}
-  _enemiesWithSpawnWeights:
-    m_keys:
-    - {fileID: 8795521627271913304, guid: 217658e50647b89438b1cd0168c11fba, type: 3}
-    - {fileID: 8795521627271913304, guid: d66d3139f6af8484b80cc418e3b3aef9, type: 3}
-    - {fileID: 8795521627271913304, guid: 9673f6091c08f2240a75ba25748b4a26, type: 3}
-    - {fileID: 8795521627271913304, guid: 386f2f425f3f5bf488d6d49b05198354, type: 3}
-    - {fileID: 8795521627271913304, guid: 7e3de83e9c7ce104591fc499debd7647, type: 3}
-    - {fileID: 8795521627271913304, guid: 260b9460927350f438f8dd819ea983ce, type: 3}
-    - {fileID: 7189367331512252750, guid: 4903fd52864a408429258602a9198451, type: 3}
-    - {fileID: 8795521627271913304, guid: c3338f38727314b42bd72980ec5172ee, type: 3}
-    m_values:
-    - 1
-    - 0
-    - 0
-    - 0
-    - 0
-    - 0
-    - 0
-    - 0
 --- !u!1 &547064754
 GameObject:
   m_ObjectHideFlags: 0
@@ -38555,6 +38582,54 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1882708507
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1882708508}
+  - component: {fileID: 1882708509}
+  m_Layer: 0
+  m_Name: XP Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1882708508
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1882708507}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 386041273}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1882708509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1882708507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d72599aa56c2b2b45a24a08e14612e01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _currentXp: {fileID: 11400000, guid: 6024bdc186b658c419fde3ac6b8d04bc, type: 2}
+  OnLevelUp:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1893918893
 GameObject:
   m_ObjectHideFlags: 0
@@ -39588,6 +39663,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d26a68dad431e9748bb38c2794c42abc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <GameLevels>k__BackingField: {fileID: 11400000, guid: 94ccc512f7e458845b5f5ea4851e9416, type: 2}
 --- !u!1 &1995846558
 GameObject:
   m_ObjectHideFlags: 0

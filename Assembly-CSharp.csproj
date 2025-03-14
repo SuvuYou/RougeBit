@@ -81,7 +81,6 @@
     <Compile Include="Assets\Scripts\Attacks\AirStrikeAttack.cs" />
     <Compile Include="Assets\Scripts\Attacks\RangedAttack.cs" />
     <Compile Include="Assets\Scripts\Attacks\DashAttackOnCollision.cs" />
-    <Compile Include="Assets\Scripts\Managers\WaveManager.cs" />
     <Compile Include="Assets\Scripts\Managers\TimeManager.cs" />
     <Compile Include="Assets\Scripts\Movement\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\Economy\InventorySO.cs" />
@@ -97,9 +96,11 @@
     <Compile Include="Assets\Scripts\SpriteEffects\ColorSpritesBasedOnAttackState.cs" />
     <Compile Include="Assets\Scripts\Managers\GameManager.cs" />
     <Compile Include="Assets\Scripts\Attacks\Weapons\CollisionWeapon.cs" />
+    <Compile Include="Assets\Scripts\Managers\WaveManager\WaveManager.cs" />
     <Compile Include="Assets\Scripts\Attacks\_ScriptableObjects\_BaseProjectileStatsSO.cs" />
     <Compile Include="Assets\Scripts\Movement\Rotation\_RotationStrategyBase.cs" />
     <Compile Include="Assets\Scripts\DamageControl\Target.cs" />
+    <Compile Include="Assets\Scripts\Managers\XPManager.cs" />
     <Compile Include="Assets\Scripts\Economy\CollectableItemSO.cs" />
     <Compile Include="Assets\Scripts\Attacks\_ScriptableObjects\AirStrikeAttackStatsSO.cs" />
     <Compile Include="Assets\Scripts\EntitiesController\EntityStats.cs" />
@@ -108,6 +109,7 @@
     <Compile Include="Assets\Scripts\UI\BarUI.cs" />
     <Compile Include="Assets\Scripts\EntitiesController\Enemy.cs" />
     <Compile Include="Assets\Scripts\Animations\Controllers\SimpleEntityAnimationController.cs" />
+    <Compile Include="Assets\Scripts\Managers\WaveManager\GameLevelsConfigSO.cs" />
     <Compile Include="Assets\Scripts\Helpers\Extentions.cs" />
     <Compile Include="Assets\Scripts\Shop\ShopController.cs" />
     <Compile Include="Assets\Scripts\Shop\Buyer.cs" />
@@ -119,6 +121,7 @@
     <Compile Include="Assets\Scripts\Animations\Controllers\ParentBasedVFXManager.cs" />
     <Compile Include="Assets\Scripts\DamageControl\DamagableWithImmunity.cs" />
     <Compile Include="Assets\Scripts\Attacks\Weapons\ClawLaserWeapon.cs" />
+    <Compile Include="Assets\Scripts\Managers\WaveManager\WaveConfigSO.cs" />
     <Compile Include="Assets\Scripts\Attacks\RocketLaunchAttack.cs" />
     <Compile Include="Assets\Scripts\Input\PalyerInputSO.cs" />
     <Compile Include="Assets\Scripts\Helpers\SOConnectors\FloatRangeValueConfigSO.cs" />
@@ -132,12 +135,12 @@
     <Compile Include="Assets\Scripts\Attacks\_ScriptableObjects\RocketProjectileStatsSO.cs" />
     <Compile Include="Assets\Scripts\Attacks\KnockBack\Shockwave.cs" />
     <Compile Include="Assets\Scripts\Attacks\KnockBack\BaseKnockback.cs" />
+    <Compile Include="Assets\Scripts\Managers\CollectablesManager.cs" />
     <Compile Include="Assets\Scripts\Animations\Controllers\_IVFXAnimationTrigger.cs" />
     <Compile Include="Assets\Scripts\Attacks\_ScriptableObjects\_BaseAttackStatsSO.cs" />
     <Compile Include="Assets\Scripts\Animations\Controllers\_BaseVFXManager.cs" />
     <Compile Include="Assets\SerializableDictionary\Example\SerializableDictionaryExample.cs" />
     <Compile Include="Assets\Scripts\Economy\ItemDropper.cs" />
-    <Compile Include="Assets\Scripts\Economy\XPManager.cs" />
     <Compile Include="Assets\Scripts\Helpers\Singlton.cs" />
     <Compile Include="Assets\Scripts\Attacks\Weapons\MinerWeapon.cs" />
     <Compile Include="Assets\Scripts\Attacks\_ScriptableObjects\SlashAttackStatsSO.cs" />

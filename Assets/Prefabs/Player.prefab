@@ -54,7 +54,7 @@ MonoBehaviour:
   OnItemCollected:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8178279282550184177}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: XPManager, Assembly-CSharp
         m_MethodName: AddXP
         m_Mode: 0
@@ -256,7 +256,6 @@ Transform:
   - {fileID: 1389256550799590785}
   - {fileID: 1653884834063098633}
   - {fileID: 6675224873160403988}
-  - {fileID: 5534945696149779416}
   - {fileID: 2034788136928177550}
   - {fileID: 2603307879337783538}
   - {fileID: 2579051138909961319}
@@ -723,65 +722,6 @@ MonoBehaviour:
     - {r: 1, g: 0, b: 0.8352337, a: 1}
     - {r: 0, g: 1, b: 0.9800041, a: 1}
     - {r: 0.956295, g: 1, b: 0, a: 1}
---- !u!1 &6468817285458752639
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5534945696149779416}
-  - component: {fileID: 8178279282550184177}
-  m_Layer: 0
-  m_Name: XPManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5534945696149779416
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6468817285458752639}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 932260380665832382}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8178279282550184177
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6468817285458752639}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d72599aa56c2b2b45a24a08e14612e01, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _currentXp: {fileID: 11400000, guid: c4f2fc4f8daefea44b5cbe2e548b5cab, type: 2}
-  _xpRequirementsLevels:
-  - {fileID: 11400000, guid: 4f90ae13e1ad70047a8ecd6530c6fce5, type: 2}
-  - {fileID: 11400000, guid: d6d5032059fab25409e0676201b9074e, type: 2}
-  - {fileID: 11400000, guid: 7aaef65736493da40969777c551a6c21, type: 2}
-  - {fileID: 11400000, guid: edf7c972a1e0aac49a222501ae20905f, type: 2}
-  - {fileID: 11400000, guid: 250753378754bf641888baf08bc89065, type: 2}
-  - {fileID: 11400000, guid: 8dc34d78a51c336469dc015a9e839082, type: 2}
-  - {fileID: 11400000, guid: 197deb97895fcf5479d13063fbe8b324, type: 2}
-  - {fileID: 11400000, guid: 99dfaef3a7df342478575ef5036a1e04, type: 2}
-  - {fileID: 11400000, guid: 751563beb770d8f4ab7cfc1c2db6ee1a, type: 2}
-  - {fileID: 11400000, guid: 42dca59e96ab859448a78bef1d38ace4, type: 2}
-  OnLevelUp:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &7641312271213329939
 GameObject:
   m_ObjectHideFlags: 0

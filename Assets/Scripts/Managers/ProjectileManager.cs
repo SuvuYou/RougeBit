@@ -32,6 +32,13 @@ public class ProjectileManager : Singlton<ProjectileManager>
         return closestProjectile != null;
     }
 
+    public void ClearProjectiles() 
+    {
+        foreach (var projectile in _projectiles) Destroy(projectile.gameObject);
+        
+        _projectiles.Clear();
+    }
+
     private void _clearNullProjectiles()
     {
         _projectiles = _projectiles.Where((projectile) => projectile != null).ToList();
