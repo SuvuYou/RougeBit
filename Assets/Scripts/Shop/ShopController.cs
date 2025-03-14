@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 class ShopController : MonoBehaviour
 {
@@ -8,7 +9,9 @@ class ShopController : MonoBehaviour
     [SerializeField] private ShopUI _shopUI;
     [SerializeField] private Buyer _buyer;
 
-    private void _displayItems()
+    public UnityEvent OnItemsPurchased;
+
+    public void DisplayItems()
     {
         if (_buyer.TrySelectRandomItemsToBuy(3, out List<UpgradablesBundleController> items))
         {
@@ -21,16 +24,16 @@ class ShopController : MonoBehaviour
                     RarityConfig = _cardRarityConfigs.ToDictionary()[item.GetNextLevelInfo().UpgradeRarity],
                     IconSprite = item.GetNextLevelInfo().IconSprite,
                     TitleSprite = item.GetNextLevelInfo().TitleSprite,
-                    Buy = () => _buyer.Purchace(item)
+                    Buy = () =>
+                    {
+                        _buyer.Purchace(item);
+
+                        OnItemsPurchased?.Invoke();
+                    }
                 });
             }
 
             _shopUI.RenderCards(cardsParams);
         }
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space)) _displayItems();
     }
 }

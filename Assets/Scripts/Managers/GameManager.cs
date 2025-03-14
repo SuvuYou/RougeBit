@@ -4,6 +4,8 @@ class GameManager : Singlton<GameManager>
 {
     [field: SerializeField] public GameLevelsConfigSO GameLevels { get; private set; }
 
+    [SerializeField] private ShopController _shop;
+
     protected override void Awake() 
     {
         base.Awake();
@@ -20,11 +22,11 @@ class GameManager : Singlton<GameManager>
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            _startRound();
+            StartRound();
         }
     }
 
-    private void _startRound()
+    public void StartRound()
     {
         WaveManager.Instance.StartNextWave();
     }

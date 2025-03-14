@@ -19,6 +19,11 @@ public class FloatRangeValue : ScriptableObject
 
     public void ReduceValue(float decrease) => SetValue(Value - decrease);
 
+    public void Init()
+    {
+        OnValueChanged = null;
+    }
+
     public void SetConfig(FloatRangeValueConfigSO config) 
     {
         Config = config;

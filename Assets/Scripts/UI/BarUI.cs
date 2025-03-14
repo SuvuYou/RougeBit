@@ -21,10 +21,11 @@ class BarUI : MonoBehaviour
 
     private float _displayerPercentageFilled;
 
-    private void Start()
+    private void Awake() 
     {
+        _valueRange.Init();
         _valueRange.OnValueChanged += _setValue;
-    }
+    } 
 
     private void _setValue(float value)
     {
@@ -46,7 +47,6 @@ class BarUI : MonoBehaviour
         if (_currentLerpCoroutine != null) StopCoroutine(_currentLerpCoroutine);
         
         _currentLerpCoroutine = StartCoroutine(_lerpFilled(_displayerPercentageFilled, PercentageFilled, _interpolationTime));
-  
     }
 
     private IEnumerator _lerpFilled(float startPercentageFilled, float endPercentageFilled, float duration)

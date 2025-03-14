@@ -8,7 +8,13 @@ public class CollectablesManager : Singlton<CollectablesManager>
 
     public void ClearCollectableItem() 
     {
-        foreach (var collectable in _collectables) Destroy(collectable.gameObject);
+        foreach (var collectable in _collectables) 
+        {
+            if (collectable != null && collectable.gameObject != null)
+            {
+                Destroy(collectable.gameObject);
+            }
+        }
         
         _collectables.Clear();
     }

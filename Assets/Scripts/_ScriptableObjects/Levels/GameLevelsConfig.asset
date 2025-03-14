@@ -23,4 +23,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 81a0784a4237d924194cd6dccad4de32, type: 2}
   - {fileID: 11400000, guid: b9b35c4721c4edc40a7bd533546b3b19, type: 2}
   - {fileID: 11400000, guid: 3e26464fd057f524ca1d9f8d1683ef69, type: 2}
-  MaxLevel: 0
+  MaxLevel: 9

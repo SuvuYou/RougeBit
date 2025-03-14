@@ -4967,7 +4967,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 9.578125
+  orthographic size: 9.828125
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -32696,6 +32696,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4335793314640104623, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
+      propertyPath: OnItemCollected.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1882708509}
     - target: {fileID: 4932905745483263487, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
       propertyPath: OnAttack.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -38626,10 +38630,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d72599aa56c2b2b45a24a08e14612e01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentXp: {fileID: 11400000, guid: 6024bdc186b658c419fde3ac6b8d04bc, type: 2}
+  _currentXp: {fileID: 11400000, guid: c4f2fc4f8daefea44b5cbe2e548b5cab, type: 2}
   OnLevelUp:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 17545156}
+        m_TargetAssemblyTypeName: ShopController, Assembly-CSharp
+        m_MethodName: DisplayItems
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1893918893
 GameObject:
   m_ObjectHideFlags: 0
@@ -39664,6 +39680,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <GameLevels>k__BackingField: {fileID: 11400000, guid: 94ccc512f7e458845b5f5ea4851e9416, type: 2}
+  _shop: {fileID: 0}
 --- !u!1 &1995846558
 GameObject:
   m_ObjectHideFlags: 0
