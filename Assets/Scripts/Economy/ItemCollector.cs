@@ -24,10 +24,10 @@ class ItemCollector : MonoBehaviour
             {
                 float distance = Vector2.Distance(_targetTransform.position, item.transform.position);
 
-                if (distance <= _radiousOfConsumsion)
+                if (distance <= _radiousOfConsumsion && collectableItem.IsCollectable)
                 {
                     OnItemCollected?.Invoke(collectableItem.XPValue);
-                    Destroy(collectableItem.gameObject);
+                    collectableItem.Collect();
 
                     return;
                 }

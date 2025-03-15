@@ -25,6 +25,8 @@ class BarUI : MonoBehaviour
     {
         _valueRange.Init();
         _valueRange.OnValueChanged += _setValue;
+
+        _setValue(_valueRange.Value);
     } 
 
     private void _setValue(float value)

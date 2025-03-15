@@ -1,0 +1,4 @@
+class HUDUIWindow : UIWindow
+{
+
+}

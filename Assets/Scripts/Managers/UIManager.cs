@@ -12,6 +12,7 @@ class UIManager : Singlton<UIManager>
         Pause           = 1 << 2,
         GameEndSuccess  = 1 << 3,
         GameEndFail     = 1 << 4,
+        HUD             = 1 << 5
     }
 
     [SerializeField] private UglySerializableDictionary<UIWindows, UIWindow> _uiWindows = new();

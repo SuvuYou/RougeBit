@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 class GameManager : Singlton<GameManager>
 {
@@ -7,6 +8,9 @@ class GameManager : Singlton<GameManager>
     [field: SerializeField] public GameLevelsConfigSO GameLevels { get; private set; }
 
     private GameStates _currentState = GameStates.None;
+
+    public UnityEvent OnRoundStarted;
+    public UnityEvent OnRoundStopped;
 
     protected override void Awake() 
     {
@@ -33,6 +37,8 @@ class GameManager : Singlton<GameManager>
     }
 
     public void StartGame() => _setState(GameStates.InGame);
+
+    public void EndGame() => _setState(GameStates.GameOverFail);
 
     public void EnterMainMenu() => _setState(GameStates.MainMenu);
 
@@ -62,6 +68,7 @@ class GameManager : Singlton<GameManager>
             case GameStates.InGame:
                 _startRound();
                 UIManager.Instance.CloseAllWindows();
+                UIManager.Instance.OpenWindow(UIManager.UIWindows.HUD);
                 break;
             case GameStates.Shop:
                 _stopRound();
@@ -87,11 +94,13 @@ class GameManager : Singlton<GameManager>
     #region Wave Management
     private void _startRound()
     {
+        OnRoundStarted?.Invoke();
         WaveManager.Instance.StartNextWave();
     }
 
     private void _stopRound()
     {
+        OnRoundStopped?.Invoke();
         WaveManager.Instance.StopWave();
         ProjectileManager.Instance.ClearProjectiles();
         CollectablesManager.Instance.ClearCollectableItem();

@@ -10,13 +10,15 @@ class BaseDamagable : MonoBehaviour
     [field: Header("Stats")]
     [field: SerializeField] public float Health { get; private set; }
     [Tooltip("Health value connector (optional)")]
-    [SerializeField] FloatRangeValue HealthValueConnector;
+    [SerializeField] private FloatRangeValue HealthValueConnector;
+    [SerializeField] private bool IsDestroyable = true;
 
     [Header("Events")]
     [SerializeField] protected FloatUnityEvent OnTakeDamage;
     [SerializeField] protected UnityEvent OnDie;
 
     private float _objectDestroyDelay = 0f; 
+    private bool _isDead = false;
 
     public void SetObjectDestroyDelay(float delay) => _objectDestroyDelay = delay;
 
@@ -31,14 +33,18 @@ class BaseDamagable : MonoBehaviour
 
         OnTakeDamage?.Invoke(damage);
 
-        if (Health <= 0) Die();
+        Debug.Log("TakeDamageTakeDamageTakeDamageTakeDamageTakeDamageTakeDamageTakeDamage");
+
+        if (Health <= 0 && !_isDead) Die();
     }
 
     public virtual void Die() 
     { 
+        _isDead = true;
+
         OnDie?.Invoke();
 
-        StartCoroutine(_destroyAfterSeconds(_objectDestroyDelay));
+        if (IsDestroyable) StartCoroutine(_destroyAfterSeconds(_objectDestroyDelay));
     }
 
     private IEnumerator _destroyAfterSeconds(float seconds) 

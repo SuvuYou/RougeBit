@@ -59,6 +59,15 @@ TagManager:
   - name: Bullets
     uniqueID: 358726641
     locked: 0
-  - name: UI
+  - name: UI HUD
+    uniqueID: 670124919
+    locked: 0
+  - name: UI Background
     uniqueID: 1978858253
+    locked: 0
+  - name: UI Icons
+    uniqueID: 1100895833
+    locked: 0
+  - name: UI Text
+    uniqueID: 17923257
     locked: 0

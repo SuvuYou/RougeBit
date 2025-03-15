@@ -145,6 +145,7 @@
     <Compile Include="Assets\Scripts\UI\PauseUIWindow.cs" />
     <Compile Include="Assets\Scripts\Animations\Controllers\_BaseVFXManager.cs" />
     <Compile Include="Assets\SerializableDictionary\Example\SerializableDictionaryExample.cs" />
+    <Compile Include="Assets\Scripts\UI\HUDUIWindow.cs" />
     <Compile Include="Assets\Scripts\Economy\ItemDropper.cs" />
     <Compile Include="Assets\Scripts\Helpers\Singlton.cs" />
     <Compile Include="Assets\Scripts\Attacks\Weapons\MinerWeapon.cs" />
