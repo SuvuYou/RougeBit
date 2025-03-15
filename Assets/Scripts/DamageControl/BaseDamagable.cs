@@ -2,8 +2,19 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
-class BaseDamagable : MonoBehaviour
+class BaseDamagable : MonoBehaviour, IResettable
 {
+    public void Reset() 
+    {
+        _isDead = false;
+        
+        if (HealthValueConnector != null) 
+        {
+            Health = HealthValueConnector.Config.DefaultValue;
+            HealthValueConnector.SetValue(Health);
+        }
+    }
+
     [Header("References")]
     [SerializeField] private GameObject _parent;
 
@@ -24,7 +35,11 @@ class BaseDamagable : MonoBehaviour
 
     private void Start() 
     {
-        if (HealthValueConnector != null) HealthValueConnector.SetValue(Health);
+        if (HealthValueConnector != null) 
+        {
+            Health = HealthValueConnector.Config.DefaultValue;
+            HealthValueConnector.SetValue(Health);
+        }
     }
 
     public virtual void TakeDamage(float damage) 
@@ -32,8 +47,6 @@ class BaseDamagable : MonoBehaviour
         Health -= damage;
 
         OnTakeDamage?.Invoke(damage);
-
-        Debug.Log("TakeDamageTakeDamageTakeDamageTakeDamageTakeDamageTakeDamageTakeDamage");
 
         if (Health <= 0 && !_isDead) Die();
     }

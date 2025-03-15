@@ -1,8 +1,13 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-class XPManager : Singlton<XPManager>
+class XPManager : Singlton<XPManager>, IResettable
 {
+    public void Reset() 
+    {
+        _currentXp.SetConfig(GameManager.Instance.GameLevels.Levels[0].XPRequirement);
+    }
+
     [SerializeField] FloatRangeValue _currentXp;
 
     public UnityEvent OnLevelUp;

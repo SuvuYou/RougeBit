@@ -9,7 +9,6 @@ public class CollectableItem : MonoBehaviour
 
     public void Collect() 
     {
-        Debug.Log("coolect");
         IsCollectable = false;
         Destroy(gameObject);
     }

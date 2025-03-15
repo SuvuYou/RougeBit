@@ -16,7 +16,6 @@ class ItemDropper : MonoBehaviour
 
     private void _instantiateItemAt(Vector3 position) 
     {
-        Debug.Log("dropping item");
         var item = Instantiate(_item.ItemPrefab, position, Quaternion.identity);
         item.Initialize(_item.XPValue);
 

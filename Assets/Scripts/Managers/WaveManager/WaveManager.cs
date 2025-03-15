@@ -2,8 +2,14 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-class WaveManager : Singlton<WaveManager>
+class WaveManager : Singlton<WaveManager>, IResettable
 {
+    public void Reset()
+    {
+        _clearEnemies();
+        _switchStates(WaveManagerStates.Idle);
+    }
+
     private enum WaveManagerStates 
     {
         Idle,

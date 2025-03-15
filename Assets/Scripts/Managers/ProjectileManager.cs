@@ -2,8 +2,10 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class ProjectileManager : Singlton<ProjectileManager>
+public class ProjectileManager : Singlton<ProjectileManager>, IResettable
 {
+    public void Reset() => ClearProjectiles();
+
     private List<BaseProjectile> _projectiles = new();
 
     public void AddProjectile(BaseProjectile projectile) => _projectiles.Add(projectile);

@@ -2,8 +2,27 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-class Buyer : MonoBehaviour
+class Buyer : MonoBehaviour, IResettable
 {
+    public void Reset() 
+    {
+        foreach (var spawnedUpgradableItem in _spawnedUpgradableItems.Except(_initialSpawnedUpgradableItems))
+        {
+            Destroy(spawnedUpgradableItem.gameObject);
+        }
+
+        _spawnableUpgradableItems.Clear();
+        _spawnedUpgradableItems.Clear();
+        
+        _spawnableUpgradableItems.AddRange(_initialSpawnableUpgradableItems);
+        _spawnedUpgradableItems.AddRange(_initialSpawnedUpgradableItems);
+
+        foreach (var spawnedUpgradableItem in _spawnedUpgradableItems)
+        {
+            spawnedUpgradableItem.Reset();
+        }
+    }
+
     [SerializeField] private List<UpgradablesBundleController> _initialSpawnableUpgradableItems = new ();
     [SerializeField] private List<UpgradablesBundleController> _initialSpawnedUpgradableItems = new ();
 

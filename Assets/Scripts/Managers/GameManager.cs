@@ -1,8 +1,14 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-class GameManager : Singlton<GameManager>
+class GameManager : Singlton<GameManager>, IResettable
 {
+    public void Reset()
+    {
+        GameLevels.Init();
+        _currentState = GameStates.None;
+    }
+
     public enum GameStates { None, MainMenu, InGame, Shop, Paused, GameOverSuccess, GameOverFail }
 
     [field: SerializeField] public GameLevelsConfigSO GameLevels { get; private set; }
@@ -40,7 +46,22 @@ class GameManager : Singlton<GameManager>
 
     public void EndGame() => _setState(GameStates.GameOverFail);
 
-    public void EnterMainMenu() => _setState(GameStates.MainMenu);
+    public void TryAgain() 
+    {
+        ResetGame();
+        _setState(GameStates.InGame);
+    } 
+
+    public void EnterMainMenu() 
+    {
+        ResetGame();
+        _setState(GameStates.MainMenu);
+    }
+
+    public void ResetGame() 
+    {
+        ResetManager.Instance.Reset();
+    }
 
     #region State Management
     private void _setState(GameStates newState)

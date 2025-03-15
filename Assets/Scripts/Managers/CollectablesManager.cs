@@ -1,7 +1,9 @@
 using System.Collections.Generic;
 
-public class CollectablesManager : Singlton<CollectablesManager>
+public class CollectablesManager : Singlton<CollectablesManager>, IResettable
 {
+    public void Reset() => ClearCollectableItem();
+
     private List<CollectableItem> _collectables = new();
 
     public void AddCollectableItem(CollectableItem collectable) => _collectables.Add(collectable);

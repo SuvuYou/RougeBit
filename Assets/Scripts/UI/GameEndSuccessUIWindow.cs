@@ -7,7 +7,7 @@ class GameEndSuccessUIWindow : UIWindow
 
     private void Start() 
     {
-        // _tryAgainButton.SetupButton(GameManager.Instance.StartRound);
+        _tryAgainButton.SetupButton(GameManager.Instance.TryAgain);
         _mainMenuButton.SetupButton(GameManager.Instance.EnterMainMenu);
     }
 }

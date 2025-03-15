@@ -21,16 +21,22 @@ class BarUI : MonoBehaviour
 
     private float _displayerPercentageFilled;
 
+    private float _currentValueCached;
+
     private void Awake() 
     {
-        _valueRange.Init();
-        _valueRange.OnValueChanged += _setValue;
-
         _setValue(_valueRange.Value);
     } 
 
+    private void Update()
+    {
+        if (_currentValueCached == _valueRange.Value) return;
+        _setValue(_valueRange.Value);
+    }
+
     private void _setValue(float value)
     {
+        _currentValueCached = value;
         _setPercentageFilled(value / _valueRange.Config.MaxValue);
     }
 
