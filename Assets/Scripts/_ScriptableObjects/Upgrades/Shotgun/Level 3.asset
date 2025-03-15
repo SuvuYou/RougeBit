@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: Level 3
   m_EditorClassIdentifier: 
   Title: Shotgun
+  IconSprite: {fileID: -750004589, guid: 49559a0a65771aa4db1937fe81349c16, type: 3}
+  TitleSprite: {fileID: 21300000, guid: d29070cc03124c34284209b97a094817, type: 3}
+  UpgradeRarity: 2
   BaseAttackStats: {fileID: 11400000, guid: a611093954488dc4d81a583d1a9fd9c6, type: 2}
   RocketLaunchAttackStats: {fileID: 0}
   RangedAttackStats: {fileID: 11400000, guid: 6eea199574e5bba48add3190c4342548, type: 2}

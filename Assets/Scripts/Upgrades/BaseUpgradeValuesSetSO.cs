@@ -4,7 +4,10 @@ using UnityEngine;
 public class BaseUpgradeValuesSetSO : ScriptableObject
 {
     [Header("Display Info")]
-    public string Title = "Attack Name";
+    public string Title;
+    public Sprite IconSprite;
+    public Sprite TitleSprite;
+    public Rarity UpgradeRarity;
 
     [Header("Attacks")]
     public _BaseAttackStatsSO BaseAttackStats;

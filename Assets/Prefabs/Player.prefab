@@ -44,7 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02967b44a2b14c64d977cc888d2b03c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _inventory: {fileID: 11400000, guid: ef460be10be72ad45924fab585f10c4b, type: 2}
   _targetTransform: {fileID: 932260380665832382}
   _radiousOfPulling: 5
   _radiousOfConsumsion: 1
@@ -52,6 +51,21 @@ MonoBehaviour:
   _itemsLayerMask:
     serializedVersion: 2
     m_Bits: 256
+  OnItemCollected:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: XPManager, Assembly-CSharp
+        m_MethodName: AddXP
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &962131282749968106
 GameObject:
   m_ObjectHideFlags: 0
@@ -385,6 +399,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _parent: {fileID: 1354620486190745828}
   <Health>k__BackingField: 100
+  HealthValueConnector: {fileID: 0}
   OnTakeDamage:
     m_PersistentCalls:
       m_Calls:

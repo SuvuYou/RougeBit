@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Collectable Gem SO
   m_EditorClassIdentifier: 
   <ItemPrefab>k__BackingField: {fileID: 6144053399824063320, guid: a000aac2085cd7e4dab215941ea7029a, type: 3}
-  <Icon>k__BackingField: {fileID: 21300000, guid: 16367a5c305a86646aeae570fd01bece, type: 3}
+  <XPValue>k__BackingField: 25

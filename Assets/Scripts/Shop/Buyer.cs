@@ -2,8 +2,27 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-class Buyer : MonoBehaviour
+class Buyer : MonoBehaviour, IResettable
 {
+    public void Reset() 
+    {
+        foreach (var spawnedUpgradableItem in _spawnedUpgradableItems.Except(_initialSpawnedUpgradableItems))
+        {
+            Destroy(spawnedUpgradableItem.gameObject);
+        }
+
+        _spawnableUpgradableItems.Clear();
+        _spawnedUpgradableItems.Clear();
+        
+        _spawnableUpgradableItems.AddRange(_initialSpawnableUpgradableItems);
+        _spawnedUpgradableItems.AddRange(_initialSpawnedUpgradableItems);
+
+        foreach (var spawnedUpgradableItem in _spawnedUpgradableItems)
+        {
+            spawnedUpgradableItem.Reset();
+        }
+    }
+
     [SerializeField] private List<UpgradablesBundleController> _initialSpawnableUpgradableItems = new ();
     [SerializeField] private List<UpgradablesBundleController> _initialSpawnedUpgradableItems = new ();
 
@@ -43,18 +62,20 @@ class Buyer : MonoBehaviour
         }
     }
 
-    public bool TrySelectRandomItemToBuy(out UpgradablesBundleController item)
+    public bool TrySelectRandomItemsToBuy(int numberOfItems, out List<UpgradablesBundleController> items)
     {
-        List<UpgradablesBundleController> availableUpgradableItems = new ();
-        item = null;
+        List<UpgradablesBundleController> availableUpgradableItems = new();
+        items = new List<UpgradablesBundleController>();
 
         availableUpgradableItems.AddRange(_spawnableUpgradableItems);
         availableUpgradableItems.AddRange(_spawnedUpgradableItems.Where(item => item.IsUpgradable));
 
-        if (availableUpgradableItems.Count == 0) return false;
+        if (availableUpgradableItems.Count == 0 || numberOfItems <= 0) return false;
 
-        item = availableUpgradableItems[Random.Range(0, availableUpgradableItems.Count)];;
+        numberOfItems = Mathf.Min(numberOfItems, availableUpgradableItems.Count);
 
-        return true;
+        items = availableUpgradableItems.OrderBy(_ => Random.value).Take(numberOfItems).ToList();
+
+        return items.Count > 0;
     }
 }

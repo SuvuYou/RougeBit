@@ -63,5 +63,5 @@ public static class AnimatorExtentions
 
 public static class GameObjectExtentions
 {
-    public static bool IsPrefab(this GameObject gameObject) => gameObject.scene.IsValid();
+    public static bool IsPrefab(this GameObject gameObject) => !gameObject.scene.IsValid();
 }

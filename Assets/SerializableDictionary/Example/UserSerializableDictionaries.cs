@@ -16,9 +16,6 @@ public class AttackStateColorDictionary : SerializableDictionary<BaseAttack.Atta
 public class ColorArrayStorage : SerializableDictionary.Storage<Color[]> {}
 
 [Serializable]
-public class SomeDict123 : SerializableDictionary<int, int> {}
-
-[Serializable]
 public class StringColorArrayDictionary : SerializableDictionary<string, Color[], ColorArrayStorage> {}
 
 [Serializable]

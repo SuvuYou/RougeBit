@@ -2,8 +2,6 @@ using UnityEngine;
 
 class ItemCollector : MonoBehaviour
 {
-    [SerializeField] private InventorySO _inventory;
-
     [SerializeField] private Transform _targetTransform;
 
     [SerializeField] private float _radiousOfPulling;
@@ -12,6 +10,9 @@ class ItemCollector : MonoBehaviour
     [SerializeField] private float _approachSpeed;
 
     [SerializeField] private LayerMask _itemsLayerMask;
+
+    [Header("Events")]
+    [SerializeField] private IntUnityEvent OnItemCollected;
 
     private void Update()
     {
@@ -23,10 +24,10 @@ class ItemCollector : MonoBehaviour
             {
                 float distance = Vector2.Distance(_targetTransform.position, item.transform.position);
 
-                if (distance <= _radiousOfConsumsion)
+                if (distance <= _radiousOfConsumsion && collectableItem.IsCollectable)
                 {
-                    _inventory.AddItem(collectableItem);
-                    Destroy(collectableItem.gameObject);
+                    OnItemCollected?.Invoke(collectableItem.XPValue);
+                    collectableItem.Collect();
 
                     return;
                 }

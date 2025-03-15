@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: Level 2
   m_EditorClassIdentifier: 
   Title: Miner
+  IconSprite: {fileID: 21300000, guid: 7c192486d75ff174a9d86faadef5cebd, type: 3}
+  TitleSprite: {fileID: 21300000, guid: b642c5d6a2119b3449e219f647cfc996, type: 3}
+  UpgradeRarity: 1
   BaseAttackStats: {fileID: 11400000, guid: 7983f7033f15bb94599a4ead05d710bc, type: 2}
   RocketLaunchAttackStats: {fileID: 0}
   RangedAttackStats: {fileID: 0}

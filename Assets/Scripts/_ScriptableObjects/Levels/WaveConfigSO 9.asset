@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bf79dbedeac71241b0fdaa3e1416b98, type: 3}
+  m_Name: WaveConfigSO 9
+  m_EditorClassIdentifier: 
+  MinGroupSpawnTimeout: 1
+  MaxGroupSpawnTimeout: 2
+  MinGroupSize: 1
+  MaxGroupSize: 3
+  EnemiesWithSpawnWeights:
+    m_keys:
+    - {fileID: 7189367331512252750, guid: 4903fd52864a408429258602a9198451, type: 3}
+    - {fileID: 8795521627271913304, guid: 217658e50647b89438b1cd0168c11fba, type: 3}
+    - {fileID: 8795521627271913304, guid: d66d3139f6af8484b80cc418e3b3aef9, type: 3}
+    - {fileID: 8795521627271913304, guid: c3338f38727314b42bd72980ec5172ee, type: 3}
+    - {fileID: 8795521627271913304, guid: 9673f6091c08f2240a75ba25748b4a26, type: 3}
+    - {fileID: 8795521627271913304, guid: 386f2f425f3f5bf488d6d49b05198354, type: 3}
+    - {fileID: 8795521627271913304, guid: 7e3de83e9c7ce104591fc499debd7647, type: 3}
+    - {fileID: 8795521627271913304, guid: 260b9460927350f438f8dd819ea983ce, type: 3}
+    m_values:
+    - 2
+    - 4
+    - 4
+    - 2
+    - 1
+    - 1
+    - 1
+    - 1
+  XPRequirement: {fileID: 11400000, guid: 751563beb770d8f4ab7cfc1c2db6ee1a, type: 2}
