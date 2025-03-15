@@ -70,11 +70,13 @@
     <Compile Include="Assets\Scripts\Managers\ProjectileManager.cs" />
     <Compile Include="Assets\Scripts\Upgrades\RotationControllerUpgradeValuesSO.cs" />
     <Compile Include="Assets\Scripts\Attacks\Weapons\SlashWeapon.cs" />
+    <Compile Include="Assets\Scripts\UI\MainMenuUIWindow.cs" />
     <Compile Include="Assets\Scripts\Movement\CharacterMovement.cs" />
     <Compile Include="Assets\Scripts\Attacks\SlashAttack.cs" />
     <Compile Include="Assets\Scripts\Helpers\SOConnectors\FloatRangeValue.cs" />
     <Compile Include="Assets\Scripts\Movement\Rotation\RotatePositionStrategy.cs" />
     <Compile Include="Assets\Scripts\Movement\EntityMovementStats.cs" />
+    <Compile Include="Assets\Scripts\UI\GameEndFailUIWindow.cs" />
     <Compile Include="Assets\Scripts\Attacks\Weapons\DashCollisionWeapon.cs" />
     <Compile Include="Assets\Scripts\Attacks\_ScriptableObjects\RocketLaunchAttackStatsSO.cs" />
     <Compile Include="Assets\Scripts\Attacks\Weapons\RocketLauncherWeapon.cs" />
@@ -107,6 +109,7 @@
     <Compile Include="Assets\Scripts\Attacks\Weapons\ShieldWeapon.cs" />
     <Compile Include="Assets\Scripts\Helpers\UnityEvents.cs" />
     <Compile Include="Assets\Scripts\UI\BarUI.cs" />
+    <Compile Include="Assets\Scripts\UI\GameEndSuccessUIWindow.cs" />
     <Compile Include="Assets\Scripts\EntitiesController\Enemy.cs" />
     <Compile Include="Assets\Scripts\Animations\Controllers\SimpleEntityAnimationController.cs" />
     <Compile Include="Assets\Scripts\Managers\WaveManager\GameLevelsConfigSO.cs" />
@@ -118,6 +121,7 @@
     <Compile Include="Assets\Scripts\Movement\Rotation\RotationController.cs" />
     <Compile Include="Assets\Scripts\UI\CardUI.cs" />
     <Compile Include="Assets\Scripts\Economy\ItemCollector.cs" />
+    <Compile Include="Assets\Scripts\UI\ButtonUI.cs" />
     <Compile Include="Assets\Scripts\Animations\Controllers\ParentBasedVFXManager.cs" />
     <Compile Include="Assets\Scripts\DamageControl\DamagableWithImmunity.cs" />
     <Compile Include="Assets\Scripts\Attacks\Weapons\ClawLaserWeapon.cs" />
@@ -138,6 +142,7 @@
     <Compile Include="Assets\Scripts\Managers\CollectablesManager.cs" />
     <Compile Include="Assets\Scripts\Animations\Controllers\_IVFXAnimationTrigger.cs" />
     <Compile Include="Assets\Scripts\Attacks\_ScriptableObjects\_BaseAttackStatsSO.cs" />
+    <Compile Include="Assets\Scripts\UI\PauseUIWindow.cs" />
     <Compile Include="Assets\Scripts\Animations\Controllers\_BaseVFXManager.cs" />
     <Compile Include="Assets\SerializableDictionary\Example\SerializableDictionaryExample.cs" />
     <Compile Include="Assets\Scripts\Economy\ItemDropper.cs" />
@@ -149,6 +154,7 @@
     <Compile Include="Assets\Scripts\Animations\Controllers\ExplosionEffectAnimationController.cs" />
     <Compile Include="Assets\Scripts\SpriteEffects\WeaponRotationSpritesetSO.cs" />
     <Compile Include="Assets\Scripts\Movement\Rotation\_IRotationStrategy.cs" />
+    <Compile Include="Assets\Scripts\Managers\UIManager.cs" />
     <Compile Include="Assets\Scripts\Upgrades\Upgradable.cs" />
     <Compile Include="Assets\Scripts\Economy\CollectableItem.cs" />
     <Compile Include="Assets\Scripts\Attacks\_ScriptableObjects\MineStatsSO.cs" />
@@ -165,6 +171,7 @@
     <Compile Include="Assets\Scripts\Movement\Rotation\RotateSpritesetByDirection.cs" />
     <Compile Include="Assets\Scripts\Movement\Rotation\SnapToRotationByDirection.cs" />
     <Compile Include="Assets\Scripts\SpriteEffects\AlphaPulseAnimation.cs" />
+    <Compile Include="Assets\Scripts\UI\UIWindow.cs" />
     <Compile Include="Assets\Scripts\UI\ShopUI.cs" />
     <Compile Include="Assets\Scripts\Movement\FollowTargetMovement.cs" />
     <Compile Include="Assets\Scripts\Attacks\AttackOnCollision.cs" />

@@ -13,7 +13,8 @@ class GameLevelsConfigSO : ScriptableObject
     
     public int MaxLevel = 0;
 
-    public bool IsLastLevel => CurrentLevelNumber == MaxLevel;
+    public bool IsLastLevel => _currentLevel == MaxLevel;
+    public bool HasPassedLastLevel => _currentLevel > MaxLevel;
     
     public void NextLevel() => CurrentLevelNumber++;
 

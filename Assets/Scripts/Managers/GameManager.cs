@@ -2,9 +2,11 @@ using UnityEngine;
 
 class GameManager : Singlton<GameManager>
 {
+    public enum GameStates { None, MainMenu, InGame, Shop, Paused, GameOverSuccess, GameOverFail }
+
     [field: SerializeField] public GameLevelsConfigSO GameLevels { get; private set; }
 
-    [SerializeField] private ShopController _shop;
+    private GameStates _currentState = GameStates.None;
 
     protected override void Awake() 
     {
@@ -15,18 +17,75 @@ class GameManager : Singlton<GameManager>
 
     private void Start()
     {
-        XPManager.Instance.OnLevelUp.AddListener(() => _stopRound());
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
+        XPManager.Instance.OnLevelUp.AddListener(() => 
         {
-            StartRound();
-        }
+            if (GameLevels.HasPassedLastLevel)
+            {
+                _setState(GameStates.GameOverSuccess);
+            }
+            else
+            {
+                _setState(GameStates.Shop);
+            } 
+        });
+
+        EnterMainMenu();
     }
 
-    public void StartRound()
+    public void StartGame() => _setState(GameStates.InGame);
+
+    public void EnterMainMenu() => _setState(GameStates.MainMenu);
+
+    #region State Management
+    private void _setState(GameStates newState)
+    {
+        if (_currentState == newState) return;
+
+        // Old state
+        switch (_currentState)
+        {
+            case GameStates.Paused:
+                UIManager.Instance.CloseWindow(UIManager.UIWindows.Pause);
+                break;
+            default:
+                break;
+        }
+
+        // New State
+        switch (newState)
+        {
+            case GameStates.MainMenu:
+                _stopRound();
+                UIManager.Instance.CloseAllWindows();
+                UIManager.Instance.OpenWindow(UIManager.UIWindows.MainMenu);
+                break;
+            case GameStates.InGame:
+                _startRound();
+                UIManager.Instance.CloseAllWindows();
+                break;
+            case GameStates.Shop:
+                _stopRound();
+                UIManager.Instance.OpenWindow(UIManager.UIWindows.Shop);
+                break;
+            case GameStates.Paused:
+                UIManager.Instance.OpenWindow(UIManager.UIWindows.Pause);
+                break;
+            case GameStates.GameOverSuccess:
+                _stopRound();
+                UIManager.Instance.OpenWindow(UIManager.UIWindows.GameEndSuccess);
+                break;
+            case GameStates.GameOverFail:
+                _stopRound();
+                UIManager.Instance.OpenWindow(UIManager.UIWindows.GameEndFail);
+                break;
+        }
+
+        _currentState = newState;
+    }
+    #endregion
+
+    #region Wave Management
+    private void _startRound()
     {
         WaveManager.Instance.StartNextWave();
     }
@@ -37,4 +96,5 @@ class GameManager : Singlton<GameManager>
         ProjectileManager.Instance.ClearProjectiles();
         CollectablesManager.Instance.ClearCollectableItem();
     }
+    #endregion
 }

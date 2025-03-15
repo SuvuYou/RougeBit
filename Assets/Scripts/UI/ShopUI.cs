@@ -1,25 +1,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-class ShopUI : MonoBehaviour
+class ShopUI : UIWindow
 {
-    [SerializeField] private GameObject _uiContainer;
-
     [SerializeField] private CardUI _cardUIPrefab;
 
     [SerializeField] private UglySerializableDictionary<int, List<Transform>> _cardSpawnPointsPerNumberOfCards = new ();
 
     private List<CardUI> _cards = new ();
 
-    private void Awake()
-    {
-        _hideUI();
-    }
-
     public void RenderCards(List<CardUI.CardSetupParams> cardsParams)
     {
-        _showUI();
-
         var spawnPoints = _cardSpawnPointsPerNumberOfCards.ToDictionary()[cardsParams.Count];
 
         for (int i = 0; i < cardsParams.Count; i++)
@@ -27,7 +18,7 @@ class ShopUI : MonoBehaviour
             var cardUI = Instantiate(_cardUIPrefab, spawnPoints[i].transform.position, Quaternion.identity, _uiContainer.transform);
             cardUI.SetupCard(cardsParams[i], () =>
             {
-                _hideUI();
+                GameManager.Instance.StartGame();
                 ClearCards();
             });
 
@@ -41,8 +32,4 @@ class ShopUI : MonoBehaviour
 
         _cards.Clear();
     } 
-
-    private void _showUI() => _uiContainer.SetActive(true);
-
-    private void _hideUI() => _uiContainer.SetActive(false);
 }

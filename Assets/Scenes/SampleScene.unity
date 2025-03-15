@@ -1148,7 +1148,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &94988587
 Transform:
   m_ObjectHideFlags: 0
@@ -2825,7 +2825,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &282391169
 Transform:
   m_ObjectHideFlags: 0
@@ -2851,25 +2851,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 282391168}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b2ab77f75abfd94cbe295016096494e, type: 3}
+  m_Script: {fileID: 11500000, guid: cee98e89fb9484742931dee29fcf3081, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _uiContainer: {fileID: 1403460017}
-  _cardUIPrefab: {fileID: 4958212608285307138, guid: d39e75dafeb78fb4ba9c82736bf927e9, type: 3}
-  _cardSpawnPointsPerNumberOfCards:
-    items:
-    - key: 1
-      value:
-      - {fileID: 0}
-    - key: 2
-      value:
-      - {fileID: 0}
-      - {fileID: 0}
-    - key: 3
-      value:
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
+  _startButton: {fileID: 1121722817}
 --- !u!1 &285519009
 GameObject:
   m_ObjectHideFlags: 0
@@ -4615,6 +4601,8 @@ GameObject:
   - component: {fileID: 422086696}
   - component: {fileID: 422086698}
   - component: {fileID: 422086697}
+  - component: {fileID: 422086699}
+  - component: {fileID: 422086700}
   m_Layer: 0
   m_Name: Home Button
   m_TagString: Untagged
@@ -5313,6 +5301,63 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!61 &422086699
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 422086695}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3, y: 3}
+  m_EdgeRadius: 0
+--- !u!114 &422086700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 422086695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3670f61d83601d24b94a520318885835, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &425026429
 GameObject:
   m_ObjectHideFlags: 0
@@ -5324,6 +5369,8 @@ GameObject:
   - component: {fileID: 425026430}
   - component: {fileID: 425026432}
   - component: {fileID: 425026431}
+  - component: {fileID: 425026433}
+  - component: {fileID: 425026434}
   m_Layer: 0
   m_Name: Home Button
   m_TagString: Untagged
@@ -6022,6 +6069,63 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!61 &425026433
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 425026429}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3, y: 3}
+  m_EdgeRadius: 0
+--- !u!114 &425026434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 425026429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3670f61d83601d24b94a520318885835, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &425823580
 GameObject:
   m_ObjectHideFlags: 0
@@ -6726,7 +6830,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 11.875
+  orthographic size: 11.46875
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -6751,7 +6855,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.9461594, y: -1.4375, z: -12.42}
+  m_LocalPosition: {x: -7.6249948, y: -1.4375, z: -12.42}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6832,7 +6936,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &527198826
 Transform:
   m_ObjectHideFlags: 0
@@ -6858,25 +6962,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 527198825}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b2ab77f75abfd94cbe295016096494e, type: 3}
+  m_Script: {fileID: 11500000, guid: a3ed0a4e2218c4f40a6617672ef5c7d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _uiContainer: {fileID: 94988586}
-  _cardUIPrefab: {fileID: 4958212608285307138, guid: d39e75dafeb78fb4ba9c82736bf927e9, type: 3}
-  _cardSpawnPointsPerNumberOfCards:
-    items:
-    - key: 1
-      value:
-      - {fileID: 0}
-    - key: 2
-      value:
-      - {fileID: 0}
-      - {fileID: 0}
-    - key: 3
-      value:
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
+  _continueButton: {fileID: 1785856012}
+  _mainMenuButton: {fileID: 1751921124}
 --- !u!1 &528097870
 GameObject:
   m_ObjectHideFlags: 0
@@ -7364,7 +7455,7 @@ MonoBehaviour:
   m_Intensity: 2
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 00000000417baf4d6f266bd2c13401c44d2a78f8f1bb61154d4a28d6
+  m_ApplyToSortingLayers: 00000000417baf4d6f266bd2c13401c44d2a78f8f1bb61154d4a28d60dfbf275
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -12693,6 +12784,8 @@ GameObject:
   - component: {fileID: 1121722813}
   - component: {fileID: 1121722815}
   - component: {fileID: 1121722814}
+  - component: {fileID: 1121722816}
+  - component: {fileID: 1121722817}
   m_Layer: 0
   m_Name: Button
   m_TagString: Untagged
@@ -13391,6 +13484,63 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!61 &1121722816
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1121722812}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3, y: 3}
+  m_EdgeRadius: 0
+--- !u!114 &1121722817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1121722812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3670f61d83601d24b94a520318885835, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1142161003
 GameObject:
   m_ObjectHideFlags: 0
@@ -35906,7 +36056,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1403460018
 Transform:
   m_ObjectHideFlags: 0
@@ -36001,7 +36151,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1405362303
 Transform:
   m_ObjectHideFlags: 0
@@ -36027,25 +36177,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1405362302}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b2ab77f75abfd94cbe295016096494e, type: 3}
+  m_Script: {fileID: 11500000, guid: d7f7ca886cb04784c918c852af387086, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _uiContainer: {fileID: 2101988252}
-  _cardUIPrefab: {fileID: 4958212608285307138, guid: d39e75dafeb78fb4ba9c82736bf927e9, type: 3}
-  _cardSpawnPointsPerNumberOfCards:
-    items:
-    - key: 1
-      value:
-      - {fileID: 0}
-    - key: 2
-      value:
-      - {fileID: 0}
-      - {fileID: 0}
-    - key: 3
-      value:
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
+  _tryAgainButton: {fileID: 1551001341}
+  _mainMenuButton: {fileID: 425026434}
 --- !u!1 &1405802259
 GameObject:
   m_ObjectHideFlags: 0
@@ -36393,6 +36530,8 @@ GameObject:
   - component: {fileID: 1443682346}
   - component: {fileID: 1443682348}
   - component: {fileID: 1443682347}
+  - component: {fileID: 1443682349}
+  - component: {fileID: 1443682350}
   m_Layer: 0
   m_Name: Replay Button
   m_TagString: Untagged
@@ -37091,6 +37230,63 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!61 &1443682349
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1443682345}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3, y: 3}
+  m_EdgeRadius: 0
+--- !u!114 &1443682350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1443682345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3670f61d83601d24b94a520318885835, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1456690481
 GameObject:
   m_ObjectHideFlags: 0
@@ -38092,7 +38288,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1543847470
 Transform:
   m_ObjectHideFlags: 0
@@ -38183,6 +38379,8 @@ GameObject:
   - component: {fileID: 1551001337}
   - component: {fileID: 1551001339}
   - component: {fileID: 1551001338}
+  - component: {fileID: 1551001340}
+  - component: {fileID: 1551001341}
   m_Layer: 0
   m_Name: Replay Button
   m_TagString: Untagged
@@ -38881,6 +39079,63 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!61 &1551001340
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1551001336}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3, y: 3}
+  m_EdgeRadius: 0
+--- !u!114 &1551001341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1551001336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3670f61d83601d24b94a520318885835, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1551717558
 GameObject:
   m_ObjectHideFlags: 0
@@ -42788,6 +43043,8 @@ GameObject:
   - component: {fileID: 1751921120}
   - component: {fileID: 1751921122}
   - component: {fileID: 1751921121}
+  - component: {fileID: 1751921123}
+  - component: {fileID: 1751921124}
   m_Layer: 0
   m_Name: Home Button
   m_TagString: Untagged
@@ -43486,6 +43743,63 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!61 &1751921123
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1751921119}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3, y: 3}
+  m_EdgeRadius: 0
+--- !u!114 &1751921124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1751921119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3670f61d83601d24b94a520318885835, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1756169453
 GameObject:
   m_ObjectHideFlags: 0
@@ -43780,6 +44094,8 @@ GameObject:
   - component: {fileID: 1785856009}
   - component: {fileID: 1785856011}
   - component: {fileID: 1785856010}
+  - component: {fileID: 1785856013}
+  - component: {fileID: 1785856012}
   m_Layer: 0
   m_Name: Continue Button
   m_TagString: Untagged
@@ -44478,6 +44794,63 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &1785856012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1785856008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3670f61d83601d24b94a520318885835, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &1785856013
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1785856008}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3, y: 3}
+  m_EdgeRadius: 0
 --- !u!1 &1786110133
 GameObject:
   m_ObjectHideFlags: 0
@@ -48015,7 +48388,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <GameLevels>k__BackingField: {fileID: 11400000, guid: 94ccc512f7e458845b5f5ea4851e9416, type: 2}
-  _shop: {fileID: 0}
 --- !u!1 &1995846558
 GameObject:
   m_ObjectHideFlags: 0
@@ -48681,7 +49053,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2057498343
 Transform:
   m_ObjectHideFlags: 0
@@ -48707,25 +49079,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2057498342}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b2ab77f75abfd94cbe295016096494e, type: 3}
+  m_Script: {fileID: 11500000, guid: fb6845e5591648949a93d2731ee792c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _uiContainer: {fileID: 1543847469}
-  _cardUIPrefab: {fileID: 4958212608285307138, guid: d39e75dafeb78fb4ba9c82736bf927e9, type: 3}
-  _cardSpawnPointsPerNumberOfCards:
-    items:
-    - key: 1
-      value:
-      - {fileID: 0}
-    - key: 2
-      value:
-      - {fileID: 0}
-      - {fileID: 0}
-    - key: 3
-      value:
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
+  _tryAgainButton: {fileID: 1443682350}
+  _mainMenuButton: {fileID: 422086700}
 --- !u!1 &2082367956
 GameObject:
   m_ObjectHideFlags: 0
@@ -50059,7 +50418,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2101988253
 Transform:
   m_ObjectHideFlags: 0
@@ -50148,6 +50507,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2109904689}
+  - component: {fileID: 2109904690}
   m_Layer: 0
   m_Name: UI
   m_TagString: Untagged
@@ -50177,6 +50537,30 @@ Transform:
   - {fileID: 1921808338}
   m_Father: {fileID: 519420032}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2109904690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2109904688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28e7cea663311a14187923ce7115ad0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uiWindows:
+    items:
+    - key: 1
+      value: {fileID: 2026395575}
+    - key: 2
+      value: {fileID: 282391170}
+    - key: 4
+      value: {fileID: 527198827}
+    - key: 8
+      value: {fileID: 1405362304}
+    - key: 16
+      value: {fileID: 2057498344}
 --- !u!1 &2132890758
 GameObject:
   m_ObjectHideFlags: 0
