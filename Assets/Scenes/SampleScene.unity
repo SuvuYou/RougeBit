@@ -6875,7 +6875,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 12.15625
+  orthographic size: 12.4375
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -37938,6 +37938,10 @@ PrefabInstance:
       propertyPath: OnItemCollected.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1882708509}
+    - target: {fileID: 4364029734468249004, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
+      propertyPath: _isSpriteRightBased
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4932905745483263487, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
       propertyPath: OnAttack.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -38000,7 +38004,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8537948102222390110, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9071764285014470526, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
       propertyPath: IsDestroyable
