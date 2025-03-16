@@ -2,14 +2,11 @@ using UnityEngine;
 
 public class RotatePositionStrategy : RotationStrategyBase
 {
+    [SerializeField] private Transform _pivotPoint;
     [SerializeField] private Transform _rotatedTransform;
     [SerializeField] private float _distanceFromCenter = 2f;
 
-    private Transform _pivotPoint;
-
     private Vector3 _targetPosition;
-
-    public override void SetPivotPoint(Transform pivotPoint) => _pivotPoint = pivotPoint;
 
     public override void SetTargetPosition(Vector3 target) => _targetPosition = target;
 

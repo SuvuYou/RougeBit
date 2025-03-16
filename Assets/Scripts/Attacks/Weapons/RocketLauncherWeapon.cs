@@ -7,8 +7,7 @@ public class RocketLauncherWeapon : BaseWeapon
 
     public override void Setup(GameObject attacker, LayerMask enemyLayerMask) 
     {
-        _attack.Setup(attacker, enemyLayerMask);
-        _rotationController.SetupPivotPoint(attacker.transform);
+        _attack.Setup(attacker, enemyLayerMask);   
     }
 
     public override void SetTarget(Target target, bool isTargetFound = false)

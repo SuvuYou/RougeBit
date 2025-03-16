@@ -37934,6 +37934,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3465815420237244368, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
+      propertyPath: _pivotPopint
+      value: 
+      objectReference: {fileID: 1476829493}
     - target: {fileID: 4335793314640104623, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
       propertyPath: OnItemCollected.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

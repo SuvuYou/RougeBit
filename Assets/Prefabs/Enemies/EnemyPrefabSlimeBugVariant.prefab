@@ -314,6 +314,10 @@ PrefabInstance:
       propertyPath: _rotationParent
       value: 
       objectReference: {fileID: 4384563107928640488}
+    - target: {fileID: 635621067889506106, guid: 1034b50eacaa7d84096b14fa585f037a, type: 3}
+      propertyPath: _pivotPopint
+      value: 
+      objectReference: {fileID: 2428275084087665492}
     - target: {fileID: 2001551918115659325, guid: 1034b50eacaa7d84096b14fa585f037a, type: 3}
       propertyPath: m_Name
       value: WeaponCollisionVariant

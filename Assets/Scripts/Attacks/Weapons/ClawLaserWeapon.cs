@@ -8,7 +8,6 @@ public class ClawLaserWeapon : BaseWeapon
     public override void Setup(GameObject attacker, LayerMask enemyLayerMask) 
     {
         _attack.Setup(attacker, enemyLayerMask);
-        _rotationController.SetupPivotPoint(attacker.transform);
     } 
 
     public override void SetTarget(Target target, bool isTargetFound = false)

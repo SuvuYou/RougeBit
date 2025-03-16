@@ -4,11 +4,6 @@ public class ShieldWeapon : BaseWeapon
 {
     [SerializeField] RotationController _rotationController;
 
-    public override void Setup(GameObject attacker, LayerMask enemyLayerMask) 
-    {
-        _rotationController.SetupPivotPoint(attacker.transform);
-    }
-
     public override void SetTarget(Target targetPosition, bool isTargetFound = false)
     {
         if (isTargetFound)
