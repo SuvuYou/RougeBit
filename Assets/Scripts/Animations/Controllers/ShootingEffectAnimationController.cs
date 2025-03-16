@@ -11,7 +11,8 @@ class ShootingEffectAnimationController : BaseAnimationController, IVFXAnimation
         LaserBeam2,
         LaserBeamContinuous,
         Slash1,
-        Slash2
+        Slash2,
+        SmallDirectionalExplosion
     }
 
     private static readonly int IDLE_HASH = Animator.StringToHash("Idle");
@@ -24,7 +25,8 @@ class ShootingEffectAnimationController : BaseAnimationController, IVFXAnimation
         { ShootingEffectType.LaserBeam2, Animator.StringToHash("Laser Beam 2") },
         { ShootingEffectType.LaserBeamContinuous, Animator.StringToHash("Laser Beam Continuous") },
         { ShootingEffectType.Slash1, Animator.StringToHash("Slash 1") },
-        { ShootingEffectType.Slash2, Animator.StringToHash("Slash 2") }
+        { ShootingEffectType.Slash2, Animator.StringToHash("Slash 2") },
+        { ShootingEffectType.SmallDirectionalExplosion, Animator.StringToHash("Small Directional Explosion") }
     };
 
     private static readonly Dictionary<ShootingEffectType, string> ShootingEffectClipNames = new()
@@ -36,6 +38,7 @@ class ShootingEffectAnimationController : BaseAnimationController, IVFXAnimation
         { ShootingEffectType.LaserBeamContinuous, "Laser Beam Continuous" },
         { ShootingEffectType.Slash1, "Slash 1" },
         { ShootingEffectType.Slash2, "Slash 2" },
+        { ShootingEffectType.SmallDirectionalExplosion, "Small Directional Explosion" }
     };
 
     [Space(20)]

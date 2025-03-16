@@ -302,6 +302,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2977791374451310444}
     m_Modifications:
+    - target: {fileID: 212325671324921915, guid: 1034b50eacaa7d84096b14fa585f037a, type: 3}
+      propertyPath: _animatedPrefab
+      value: 
+      objectReference: {fileID: 6398712736177628684, guid: 5d1b198d629cbd0409705a37dd595537, type: 3}
+    - target: {fileID: 212325671324921915, guid: 1034b50eacaa7d84096b14fa585f037a, type: 3}
+      propertyPath: _positionParent
+      value: 
+      objectReference: {fileID: 4384563107928640488}
+    - target: {fileID: 212325671324921915, guid: 1034b50eacaa7d84096b14fa585f037a, type: 3}
+      propertyPath: _rotationParent
+      value: 
+      objectReference: {fileID: 4384563107928640488}
     - target: {fileID: 2001551918115659325, guid: 1034b50eacaa7d84096b14fa585f037a, type: 3}
       propertyPath: m_Name
       value: WeaponCollisionVariant
@@ -401,6 +413,11 @@ MonoBehaviour:
 --- !u!4 &2428275084087665492 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8685442624772552056, guid: 1034b50eacaa7d84096b14fa585f037a, type: 3}
+  m_PrefabInstance: {fileID: 6429472714441922092}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &4384563107928640488 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7341724689464434116, guid: 1034b50eacaa7d84096b14fa585f037a, type: 3}
   m_PrefabInstance: {fileID: 6429472714441922092}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &9094205353407703575 stripped

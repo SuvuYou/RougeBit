@@ -3,6 +3,7 @@ using UnityEngine;
 public class CollisionWeapon : BaseWeapon
 {
     [SerializeField] AttackOnCollision _attack;
+    [SerializeField] RotationController _rotationController;
 
     public override void Setup(GameObject attacker, LayerMask enemyLayerMask) => _attack.Setup(attacker, enemyLayerMask);
 
@@ -11,6 +12,7 @@ public class CollisionWeapon : BaseWeapon
         if (isTargetFound && !_attack.IsAttacking)
         {
             _attack.SetTarget(target);
+            _rotationController.SetNewTarget(target.transform.position);
         }
     }
 }
