@@ -38128,6 +38128,22 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2779835192470231401, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2779835192470231401, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2779835192470231401, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2779835192470231401, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3465815420237244368, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
       propertyPath: _pivotPopint
       value: 
@@ -38201,6 +38217,10 @@ PrefabInstance:
       value: PlayerBuyer
       objectReference: {fileID: 0}
     - target: {fileID: 8537948102222390110, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8753471297674628231, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
