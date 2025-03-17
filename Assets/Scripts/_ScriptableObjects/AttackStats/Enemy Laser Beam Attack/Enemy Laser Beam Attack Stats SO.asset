@@ -14,9 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MovementVelocityToCancelAttackThreshold: 1
   AttackReachDistance: 10
-  BeamDamage: 1
-  BeamAttacksPerSecond: 5
-  BeamDuration: 5
-  BeamSprite: {fileID: 3431848524641470274, guid: 8d54bd8d408db3147b51d3e9f50b5f57, type: 3}
-  BeamLength: 15
-  BeamWidth: 1
+  BeamDamage: 35
+  BeamLength: 18
+  BeamWidth: 0.75

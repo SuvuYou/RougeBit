@@ -29,7 +29,20 @@ public class RotationController : Upgradable
     public bool IsRotationEnabled { get; private set; } = true;
 
     public void EnableRotation() => IsRotationEnabled = true;
+    
     public void DisableRotation() => IsRotationEnabled = false;
+    
+    public void EnableRotationWithSnap() 
+    {
+        _snap();
+        IsRotationEnabled = true;
+    }
+
+    public void DisableRotationWithSnap() 
+    {
+        _snap();
+        IsRotationEnabled = false;  
+    } 
 
     protected Vector3 _currentTarget;
     protected Vector3 _goalTarget;
@@ -46,10 +59,21 @@ public class RotationController : Upgradable
 
         if (IsRotationEnabled && _currentTarget != null)
         {       
-            foreach (RotationStrategyBase strategy in _rotationStrategies)
-            {
-                strategy.Rotate();
-            }
+            _rotateStrategies();
+        }
+    }
+
+    private void _snap()
+    {
+        _setCurrentTarget(_goalTarget);
+        _rotateStrategies();
+    }
+
+    private void _rotateStrategies() 
+    {
+        foreach (RotationStrategyBase strategy in _rotationStrategies)
+        {
+            strategy.Rotate();
         }
     }
 

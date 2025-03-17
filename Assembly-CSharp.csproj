@@ -74,7 +74,6 @@
     <Compile Include="Assets\Scripts\Movement\CharacterMovement.cs" />
     <Compile Include="Assets\Scripts\Attacks\SlashAttack.cs" />
     <Compile Include="Assets\Scripts\Helpers\SOConnectors\FloatRangeValue.cs" />
-    <Compile Include="Assets\Scripts\Movement\Rotation\RotatePositionStrategy.cs" />
     <Compile Include="Assets\Scripts\Movement\EntityMovementStats.cs" />
     <Compile Include="Assets\Scripts\UI\GameEndFailUIWindow.cs" />
     <Compile Include="Assets\Scripts\Attacks\Weapons\DashCollisionWeapon.cs" />
@@ -102,7 +101,6 @@
     <Compile Include="Assets\Scripts\Attacks\Weapons\CollisionWeapon.cs" />
     <Compile Include="Assets\Scripts\Managers\WaveManager\WaveManager.cs" />
     <Compile Include="Assets\Scripts\Attacks\_ScriptableObjects\_BaseProjectileStatsSO.cs" />
-    <Compile Include="Assets\Scripts\Movement\Rotation\_RotationStrategyBase.cs" />
     <Compile Include="Assets\Scripts\DamageControl\Target.cs" />
     <Compile Include="Assets\Scripts\Managers\XPManager.cs" />
     <Compile Include="Assets\Scripts\Economy\CollectableItemSO.cs" />
@@ -133,6 +131,7 @@
     <Compile Include="Assets\Scripts\Helpers\SOConnectors\FloatRangeValueConfigSO.cs" />
     <Compile Include="Assets\Scripts\Attacks\Weapons\AirStrikeWeapon.cs" />
     <Compile Include="Assets\Scripts\Movement\Rotation\FollowTargetRotationController.cs" />
+    <Compile Include="Assets\Scripts\Movement\Rotation\Rotation Strategies\RotatePositionStrategy.cs" />
     <Compile Include="Assets\Scripts\Attacks\Projectiles\_BaseProjectile.cs" />
     <Compile Include="Assets\Scripts\Upgrades\BaseUpgradeValuesSetSO.cs" />
     <Compile Include="Assets\Scripts\Helpers\Timer.cs" />
@@ -142,10 +141,13 @@
     <Compile Include="Assets\Scripts\Attacks\KnockBack\Shockwave.cs" />
     <Compile Include="Assets\Scripts\Attacks\KnockBack\BaseKnockback.cs" />
     <Compile Include="Assets\Scripts\Managers\CollectablesManager.cs" />
+    <Compile Include="Assets\Scripts\Movement\Rotation\Rotation Strategies\SnapToRotationByDirection.cs" />
     <Compile Include="Assets\Scripts\Animations\Controllers\_IVFXAnimationTrigger.cs" />
+    <Compile Include="Assets\Scripts\Movement\Rotation\Rotation Strategies\RotateTowardsStrategy.cs" />
     <Compile Include="Assets\Scripts\Attacks\_ScriptableObjects\_BaseAttackStatsSO.cs" />
     <Compile Include="Assets\Scripts\UI\PauseUIWindow.cs" />
     <Compile Include="Assets\Scripts\Animations\Controllers\_BaseVFXManager.cs" />
+    <Compile Include="Assets\Scripts\Movement\Rotation\Rotation Strategies\RotateSpritesetByDirection.cs" />
     <Compile Include="Assets\SerializableDictionary\Example\SerializableDictionaryExample.cs" />
     <Compile Include="Assets\Scripts\UI\HUDUIWindow.cs" />
     <Compile Include="Assets\Scripts\Economy\ItemDropper.cs" />
@@ -156,7 +158,6 @@
     <Compile Include="Assets\Scripts\Attacks\_ScriptableObjects\LaserBeamAttackStatsSO.cs" />
     <Compile Include="Assets\Scripts\Animations\Controllers\ExplosionEffectAnimationController.cs" />
     <Compile Include="Assets\Scripts\SpriteEffects\WeaponRotationSpritesetSO.cs" />
-    <Compile Include="Assets\Scripts\Movement\Rotation\_IRotationStrategy.cs" />
     <Compile Include="Assets\Scripts\Managers\UIManager.cs" />
     <Compile Include="Assets\Scripts\Upgrades\Upgradable.cs" />
     <Compile Include="Assets\Scripts\Economy\CollectableItem.cs" />
@@ -170,9 +171,9 @@
     <Compile Include="Assets\Scripts\Attacks\_BaseAttack.cs" />
     <Compile Include="Assets\Scripts\Animations\Controllers\ComplexEntityAnimationController.cs" />
     <Compile Include="Assets\Scripts\Attacks\Managers\PlayerAttack.cs" />
+    <Compile Include="Assets\Scripts\Movement\Rotation\Rotation Strategies\_RotationStrategyBase.cs" />
     <Compile Include="Assets\SerializableDictionary\SerializableDictionary.cs" />
-    <Compile Include="Assets\Scripts\Movement\Rotation\RotateSpritesetByDirection.cs" />
-    <Compile Include="Assets\Scripts\Movement\Rotation\SnapToRotationByDirection.cs" />
+    <Compile Include="Assets\Scripts\Movement\Rotation\Rotation Strategies\_IRotationStrategy.cs" />
     <Compile Include="Assets\Scripts\SpriteEffects\AlphaPulseAnimation.cs" />
     <Compile Include="Assets\Scripts\UI\UIWindow.cs" />
     <Compile Include="Assets\Scripts\UI\ShopUI.cs" />

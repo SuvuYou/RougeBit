@@ -8,9 +8,6 @@ class LaserBeamAttack : BaseAttack
         base.UpgradeValues(ovrrideValues);
 
         _stats = ovrrideValues.LaserBeamAttackStats;
-
-        _attackTimer.SetBaseTime(_stats.BeamDuration);
-        _collisionTimer.SetBaseTime(1f / _stats.BeamAttacksPerSecond);
     }
 
     [SerializeField] private LaserBeamAttackStatsSO _stats;
@@ -19,9 +16,6 @@ class LaserBeamAttack : BaseAttack
 
     private Vector3 _attackDirection;
     private Vector3 _attackerPosition;
-
-    private Timer _attackTimer = new();
-    private Timer _collisionTimer = new();
 
     public override void Setup(GameObject attacker, LayerMask enemyLayerMask)
     {
@@ -32,9 +26,7 @@ class LaserBeamAttack : BaseAttack
             _attackerMovement = movement;
         }
 
-        _attackTimer.SetBaseTime(_stats.BeamDuration);
-        _collisionTimer.SetBaseTime(1f / _stats.BeamAttacksPerSecond);
-
+        OnAim.AddListener((Vector3 targetPosition) => _attackerMovement.AddMovementLock(MovementLock.Attack));
         OnAttack.AddListener((Vector3 targetPosition) => _attackerMovement.AddMovementLock(MovementLock.Attack));
     }
 
@@ -46,42 +38,10 @@ class LaserBeamAttack : BaseAttack
 
         if (_attackerMovement.Velocity.magnitude > _stats.MovementVelocityToCancelAttackThreshold) return;
 
-        _collisionTimer.Reset();
-        _collisionTimer.Start();
-        _attackTimer.Reset();
-        _attackTimer.Start();
+        _updateAttackState();
 
         performAttackOrAim();
     } 
-
-    protected override void _handleAttack(Action finishAttack, Action cancelAttack, Action cancelReloadAttack)
-    {
-        _attackTimer.Update(Time.deltaTime);
-        _collisionTimer.Update(Time.deltaTime);
-        
-        if (_collisionTimer.IsFinished)
-        {
-            _handleCollision();
-            _collisionTimer.Reset();
-        }
-
-        if (_attackTimer.IsFinished)
-        {
-            _attackTimer.Stop();
-            _collisionTimer.Stop();
-
-            _attackerMovement.RemoveMovementLock(MovementLock.Attack);
-
-            finishAttack();
-        }
-    }
-
-    protected override void _handleAim(Action cancelAim, Action earlyFinishAttack)
-    {
-        if (_attackerMovement.Velocity.magnitude > _stats.MovementVelocityToCancelAttackThreshold) cancelAim();
-
-        _updateAttackState();
-    }
 
     private void _updateAttackState()
     {
@@ -89,6 +49,14 @@ class LaserBeamAttack : BaseAttack
 
         _attackDirection = (_target.transform.position - _attacker.transform.position).normalized;
         _attackerPosition = _attacker.transform.position;
+    }
+    
+    protected override void _handleAttack(Action finishAttack, Action cancelAttack, Action cancelReloadAttack)
+    {
+        _handleCollision();
+        _attackerMovement.RemoveMovementLock(MovementLock.Attack);
+
+        finishAttack();
     }
 
     private void _handleCollision()

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3905545280479315810}
   - component: {fileID: 9085512862200925206}
   m_Layer: 0
-  m_Name: Laser Beam
+  m_Name: Laser Beam Charge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,11 +76,11 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 0}
-  m_Color: {r: 0.85882354, g: 0.5803922, b: 0.6901961, a: 1}
+  m_Color: {r: 0.85882354, g: 0.5803922, b: 0.6901961, a: 0.101960786}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 3, y: 3}
+  m_Size: {x: 6, y: 6}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
@@ -120,5 +120,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animator: {fileID: 3905545280479315810}
-  _shootingEffectType: 3
+  _shootingEffectType: 5
   _overrideShootingAnimationLength: 0
