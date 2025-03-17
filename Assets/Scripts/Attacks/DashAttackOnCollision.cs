@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 class DashAttackOnCollision : BaseAttack
 {
@@ -12,6 +13,8 @@ class DashAttackOnCollision : BaseAttack
 
     [Header("References")]
     [SerializeField] private DashAttackOnCollisionStatsSO _stats;
+
+    public UnityEvent OnDealDamage;
 
     private CharacterMovement _attackerMovement;
 
@@ -92,6 +95,8 @@ class DashAttackOnCollision : BaseAttack
         if (parent.TryGetComponentInChildren(out BaseDamagable damagable))
         {
             damagable.TakeDamage(_stats.AttackDamage);
+
+            OnDealDamage?.Invoke();
         }
 
         if (_baseStats.AddsKnockback && parent.TryGetComponentInChildren(out BaseKnockback knockable))
