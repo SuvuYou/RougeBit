@@ -1,27 +1,33 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TargetingEffectAnimationController : BaseAnimationController, IVFXAnimationTrigger
+public class GeneralVFXAnimationController : BaseAnimationController, IVFXAnimationTrigger
 {
-    private enum TargetingEffectType
+    private enum GeneralEffectType
     {
         DiamondTargeting,
+        ElectricCharge,
+        TargetSpriteTargeting
     }
 
     private static readonly int IDLE_HASH = Animator.StringToHash("Idle");
 
-    private static readonly Dictionary<TargetingEffectType, int> TargetingEffectHashes = new()
+    private static readonly Dictionary<GeneralEffectType, int> TargetingEffectHashes = new()
     {
-        { TargetingEffectType.DiamondTargeting, Animator.StringToHash("DiamondTargeting") },
+        { GeneralEffectType.DiamondTargeting, Animator.StringToHash("DiamondTargeting") },
+        { GeneralEffectType.ElectricCharge, Animator.StringToHash("ElectricCharge") },
+        { GeneralEffectType.TargetSpriteTargeting, Animator.StringToHash("TargetSpriteTargeting") },
     };
 
-    private static readonly Dictionary<TargetingEffectType, string> TargetingEffectClipNames = new()
+    private static readonly Dictionary<GeneralEffectType, string> TargetingEffectClipNames = new()
     {
-        { TargetingEffectType.DiamondTargeting, "DiamondTargeting" },
+        { GeneralEffectType.DiamondTargeting, "DiamondTargeting" },
+        { GeneralEffectType.ElectricCharge, "ElectricCharge" },
+        { GeneralEffectType.TargetSpriteTargeting, "TargetSpriteTargeting" },
     };
 
     [Space(20)]
-    [SerializeField] private TargetingEffectType _targetingEffectType;
+    [SerializeField] private GeneralEffectType _targetingEffectType;
     [SerializeField] private float _overrideTargetingAnimationLength = 0f;
 
     private float _targetingAnimationLength = 0f;

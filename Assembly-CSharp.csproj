@@ -181,8 +181,8 @@
     <Compile Include="Assets\Scripts\DamageControl\BaseDamagable.cs" />
     <Compile Include="Assets\Scripts\Upgrades\Rarity.cs" />
     <Compile Include="Assets\Scripts\Input\PalyerInput.cs" />
+    <Compile Include="Assets\Scripts\Animations\Controllers\GeneralVFXAnimationController.cs" />
     <Compile Include="Assets\Scripts\Attacks\_ScriptableObjects\AttackOnCollisionStatsSO.cs" />
-    <Compile Include="Assets\Scripts\Animations\Controllers\TargetingEffectAnimationController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

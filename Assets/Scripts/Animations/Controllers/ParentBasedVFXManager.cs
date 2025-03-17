@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 
 public class ParentBasedVFXManager : BaseVFXManager
@@ -21,8 +22,10 @@ public class ParentBasedVFXManager : BaseVFXManager
 
     protected virtual IVFXAnimationTrigger _instantiateAnimationTrigger() 
     {
-        _cachedAnimation = Instantiate(_animatedPrefab, _positionParent.position, _rotationParent.rotation);
+        var newAnimation = Instantiate(_animatedPrefab, _positionParent.position, _rotationParent.rotation);
 
-        return _cachedAnimation.GetComponentInChildren<IVFXAnimationTrigger>();
+        _cachedAnimations.Add(newAnimation);
+
+        return newAnimation.GetComponentInChildren<IVFXAnimationTrigger>();
     }
 }
