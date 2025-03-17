@@ -7,6 +7,8 @@ class LaserBeamAttack : BaseAttack
     {
         base.UpgradeValues(ovrrideValues);
 
+        _beamCollisionDurationTimer = new Timer(ovrrideValues.LaserBeamAttackStats.BeamDuration);
+        
         _stats = ovrrideValues.LaserBeamAttackStats;
     }
 
@@ -17,9 +19,13 @@ class LaserBeamAttack : BaseAttack
     private Vector3 _attackDirection;
     private Vector3 _attackerPosition;
 
+    private Timer _beamCollisionDurationTimer;
+
     public override void Setup(GameObject attacker, LayerMask enemyLayerMask)
     {
         base.Setup(attacker, enemyLayerMask);
+
+        _beamCollisionDurationTimer = new Timer(_stats.BeamDuration);
 
         if(attacker.transform.parent.TryGetComponentInChildren(out CharacterMovement movement))
         {
@@ -40,6 +46,8 @@ class LaserBeamAttack : BaseAttack
 
         _updateAttackState();
 
+        _beamCollisionDurationTimer.Reset();
+
         performAttackOrAim();
     } 
 
@@ -53,10 +61,17 @@ class LaserBeamAttack : BaseAttack
     
     protected override void _handleAttack(Action finishAttack, Action cancelAttack, Action cancelReloadAttack)
     {
-        _handleCollision();
-        _attackerMovement.RemoveMovementLock(MovementLock.Attack);
+        if (!_beamCollisionDurationTimer.IsRunning) _beamCollisionDurationTimer.Start();
 
-        finishAttack();
+        _handleCollision();
+        _beamCollisionDurationTimer.Update(Time.deltaTime);
+
+        if (_beamCollisionDurationTimer.IsFinished)
+        {
+            _beamCollisionDurationTimer.Stop();
+            _attackerMovement.RemoveMovementLock(MovementLock.Attack);
+            finishAttack();
+        }
     }
 
     private void _handleCollision()

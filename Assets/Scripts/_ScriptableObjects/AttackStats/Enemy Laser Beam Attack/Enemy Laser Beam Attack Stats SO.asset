@@ -15,5 +15,6 @@ MonoBehaviour:
   MovementVelocityToCancelAttackThreshold: 1
   AttackReachDistance: 10
   BeamDamage: 35
+  BeamDuration: 0.65
   BeamLength: 18
   BeamWidth: 0.75

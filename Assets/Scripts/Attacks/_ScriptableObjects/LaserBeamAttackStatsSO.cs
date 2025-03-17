@@ -8,6 +8,7 @@ public class LaserBeamAttackStatsSO : ScriptableObject
 
     [Header("Beam Damage Settings")]
     public float BeamDamage = 1f;
+    public float BeamDuration = 1f;
 
     [Header("Beam Visuals Settings")]
     public float BeamLength = 8f;
