@@ -450,10 +450,46 @@ MonoBehaviour:
   OnDie:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 8474485352587460548}
+        m_TargetAssemblyTypeName: Target, Assembly-CSharp
+        m_MethodName: SetIsTargetable
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 8753471297674628231}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7454476559328382400}
+        m_TargetAssemblyTypeName: PlayerAttack, Assembly-CSharp
+        m_MethodName: DeactivateWeapons
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2213814842685308979}
+        m_TargetAssemblyTypeName: CharacterMovement, Assembly-CSharp
+        m_MethodName: LockMovementByDead
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -658,7 +694,6 @@ GameObject:
   - component: {fileID: 6675224873160403988}
   - component: {fileID: 7454476559328382400}
   - component: {fileID: 6004201784454083774}
-  - component: {fileID: 6423048190998339948}
   m_Layer: 7
   m_Name: Attack
   m_TagString: Player
@@ -721,27 +756,6 @@ MonoBehaviour:
   _knockbackStepDelay: 0.001
   _knockbackStep: 0.1
   _knockbackForce: 0.1
---- !u!114 &6423048190998339948
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5744413092235882709}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc7479f3834ddf445a026ab32db6494e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spriteRenderer: {fileID: 8308423075698151257}
-  _attack: {fileID: 0}
-  _colorByState:
-    m_keys: 00000000010000000200000003000000
-    m_values:
-    - {r: 1, g: 0, b: 0, a: 1}
-    - {r: 1, g: 0, b: 0.8352337, a: 1}
-    - {r: 0, g: 1, b: 0.9800041, a: 1}
-    - {r: 0.956295, g: 1, b: 0, a: 1}
 --- !u!1 &7641312271213329939
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,9 +9,9 @@ public class BaseAnimationController : MonoBehaviour
 
     protected float _lockedUntillTime = 0;
 
-    protected void _switchAnimationState(int newState, float lockTime = 0f)
+    protected void _switchAnimationState(int newState, float lockTime = 0f, bool shouldOverride = false)
     {
-        if (Time.time < _lockedUntillTime) return;
+        if (Time.time < _lockedUntillTime && !shouldOverride) return;
         if (_currentState == newState) return;
 
         _animator.CrossFade(newState, 0, 0);
