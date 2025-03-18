@@ -28,7 +28,7 @@ class ShootingEffectAnimationController : BaseAnimationController, IVFXAnimation
         { ShootingEffectType.LaserBeamCharge, Animator.StringToHash("Laser Beam Charge") },
         { ShootingEffectType.Slash1, Animator.StringToHash("Slash 1") },
         { ShootingEffectType.Slash2, Animator.StringToHash("Slash 2") },
-        { ShootingEffectType.SmallDirectionalExplosion, Animator.StringToHash("Small Directional Explosion") }
+        { ShootingEffectType.SmallDirectionalExplosion, Animator.StringToHash("Small Directional Explosion") },
     };
 
     private static readonly Dictionary<ShootingEffectType, string> ShootingEffectClipNames = new()

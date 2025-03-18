@@ -262,6 +262,7 @@ Transform:
   - {fileID: 2579051138909961319}
   - {fileID: 8955522599538972303}
   - {fileID: 2779835192470231401}
+  - {fileID: 6273912901345946337}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8474485352587460548
@@ -430,10 +431,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: TimeManager, Assembly-CSharp
-        m_MethodName: HalfTimeScaleFor
-        m_Mode: 4
+      - m_Target: {fileID: 3565329652848375942}
+        m_TargetAssemblyTypeName: ParentBasedVFXManager, Assembly-CSharp
+        m_MethodName: TriggerAnimationAtPositionOnce
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -773,6 +774,53 @@ MonoBehaviour:
   _initialSpawnedUpgradableItems: []
   _spawnParent: {fileID: 8955522599538972303}
   _playerAttack: {fileID: 0}
+--- !u!1 &8395617432068489116
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6273912901345946337}
+  - component: {fileID: 3565329652848375942}
+  m_Layer: 0
+  m_Name: DustShockWaveVFX
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6273912901345946337
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8395617432068489116}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 932260380665832382}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3565329652848375942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8395617432068489116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27e88e8e164a2734783d8c3078fdc882, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animatedPrefab: {fileID: 6398712736177628684, guid: 9ca39800bf1be9f4395449a416aa036b, type: 3}
+  _positionParent: {fileID: 6273912901345946337}
+  _rotationParent: {fileID: 6273912901345946337}
 --- !u!1001 &1733901893571197517
 PrefabInstance:
   m_ObjectHideFlags: 0
