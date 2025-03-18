@@ -49,7 +49,6 @@ public class RotationController : Upgradable
 
     public void SetupPivotPoint(Transform pivotPoint) 
     {
-        Debug.Log(_smoothTime);
         _pivotPopint = pivotPoint; 
 
         foreach (RotationStrategyBase strategy in _rotationStrategies)

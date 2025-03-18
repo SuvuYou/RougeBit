@@ -1,5 +1,52 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6421245394345225530
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3953532781452427832}
+  - component: {fileID: 699137457762307937}
+  m_Layer: 0
+  m_Name: AttackVFXManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3953532781452427832
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6421245394345225530}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: -0.25, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1965389716515882799}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!114 &699137457762307937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6421245394345225530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27e88e8e164a2734783d8c3078fdc882, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animatedPrefab: {fileID: 2943487600035968806, guid: cf70b6e859c56574e89cd662773aec54, type: 3}
+  _positionParent: {fileID: 3953532781452427832}
+  _rotationParent: {fileID: 3953532781452427832}
 --- !u!1 &9119934357816103448
 GameObject:
   m_ObjectHideFlags: 0
@@ -45,9 +92,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _baseStats: {fileID: 0}
-  _enemyLayerMask:
-    serializedVersion: 2
-    m_Bits: 64
   OnReload:
     m_PersistentCalls:
       m_Calls: []
@@ -59,11 +103,22 @@ MonoBehaviour:
       m_Calls: []
   OnAttack:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 699137457762307937}
+        m_TargetAssemblyTypeName: ParentBasedVFXManager, Assembly-CSharp
+        m_MethodName: TriggerAnimationAtPositionOnce
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnFinishAttack:
     m_PersistentCalls:
       m_Calls: []
-  _attackerMovement: {fileID: 0}
   _stats: {fileID: 0}
 --- !u!1001 &2662760763423943772
 PrefabInstance:
@@ -176,6 +231,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4589855519121468275, guid: d32945e6fda138c41bc4b69f123568a1, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1272297464445265288}
+    - targetCorrespondingSourceObject: {fileID: 4589855519121468275, guid: d32945e6fda138c41bc4b69f123568a1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3953532781452427832}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 6700342045166944310, guid: d32945e6fda138c41bc4b69f123568a1, type: 3}
       insertIndex: -1
@@ -220,6 +278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19ac51fa1e96f134eaba154925547e18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _pivotPoint: {fileID: 0}
   _rotatedTransform: {fileID: 1965389716515882799}
   _distanceFromCenter: 1.5
 --- !u!1 &8649272319919860842 stripped

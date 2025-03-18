@@ -36,7 +36,7 @@ public class GeneralVFXAnimationController : BaseAnimationController, IVFXAnimat
 
     private float _animationLength => _overrideTargetingAnimationLength > 0f ? _overrideTargetingAnimationLength : _targetingAnimationLength;
 
-    private void Start()
+    private void Awake()
     {
         _targetingAnimationLength = _animator.GetClipLength(TargetingEffectClipNames[_targetingEffectType]);
     }

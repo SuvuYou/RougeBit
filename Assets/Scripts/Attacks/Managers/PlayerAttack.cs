@@ -18,6 +18,9 @@ class PlayerAttack : MonoBehaviour
         weapon.Setup(this.gameObject, _enemyLayerMask);
     }
 
+    public void ActivateWeapons() => _weapons.ForEach(w => w.Activate());
+    public void DeactivateWeapons() => _weapons.ForEach(w => w.Deactivate());
+
     private void Start()
     {
         _setupAttacks();

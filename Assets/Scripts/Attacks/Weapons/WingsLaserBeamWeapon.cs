@@ -5,6 +5,9 @@ public class WingsLaserBeamWeapon : BaseWeapon
     [SerializeField] LaserBeamAttack _attack;
     [SerializeField] RotationController _rotationController;
 
+    public override void Activate () { _attack.ActivateAttack(); }
+    public override void Deactivate () { _attack.DeactivateAttack(); }
+
     public override void Setup(GameObject attacker, LayerMask enemyLayerMask) 
     {
         _attack.Setup(attacker, enemyLayerMask);

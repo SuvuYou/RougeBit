@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MinGroupSpawnTimeout: 1
   MaxGroupSpawnTimeout: 1
-  MinGroupSize: 8
-  MaxGroupSize: 8
+  MinGroupSize: 0
+  MaxGroupSize: 0
   EnemiesWithSpawnWeights:
     m_keys:
     - {fileID: 7189367331512252750, guid: 4903fd52864a408429258602a9198451, type: 3}
