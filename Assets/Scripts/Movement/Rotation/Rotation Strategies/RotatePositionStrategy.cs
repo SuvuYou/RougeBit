@@ -8,6 +8,11 @@ public class RotatePositionStrategy : RotationStrategyBase
 
     private Vector3 _targetPosition;
 
+    public override void SetPivotPoint(Transform pivotPoint)
+    {
+        _pivotPoint = pivotPoint;
+    }
+
     public override void SetTargetPosition(Vector3 target) => _targetPosition = target;
 
     public override void Rotate() => _rotatePositionAroundCenter(_targetPosition - _pivotPoint.position);

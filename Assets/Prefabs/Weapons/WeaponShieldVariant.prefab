@@ -77,6 +77,51 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2, y: 2}
   m_EdgeRadius: 0
+--- !u!1 &9042178157431862090
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7880700430005600195}
+  - component: {fileID: 2134594244551770067}
+  m_Layer: 0
+  m_Name: VFXRedirect
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7880700430005600195
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9042178157431862090}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.4, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7575035282878057796}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2134594244551770067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9042178157431862090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 899f6c26ada944e459699f1f772a3710, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animatedPrefab: {fileID: 6398712736177628684, guid: 01b28d487ad7c804f8809c56d15a4006, type: 3}
 --- !u!1001 &2662760763423943772
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -85,6 +130,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1916716790758114488, guid: d32945e6fda138c41bc4b69f123568a1, type: 3}
+      propertyPath: _pivotPopint
+      value: 
+      objectReference: {fileID: 1965389716515882799}
     - target: {fileID: 1916716790758114488, guid: d32945e6fda138c41bc4b69f123568a1, type: 3}
       propertyPath: _distanceFromCenter
       value: 2
@@ -182,6 +231,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4589855519121468275, guid: d32945e6fda138c41bc4b69f123568a1, type: 3}
       insertIndex: 0
       addedObject: {fileID: 3648673856012811390}
+    - targetCorrespondingSourceObject: {fileID: 5614837249989681432, guid: d32945e6fda138c41bc4b69f123568a1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7880700430005600195}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 6700342045166944310, guid: d32945e6fda138c41bc4b69f123568a1, type: 3}
       insertIndex: -1
@@ -229,8 +281,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19ac51fa1e96f134eaba154925547e18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _pivotPoint: {fileID: 7575035282878057796}
   _rotatedTransform: {fileID: 1965389716515882799}
   _distanceFromCenter: 2
+--- !u!4 &7575035282878057796 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5614837249989681432, guid: d32945e6fda138c41bc4b69f123568a1, type: 3}
+  m_PrefabInstance: {fileID: 2662760763423943772}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &8649272319919860842 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6700342045166944310, guid: d32945e6fda138c41bc4b69f123568a1, type: 3}
@@ -250,6 +308,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <WeaponTargetType>k__BackingField: 2
   _rotationController: {fileID: 4498406678673320164}
+  OnRedirect:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2134594244551770067}
+        m_TargetAssemblyTypeName: PositionAndRotationBasedVFXManager, Assembly-CSharp
+        m_MethodName: TriggerAnimationAtPositionOnce
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!50 &1593988525770425359
 Rigidbody2D:
   serializedVersion: 4

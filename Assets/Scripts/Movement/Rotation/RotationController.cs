@@ -47,6 +47,17 @@ public class RotationController : Upgradable
     protected Vector3 _currentTarget;
     protected Vector3 _goalTarget;
 
+    public void SetupPivotPoint(Transform pivotPoint) 
+    {
+        Debug.Log(_smoothTime);
+        _pivotPopint = pivotPoint; 
+
+        foreach (RotationStrategyBase strategy in _rotationStrategies)
+        {
+            strategy.SetPivotPoint(pivotPoint);
+        }
+    }
+
     public void SetNewTarget(Vector3 newTarget)
     {
         _goalTarget =_shouldClampOutsideCircle ? _clampOutsideCircle(newTarget) : newTarget;

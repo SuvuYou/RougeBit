@@ -89,6 +89,7 @@
     <Compile Include="Assets\Scripts\Managers\IResettable.cs" />
     <Compile Include="Assets\Scripts\Attacks\Weapons\ShotGunWeapon.cs" />
     <Compile Include="Assets\Scripts\SpriteEffects\SwitchSpriteColor.cs" />
+    <Compile Include="Assets\Scripts\Animations\Controllers\PositionAndRotationBasedVFXManager.cs" />
     <Compile Include="Assets\Scripts\Movement\EnemyFollowTargetMovement.cs" />
     <Compile Include="Assets\Scripts\Attacks\LaserBeamAttack.cs" />
     <Compile Include="Assets\Scripts\Attacks\Managers\EnemyAttack.cs" />
