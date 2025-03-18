@@ -81,6 +81,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 2059059578130922747}
   - {fileID: 111272048050467673}
   - {fileID: 5123945442552282963}
   - {fileID: 5991179240318204067}
@@ -101,6 +102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59c86002ec8f55a408a6f825cf71f3af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <SpawnableComponent>k__BackingField: {fileID: 1976675773990308990}
 --- !u!1 &3147103555689504322
 GameObject:
   m_ObjectHideFlags: 0
@@ -223,6 +225,140 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _item: {fileID: 11400000, guid: 4d73bf2d368e0b748b933b003ba8732e, type: 2}
+--- !u!1 &6517450096875999165
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2059059578130922747}
+  - component: {fileID: 1976675773990308990}
+  m_Layer: 0
+  m_Name: Spawnable
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2059059578130922747
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6517450096875999165}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.12408342, y: 0.95851874, z: -0.026190119}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8969133470949677645}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1976675773990308990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6517450096875999165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5be4ae027014b34498fb923a7e70f8b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnBeforeSpawn:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6821153135978145315}
+        m_TargetAssemblyTypeName: SimpleEntityAnimationController, Assembly-CSharp
+        m_MethodName: TriggerSpawnAnimation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5597872238646907730}
+        m_TargetAssemblyTypeName: CharacterMovement, Assembly-CSharp
+        m_MethodName: LockMovementByDead
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 423592769670921652}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3396847117748091513}
+        m_TargetAssemblyTypeName: Target, Assembly-CSharp
+        m_MethodName: SetIsTargetable
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnSpawn:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5597872238646907730}
+        m_TargetAssemblyTypeName: CharacterMovement, Assembly-CSharp
+        m_MethodName: UnlockMovementByDead
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 423592769670921652}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 3396847117748091513}
+        m_TargetAssemblyTypeName: Target, Assembly-CSharp
+        m_MethodName: SetIsTargetable
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1 &6810488860270274726
 GameObject:
   m_ObjectHideFlags: 0
@@ -301,6 +437,10 @@ MonoBehaviour:
     AccelerationSpeed: 150
     Drag: 15
     DragThreshold: 0.1
+  collisionRadius: 0.5
+  collisionLayer:
+    serializedVersion: 2
+    m_Bits: 0
   _target: {fileID: 0}
   _minDistanceToTarget: 1
   _maxDistanceToTarget: 2
@@ -352,6 +492,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _parent: {fileID: 1812475399466415157}
   <Health>k__BackingField: 100
+  HealthValueConnector: {fileID: 0}
+  IsDestroyable: 1
   OnTakeDamage:
     m_PersistentCalls:
       m_Calls:
@@ -548,5 +690,7 @@ MonoBehaviour:
   _animator: {fileID: 8481696034036434328}
   _characterMovement: {fileID: 5597872238646907730}
   _spriteRenderer: {fileID: 4585216083140507439}
+  _isSpriteRightBased: 1
   _baseDamagable: {fileID: 7696781996479433932}
+  _spawnable: {fileID: 1976675773990308990}
   _includeIdleAnimations: 1

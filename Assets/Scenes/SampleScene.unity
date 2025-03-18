@@ -6599,7 +6599,7 @@ Animator:
   m_GameObject: {fileID: 500647162}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: cb04c684a33d41d44b99e3bdd177f28b, type: 2}
+  m_Controller: {fileID: 9100000, guid: fe2062647304e1345bd9aa341f31e5ca, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -7660,7 +7660,7 @@ MonoBehaviour:
   m_Intensity: 2
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 00000000417baf4d6f266bd2c13401c44d2a78f84d4a28d6b97c11010dfbf27559569e41774bf127f1bb6115
+  m_ApplyToSortingLayers: 00000000417baf4d6f266bd2c13401c44d2a78f84d4a28d6b97c11010dfbf27559569e41774bf127f1bb6115bb8f1efc
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0

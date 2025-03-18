@@ -75,6 +75,7 @@
     <Compile Include="Assets\Scripts\Attacks\SlashAttack.cs" />
     <Compile Include="Assets\Scripts\Helpers\SOConnectors\FloatRangeValue.cs" />
     <Compile Include="Assets\Scripts\Movement\EntityMovementStats.cs" />
+    <Compile Include="Assets\Scripts\DamageControl\Spawnable.cs" />
     <Compile Include="Assets\Scripts\UI\GameEndFailUIWindow.cs" />
     <Compile Include="Assets\Scripts\Attacks\Weapons\DashCollisionWeapon.cs" />
     <Compile Include="Assets\Scripts\Attacks\_ScriptableObjects\RocketLaunchAttackStatsSO.cs" />

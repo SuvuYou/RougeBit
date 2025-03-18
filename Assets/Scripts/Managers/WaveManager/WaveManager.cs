@@ -117,6 +117,7 @@ class WaveManager : Singlton<WaveManager>, IResettable
 
             var enemy = Instantiate(waveConfig.EnemiesWithSpawnWeights.GetRandomItem(), spawnPosition, Quaternion.identity);
             enemy.SetTarget(_enemyTarget);
+            enemy.SpawnableComponent.Spawn();
 
             Enemies.Add(enemy);
         }

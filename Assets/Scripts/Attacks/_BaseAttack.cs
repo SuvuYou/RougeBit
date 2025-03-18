@@ -121,6 +121,4 @@ public class BaseAttack : Upgradable
     }
 
     private void _performAttackOrAim() => _switchAttackState(_baseStats.RequiresAim ? AttackState.Aiming : AttackState.Attacking);
-
-    private void OnDisable() => DeactivateAttack();
 }
