@@ -8,7 +8,7 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Wall
   - Water
   - UI
   - Enemy
@@ -46,6 +46,9 @@ TagManager:
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Collectables
+    uniqueID: 4229861307
     locked: 0
   - name: Entities
     uniqueID: 3530237551
