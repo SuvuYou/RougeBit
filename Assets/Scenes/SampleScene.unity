@@ -7034,7 +7034,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 10.890625
+  orthographic size: 10.90625
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -38433,11 +38433,11 @@ PrefabInstance:
     - target: {fileID: 7245911228026896187, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
       propertyPath: _initialSpawnableUpgradableItems.Array.data[2]
       value: 
-      objectReference: {fileID: 6873396767625417935, guid: 413a0664bfa429c40995779f92b65374, type: 3}
+      objectReference: {fileID: 8648079020745607146, guid: 4bc9b1dce915fbe4c849c648278e2a59, type: 3}
     - target: {fileID: 7245911228026896187, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
       propertyPath: _initialSpawnableUpgradableItems.Array.data[3]
       value: 
-      objectReference: {fileID: 8648079020745607146, guid: 4bc9b1dce915fbe4c849c648278e2a59, type: 3}
+      objectReference: {fileID: 6873396767625417935, guid: 413a0664bfa429c40995779f92b65374, type: 3}
     - target: {fileID: 7454476559328382400, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
       propertyPath: _weapons.Array.size
       value: 1
@@ -38614,7 +38614,8 @@ PrefabInstance:
       propertyPath: OnTakeDamage.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6423048190998339948, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
     m_RemovedGameObjects:
     - {fileID: 6537718211861794339, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
     m_AddedGameObjects: []

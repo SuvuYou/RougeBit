@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6141790206074235986}
   - component: {fileID: 3015178883289959723}
   - component: {fileID: 3251412917661029857}
+  - component: {fileID: 6311220084456717290}
   m_Layer: 0
   m_Name: Rocket
   m_TagString: Untagged
@@ -192,6 +193,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 6311220084456717290}
+        m_TargetAssemblyTypeName: PositionBasedVFXManager, Assembly-CSharp
+        m_MethodName: TriggerAnimationAtPositionOnce
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3015178883289959723
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -217,6 +230,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animatedPrefab: {fileID: 6398712736177628684, guid: 509c45141af33f0408016d2fa9a8d29d, type: 3}
+--- !u!114 &6311220084456717290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2044180544916972905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1336c6cc7f42794da3b9fd7c7b08498, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animatedPrefab: {fileID: 6398712736177628684, guid: 9ca39800bf1be9f4395449a416aa036b, type: 3}
 --- !u!1 &2855948379871667153
 GameObject:
   m_ObjectHideFlags: 0

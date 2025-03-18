@@ -27,9 +27,9 @@ MonoBehaviour:
     - {fileID: 8795521627271913304, guid: 7e3de83e9c7ce104591fc499debd7647, type: 3}
     - {fileID: 8795521627271913304, guid: 260b9460927350f438f8dd819ea983ce, type: 3}
     m_values:
-    - 1
-    - 1
-    - 1
+    - 0
+    - 0
+    - 0
     - 1
     - 0
     - 0
