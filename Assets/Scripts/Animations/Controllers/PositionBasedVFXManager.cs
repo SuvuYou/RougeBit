@@ -1,4 +1,3 @@
-using System.Linq;
 using UnityEngine;
 
 public class PositionBasedVFXManager : BaseVFXManager
@@ -20,6 +19,8 @@ public class PositionBasedVFXManager : BaseVFXManager
     protected virtual IVFXAnimationTrigger _instantiateAnimationTrigger(Vector3 spawnPosition) 
     {
         var newAnimation = Instantiate(_animatedPrefab, spawnPosition, Quaternion.identity);
+
+        VFXCleanerManager.Instance.AddVFXObject(newAnimation);
 
         _cachedAnimations.Add(newAnimation);
 

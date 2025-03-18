@@ -142,6 +142,7 @@
     <Compile Include="Assets\Scripts\Shop\CardRarityConfig.cs" />
     <Compile Include="Assets\Scripts\Attacks\_ScriptableObjects\RocketProjectileStatsSO.cs" />
     <Compile Include="Assets\Scripts\Attacks\KnockBack\Shockwave.cs" />
+    <Compile Include="Assets\Scripts\Managers\VFXCleanerManager.cs" />
     <Compile Include="Assets\Scripts\Attacks\KnockBack\BaseKnockback.cs" />
     <Compile Include="Assets\Scripts\Managers\CollectablesManager.cs" />
     <Compile Include="Assets\Scripts\Movement\Rotation\Rotation Strategies\SnapToRotationByDirection.cs" />

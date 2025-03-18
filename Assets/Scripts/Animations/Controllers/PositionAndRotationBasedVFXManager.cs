@@ -20,6 +20,8 @@ public class PositionAndRotationBasedVFXManager : BaseVFXManager
     {
         var newAnimation = Instantiate(_animatedPrefab, spawnPosition, spawnRotation);
 
+        VFXCleanerManager.Instance.AddVFXObject(newAnimation);
+
         _cachedAnimations.Add(newAnimation);
 
         return newAnimation.GetComponentInChildren<IVFXAnimationTrigger>();

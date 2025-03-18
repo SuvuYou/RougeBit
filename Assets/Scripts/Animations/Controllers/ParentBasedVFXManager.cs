@@ -24,6 +24,8 @@ public class ParentBasedVFXManager : BaseVFXManager
     {
         var newAnimation = Instantiate(_animatedPrefab, _positionParent.position, _rotationParent.rotation);
 
+        VFXCleanerManager.Instance.AddVFXObject(newAnimation);
+
         _cachedAnimations.Add(newAnimation);
 
         return newAnimation.GetComponentInChildren<IVFXAnimationTrigger>();
