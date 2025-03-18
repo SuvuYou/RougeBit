@@ -12,4 +12,5 @@ public class DashAttackOnCollisionStatsSO : ScriptableObject
     [Header("Collision Settings")]
     public float AttackReachDistance = 2f;
     public float CollisionRadius = 2.5f;
+    public float ChargeAttackDuration = 1f;
 }
