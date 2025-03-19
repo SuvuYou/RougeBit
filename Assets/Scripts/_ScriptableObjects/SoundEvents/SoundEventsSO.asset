@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49abe45035395ec47a8b7b9e42ee42c6, type: 3}
+  m_Name: SoundEventsSO
+  m_EditorClassIdentifier: 
+  SoundLookup:
+    items:
+    - key: 0
+      value:
+        SoundClips:
+        - {fileID: 8300000, guid: 70d3accb8f0c5364d9bdd0b642e6ddd0, type: 3}
+        InstanceLimit: 2
+        ShouldStopOldestSourceOnLimitReached: 1
+        CurrentSources: []
+    - key: 1
+      value:
+        SoundClips:
+        - {fileID: 8300000, guid: f9376dd3f323a124684d58b5a902ad52, type: 3}
+        InstanceLimit: 1
+        ShouldStopOldestSourceOnLimitReached: 0
+        CurrentSources: []
+  ShootingClips:
+  - {fileID: 8300000, guid: f6e39ba6716e5c345a0930786af80fe7, type: 3}
+  ExplosionClips:
+  - {fileID: 8300000, guid: 70d3accb8f0c5364d9bdd0b642e6ddd0, type: 3}
+  - {fileID: 8300000, guid: 72cb158559aebe247b0881f0678483bc, type: 3}
+  PickupClips:
+  - {fileID: 8300000, guid: f9376dd3f323a124684d58b5a902ad52, type: 3}
+  WalkingClips:
+  - {fileID: 8300000, guid: 72cb158559aebe247b0881f0678483bc, type: 3}
+  HurtClips:
+  - {fileID: 8300000, guid: 949b35efc093fe84cb809c54ca41a601, type: 3}

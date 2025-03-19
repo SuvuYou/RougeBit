@@ -75,6 +75,7 @@
     <Compile Include="Assets\Scripts\Movement\CharacterMovement.cs" />
     <Compile Include="Assets\Scripts\Attacks\SlashAttack.cs" />
     <Compile Include="Assets\Scripts\Helpers\SOConnectors\FloatRangeValue.cs" />
+    <Compile Include="Assets\Scripts\Sound\SoundManager.cs" />
     <Compile Include="Assets\Scripts\Movement\EntityMovementStats.cs" />
     <Compile Include="Assets\Scripts\DamageControl\Spawnable.cs" />
     <Compile Include="Assets\Scripts\UI\GameEndFailUIWindow.cs" />
@@ -106,6 +107,7 @@
     <Compile Include="Assets\Scripts\Attacks\_ScriptableObjects\_BaseProjectileStatsSO.cs" />
     <Compile Include="Assets\Scripts\DamageControl\Target.cs" />
     <Compile Include="Assets\Scripts\Managers\XPManager.cs" />
+    <Compile Include="Assets\Scripts\Sound\ParentBasedSoundEventTrigger.cs" />
     <Compile Include="Assets\Scripts\Economy\CollectableItemSO.cs" />
     <Compile Include="Assets\Scripts\Attacks\_ScriptableObjects\AirStrikeAttackStatsSO.cs" />
     <Compile Include="Assets\Scripts\EntitiesController\EntityStats.cs" />
@@ -113,6 +115,7 @@
     <Compile Include="Assets\Scripts\Helpers\UnityEvents.cs" />
     <Compile Include="Assets\Scripts\UI\BarUI.cs" />
     <Compile Include="Assets\Scripts\UI\GameEndSuccessUIWindow.cs" />
+    <Compile Include="Assets\Scripts\Sound\SoundEventsSO.cs" />
     <Compile Include="Assets\Scripts\EntitiesController\Enemy.cs" />
     <Compile Include="Assets\Scripts\Animations\Controllers\SimpleEntityAnimationController.cs" />
     <Compile Include="Assets\Scripts\Managers\WaveManager\GameLevelsConfigSO.cs" />
@@ -129,6 +132,7 @@
     <Compile Include="Assets\Scripts\DamageControl\DamagableWithImmunity.cs" />
     <Compile Include="Assets\Scripts\Attacks\Weapons\ClawLaserWeapon.cs" />
     <Compile Include="Assets\Scripts\Managers\WaveManager\WaveConfigSO.cs" />
+    <Compile Include="Assets\Scripts\Helpers\ObjectPool.cs" />
     <Compile Include="Assets\Scripts\Attacks\RocketLaunchAttack.cs" />
     <Compile Include="Assets\Scripts\Input\PalyerInputSO.cs" />
     <Compile Include="Assets\Scripts\Helpers\SOConnectors\FloatRangeValueConfigSO.cs" />

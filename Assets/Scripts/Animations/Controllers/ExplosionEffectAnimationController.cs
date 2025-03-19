@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ExplosionEffectAnimationController : BaseAnimationController, IVFXAnimationTrigger
 {
@@ -39,6 +40,8 @@ public class ExplosionEffectAnimationController : BaseAnimationController, IVFXA
     [SerializeField] private ExplosionEffectType _explosionEffectType;
     [SerializeField] private float _overrideExplosionAnimationLength = 0f;
 
+    public UnityEvent OnExplosion;
+
     private float _explosionAnimationLength = 0f;
 
     private bool _isLockedInLoop = false;
@@ -57,19 +60,26 @@ public class ExplosionEffectAnimationController : BaseAnimationController, IVFXA
         _switchAnimationState(IDLE_HASH);
     }
 
-    public void TriggerAnimation() => _switchAnimationState(ExplosionEffectHashes[_explosionEffectType], lockTime: _animationLength);
+    public void TriggerAnimation() 
+    {
+        _switchAnimationState(ExplosionEffectHashes[_explosionEffectType], lockTime: _animationLength);
+
+        OnExplosion?.Invoke();
+    }
 
     public void TriggerAnimationLooped() 
     {
         _isLockedInLoop = true;
         
         _switchAnimationState(ExplosionEffectHashes[_explosionEffectType]);
+        OnExplosion?.Invoke();
     }
 
     public void TriggerAnimationOnce()
     {
         _switchAnimationState(ExplosionEffectHashes[_explosionEffectType], lockTime: _animationLength);
         StartCoroutine(_destroyAfterSeconds(_animationLength));
+        OnExplosion?.Invoke();
     } 
 
     private System.Collections.IEnumerator _destroyAfterSeconds(float seconds)

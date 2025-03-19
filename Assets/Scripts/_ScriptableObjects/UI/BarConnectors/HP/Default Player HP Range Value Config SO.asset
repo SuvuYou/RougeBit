@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 522b0fad8ab0b88419defdbcbeff4b22, type: 3}
   m_Name: Default Player HP Range Value Config SO
   m_EditorClassIdentifier: 
-  DefaultValue: 1
+  DefaultValue: 100000
   MinValue: 0
-  MaxValue: 100
+  MaxValue: 100000
