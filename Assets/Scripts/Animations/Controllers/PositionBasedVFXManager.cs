@@ -18,8 +18,12 @@ public class PositionBasedVFXManager : BaseVFXManager
 
     protected virtual IVFXAnimationTrigger _instantiateAnimationTrigger(Vector3 spawnPosition) 
     {
-        _cachedAnimation = Instantiate(_animatedPrefab, spawnPosition, Quaternion.identity);
+        var newAnimation = Instantiate(_animatedPrefab, spawnPosition, Quaternion.identity);
 
-        return _cachedAnimation.GetComponentInChildren<IVFXAnimationTrigger>();
+        VFXCleanerManager.Instance.AddVFXObject(newAnimation);
+
+        _cachedAnimations.Add(newAnimation);
+
+        return newAnimation.GetComponentInChildren<IVFXAnimationTrigger>();
     }
 }

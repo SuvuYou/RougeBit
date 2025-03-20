@@ -38,12 +38,14 @@ public class BaseAttack : Upgradable
     protected Timer _reloadTimer;
     protected Timer _aimTimer;
 
+    private bool _isActivated = true;
+
     protected AttackState _attackState = AttackState.Reload;
 
     public bool IsAttacking => _attackState == AttackState.Attacking;
 
-    public void ActivateAttack() { _reloadTimer.Start(); _reloadTimer.Reset(); }
-    public void DeactivateAttack() { _reloadTimer.Stop(); _aimTimer.Stop(); }
+    public void ActivateAttack() { _reloadTimer.Start(); _reloadTimer.Reset(); _isActivated = true; }
+    public void DeactivateAttack() { _reloadTimer.Stop(); _aimTimer.Stop(); _isActivated = false; }
 
     public void SetTarget(Target target) => _target = target;
 
@@ -60,6 +62,8 @@ public class BaseAttack : Upgradable
 
     private void Update()
     {
+        if (!_isActivated) return;
+
         switch (_attackState)
         {
             case AttackState.Reload:
@@ -121,6 +125,4 @@ public class BaseAttack : Upgradable
     }
 
     private void _performAttackOrAim() => _switchAttackState(_baseStats.RequiresAim ? AttackState.Aiming : AttackState.Attacking);
-
-    private void OnDisable() => DeactivateAttack();
 }

@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 class DashAttackOnCollision : BaseAttack
 {
@@ -7,11 +8,19 @@ class DashAttackOnCollision : BaseAttack
     {
         base.UpgradeValues(ovrrideValues);
 
+        _chargeAttackTimer = new (ovrrideValues.DashAttackOnCollisionStats.ChargeAttackDuration);
+        _chargeAttackTimer.Stop();
+
         _stats = ovrrideValues.DashAttackOnCollisionStats;
     }
 
     [Header("References")]
     [SerializeField] private DashAttackOnCollisionStatsSO _stats;
+
+    public UnityEvent OnDealDamage;
+
+    public UnityEvent OnStartCharge;
+    public UnityEvent OnEndCharge;
 
     private CharacterMovement _attackerMovement;
 
@@ -21,9 +30,14 @@ class DashAttackOnCollision : BaseAttack
     private Vector3 _positionBeforeDash;
     private Vector3 _dashTargetPosition;
 
+    private Timer _chargeAttackTimer;
+
     public override void Setup(GameObject attacker, LayerMask enemyLayerMask)
     {
         base.Setup(attacker, enemyLayerMask);
+
+        _chargeAttackTimer = new (_stats.ChargeAttackDuration);
+        _chargeAttackTimer.Stop();
 
         if (attacker.transform.TryGetComponentInChildrenOfParent(out CharacterMovement movement))
         {
@@ -39,12 +53,39 @@ class DashAttackOnCollision : BaseAttack
 
     protected override void _handleIsReadyForAttack(Action performAttackOrAim) 
     {
-        if (!_isTargetFound) return;
+        if (!_isTargetFound) 
+        {
+            OnEndCharge.Invoke();
+            _chargeAttackTimer.Stop();
 
-        if (Vector3.Distance(_attacker.transform.position, _target.transform.position) > _stats.DashTriggerDistance) return;
+            return;
+        }
+
+        if (Vector3.Distance(_attacker.transform.position, _target.transform.position) > _stats.DashTriggerDistance) 
+        {
+            OnEndCharge.Invoke();
+            _chargeAttackTimer.Stop();
+
+            return;
+        }
+
+        if (!_chargeAttackTimer.IsRunning)
+        {
+            OnStartCharge.Invoke();
+            _chargeAttackTimer.Reset();
+            _chargeAttackTimer.Start(); 
+        }
+
+        _chargeAttackTimer.Update(Time.deltaTime);
 
         _updateAttackState();
-        performAttackOrAim();
+
+        if (_chargeAttackTimer.IsRunning && _chargeAttackTimer.IsFinished)
+        {           
+            performAttackOrAim();
+            OnEndCharge.Invoke();
+            _chargeAttackTimer.Stop();
+        }
     } 
 
     protected override void _handleAim(Action cancelAim, Action earlyFinishAttack)
@@ -92,6 +133,8 @@ class DashAttackOnCollision : BaseAttack
         if (parent.TryGetComponentInChildren(out BaseDamagable damagable))
         {
             damagable.TakeDamage(_stats.AttackDamage);
+
+            OnDealDamage?.Invoke();
         }
 
         if (_baseStats.AddsKnockback && parent.TryGetComponentInChildren(out BaseKnockback knockable))

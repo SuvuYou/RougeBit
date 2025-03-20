@@ -10,7 +10,8 @@ class GameLevelsConfigSO : ScriptableObject
 
     private int _currentLevel = 0;
     public int CurrentLevelNumber { get => _currentLevel > MaxLevel ? MaxLevel : _currentLevel; private set => _currentLevel = value; }
-    
+
+    [HideInInspector]  
     public int MaxLevel = 0;
 
     public bool IsLastLevel => _currentLevel == MaxLevel;

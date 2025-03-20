@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AttackDamage: 10
   DashTriggerDistance: 6
-  DashDistance: 4
+  DashDistance: 5
   AttackReachDistance: 0.5
   CollisionRadius: 0.5
+  ChargeAttackDuration: 1

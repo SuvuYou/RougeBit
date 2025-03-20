@@ -1,11 +1,16 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ShieldWeapon : BaseWeapon
 {
     [SerializeField] RotationController _rotationController;
 
+    public Vector3QuaternionUnityEvent OnRedirect;
+
     public override void Setup(GameObject attacker, LayerMask enemyLayerMask) 
     {
+        base.Setup(attacker, enemyLayerMask);
+
         _rotationController.SetupPivotPoint(attacker.transform);
     }
 
@@ -30,6 +35,12 @@ public class ShieldWeapon : BaseWeapon
             if (projectile.CurrentVarient == BaseProjectile.Varients.Enemy && WeaponTargetType == TargetType.PlayerProjectile) return;
 
            projectile.Redirect(speedMultiplier: 2f);
+
+           var projectileLookDirection = projectile.Direction;
+           var angle = Mathf.Atan2(projectileLookDirection.y, projectileLookDirection.x) * Mathf.Rad2Deg;
+           var quaternionRotation = Quaternion.Euler(0, 0, angle);
+
+           OnRedirect?.Invoke(projectile.gameObject.transform.position, quaternionRotation);
         }
     } 
 }

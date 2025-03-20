@@ -11,4 +11,7 @@ public abstract class BaseWeapon : MonoBehaviour
     public abstract void SetTarget(Target targetPosition, bool isTargetFound);
 
     public virtual void Setup(GameObject attacker, LayerMask enemyLayerMask) { }
+
+    public virtual void Activate () { }
+    public virtual void Deactivate () { }
 }

@@ -7,7 +7,7 @@ public class RotationController : Upgradable
 
     [Header("References")]
     [SerializeField] private List<RotationStrategyBase> _rotationStrategies;
-    private Transform _pivotPopint;
+    [SerializeField] private Transform _pivotPopint;
 
     [Header("Clamp outside circle options")]
     [SerializeField] private bool _shouldClampOutsideCircle = true;
@@ -29,43 +29,61 @@ public class RotationController : Upgradable
     public bool IsRotationEnabled { get; private set; } = true;
 
     public void EnableRotation() => IsRotationEnabled = true;
+    
     public void DisableRotation() => IsRotationEnabled = false;
+    
+    public void EnableRotationWithSnap() 
+    {
+        _snap();
+        IsRotationEnabled = true;
+    }
+
+    public void DisableRotationWithSnap() 
+    {
+        _snap();
+        IsRotationEnabled = false;  
+    } 
 
     protected Vector3 _currentTarget;
     protected Vector3 _goalTarget;
 
     public void SetupPivotPoint(Transform pivotPoint) 
     {
-        _pivotPopint = pivotPoint;
-    } 
+        _pivotPopint = pivotPoint; 
+
+        foreach (RotationStrategyBase strategy in _rotationStrategies)
+        {
+            strategy.SetPivotPoint(pivotPoint);
+        }
+    }
 
     public void SetNewTarget(Vector3 newTarget)
     {
         _goalTarget =_shouldClampOutsideCircle ? _clampOutsideCircle(newTarget) : newTarget;
     }
 
-    private void Start()
-    {
-        foreach (RotationStrategyBase strategy in _rotationStrategies)
-        {
-            strategy.SetPivotPoint(_pivotPopint);
-        }
-    }
-
     protected virtual void Update()
     {
-        
-        if (!_pivotPopint) return;
-
         if (_shouldEnableIdleCircularMotion && IsIdleRotationEnabled) _stepToCircilarMotion();
         else _stepToGoalTarget();
 
         if (IsRotationEnabled && _currentTarget != null)
         {       
-            foreach (RotationStrategyBase strategy in _rotationStrategies)
-            {
-                strategy.Rotate();
-            }
+            _rotateStrategies();
+        }
+    }
+
+    private void _snap()
+    {
+        _setCurrentTarget(_goalTarget);
+        _rotateStrategies();
+    }
+
+    private void _rotateStrategies() 
+    {
+        foreach (RotationStrategyBase strategy in _rotationStrategies)
+        {
+            strategy.Rotate();
         }
     }
 

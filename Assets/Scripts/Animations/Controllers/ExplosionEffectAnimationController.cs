@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ExplosionEffectAnimationController : BaseAnimationController, IVFXAnimationTrigger
 {
@@ -9,7 +10,8 @@ public class ExplosionEffectAnimationController : BaseAnimationController, IVFXA
         BigBoom,
         BiggerBoom,
         PurpleBoom1,
-        PurpleBoom2
+        PurpleBoom2,
+        DustShockWave
     }
 
     private static readonly int IDLE_HASH = Animator.StringToHash("Idle");
@@ -21,6 +23,7 @@ public class ExplosionEffectAnimationController : BaseAnimationController, IVFXA
         { ExplosionEffectType.BiggerBoom, Animator.StringToHash("BiggerBoom") },
         { ExplosionEffectType.PurpleBoom1, Animator.StringToHash("PurpleBoom1") },
         { ExplosionEffectType.PurpleBoom2, Animator.StringToHash("PurpleBoom2") },
+        { ExplosionEffectType.DustShockWave, Animator.StringToHash("DustShockWave") }
     };
 
     private static readonly Dictionary<ExplosionEffectType, string> ExplosionEffectClipNames = new()
@@ -30,11 +33,14 @@ public class ExplosionEffectAnimationController : BaseAnimationController, IVFXA
         { ExplosionEffectType.BiggerBoom, "BiggerBoom" },
         { ExplosionEffectType.PurpleBoom1, "PurpleBoom1" },
         { ExplosionEffectType.PurpleBoom2, "PurpleBoom2" },
+        { ExplosionEffectType.DustShockWave, "DustShockWave" }
     };
 
     [Space(20)]
     [SerializeField] private ExplosionEffectType _explosionEffectType;
     [SerializeField] private float _overrideExplosionAnimationLength = 0f;
+
+    public UnityEvent OnExplosion;
 
     private float _explosionAnimationLength = 0f;
 
@@ -54,19 +60,26 @@ public class ExplosionEffectAnimationController : BaseAnimationController, IVFXA
         _switchAnimationState(IDLE_HASH);
     }
 
-    public void TriggerAnimation() => _switchAnimationState(ExplosionEffectHashes[_explosionEffectType], lockTime: _animationLength);
+    public void TriggerAnimation() 
+    {
+        _switchAnimationState(ExplosionEffectHashes[_explosionEffectType], lockTime: _animationLength);
+
+        OnExplosion?.Invoke();
+    }
 
     public void TriggerAnimationLooped() 
     {
         _isLockedInLoop = true;
         
         _switchAnimationState(ExplosionEffectHashes[_explosionEffectType]);
+        OnExplosion?.Invoke();
     }
 
     public void TriggerAnimationOnce()
     {
         _switchAnimationState(ExplosionEffectHashes[_explosionEffectType], lockTime: _animationLength);
         StartCoroutine(_destroyAfterSeconds(_animationLength));
+        OnExplosion?.Invoke();
     } 
 
     private System.Collections.IEnumerator _destroyAfterSeconds(float seconds)

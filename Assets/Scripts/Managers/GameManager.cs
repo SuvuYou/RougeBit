@@ -17,6 +17,7 @@ class GameManager : Singlton<GameManager>, IResettable
 
     public UnityEvent OnRoundStarted;
     public UnityEvent OnRoundStopped;
+    public UnityEvent OnEnterMainMenu;
 
     protected override void Awake() 
     {
@@ -56,6 +57,7 @@ class GameManager : Singlton<GameManager>, IResettable
     {
         ResetGame();
         _setState(GameStates.MainMenu);
+        OnEnterMainMenu?.Invoke();
     }
 
     public void ResetGame() 

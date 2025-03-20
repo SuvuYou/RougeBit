@@ -19,6 +19,11 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] protected Transform _character;
     [SerializeField] EntityMovementStats _movementStats;
 
+        // Collision settings
+    [SerializeField] float collisionRadius = 0.5f; // adjust as needed
+    [SerializeField] LayerMask collisionLayer;      // set this to the layer(s) that represent obstacles
+
+
     private MovementLock _activeMovementLocks = MovementLock.None;
 
     public bool Enabled => _activeMovementLocks == MovementLock.None;
@@ -51,7 +56,31 @@ public class CharacterMovement : MonoBehaviour
 
         Velocity = Vector3.ClampMagnitude(Velocity, _movementStats.MaxMovementSpeed);
 
-        _character.position += Velocity * Time.deltaTime;
+        Vector3 predictedPosition = _character.position + Velocity * Time.deltaTime;
+
+        if (Physics.SphereCast(_character.position, collisionRadius, Velocity.normalized, out RaycastHit hit, Velocity.magnitude * Time.deltaTime, collisionLayer))
+        {
+            if (Vector3.Dot(direction.normalized, hit.normal) > -0.94f)
+            {
+                Vector3 slideVelocity = Vector3.ProjectOnPlane(Velocity, hit.normal);
+                predictedPosition = _character.position + slideVelocity * Time.deltaTime;
+                Velocity = slideVelocity; 
+            }
+            else
+            {
+                Velocity = Vector3.zero;
+                predictedPosition = _character.position;
+            }
+        }
+
+        _character.position = predictedPosition;
+    }
+
+    private bool IsCollisionAtPosition(Vector3 position)
+    {
+        Collider[] hitColliders = Physics.OverlapSphere(position, collisionRadius, collisionLayer);
+
+        return hitColliders.Length > 0;
     }
 
     public void Dash(Vector3 currentPositoin, Vector3 targetPosition, float duration)
@@ -61,7 +90,7 @@ public class CharacterMovement : MonoBehaviour
         StartCoroutine(_dashCoroutine(currentPositoin, targetPosition, duration, () => RemoveMovementLock(MovementLock.Dash)));
     }
 
-    private IEnumerator _dashCoroutine(Vector3 currentPositoin, Vector3 targetPosition, float duration, Action onComplete = null)
+    private IEnumerator _dashCoroutine(Vector3 currentPosition, Vector3 targetPosition, float duration, Action onComplete = null)
     {
         float elapsedTime = 0f, smoothT;
 
@@ -70,9 +99,18 @@ public class CharacterMovement : MonoBehaviour
             smoothT = elapsedTime / duration;
             smoothT = smoothT * smoothT * (3f - 2f * smoothT);
 
-            _character.position = Vector3.Lerp(currentPositoin, targetPosition, smoothT);
+            Vector3 newPosition = Vector3.Lerp(currentPosition, targetPosition, smoothT);
+            
+            if (!IsCollisionAtPosition(newPosition))
+            {
+                _character.position = newPosition;
+            }
+            else
+            {
+                break;
+            }
+            
             elapsedTime += Time.deltaTime;
-
             yield return null;
         }
 

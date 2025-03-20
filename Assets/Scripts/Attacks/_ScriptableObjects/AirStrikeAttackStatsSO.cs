@@ -3,7 +3,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "ScriptableObjects/Attacks/AirStrikeAttackStatsSO")]
 public class AirStrikeAttackStatsSO : ScriptableObject
 {
-    public TargetingEffectAnimationController TargetingAnimationPrefab;
+    public GeneralVFXAnimationController TargetingAnimationPrefab;
     public ExplosionEffectAnimationController ExplosionAnimationPrefab; 
 
     public float Damage = 50f;

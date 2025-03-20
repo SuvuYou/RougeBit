@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class BaseVFXManager : MonoBehaviour
@@ -11,7 +12,7 @@ public class BaseVFXManager : MonoBehaviour
 
     [SerializeField] protected GameObject _animatedPrefab;
 
-    protected GameObject _cachedAnimation;
+    protected List<GameObject> _cachedAnimations = new ();
 
     private void Awake()
     {
@@ -39,5 +40,13 @@ public class BaseVFXManager : MonoBehaviour
         }
     }
 
-    public void DestroyAnimation() => Destroy(_cachedAnimation?.gameObject);
+    public void DestroyAnimation() 
+    { 
+        foreach (var animation in _cachedAnimations)
+        {
+            if (animation == null) continue;
+
+            Destroy(animation);
+        } 
+    } 
 }

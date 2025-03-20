@@ -12,10 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b383c3445699f334d8134caed5a320f3, type: 3}
   m_Name: Enemy Dash Attack On Collision Stats SO Base
   m_EditorClassIdentifier: 
-  EnemyLayerMask:
-    serializedVersion: 2
-    m_Bits: 128
-  ReloadDuration: 3
+  ReloadDuration: 0
   RequiresAim: 1
   AimDuration: 0.5
   AddsKnockback: 0
