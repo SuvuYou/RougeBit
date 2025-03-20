@@ -14,28 +14,100 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SoundLookup:
     items:
-    - key: 0
+    - key: 100
+      value:
+        SoundClips:
+        - {fileID: 8300000, guid: f9376dd3f323a124684d58b5a902ad52, type: 3}
+        InstanceLimit: 2
+        ShouldStopOldestSourceOnLimitReached: 0
+    - key: 200
+      value:
+        SoundClips:
+        - {fileID: 8300000, guid: aeb6d7be3ed42d14aad06c318751df09, type: 3}
+        - {fileID: 8300000, guid: 465e9562d46cbf540b400486eeab7540, type: 3}
+        InstanceLimit: 4
+        ShouldStopOldestSourceOnLimitReached: 0
+    - key: 300
+      value:
+        SoundClips:
+        - {fileID: 8300000, guid: a0266c7c8df559d468d9afd944952108, type: 3}
+        InstanceLimit: 2
+        ShouldStopOldestSourceOnLimitReached: 0
+    - key: 500
+      value:
+        SoundClips:
+        - {fileID: 8300000, guid: d8d72667afb65f346a9f073e7044b9fd, type: 3}
+        InstanceLimit: 2
+        ShouldStopOldestSourceOnLimitReached: 0
+    - key: 900
+      value:
+        SoundClips:
+        - {fileID: 8300000, guid: 67d1bf2370e989c4bab1f338dc6eeef5, type: 3}
+        InstanceLimit: 2
+        ShouldStopOldestSourceOnLimitReached: 0
+    - key: 600
+      value:
+        SoundClips:
+        - {fileID: 8300000, guid: f77d53b75332d8b4396f16b82e48c284, type: 3}
+        InstanceLimit: 4
+        ShouldStopOldestSourceOnLimitReached: 1
+    - key: 700
+      value:
+        SoundClips:
+        - {fileID: 8300000, guid: 1a45e8e3e8b9b6442bf61bcd0124b1b8, type: 3}
+        InstanceLimit: 4
+        ShouldStopOldestSourceOnLimitReached: 1
+    - key: 400
+      value:
+        SoundClips:
+        - {fileID: 8300000, guid: 44a12254d951423468b1215af7693b58, type: 3}
+        InstanceLimit: 1
+        ShouldStopOldestSourceOnLimitReached: 1
+    - key: 1000
       value:
         SoundClips:
         - {fileID: 8300000, guid: 70d3accb8f0c5364d9bdd0b642e6ddd0, type: 3}
         InstanceLimit: 2
         ShouldStopOldestSourceOnLimitReached: 1
-        CurrentSources: []
-    - key: 1
+    - key: 1100
       value:
         SoundClips:
-        - {fileID: 8300000, guid: f9376dd3f323a124684d58b5a902ad52, type: 3}
+        - {fileID: 8300000, guid: 8c21a4614b5c3e74ea7c39fd09f4cae0, type: 3}
+        InstanceLimit: 2
+        ShouldStopOldestSourceOnLimitReached: 1
+    - key: 800
+      value:
+        SoundClips:
+        - {fileID: 8300000, guid: 0ae63af57f038a0438a88215d26e12bd, type: 3}
+        InstanceLimit: 2
+        ShouldStopOldestSourceOnLimitReached: 0
+    - key: 1200
+      value:
+        SoundClips:
+        - {fileID: 8300000, guid: afe8b76abe766224f83469794bfcbf81, type: 3}
+        InstanceLimit: 4
+        ShouldStopOldestSourceOnLimitReached: 1
+    - key: 1400
+      value:
+        SoundClips:
+        - {fileID: 8300000, guid: fd724c18de1663c41a3e72c0bc0bb23a, type: 3}
+        InstanceLimit: 4
+        ShouldStopOldestSourceOnLimitReached: 1
+    - key: 1300
+      value:
+        SoundClips:
+        - {fileID: 8300000, guid: 1c5d719a5ed656f40b0bcd74a88cc31e, type: 3}
         InstanceLimit: 1
         ShouldStopOldestSourceOnLimitReached: 0
-        CurrentSources: []
-  ShootingClips:
-  - {fileID: 8300000, guid: f6e39ba6716e5c345a0930786af80fe7, type: 3}
-  ExplosionClips:
-  - {fileID: 8300000, guid: 70d3accb8f0c5364d9bdd0b642e6ddd0, type: 3}
-  - {fileID: 8300000, guid: 72cb158559aebe247b0881f0678483bc, type: 3}
-  PickupClips:
-  - {fileID: 8300000, guid: f9376dd3f323a124684d58b5a902ad52, type: 3}
-  WalkingClips:
-  - {fileID: 8300000, guid: 72cb158559aebe247b0881f0678483bc, type: 3}
-  HurtClips:
-  - {fileID: 8300000, guid: 949b35efc093fe84cb809c54ca41a601, type: 3}
+    - key: 1600
+      value:
+        SoundClips:
+        - {fileID: 8300000, guid: 52e17dac32cc5e344bb0e25c993c4bd9, type: 3}
+        InstanceLimit: 2
+        ShouldStopOldestSourceOnLimitReached: 1
+    - key: 1500
+      value:
+        SoundClips:
+        - {fileID: 8300000, guid: cdc72a444fc2dfc47ba3c6cf691c93cc, type: 3}
+        InstanceLimit: 1
+        ShouldStopOldestSourceOnLimitReached: 0

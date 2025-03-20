@@ -25,6 +25,8 @@ class AirStrikeAttack : BaseAttack
 
     protected override void _handleIsReadyForAttack(Action performAttackOrAim) 
     {
+        _cachedTargetPosition = Vector3.zero;
+
         if (!_isTargetFound) return;
 
         if (Vector3.Distance(_attacker.transform.position, _target.transform.position) > _stats.AttackDistance) return;
@@ -41,7 +43,7 @@ class AirStrikeAttack : BaseAttack
 
     private void _handleCollision() 
     {
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(_cachedTargetPosition, _stats.ExplosionRadious, _enemyLayerMask);
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(_targetPosition, _stats.ExplosionRadious, _enemyLayerMask);
 
         foreach (var collider in colliders)
         {

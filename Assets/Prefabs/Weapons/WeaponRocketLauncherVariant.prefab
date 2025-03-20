@@ -4796,7 +4796,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 358726641
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_RenderMode: 0
   m_MeshDistribution: 0
@@ -5146,6 +5146,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: fa4fced8617e6e440b2515c16641295a, type: 2}
+        m_TargetAssemblyTypeName: SoundEventsSO, Assembly-CSharp
+        m_MethodName: TriggerRocketLaunchSoundEvent
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 6601712315830365118}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

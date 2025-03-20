@@ -323,6 +323,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: fa4fced8617e6e440b2515c16641295a, type: 2}
+        m_TargetAssemblyTypeName: SoundEventsSO, Assembly-CSharp
+        m_MethodName: TriggerPlayerProjectileShootingSoundEvent
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1965389716515882799}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!50 &1593988525770425359
 Rigidbody2D:
   serializedVersion: 4

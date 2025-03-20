@@ -107,7 +107,6 @@
     <Compile Include="Assets\Scripts\Attacks\_ScriptableObjects\_BaseProjectileStatsSO.cs" />
     <Compile Include="Assets\Scripts\DamageControl\Target.cs" />
     <Compile Include="Assets\Scripts\Managers\XPManager.cs" />
-    <Compile Include="Assets\Scripts\Sound\ParentBasedSoundEventTrigger.cs" />
     <Compile Include="Assets\Scripts\Economy\CollectableItemSO.cs" />
     <Compile Include="Assets\Scripts\Attacks\_ScriptableObjects\AirStrikeAttackStatsSO.cs" />
     <Compile Include="Assets\Scripts\EntitiesController\EntityStats.cs" />

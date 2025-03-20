@@ -7084,7 +7084,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 9.03125
+  orthographic size: 11
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -11929,9 +11929,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72013542a22b80b47a7e497559bfcdb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _characterMovement: {fileID: 1762710404}
-  soundEvents: {fileID: 11400000, guid: fa4fced8617e6e440b2515c16641295a, type: 2}
-  stepInterval: 0.35
 --- !u!1 &936288060
 GameObject:
   m_ObjectHideFlags: 0
@@ -12215,6 +12212,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1014407086}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &963434411 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1527553986020509723, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
+  m_PrefabInstance: {fileID: 1476829491}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &979593533
 GameObject:
   m_ObjectHideFlags: 0
@@ -38699,7 +38701,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4932905745483263487, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
       propertyPath: OnAttack.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
-      value: TriggerShootingSoundEvent
+      value: TriggerSlashSoundEvent
       objectReference: {fileID: 0}
     - target: {fileID: 4932905745483263487, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
       propertyPath: OnAttack.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
@@ -38708,14 +38710,38 @@ PrefabInstance:
     - target: {fileID: 4932905745483263487, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
       propertyPath: OnAttack.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 1476829493}
+      objectReference: {fileID: 963434411}
     - target: {fileID: 4932905745483263487, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
       propertyPath: OnAttack.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Transform, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 7245911228026896187, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
+      propertyPath: _initialSpawnedUpgradableItems.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7245911228026896187, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
+      propertyPath: _initialSpawnableUpgradableItems.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7245911228026896187, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
+      propertyPath: _initialSpawnedUpgradableItems.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7454476559328382400, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
+      propertyPath: _weapons.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7454476559328382400, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
+      propertyPath: _weapons.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 9071764285014470526, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
       propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.size
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9071764285014470526, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
+      propertyPath: OnTakeDamage.m_PersistentCalls.m_Calls.Array.size
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 9071764285014470526, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
       propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
@@ -38738,11 +38764,43 @@ PrefabInstance:
       value: ClearVFXObjects
       objectReference: {fileID: 0}
     - target: {fileID: 9071764285014470526, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
+      propertyPath: OnTakeDamage.m_PersistentCalls.m_Calls.Array.data[5].m_Mode
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9071764285014470526, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
+      propertyPath: OnTakeDamage.m_PersistentCalls.m_Calls.Array.data[5].m_Target
+      value: 
+      objectReference: {fileID: 82427265}
+    - target: {fileID: 9071764285014470526, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
+      propertyPath: OnTakeDamage.m_PersistentCalls.m_Calls.Array.data[5].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9071764285014470526, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
+      propertyPath: OnTakeDamage.m_PersistentCalls.m_Calls.Array.data[5].m_MethodName
+      value: HalfTimeScaleFor
+      objectReference: {fileID: 0}
+    - target: {fileID: 9071764285014470526, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
       propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
       value: VFXCleanerManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 9071764285014470526, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
+      propertyPath: OnTakeDamage.m_PersistentCalls.m_Calls.Array.data[5].m_TargetAssemblyTypeName
+      value: TimeManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 9071764285014470526, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
+      propertyPath: OnTakeDamage.m_PersistentCalls.m_Calls.Array.data[5].m_Arguments.m_FloatArgument
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9071764285014470526, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
+      propertyPath: OnTakeDamage.m_PersistentCalls.m_Calls.Array.data[5].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 9071764285014470526, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
       propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 9071764285014470526, guid: ac5ac9a011b9dbb40afdeb430c826f5c, type: 3}
+      propertyPath: OnTakeDamage.m_PersistentCalls.m_Calls.Array.data[5].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
