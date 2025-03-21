@@ -15,6 +15,8 @@ class MovableChain : MonoBehaviour
 
     private void Start()
     {
+        Reset();
+        
         _uiWindow.OnShowUI += () => Move();
         _uiWindow.OnHideUI += () => _onMoveBack();
     }
