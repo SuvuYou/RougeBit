@@ -62,6 +62,9 @@ TagManager:
   - name: Bullets
     uniqueID: 358726641
     locked: 0
+  - name: UIReload
+    uniqueID: 1867193817
+    locked: 0
   - name: UI HUD
     uniqueID: 670124919
     locked: 0
