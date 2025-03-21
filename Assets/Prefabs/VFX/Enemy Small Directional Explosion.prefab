@@ -120,5 +120,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animator: {fileID: 3905545280479315810}
-  _shootingEffectType: 7
+  _shootingEffectType: 8
   _overrideShootingAnimationLength: 0

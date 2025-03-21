@@ -31,6 +31,7 @@ class BarUI : MonoBehaviour
     private void Update()
     {
         if (_currentValueCached == _valueRange.Value) return;
+
         _setValue(_valueRange.Value);
     }
 
@@ -51,7 +52,7 @@ class BarUI : MonoBehaviour
 
             return;
         }
-
+        
         if (_currentLerpCoroutine != null) StopCoroutine(_currentLerpCoroutine);
         
         _currentLerpCoroutine = StartCoroutine(_lerpFilled(_displayerPercentageFilled, PercentageFilled, _interpolationTime));
@@ -61,18 +62,20 @@ class BarUI : MonoBehaviour
     {
         float elapsedTime = 0f;
         _displayerPercentageFilled = startPercentageFilled;
-
+        
         while (elapsedTime < duration)
         {
             _displayerPercentageFilled = Mathf.Lerp(startPercentageFilled, endPercentageFilled, elapsedTime / duration);
-            elapsedTime += Time.deltaTime;
-
             _displayFillBar();
+
+            elapsedTime += Time.deltaTime;
 
             yield return null;
         }
-    
+
         _displayerPercentageFilled = endPercentageFilled;
+
+        _displayFillBar();
     }
 
 

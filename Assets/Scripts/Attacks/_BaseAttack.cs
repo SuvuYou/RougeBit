@@ -44,8 +44,8 @@ public class BaseAttack : Upgradable
 
     public bool IsAttacking => _attackState == AttackState.Attacking;
 
-    public void ActivateAttack() { _reloadTimer.Start(); _reloadTimer.Reset(); _isActivated = true; }
-    public void DeactivateAttack() { _reloadTimer.Stop(); _aimTimer.Stop(); _isActivated = false; }
+    public void ActivateAttack() { _reloadTimer?.Start(); _reloadTimer?.Reset(); _isActivated = true; }
+    public void DeactivateAttack() { _reloadTimer?.Stop(); _aimTimer?.Stop(); _isActivated = false; }
 
     public void SetTarget(Target target) => _target = target;
 

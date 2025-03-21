@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bf79dbedeac71241b0fdaa3e1416b98, type: 3}
   m_Name: WaveConfigSO 6
   m_EditorClassIdentifier: 
-  MinGroupSpawnTimeout: 1
-  MaxGroupSpawnTimeout: 2
+  MinGroupSpawnTimeout: 0.5
+  MaxGroupSpawnTimeout: 1
   MinGroupSize: 1
   MaxGroupSize: 3
   EnemiesWithSpawnWeights:

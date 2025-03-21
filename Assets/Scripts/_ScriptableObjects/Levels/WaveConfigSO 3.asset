@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: WaveConfigSO 3
   m_EditorClassIdentifier: 
   MinGroupSpawnTimeout: 1
-  MaxGroupSpawnTimeout: 2
+  MaxGroupSpawnTimeout: 1
   MinGroupSize: 1
   MaxGroupSize: 3
   EnemiesWithSpawnWeights:
