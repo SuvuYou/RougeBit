@@ -7,7 +7,7 @@ class PauseUIWindow : UIWindow
 
     private void Start() 
     {
-        _continueButton.SetupButton(TimeManager.Instance.StartTime);
+        _continueButton.SetupButton(GameManager.Instance.StartGame);
         _mainMenuButton.SetupButton(GameManager.Instance.EnterMainMenu);
     }
 }

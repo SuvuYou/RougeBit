@@ -13,7 +13,10 @@ class GameManager : Singlton<GameManager>, IResettable
 
     [field: SerializeField] public GameLevelsConfigSO GameLevels { get; private set; }
 
+    [SerializeField] private PalyerInputSO _playerInputSO;
+
     private GameStates _currentState = GameStates.None;
+    private GameStates _prevState;
 
     public UnityEvent OnRoundStarted;
     public UnityEvent OnRoundStopped;
@@ -39,6 +42,14 @@ class GameManager : Singlton<GameManager>, IResettable
                 _setState(GameStates.Shop);
             } 
         });
+
+        _playerInputSO.OnEscapePressed += () => 
+        {
+            if(_currentState == GameStates.Paused) 
+                _setState(_prevState);   
+            else if (_currentState == GameStates.InGame)
+                _setState(GameStates.Paused); 
+        };
 
         EnterMainMenu();
     }
@@ -70,18 +81,22 @@ class GameManager : Singlton<GameManager>, IResettable
     {
         if (_currentState == newState) return;
 
+        _prevState = _currentState;
+        _currentState = newState;
+
         // Old state
-        switch (_currentState)
+        switch (_prevState)
         {
             case GameStates.Paused:
                 UIManager.Instance.CloseWindow(UIManager.UIWindows.Pause);
-                break;
+                TimeManager.Instance.StartTime();
+                return;
             default:
                 break;
         }
 
         // New State
-        switch (newState)
+        switch (_currentState)
         {
             case GameStates.MainMenu:
                 _stopRound();
@@ -99,18 +114,19 @@ class GameManager : Singlton<GameManager>, IResettable
                 break;
             case GameStates.Paused:
                 UIManager.Instance.OpenWindow(UIManager.UIWindows.Pause);
+                TimeManager.Instance.StopTime();
                 break;
             case GameStates.GameOverSuccess:
+                ResetGame();
                 _stopRound();
                 UIManager.Instance.OpenWindow(UIManager.UIWindows.GameEndSuccess);
                 break;
             case GameStates.GameOverFail:
+                ResetGame();
                 _stopRound();
                 UIManager.Instance.OpenWindow(UIManager.UIWindows.GameEndFail);
                 break;
         }
-
-        _currentState = newState;
     }
     #endregion
 

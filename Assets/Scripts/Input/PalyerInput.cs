@@ -12,5 +12,7 @@ public class PalyerInput : MonoBehaviour
         _input.y = Input.GetAxisRaw("Vertical");
 
         _palyerInputSO.SetMovementInput(newInput: _input);
+
+        if (Input.GetKeyDown(KeyCode.Escape)) _palyerInputSO.PressEscape();
     }
 }
