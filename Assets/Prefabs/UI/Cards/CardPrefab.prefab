@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3304464713003470332}
   - component: {fileID: 391947300680816342}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: DisplaySprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3943116349042014589}
   - component: {fileID: 6480686891286796868}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: RarityText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,7 +178,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7779504547810840875}
   - component: {fileID: 269343417795795619}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: DisplayText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -263,7 +263,7 @@ GameObject:
   - component: {fileID: 4684332885635047187}
   - component: {fileID: 4958212608285307138}
   - component: {fileID: 7001030463958352182}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: CardPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}

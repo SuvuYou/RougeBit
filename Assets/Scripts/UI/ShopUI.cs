@@ -20,16 +20,11 @@ class ShopUI : UIWindow
 
     private void Update()
     {
-        Vector3 worldPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector2 touchPos = new (worldPoint.x, worldPoint.y);
-
-        RaycastHit2D hit = Physics2D.Raycast(touchPos, Vector2.zero);
-
-        if (hit.collider == null) return;
+        if (!UIRaycastManager.Instance.IsElementHit) return;
 
         foreach (var card in _cards)
         {
-            if (hit.collider.gameObject == card.gameObject)
+            if (UIRaycastManager.Instance.IsObjectHit(card.gameObject))
             {
                 card.SetIsHoveredOver(true);
 

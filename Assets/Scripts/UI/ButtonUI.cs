@@ -1,9 +1,22 @@
 using System;
+using DG.Tweening;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 class ButtonUI : MonoBehaviour
 {
+    [Header("References")]
+    [SerializeField] private Tilemap _backgroundSpriteRenderer;
+
+    [Header("Button interaction settings")]
+    [SerializeField] private Color _defaultColor = Color.white;
+    [SerializeField] private Color _hoverColor = Color.gray;
+    [SerializeField] private Color _holdingColor = Color.black;
+    [SerializeField] private float _colorTransitionDuration = 0.1f;
+
     private Action _click;
+
+    private Tweener _currentColorTween;
 
     public void SetupButton(Action onClick)
     {
@@ -12,23 +25,50 @@ class ButtonUI : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (!UIRaycastManager.Instance.IsElementHit) return;
+
+        if (UIRaycastManager.Instance.IsObjectHit(this.gameObject))
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit2D[] hit = Physics2D.RaycastAll(ray.origin, ray.direction);
-
-            if (hit.Length == 0)
-            {
-                return;
-            }
-
-            foreach (RaycastHit2D h in hit)
-            {
-                if (h.collider != null && h.collider.gameObject == this.gameObject)
-                {
-                    _click();
-                }
-            }
+            if (Input.GetMouseButton(0))
+                this.ChangeToHoldingState();     
+            else 
+                this.ChangeToHoverState();
+            
+            if (Input.GetMouseButtonUp(0))
+                _click();
         }
+        else
+        {
+            this.ChangeToOriginalState();
+        }
+    }
+
+    private void OnDestroy() => _currentColorTween?.Kill();
+
+    public void ChangeToHoverState()
+    {
+        if (_backgroundSpriteRenderer == null) return;
+
+        if (_currentColorTween != null) return;
+
+        _currentColorTween = DOVirtual.Color(_backgroundSpriteRenderer.color, _hoverColor, _colorTransitionDuration, (color) => _backgroundSpriteRenderer.color = color).SetEase(Ease.OutExpo).OnComplete(() => _currentColorTween = null).SetUpdate(isIndependentUpdate: true);
+    }
+
+    public void ChangeToHoldingState()
+    {
+        if (_backgroundSpriteRenderer == null) return;
+
+        if (_currentColorTween != null) return;
+
+        _currentColorTween = DOVirtual.Color(_backgroundSpriteRenderer.color, _holdingColor, _colorTransitionDuration, (color) => _backgroundSpriteRenderer.color = color).SetEase(Ease.OutExpo).OnComplete(() => _currentColorTween = null).SetUpdate(isIndependentUpdate: true);
+    }
+
+    public void ChangeToOriginalState()
+    {
+        if (_backgroundSpriteRenderer == null) return;
+
+        if (_currentColorTween != null) return;
+
+        _currentColorTween = DOVirtual.Color(_backgroundSpriteRenderer.color, _defaultColor, _colorTransitionDuration, (color) => _backgroundSpriteRenderer.color = color).SetEase(Ease.OutExpo).OnComplete(() => _currentColorTween = null).SetUpdate(isIndependentUpdate: true);
     }
 }
