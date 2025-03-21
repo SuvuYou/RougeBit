@@ -52,6 +52,7 @@ class RocketLaunchAttack : BaseAttack
 
     protected override void _handleAim(Action cancelAim, Action earlyFinishAttack)
     {
+        Debug.Log(_aimTimer.IsRunning);
         if (_attackerMovement.Velocity.magnitude > _stats.MovementVelocityToCancelAttackThreshold) cancelAim();
         _updateAttackState();
     }

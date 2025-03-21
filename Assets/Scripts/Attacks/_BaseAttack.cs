@@ -40,11 +40,11 @@ public class BaseAttack : Upgradable
 
     private bool _isActivated = true;
 
-    protected AttackState _attackState = AttackState.Reload;
+    [SerializeField] protected AttackState _attackState = AttackState.Reload;
 
     public bool IsAttacking => _attackState == AttackState.Attacking;
 
-    public void ActivateAttack() { _reloadTimer?.Start(); _reloadTimer?.Reset(); _isActivated = true; }
+    public void ActivateAttack() { _reloadTimer?.Start(); _reloadTimer?.Reset(); _aimTimer?.Start(); _aimTimer?.Reset(); _isActivated = true; }
     public void DeactivateAttack() { _reloadTimer?.Stop(); _aimTimer?.Stop(); _isActivated = false; }
 
     public void SetTarget(Target target) => _target = target;

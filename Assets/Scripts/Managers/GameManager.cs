@@ -20,6 +20,7 @@ class GameManager : Singlton<GameManager>, IResettable
 
     public UnityEvent OnRoundStarted;
     public UnityEvent OnRoundStopped;
+    public UnityEvent OnRoundEnd;
     public UnityEvent OnEnterMainMenu;
 
     protected override void Awake() 
@@ -119,11 +120,13 @@ class GameManager : Singlton<GameManager>, IResettable
             case GameStates.GameOverSuccess:
                 ResetGame();
                 _stopRound();
+                OnRoundEnd?.Invoke();
                 UIManager.Instance.OpenWindow(UIManager.UIWindows.GameEndSuccess);
                 break;
             case GameStates.GameOverFail:
                 ResetGame();
                 _stopRound();
+                OnRoundEnd?.Invoke();
                 UIManager.Instance.OpenWindow(UIManager.UIWindows.GameEndFail);
                 break;
         }
