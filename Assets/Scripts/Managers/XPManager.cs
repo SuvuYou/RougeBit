@@ -33,12 +33,6 @@ class XPManager : Singlton<XPManager>, IResettable
 
     private void _increaseLevel()
     {
-        if (GameManager.Instance.GameLevels.IsLastLevel)
-        {
-
-            return;
-        }
-
         GameManager.Instance.GameLevels.NextLevel();
 
         _currentXp.SetConfig(GameManager.Instance.GameLevels.GetCurrentLevel().XPRequirement);

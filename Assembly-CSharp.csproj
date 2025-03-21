@@ -131,10 +131,12 @@
     <Compile Include="Assets\Scripts\Animations\Controllers\ParentBasedVFXManager.cs" />
     <Compile Include="Assets\Scripts\DamageControl\DamagableWithImmunity.cs" />
     <Compile Include="Assets\Scripts\Attacks\Weapons\ClawLaserWeapon.cs" />
+    <Compile Include="Assets\Scripts\UI\ProgressBarUI.cs" />
     <Compile Include="Assets\Scripts\Managers\WaveManager\WaveConfigSO.cs" />
     <Compile Include="Assets\Scripts\Helpers\ObjectPool.cs" />
     <Compile Include="Assets\Scripts\Attacks\RocketLaunchAttack.cs" />
     <Compile Include="Assets\Scripts\Input\PalyerInputSO.cs" />
+    <Compile Include="Assets\Scripts\EntitiesController\ICleanable.cs" />
     <Compile Include="Assets\Scripts\Helpers\SOConnectors\FloatRangeValueConfigSO.cs" />
     <Compile Include="Assets\Scripts\Attacks\Weapons\AirStrikeWeapon.cs" />
     <Compile Include="Assets\Scripts\Movement\Rotation\FollowTargetRotationController.cs" />

@@ -157,6 +157,7 @@ class WaveManager : Singlton<WaveManager>, IResettable
     {
         foreach (var enemy in Enemies) 
         {
+            enemy.Clean();
             Destroy(enemy.gameObject);
         }
 
