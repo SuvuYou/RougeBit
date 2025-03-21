@@ -40,7 +40,7 @@ public class BaseAttack : Upgradable
 
     private bool _isActivated = true;
 
-    [SerializeField] protected AttackState _attackState = AttackState.Reload;
+    protected AttackState _attackState = AttackState.Reload;
 
     public bool IsAttacking => _attackState == AttackState.Attacking;
 
