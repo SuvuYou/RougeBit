@@ -46,12 +46,12 @@ public class MusicManager : Singlton<MusicManager>
             yield return null;
         }
 
-        _audioSource.volume = 0f;
+        _audioSource.volume = 1f;
     }
 
     private void _playClip(AudioClip newClip)
     {
-        _audioSource.volume = 0f;
+        _audioSource.volume = 1f;
         _audioSource.clip = newClip;
         _audioSource.Play();
     }
